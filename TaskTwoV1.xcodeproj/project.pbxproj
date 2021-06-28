@@ -19,6 +19,7 @@
 		2E48E2902689CE1300271A85 /* HalfWidthTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E48E28E2689CE1300271A85 /* HalfWidthTableViewCell.xib */; };
 		2E48E2942689CE4700271A85 /* TableViwInTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E48E2922689CE4700271A85 /* TableViwInTableViewCell.swift */; };
 		2E48E2952689CE4700271A85 /* TableViwInTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E48E2932689CE4700271A85 /* TableViwInTableViewCell.xib */; };
+		2E48E2AA268A0DCC00271A85 /* Breed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E48E2A9268A0DCC00271A85 /* Breed.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		2E48E28E2689CE1300271A85 /* HalfWidthTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HalfWidthTableViewCell.xib; sourceTree = "<group>"; };
 		2E48E2922689CE4700271A85 /* TableViwInTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViwInTableViewCell.swift; sourceTree = "<group>"; };
 		2E48E2932689CE4700271A85 /* TableViwInTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViwInTableViewCell.xib; sourceTree = "<group>"; };
+		2E48E2A9268A0DCC00271A85 /* Breed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Breed.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,18 +73,11 @@
 				2E48E2792689C5A100271A85 /* Info.plist */,
 				2E48E2832689CCA800271A85 /* App */,
 				2E48E2822689CCA400271A85 /* View */,
+				2E48E2A8268A0DA600271A85 /* APIService */,
 				2E48E2812689CCA000271A85 /* Controller */,
 				2E48E2842689CCD500271A85 /* CustomCells */,
-				2E48E2802689CC9B00271A85 /* APIService */,
 			);
 			path = TaskTwoV1;
-			sourceTree = "<group>";
-		};
-		2E48E2802689CC9B00271A85 /* APIService */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = APIService;
 			sourceTree = "<group>";
 		};
 		2E48E2812689CCA000271A85 /* Controller */ = {
@@ -131,6 +126,14 @@
 				2E48E2932689CE4700271A85 /* TableViwInTableViewCell.xib */,
 			);
 			path = CellsXibFiles;
+			sourceTree = "<group>";
+		};
+		2E48E2A8268A0DA600271A85 /* APIService */ = {
+			isa = PBXGroup;
+			children = (
+				2E48E2A9268A0DCC00271A85 /* Breed.swift */,
+			);
+			path = APIService;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,6 +210,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E48E28F2689CE1300271A85 /* HalfWidthTableViewCell.swift in Sources */,
+				2E48E2AA268A0DCC00271A85 /* Breed.swift in Sources */,
 				2E48E2702689C59C00271A85 /* ViewController.swift in Sources */,
 				2E48E2942689CE4700271A85 /* TableViwInTableViewCell.swift in Sources */,
 				2E48E2892689CDF200271A85 /* FullWidthTableViewCell.swift in Sources */,

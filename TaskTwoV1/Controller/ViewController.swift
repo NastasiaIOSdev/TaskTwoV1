@@ -21,8 +21,28 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.dataSource = self
         title = "Cats List"
         
+        getBreed()
+        
     }
     
+    func getBreed() {
+        guard let url = URL(string: "https://api.thecatapi.com/v1/breeds") else{
+            return
+        }
+        
+        let task = URLSession.shared.dataTask(with: url) { (data, _, _) in
+            
+            guard let data = data else { return }
+            
+            do {
+                let breeds = try JSONDecoder().decode([Breed].self, from: data)
+                print(breeds)
+            } catch {
+                print(error)
+            }
+        }
+        task.resume()
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 10
