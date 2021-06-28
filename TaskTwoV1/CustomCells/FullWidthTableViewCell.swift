@@ -7,6 +7,25 @@
 
 import UIKit
 
+// Mark: - ViewModel
+
+class FullWidthViewCellViewModel {
+    let title: String
+    let subtitle: String
+    let imageUrl: URL?
+    var imageData: Data? = nil
+    
+    init(
+        title: String,
+        subtitle: String,
+        imageUrl: URL?
+    ) {
+        self.title = title
+        self.subtitle = subtitle
+        self.imageUrl = imageUrl
+    }
+}
+
 final class FullWidthTableViewCell: UITableViewCell {
     
    static let identifier = "FullWidthTableViewCell"
@@ -27,12 +46,36 @@ final class FullWidthTableViewCell: UITableViewCell {
         catUIImageView.layer.masksToBounds = true
     }
     
+    func configure(with viewModel: BigTableViewCellViewModel) {
+        breedLabel.text = viewModel.title
+        counryLabel.text = viewModel.subtitle
+        //image
+        if let data = viewModel.imageData {
+            catUIImageView.image = UIImage(data: data)
+        }
+        else if let url = viewModel.imageUrl {
+                //fetch
+                URLSession.shared.dataTask(with: url) { [weak self] data, _, error in
+                    guard let data = data, error == nil else {
+                        return
+                    }
+                    viewModel.imageData = data
+                    DispatchQueue.main.async {
+                        self?.catUIImageView.image = UIImage(data: data)
+                    }
+                }.resume()
+        }
+    }
+    
     override func layoutSubviews() {
         super.layoutSubviews()
     }
     
     override func prepareForReuse() {
         super.prepareForReuse()
+        catUIImageView.image = nil
+        counryLabel.text = nil
+        breedLabel.text = nil
     }
     
     
