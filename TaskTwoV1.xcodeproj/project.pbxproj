@@ -22,6 +22,10 @@
 		2E48E353268CEE8D00271A85 /* CatsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E48E352268CEE8D00271A85 /* CatsModel.swift */; };
 		2E48E359268CEEE300271A85 /* CellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E48E358268CEEE300271A85 /* CellViewModel.swift */; };
 		2E48E35D268CEF0D00271A85 /* NetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E48E35C268CEF0D00271A85 /* NetService.swift */; };
+		2E48E36F268D0B6100271A85 /* PersonList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E48E36E268D0B5F00271A85 /* PersonList.swift */; };
+		2E48E372268D0B8300271A85 /* SearchPersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E48E371268D0B8300271A85 /* SearchPersonViewController.swift */; };
+		2E48E375268D0BD700271A85 /* PersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E48E374268D0BD700271A85 /* PersonTableViewCell.swift */; };
+		2E48E379268D0C1300271A85 /* DetailPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E48E378268D0C1300271A85 /* DetailPageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +46,10 @@
 		2E48E352268CEE8D00271A85 /* CatsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatsModel.swift; sourceTree = "<group>"; };
 		2E48E358268CEEE300271A85 /* CellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellViewModel.swift; sourceTree = "<group>"; };
 		2E48E35C268CEF0D00271A85 /* NetService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetService.swift; sourceTree = "<group>"; };
+		2E48E36E268D0B5F00271A85 /* PersonList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonList.swift; sourceTree = "<group>"; };
+		2E48E371268D0B8300271A85 /* SearchPersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPersonViewController.swift; sourceTree = "<group>"; };
+		2E48E374268D0BD700271A85 /* PersonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTableViewCell.swift; sourceTree = "<group>"; };
+		2E48E378268D0C1300271A85 /* DetailPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,18 +86,18 @@
 				2E48E2832689CCA800271A85 /* App */,
 				2E48E2822689CCA400271A85 /* View */,
 				2E48E2A8268A0DA600271A85 /* APIService */,
-				2E48E2812689CCA000271A85 /* Controller */,
-				2E48E2842689CCD500271A85 /* CustomCells */,
+				2E48E36C268D0AA000271A85 /* SWars */,
+				2E48E36A268D0A6100271A85 /* Cats */,
 			);
 			path = TaskTwoV1;
 			sourceTree = "<group>";
 		};
-		2E48E2812689CCA000271A85 /* Controller */ = {
+		2E48E2812689CCA000271A85 /* ControllersCat */ = {
 			isa = PBXGroup;
 			children = (
 				2E48E26F2689C59C00271A85 /* ViewController.swift */,
 			);
-			path = Controller;
+			path = ControllersCat;
 			sourceTree = "<group>";
 		};
 		2E48E2822689CCA400271A85 /* View */ = {
@@ -137,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				2E48E35C268CEF0D00271A85 /* NetService.swift */,
+				2E48E36E268D0B5F00271A85 /* PersonList.swift */,
 				2E48E352268CEE8D00271A85 /* CatsModel.swift */,
 				2E48E358268CEEE300271A85 /* CellViewModel.swift */,
 			);
@@ -148,6 +157,25 @@
 			children = (
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		2E48E36A268D0A6100271A85 /* Cats */ = {
+			isa = PBXGroup;
+			children = (
+				2E48E2812689CCA000271A85 /* ControllersCat */,
+				2E48E2842689CCD500271A85 /* CustomCells */,
+			);
+			path = Cats;
+			sourceTree = "<group>";
+		};
+		2E48E36C268D0AA000271A85 /* SWars */ = {
+			isa = PBXGroup;
+			children = (
+				2E48E371268D0B8300271A85 /* SearchPersonViewController.swift */,
+				2E48E374268D0BD700271A85 /* PersonTableViewCell.swift */,
+				2E48E378268D0C1300271A85 /* DetailPageViewController.swift */,
+			);
+			path = SWars;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -223,14 +251,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E48E379268D0C1300271A85 /* DetailPageViewController.swift in Sources */,
 				2E48E359268CEEE300271A85 /* CellViewModel.swift in Sources */,
 				2E48E28F2689CE1300271A85 /* HalfWidthTableViewCell.swift in Sources */,
 				2E48E2702689C59C00271A85 /* ViewController.swift in Sources */,
 				2E48E2942689CE4700271A85 /* TableViwInTableViewCell.swift in Sources */,
 				2E48E2892689CDF200271A85 /* FullWidthTableViewCell.swift in Sources */,
 				2E48E26C2689C59C00271A85 /* AppDelegate.swift in Sources */,
+				2E48E375268D0BD700271A85 /* PersonTableViewCell.swift in Sources */,
 				2E48E26E2689C59C00271A85 /* SceneDelegate.swift in Sources */,
 				2E48E35D268CEF0D00271A85 /* NetService.swift in Sources */,
+				2E48E372268D0B8300271A85 /* SearchPersonViewController.swift in Sources */,
+				2E48E36F268D0B6100271A85 /* PersonList.swift in Sources */,
 				2E48E353268CEE8D00271A85 /* CatsModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
