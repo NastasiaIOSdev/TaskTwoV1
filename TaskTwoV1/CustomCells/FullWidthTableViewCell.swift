@@ -7,28 +7,11 @@
 
 import UIKit
 
-// Mark: - ViewModel
-
-class FullWidthViewCellViewModel {
-    let title: String
-    let subtitle: String
-    let imageUrl: URL?
-    var imageData: Data? = nil
-    
-    init(
-        title: String,
-        subtitle: String,
-        imageUrl: URL?
-    ) {
-        self.title = title
-        self.subtitle = subtitle
-        self.imageUrl = imageUrl
-    }
-}
-
 final class FullWidthTableViewCell: UITableViewCell {
     
-   static let identifier = "FullWidthTableViewCell"
+    static let identifier = "FullWidthTableViewCell"
+    
+    // MARK: - IBOUtlets
     
     @IBOutlet weak var catUIImageView: UIImageView!
     @IBOutlet weak var breedLabel: UILabel!
@@ -38,35 +21,14 @@ final class FullWidthTableViewCell: UITableViewCell {
     static func nib() -> UINib {
         return UINib(nibName: "FullWidthTableViewCell", bundle: nil)
     }
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         catUIImageView.layer.cornerRadius = 20
         myView.layer.cornerRadius = 20
         catUIImageView.layer.masksToBounds = true
     }
-    
-    func configure(with viewModel: BigTableViewCellViewModel) {
-        breedLabel.text = viewModel.title
-        counryLabel.text = viewModel.subtitle
-        //image
-        if let data = viewModel.imageData {
-            catUIImageView.image = UIImage(data: data)
-        }
-        else if let url = viewModel.imageUrl {
-                //fetch
-                URLSession.shared.dataTask(with: url) { [weak self] data, _, error in
-                    guard let data = data, error == nil else {
-                        return
-                    }
-                    viewModel.imageData = data
-                    DispatchQueue.main.async {
-                        self?.catUIImageView.image = UIImage(data: data)
-                    }
-                }.resume()
-        }
-    }
-    
+   
     override func layoutSubviews() {
         super.layoutSubviews()
     }
@@ -77,16 +39,14 @@ final class FullWidthTableViewCell: UITableViewCell {
         counryLabel.text = nil
         breedLabel.text = nil
     }
-    
-    
-
+   
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
 }
+
+// MARK: - Extension
 
 extension UIView {
     func roundCorners(corners:UIRectCorner, radius: CGFloat) {

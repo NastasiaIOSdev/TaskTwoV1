@@ -19,7 +19,9 @@
 		2E48E2902689CE1300271A85 /* HalfWidthTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E48E28E2689CE1300271A85 /* HalfWidthTableViewCell.xib */; };
 		2E48E2942689CE4700271A85 /* TableViwInTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E48E2922689CE4700271A85 /* TableViwInTableViewCell.swift */; };
 		2E48E2952689CE4700271A85 /* TableViwInTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E48E2932689CE4700271A85 /* TableViwInTableViewCell.xib */; };
-		2E48E2AD268A13B900271A85 /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E48E2AC268A13B900271A85 /* APICaller.swift */; };
+		2E48E353268CEE8D00271A85 /* CatsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E48E352268CEE8D00271A85 /* CatsModel.swift */; };
+		2E48E359268CEEE300271A85 /* CellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E48E358268CEEE300271A85 /* CellViewModel.swift */; };
+		2E48E35D268CEF0D00271A85 /* NetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E48E35C268CEF0D00271A85 /* NetService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,7 +39,9 @@
 		2E48E28E2689CE1300271A85 /* HalfWidthTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HalfWidthTableViewCell.xib; sourceTree = "<group>"; };
 		2E48E2922689CE4700271A85 /* TableViwInTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViwInTableViewCell.swift; sourceTree = "<group>"; };
 		2E48E2932689CE4700271A85 /* TableViwInTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViwInTableViewCell.xib; sourceTree = "<group>"; };
-		2E48E2AC268A13B900271A85 /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
+		2E48E352268CEE8D00271A85 /* CatsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatsModel.swift; sourceTree = "<group>"; };
+		2E48E358268CEEE300271A85 /* CellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellViewModel.swift; sourceTree = "<group>"; };
+		2E48E35C268CEF0D00271A85 /* NetService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +118,7 @@
 				2E48E28D2689CE1300271A85 /* HalfWidthTableViewCell.swift */,
 				2E48E2922689CE4700271A85 /* TableViwInTableViewCell.swift */,
 				2E48E2972689CE4E00271A85 /* CellsXibFiles */,
+				2E48E360268CF81D00271A85 /* Helpers */,
 			);
 			path = CustomCells;
 			sourceTree = "<group>";
@@ -131,9 +136,18 @@
 		2E48E2A8268A0DA600271A85 /* APIService */ = {
 			isa = PBXGroup;
 			children = (
-				2E48E2AC268A13B900271A85 /* APICaller.swift */,
+				2E48E35C268CEF0D00271A85 /* NetService.swift */,
+				2E48E352268CEE8D00271A85 /* CatsModel.swift */,
+				2E48E358268CEEE300271A85 /* CellViewModel.swift */,
 			);
 			path = APIService;
+			sourceTree = "<group>";
+		};
+		2E48E360268CF81D00271A85 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,13 +223,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E48E359268CEEE300271A85 /* CellViewModel.swift in Sources */,
 				2E48E28F2689CE1300271A85 /* HalfWidthTableViewCell.swift in Sources */,
 				2E48E2702689C59C00271A85 /* ViewController.swift in Sources */,
 				2E48E2942689CE4700271A85 /* TableViwInTableViewCell.swift in Sources */,
 				2E48E2892689CDF200271A85 /* FullWidthTableViewCell.swift in Sources */,
 				2E48E26C2689C59C00271A85 /* AppDelegate.swift in Sources */,
 				2E48E26E2689C59C00271A85 /* SceneDelegate.swift in Sources */,
-				2E48E2AD268A13B900271A85 /* APICaller.swift in Sources */,
+				2E48E35D268CEF0D00271A85 /* NetService.swift in Sources */,
+				2E48E353268CEE8D00271A85 /* CatsModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

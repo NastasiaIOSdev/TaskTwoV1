@@ -10,9 +10,9 @@ import UIKit
 class TableViwInTableViewCell: UITableViewCell {
 
     static let identifier = "TableViwInTableViewCell"
-     
-//     @IBOutlet weak var catUIImageView: UIImageView!
-//     @IBOutlet weak var breedLabel: UILabel!
+ 
+    // MARK: - IBOutlets
+    
      @IBOutlet weak var myView: UIView!
      @IBOutlet weak var myTable: UITableView!
     
@@ -23,9 +23,7 @@ class TableViwInTableViewCell: UITableViewCell {
 
      override func awakeFromNib() {
          super.awakeFromNib()
-         //catUIImageView.layer.cornerRadius = 20
          myView.layer.cornerRadius = 20
-         //catUIImageView.layer.masksToBounds = true
      }
      
      override func layoutSubviews() {
@@ -36,12 +34,8 @@ class TableViwInTableViewCell: UITableViewCell {
          super.prepareForReuse()
      }
      
-     
-
      override func setSelected(_ selected: Bool, animated: Bool) {
          super.setSelected(selected, animated: animated)
-
-         // Configure the view for the selected state
      }
     
 }
