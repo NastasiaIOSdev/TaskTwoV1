@@ -1,17 +1,17 @@
 //
-//  ViewController.swift
+//  MainViewController.swift
 //  TaskTwoV1
 //
-//  Created by Анастасия Ларина on 28.06.2021.
+//  Created by Анастасия Ларина on 03.07.2021.
 //
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class MainViewController: UIViewController {
     
     // MARK: - IBOUtlets
     
-    @IBOutlet var tableView: UITableView!
+    @IBOutlet var tableViewSecond: UITableView!
     
     private var viewModels = [CellViewModel]()
     
@@ -20,13 +20,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.register(FullWidthTableViewCell.nib(), forCellReuseIdentifier: FullWidthTableViewCell.identifier)
-        tableView.register(HalfWidthTableViewCell.nib(), forCellReuseIdentifier: HalfWidthTableViewCell.identifier)
-        tableView.register(TableViwInTableViewCell.nib(), forCellReuseIdentifier: TableViwInTableViewCell.identifier)
+        tableViewSecond.register(FirstTableViewCell.nib(), forCellReuseIdentifier: FirstTableViewCell.identifier)
+        tableViewSecond.register(SecondTableViewCell.nib(), forCellReuseIdentifier: SecondTableViewCell.identifier)
+        tableViewSecond.register(ThirdTableViewCell.nib(), forCellReuseIdentifier: ThirdTableViewCell.identifier)
         
-        tableView.delegate = self
-        tableView.dataSource = self
-        title = "Cats List"
+        tableViewSecond.delegate = self
+        tableViewSecond.dataSource = self
+        title = "Another List"
         
         APIService.shared.getBreed { [weak self] result in
             switch result {
@@ -39,7 +39,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                     )
                 })
                 DispatchQueue.main.async {
-                    self?.tableView.reloadData()
+                    self?.tableViewSecond.reloadData()
                 }
                 
             case.failure(let error):
@@ -51,6 +51,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
     }
+
+}
+
+
+extension MainViewController: UITableViewDelegate {
+    
+}
+
+extension MainViewController: UITableViewDataSource {
     
     // MARK: - UITavleView
     
@@ -60,26 +69,26 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row % 3 == 0 {
-              if let cell = tableView.dequeueReusableCell(withIdentifier: "FullWidthTableViewCell") as? FullWidthTableViewCell {
+              if let cell = tableView.dequeueReusableCell(withIdentifier: "FirstTableViewCell") as? FirstTableViewCell {
                 cell.configure(with: viewModels[indexPath.row])
                   return cell
               }
         } else if (indexPath.row - 1) % 3 == 0 || indexPath.row == 1 {
-              if let cell2 = tableView.dequeueReusableCell(withIdentifier: "HalfWidthTableViewCell") as? HalfWidthTableViewCell {
+              if let cell2 = tableView.dequeueReusableCell(withIdentifier: "SecondTableViewCell") as? SecondTableViewCell {
                   cell2.configure(with: viewModels[indexPath.row])
                   return cell2
               }
         } else if (indexPath.row - 1) % 2 == 0 || (indexPath.row - 1) % 2 == 1 || indexPath.row == 2 {
-            if let cell3 = tableView.dequeueReusableCell(withIdentifier: "TableViwInTableViewCell") as? TableViwInTableViewCell {
+            if let cell3 = tableView.dequeueReusableCell(withIdentifier: "ThirdTableViewCell") as? ThirdTableViewCell {
+               
                 return cell3
             }
         }
         
           return UITableViewCell()
       }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        160.0
     }
-    
 }

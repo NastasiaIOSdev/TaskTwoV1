@@ -7,22 +7,9 @@
 
 import Foundation
 
-protocol NetService {
-    func getBreed(completion: @escaping (Result<[Breed], Error>) -> Void)
-    func getPeopleList(completion: @escaping (Result<[Results], Error>) -> Void)
-    func searchPeopleList(with query: String, completion: @escaping (Result<[Results], Error>) -> Void)
-}
-
 final class APIService {
     
     static let shared = APIService()
-    
-    struct Constants {
-        static let breedsURL = URL(string: "https://api.thecatapi.com/v1/breeds")
-        static let peopleURL = URL(string: "https://swapi.dev/api/people/")
-        static let searchURLString = "https://swapi.dev/api/people/&q="
-    }
-   
     
     private init() {}
     
@@ -48,6 +35,7 @@ final class APIService {
         task.resume()
         
     }
+    
     
     public func getPeopleList(completion: @escaping (Result<[Results], Error>) -> Void) {
         guard let url = Constants.peopleURL else {
@@ -100,5 +88,4 @@ final class APIService {
         task.resume()
     }
 }
-
 

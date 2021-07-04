@@ -1,29 +1,24 @@
 //
-//  HalfWidthTableViewCell.swift
+//  SecondTableViewCell.swift
 //  TaskTwoV1
 //
-//  Created by Анастасия Ларина on 28.06.2021.
+//  Created by Анастасия Ларина on 03.07.2021.
 //
 
 import UIKit
 
-class HalfWidthTableViewCell: UITableViewCell {
+class SecondTableViewCell: UITableViewCell {
+
+    static let identifier = "SecondTableViewCell"
     
-    static let identifier = "HalfWidthTableViewCell"
-    
-    // MARK: - IBOUTlets
+    // MARK: - IBOUtlets
     
     @IBOutlet weak var catUIImageView: UIImageView!
     @IBOutlet weak var breedLabel: UILabel!
     @IBOutlet weak var myView: UIView!
-    @IBOutlet weak var countryLabel: UILabel!
-    @IBOutlet weak var rightCatUIImageView: UIImageView!
-    @IBOutlet weak var rightBreedLabel: UILabel!
-    @IBOutlet weak var rightMyView: UIView!
-    @IBOutlet weak var rightCountryLabel: UILabel!
     
     static func nib() -> UINib {
-        return UINib(nibName: "HalfWidthTableViewCell", bundle: nil)
+        return UINib(nibName: "SecondTableViewCell", bundle: nil)
     }
     
     override func awakeFromNib() {
@@ -31,15 +26,10 @@ class HalfWidthTableViewCell: UITableViewCell {
         catUIImageView.layer.cornerRadius = 10
         myView.layer.cornerRadius = 10
         catUIImageView.layer.masksToBounds = true
-        rightCatUIImageView.layer.cornerRadius = 10
-        rightMyView.layer.cornerRadius = 10
-        rightCatUIImageView.layer.masksToBounds = true
     }
-    
     
     func configure(with viewModel: CellViewModel) {
         breedLabel.text = viewModel.title
-        countryLabel.text = viewModel.subtitle
 
         if let data = viewModel.imageData {
             catUIImageView.image = UIImage(data: data)
@@ -55,26 +45,19 @@ class HalfWidthTableViewCell: UITableViewCell {
                 }
             }.resume()
         }
-        
         func layoutSubviews() {
-            super.layoutSubviews()
-        }
-        
+        super.layoutSubviews()
+    }
+    
         func prepareForReuse() {
-            super.prepareForReuse()
-            breedLabel.text = nil
-            catUIImageView.image = nil
-            countryLabel.text = nil
-            rightCatUIImageView.image = nil
-            rightBreedLabel.text = nil
-            rightCountryLabel.text = nil
-            
-        }
-        
+        super.prepareForReuse()
+        catUIImageView.image = nil
+        breedLabel.text = nil
+    }
         func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
-        
-    }
     
+}
+
 }

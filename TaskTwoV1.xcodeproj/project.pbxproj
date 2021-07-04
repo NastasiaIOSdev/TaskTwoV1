@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E2CFA902690619000458940 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2CFA8F2690619000458940 /* MainViewController.swift */; };
+		2E2CFA96269061D900458940 /* FirstTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2CFA94269061D900458940 /* FirstTableViewCell.swift */; };
+		2E2CFA97269061D900458940 /* FirstTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E2CFA95269061D900458940 /* FirstTableViewCell.xib */; };
+		2E2CFA9C269061FA00458940 /* SecondTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2CFA9A269061FA00458940 /* SecondTableViewCell.swift */; };
+		2E2CFA9D269061FA00458940 /* SecondTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E2CFA9B269061FA00458940 /* SecondTableViewCell.xib */; };
+		2E2CFAA12690621900458940 /* ThirdTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2CFA9F2690621900458940 /* ThirdTableViewCell.swift */; };
+		2E2CFAA22690621900458940 /* ThirdTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E2CFAA02690621900458940 /* ThirdTableViewCell.xib */; };
+		2E2CFAA7269065D800458940 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2CFAA5269065D800458940 /* CollectionViewCell.swift */; };
+		2E2CFAA8269065D800458940 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E2CFAA6269065D800458940 /* CollectionViewCell.xib */; };
 		2E48E26C2689C59C00271A85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E48E26B2689C59C00271A85 /* AppDelegate.swift */; };
 		2E48E26E2689C59C00271A85 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E48E26D2689C59C00271A85 /* SceneDelegate.swift */; };
 		2E48E2702689C59C00271A85 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E48E26F2689C59C00271A85 /* ViewController.swift */; };
@@ -26,15 +35,29 @@
 		2E48E372268D0B8300271A85 /* SearchPersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E48E371268D0B8300271A85 /* SearchPersonViewController.swift */; };
 		2E48E375268D0BD700271A85 /* PersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E48E374268D0BD700271A85 /* PersonTableViewCell.swift */; };
 		2E48E379268D0C1300271A85 /* DetailPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E48E378268D0C1300271A85 /* DetailPageViewController.swift */; };
+		2E79B4A62690F35800C357C3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E79B4A52690F35800C357C3 /* Constants.swift */; };
+		2E79B4AA2690F45100C357C3 /* ProtocolNetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E79B4A92690F45100C357C3 /* ProtocolNetService.swift */; };
+		2EAC783326924836005B7D98 /* DogImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAC783226924836005B7D98 /* DogImage.swift */; };
+		2EAC783626924850005B7D98 /* DogBreed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAC783526924850005B7D98 /* DogBreed.swift */; };
+		2EAC783A26925139005B7D98 /* CellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAC783926925139005B7D98 /* CellModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2E2CFA8F2690619000458940 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		2E2CFA94269061D900458940 /* FirstTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTableViewCell.swift; sourceTree = "<group>"; };
+		2E2CFA95269061D900458940 /* FirstTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FirstTableViewCell.xib; sourceTree = "<group>"; };
+		2E2CFA9A269061FA00458940 /* SecondTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondTableViewCell.swift; sourceTree = "<group>"; };
+		2E2CFA9B269061FA00458940 /* SecondTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecondTableViewCell.xib; sourceTree = "<group>"; };
+		2E2CFA9F2690621900458940 /* ThirdTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdTableViewCell.swift; sourceTree = "<group>"; };
+		2E2CFAA02690621900458940 /* ThirdTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThirdTableViewCell.xib; sourceTree = "<group>"; };
+		2E2CFAA5269065D800458940 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		2E2CFAA6269065D800458940 /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
 		2E48E2682689C59C00271A85 /* TaskTwoV1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaskTwoV1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E48E26B2689C59C00271A85 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2E48E26D2689C59C00271A85 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		2E48E26F2689C59C00271A85 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2E48E2722689C59C00271A85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		2E48E2742689C5A100271A85 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2E48E2742689C5A100271A85 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../View/Assets.xcassets; sourceTree = "<group>"; };
 		2E48E2772689C5A100271A85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2E48E2792689C5A100271A85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2E48E2872689CDF200271A85 /* FullWidthTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullWidthTableViewCell.swift; sourceTree = "<group>"; };
@@ -50,6 +73,11 @@
 		2E48E371268D0B8300271A85 /* SearchPersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPersonViewController.swift; sourceTree = "<group>"; };
 		2E48E374268D0BD700271A85 /* PersonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTableViewCell.swift; sourceTree = "<group>"; };
 		2E48E378268D0C1300271A85 /* DetailPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPageViewController.swift; sourceTree = "<group>"; };
+		2E79B4A52690F35800C357C3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		2E79B4A92690F45100C357C3 /* ProtocolNetService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolNetService.swift; sourceTree = "<group>"; };
+		2EAC783226924836005B7D98 /* DogImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogImage.swift; sourceTree = "<group>"; };
+		2EAC783526924850005B7D98 /* DogBreed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogBreed.swift; sourceTree = "<group>"; };
+		2EAC783926925139005B7D98 /* CellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +91,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2E2CFA8A26905E8800458940 /* CatToDog */ = {
+			isa = PBXGroup;
+			children = (
+				2E2CFA8D269060FB00458940 /* Controller */,
+				2E2CFA8E2690612A00458940 /* CustomCells& */,
+			);
+			path = CatToDog;
+			sourceTree = "<group>";
+		};
+		2E2CFA8D269060FB00458940 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2E2CFA8F2690619000458940 /* MainViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2E2CFA8E2690612A00458940 /* CustomCells& */ = {
+			isa = PBXGroup;
+			children = (
+				2E2CFA94269061D900458940 /* FirstTableViewCell.swift */,
+				2E2CFA9A269061FA00458940 /* SecondTableViewCell.swift */,
+				2E2CFA9F2690621900458940 /* ThirdTableViewCell.swift */,
+				2E2CFAA5269065D800458940 /* CollectionViewCell.swift */,
+				2E2CFA932690619700458940 /* XibFiles */,
+			);
+			path = "CustomCells&";
+			sourceTree = "<group>";
+		};
+		2E2CFA932690619700458940 /* XibFiles */ = {
+			isa = PBXGroup;
+			children = (
+				2E2CFA95269061D900458940 /* FirstTableViewCell.xib */,
+				2E2CFA9B269061FA00458940 /* SecondTableViewCell.xib */,
+				2E2CFAA02690621900458940 /* ThirdTableViewCell.xib */,
+				2E2CFAA6269065D800458940 /* CollectionViewCell.xib */,
+			);
+			path = XibFiles;
+			sourceTree = "<group>";
+		};
 		2E48E25F2689C59C00271A85 = {
 			isa = PBXGroup;
 			children = (
@@ -86,6 +154,9 @@
 				2E48E2832689CCA800271A85 /* App */,
 				2E48E2822689CCA400271A85 /* View */,
 				2E48E2A8268A0DA600271A85 /* APIService */,
+				2E79B4A42690F33100C357C3 /* Constants */,
+				2E79B4A82690F3FA00C357C3 /* Protocols */,
+				2E2CFA8A26905E8800458940 /* CatToDog */,
 				2E48E36C268D0AA000271A85 /* SWars */,
 				2E48E36A268D0A6100271A85 /* Cats */,
 			);
@@ -103,7 +174,6 @@
 		2E48E2822689CCA400271A85 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				2E48E2742689C5A100271A85 /* Assets.xcassets */,
 				2E48E2762689C5A100271A85 /* LaunchScreen.storyboard */,
 				2E48E2712689C59C00271A85 /* Main.storyboard */,
 			);
@@ -115,6 +185,7 @@
 			children = (
 				2E48E26B2689C59C00271A85 /* AppDelegate.swift */,
 				2E48E26D2689C59C00271A85 /* SceneDelegate.swift */,
+				2E48E2742689C5A100271A85 /* Assets.xcassets */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -126,7 +197,6 @@
 				2E48E28D2689CE1300271A85 /* HalfWidthTableViewCell.swift */,
 				2E48E2922689CE4700271A85 /* TableViwInTableViewCell.swift */,
 				2E48E2972689CE4E00271A85 /* CellsXibFiles */,
-				2E48E360268CF81D00271A85 /* Helpers */,
 			);
 			path = CustomCells;
 			sourceTree = "<group>";
@@ -148,15 +218,11 @@
 				2E48E36E268D0B5F00271A85 /* PersonList.swift */,
 				2E48E352268CEE8D00271A85 /* CatsModel.swift */,
 				2E48E358268CEEE300271A85 /* CellViewModel.swift */,
+				2EAC783226924836005B7D98 /* DogImage.swift */,
+				2EAC783526924850005B7D98 /* DogBreed.swift */,
+				2EAC783926925139005B7D98 /* CellModel.swift */,
 			);
 			path = APIService;
-			sourceTree = "<group>";
-		};
-		2E48E360268CF81D00271A85 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Helpers;
 			sourceTree = "<group>";
 		};
 		2E48E36A268D0A6100271A85 /* Cats */ = {
@@ -176,6 +242,22 @@
 				2E48E378268D0C1300271A85 /* DetailPageViewController.swift */,
 			);
 			path = SWars;
+			sourceTree = "<group>";
+		};
+		2E79B4A42690F33100C357C3 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				2E79B4A52690F35800C357C3 /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		2E79B4A82690F3FA00C357C3 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				2E79B4A92690F45100C357C3 /* ProtocolNetService.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,11 +318,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E48E2782689C5A100271A85 /* LaunchScreen.storyboard in Resources */,
+				2E2CFA97269061D900458940 /* FirstTableViewCell.xib in Resources */,
+				2E2CFAA22690621900458940 /* ThirdTableViewCell.xib in Resources */,
 				2E48E28A2689CDF200271A85 /* FullWidthTableViewCell.xib in Resources */,
+				2E2CFAA8269065D800458940 /* CollectionViewCell.xib in Resources */,
 				2E48E2952689CE4700271A85 /* TableViwInTableViewCell.xib in Resources */,
 				2E48E2902689CE1300271A85 /* HalfWidthTableViewCell.xib in Resources */,
 				2E48E2752689C5A100271A85 /* Assets.xcassets in Resources */,
 				2E48E2732689C59C00271A85 /* Main.storyboard in Resources */,
+				2E2CFA9D269061FA00458940 /* SecondTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,17 +337,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2EAC783A26925139005B7D98 /* CellModel.swift in Sources */,
 				2E48E379268D0C1300271A85 /* DetailPageViewController.swift in Sources */,
+				2E79B4A62690F35800C357C3 /* Constants.swift in Sources */,
 				2E48E359268CEEE300271A85 /* CellViewModel.swift in Sources */,
+				2E2CFAA7269065D800458940 /* CollectionViewCell.swift in Sources */,
+				2EAC783326924836005B7D98 /* DogImage.swift in Sources */,
 				2E48E28F2689CE1300271A85 /* HalfWidthTableViewCell.swift in Sources */,
+				2E2CFA9C269061FA00458940 /* SecondTableViewCell.swift in Sources */,
+				2EAC783626924850005B7D98 /* DogBreed.swift in Sources */,
 				2E48E2702689C59C00271A85 /* ViewController.swift in Sources */,
 				2E48E2942689CE4700271A85 /* TableViwInTableViewCell.swift in Sources */,
 				2E48E2892689CDF200271A85 /* FullWidthTableViewCell.swift in Sources */,
 				2E48E26C2689C59C00271A85 /* AppDelegate.swift in Sources */,
+				2E2CFA902690619000458940 /* MainViewController.swift in Sources */,
 				2E48E375268D0BD700271A85 /* PersonTableViewCell.swift in Sources */,
+				2E2CFAA12690621900458940 /* ThirdTableViewCell.swift in Sources */,
 				2E48E26E2689C59C00271A85 /* SceneDelegate.swift in Sources */,
 				2E48E35D268CEF0D00271A85 /* NetService.swift in Sources */,
 				2E48E372268D0B8300271A85 /* SearchPersonViewController.swift in Sources */,
+				2E2CFA96269061D900458940 /* FirstTableViewCell.swift in Sources */,
+				2E79B4AA2690F45100C357C3 /* ProtocolNetService.swift in Sources */,
 				2E48E36F268D0B6100271A85 /* PersonList.swift in Sources */,
 				2E48E353268CEE8D00271A85 /* CatsModel.swift in Sources */,
 			);
@@ -411,6 +507,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3VJYN6Z9BM;
 				INFOPLIST_FILE = TaskTwoV1/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -429,6 +526,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3VJYN6Z9BM;
 				INFOPLIST_FILE = TaskTwoV1/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

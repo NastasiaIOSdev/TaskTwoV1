@@ -29,6 +29,26 @@ final class FullWidthTableViewCell: UITableViewCell {
         catUIImageView.layer.masksToBounds = true
     }
    
+    func configure(with viewModel: CellViewModel) {
+        breedLabel.text = viewModel.title
+        counryLabel.text = viewModel.subtitle
+
+        if let data = viewModel.imageData {
+            catUIImageView.image = UIImage(data: data)
+        }
+        else if let url = viewModel.imageUrl {
+            URLSession.shared.dataTask(with: url) { [weak self] data, _, error in
+                guard let data = data, error == nil else {
+                    return
+                }
+                viewModel.imageData = data
+                DispatchQueue.main.async {
+                    self?.catUIImageView.image = UIImage(data: data)
+                }
+            }.resume()
+        }
+    }
+    
     override func layoutSubviews() {
         super.layoutSubviews()
     }

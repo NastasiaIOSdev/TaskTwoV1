@@ -27,13 +27,20 @@
                                     <constraint firstAttribute="width" secondItem="xSh-x5-rPV" secondAttribute="height" multiplier="320:139" id="4xI-nf-6lb"/>
                                 </constraints>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ofP-tt-Ypx">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="139"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="ofP-tt-Ypx" firstAttribute="bottom" secondItem="xSh-x5-rPV" secondAttribute="bottom" id="2UQ-Im-D16"/>
                             <constraint firstItem="xSh-x5-rPV" firstAttribute="top" secondItem="rRv-FT-rYT" secondAttribute="top" id="Vaa-kS-fk2"/>
                             <constraint firstAttribute="bottom" secondItem="xSh-x5-rPV" secondAttribute="bottom" id="ZOA-2s-atD"/>
+                            <constraint firstItem="ofP-tt-Ypx" firstAttribute="leading" secondItem="xSh-x5-rPV" secondAttribute="leading" id="Zd3-jU-nnW"/>
                             <constraint firstAttribute="trailing" secondItem="xSh-x5-rPV" secondAttribute="trailing" id="aYl-Vp-6Kh"/>
                             <constraint firstItem="xSh-x5-rPV" firstAttribute="leading" secondItem="rRv-FT-rYT" secondAttribute="leading" id="dyA-52-PeC"/>
+                            <constraint firstItem="ofP-tt-Ypx" firstAttribute="top" secondItem="xSh-x5-rPV" secondAttribute="top" id="yBm-kc-XKU"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -45,16 +52,22 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <constraints>
+                <constraint firstItem="ofP-tt-Ypx" firstAttribute="width" secondItem="KGk-i7-Jjw" secondAttribute="width" id="8EL-fY-RSr"/>
+            </constraints>
             <connections>
                 <outlet property="myTable" destination="xSh-x5-rPV" id="8Oq-j0-4pS"/>
                 <outlet property="myView" destination="rRv-FT-rYT" id="dRd-ex-wEp"/>
             </connections>
-            <point key="canvasLocation" x="264" y="132"/>
+            <point key="canvasLocation" x="263.768115942029" y="131.58482142857142"/>
         </tableViewCell>
     </objects>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
