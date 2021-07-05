@@ -1,5 +1,5 @@
 //
-//  FirstTableViewCell.swift
+//  ThirdTableViewCell.swift
 //  TaskTwoV1
 //
 //  Created by Анастасия Ларина on 03.07.2021.
@@ -7,60 +7,47 @@
 
 import UIKit
 
-class FirstTableViewCell: UITableViewCell {
-
+class FirstTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+ 
     static let identifier = "FirstTableViewCell"
+ 
+    // MARK: - IBOutlets
     
-    // MARK: - IBOUtlets
+    @IBOutlet weak var collectionViewSecond: UICollectionView!
     
-    @IBOutlet weak var catUIImageView: UIImageView!
-    @IBOutlet weak var breedLabel: UILabel!
-    @IBOutlet weak var myView: UIView!
+    var models = [CellViewModel]()
     
+     static func nib() -> UINib {
+         return UINib(nibName: "FirstTableViewCell", bundle: nil)
+     }
     
-    static func nib() -> UINib {
-        return UINib(nibName: "FirstTableViewCell", bundle: nil)
+    func configure(with models: [CellViewModel]) {
+        self.models = models
+        collectionViewSecond.reloadData()
     }
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        catUIImageView.layer.cornerRadius = 10
-        myView.layer.cornerRadius = 10
-        catUIImageView.layer.masksToBounds = true
-    }
-    
-    func configure(with viewModel: CellViewModel) {
-        breedLabel.text = viewModel.title
 
-        if let data = viewModel.imageData {
-            catUIImageView.image = UIImage(data: data)
-        }
-        else if let url = viewModel.imageUrl {
-            URLSession.shared.dataTask(with: url) { [weak self] data, _, error in
-                guard let data = data, error == nil else {
-                    return
-                }
-                viewModel.imageData = data
-                DispatchQueue.main.async {
-                    self?.catUIImageView.image = UIImage(data: data)
-                }
-            }.resume()
-        }
-        
-   
-        func layoutSubviews() {
-        super.layoutSubviews()
+     override func awakeFromNib() {
+         super.awakeFromNib()
+        collectionViewSecond.register(CollectionViewCell.nib(), forCellWithReuseIdentifier: CollectionViewCell.identifaer)
+        collectionViewSecond.delegate = self
+        collectionViewSecond.dataSource = self
+     }
+    
+    //MARK: - CollectionView
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return models.count
     }
     
-        func prepareForReuse() {
-        super.prepareForReuse()
-        catUIImageView.image = nil
-        breedLabel.text = nil
-    }
-   
-        func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionViewSecond.dequeueReusableCell(withReuseIdentifier: CollectionViewCell.identifaer, for: indexPath) as! CollectionViewCell
+       cell.configure(with: models[indexPath.row])
+    
+        return cell
     }
     
-}
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 320, height: 150)
+    }
+    
 }

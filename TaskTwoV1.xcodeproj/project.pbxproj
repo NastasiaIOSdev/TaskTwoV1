@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		2E2CFA902690619000458940 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2CFA8F2690619000458940 /* MainViewController.swift */; };
-		2E2CFA96269061D900458940 /* FirstTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2CFA94269061D900458940 /* FirstTableViewCell.swift */; };
-		2E2CFA97269061D900458940 /* FirstTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E2CFA95269061D900458940 /* FirstTableViewCell.xib */; };
+		2E2CFA96269061D900458940 /* FTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2CFA94269061D900458940 /* FTableViewCell.swift */; };
+		2E2CFA97269061D900458940 /* FTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E2CFA95269061D900458940 /* FTableViewCell.xib */; };
 		2E2CFA9C269061FA00458940 /* SecondTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2CFA9A269061FA00458940 /* SecondTableViewCell.swift */; };
 		2E2CFA9D269061FA00458940 /* SecondTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E2CFA9B269061FA00458940 /* SecondTableViewCell.xib */; };
-		2E2CFAA12690621900458940 /* ThirdTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2CFA9F2690621900458940 /* ThirdTableViewCell.swift */; };
-		2E2CFAA22690621900458940 /* ThirdTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E2CFAA02690621900458940 /* ThirdTableViewCell.xib */; };
+		2E2CFAA12690621900458940 /* FirstTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2CFA9F2690621900458940 /* FirstTableViewCell.swift */; };
+		2E2CFAA22690621900458940 /* FirstTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E2CFAA02690621900458940 /* FirstTableViewCell.xib */; };
 		2E2CFAA7269065D800458940 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2CFAA5269065D800458940 /* CollectionViewCell.swift */; };
 		2E2CFAA8269065D800458940 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E2CFAA6269065D800458940 /* CollectionViewCell.xib */; };
 		2E48E26C2689C59C00271A85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E48E26B2689C59C00271A85 /* AppDelegate.swift */; };
@@ -44,12 +44,12 @@
 
 /* Begin PBXFileReference section */
 		2E2CFA8F2690619000458940 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		2E2CFA94269061D900458940 /* FirstTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTableViewCell.swift; sourceTree = "<group>"; };
-		2E2CFA95269061D900458940 /* FirstTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FirstTableViewCell.xib; sourceTree = "<group>"; };
+		2E2CFA94269061D900458940 /* FTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FTableViewCell.swift; sourceTree = "<group>"; };
+		2E2CFA95269061D900458940 /* FTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FTableViewCell.xib; sourceTree = "<group>"; };
 		2E2CFA9A269061FA00458940 /* SecondTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondTableViewCell.swift; sourceTree = "<group>"; };
 		2E2CFA9B269061FA00458940 /* SecondTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecondTableViewCell.xib; sourceTree = "<group>"; };
-		2E2CFA9F2690621900458940 /* ThirdTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdTableViewCell.swift; sourceTree = "<group>"; };
-		2E2CFAA02690621900458940 /* ThirdTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThirdTableViewCell.xib; sourceTree = "<group>"; };
+		2E2CFA9F2690621900458940 /* FirstTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTableViewCell.swift; sourceTree = "<group>"; };
+		2E2CFAA02690621900458940 /* FirstTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FirstTableViewCell.xib; sourceTree = "<group>"; };
 		2E2CFAA5269065D800458940 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		2E2CFAA6269065D800458940 /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
 		2E48E2682689C59C00271A85 /* TaskTwoV1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaskTwoV1.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,10 +111,10 @@
 		2E2CFA8E2690612A00458940 /* CustomCells& */ = {
 			isa = PBXGroup;
 			children = (
-				2E2CFA94269061D900458940 /* FirstTableViewCell.swift */,
-				2E2CFA9A269061FA00458940 /* SecondTableViewCell.swift */,
-				2E2CFA9F2690621900458940 /* ThirdTableViewCell.swift */,
+				2E2CFA9F2690621900458940 /* FirstTableViewCell.swift */,
 				2E2CFAA5269065D800458940 /* CollectionViewCell.swift */,
+				2E2CFA9A269061FA00458940 /* SecondTableViewCell.swift */,
+				2E2CFA94269061D900458940 /* FTableViewCell.swift */,
 				2E2CFA932690619700458940 /* XibFiles */,
 			);
 			path = "CustomCells&";
@@ -123,10 +123,10 @@
 		2E2CFA932690619700458940 /* XibFiles */ = {
 			isa = PBXGroup;
 			children = (
-				2E2CFA95269061D900458940 /* FirstTableViewCell.xib */,
-				2E2CFA9B269061FA00458940 /* SecondTableViewCell.xib */,
-				2E2CFAA02690621900458940 /* ThirdTableViewCell.xib */,
+				2E2CFAA02690621900458940 /* FirstTableViewCell.xib */,
 				2E2CFAA6269065D800458940 /* CollectionViewCell.xib */,
+				2E2CFA9B269061FA00458940 /* SecondTableViewCell.xib */,
+				2E2CFA95269061D900458940 /* FTableViewCell.xib */,
 			);
 			path = XibFiles;
 			sourceTree = "<group>";
@@ -318,8 +318,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E48E2782689C5A100271A85 /* LaunchScreen.storyboard in Resources */,
-				2E2CFA97269061D900458940 /* FirstTableViewCell.xib in Resources */,
-				2E2CFAA22690621900458940 /* ThirdTableViewCell.xib in Resources */,
+				2E2CFA97269061D900458940 /* FTableViewCell.xib in Resources */,
+				2E2CFAA22690621900458940 /* FirstTableViewCell.xib in Resources */,
 				2E48E28A2689CDF200271A85 /* FullWidthTableViewCell.xib in Resources */,
 				2E2CFAA8269065D800458940 /* CollectionViewCell.xib in Resources */,
 				2E48E2952689CE4700271A85 /* TableViwInTableViewCell.xib in Resources */,
@@ -352,11 +352,11 @@
 				2E48E26C2689C59C00271A85 /* AppDelegate.swift in Sources */,
 				2E2CFA902690619000458940 /* MainViewController.swift in Sources */,
 				2E48E375268D0BD700271A85 /* PersonTableViewCell.swift in Sources */,
-				2E2CFAA12690621900458940 /* ThirdTableViewCell.swift in Sources */,
+				2E2CFAA12690621900458940 /* FirstTableViewCell.swift in Sources */,
 				2E48E26E2689C59C00271A85 /* SceneDelegate.swift in Sources */,
 				2E48E35D268CEF0D00271A85 /* NetService.swift in Sources */,
 				2E48E372268D0B8300271A85 /* SearchPersonViewController.swift in Sources */,
-				2E2CFA96269061D900458940 /* FirstTableViewCell.swift in Sources */,
+				2E2CFA96269061D900458940 /* FTableViewCell.swift in Sources */,
 				2E79B4AA2690F45100C357C3 /* ProtocolNetService.swift in Sources */,
 				2E48E36F268D0B6100271A85 /* PersonList.swift in Sources */,
 				2E48E353268CEE8D00271A85 /* CatsModel.swift in Sources */,

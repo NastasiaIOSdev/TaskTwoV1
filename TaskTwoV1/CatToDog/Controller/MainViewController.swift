@@ -22,7 +22,7 @@ class MainViewController: UIViewController {
         
         tableViewSecond.register(FirstTableViewCell.nib(), forCellReuseIdentifier: FirstTableViewCell.identifier)
         tableViewSecond.register(SecondTableViewCell.nib(), forCellReuseIdentifier: SecondTableViewCell.identifier)
-        tableViewSecond.register(ThirdTableViewCell.nib(), forCellReuseIdentifier: ThirdTableViewCell.identifier)
+//        tableViewSecond.register(FTableViewCell.nib(), forCellReuseIdentifier: FTableViewCell.identifier)
         
         tableViewSecond.delegate = self
         tableViewSecond.dataSource = self
@@ -70,8 +70,8 @@ extension MainViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row % 3 == 0 {
               if let cell = tableView.dequeueReusableCell(withIdentifier: "FirstTableViewCell") as? FirstTableViewCell {
-                cell.configure(with: viewModels[indexPath.row])
-                  return cell
+                cell.configure(with: viewModels)
+               return cell
               }
         } else if (indexPath.row - 1) % 3 == 0 || indexPath.row == 1 {
               if let cell2 = tableView.dequeueReusableCell(withIdentifier: "SecondTableViewCell") as? SecondTableViewCell {
@@ -79,8 +79,8 @@ extension MainViewController: UITableViewDataSource {
                   return cell2
               }
         } else if (indexPath.row - 1) % 2 == 0 || (indexPath.row - 1) % 2 == 1 || indexPath.row == 2 {
-            if let cell3 = tableView.dequeueReusableCell(withIdentifier: "ThirdTableViewCell") as? ThirdTableViewCell {
-               
+            if let cell3 = tableView.dequeueReusableCell(withIdentifier: "FTableViewCell") as? FTableViewCell {
+                cell3.configure(with: viewModels[indexPath.row])
                 return cell3
             }
         }

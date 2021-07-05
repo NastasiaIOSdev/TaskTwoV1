@@ -1,5 +1,5 @@
 //
-//  CollectionViewCell.swift
+//  FirstTableViewCell.swift
 //  TaskTwoV1
 //
 //  Created by Анастасия Ларина on 03.07.2021.
@@ -7,54 +7,60 @@
 
 import UIKit
 
-class CollectionViewCell: UICollectionViewCell {
+class FTableViewCell: UITableViewCell {
+
+    static let identifier = "FTableViewCell"
     
+    // MARK: - IBOUtlets
     
     @IBOutlet weak var catUIImageView: UIImageView!
     @IBOutlet weak var breedLabel: UILabel!
     @IBOutlet weak var myView: UIView!
     
     
-    static let identifaer = "CollectionViewCell"
-    
     static func nib() -> UINib {
-        return  UINib(nibName: "CollectionViewCell", bundle: nil
-        )
+        return UINib(nibName: "FTableViewCell", bundle: nil)
     }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         catUIImageView.layer.cornerRadius = 10
-//        myView.layer.cornerRadius = 8
+        myView.layer.cornerRadius = 10
         catUIImageView.layer.masksToBounds = true
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-    }
-    func configure(with viewModels: CellViewModel) {
-        breedLabel.text = viewModels.title
+    func configure(with viewModel: CellViewModel) {
+        breedLabel.text = viewModel.title
 
-        
-        if let data = viewModels.imageData {
+        if let data = viewModel.imageData {
             catUIImageView.image = UIImage(data: data)
         }
-        else if let url = viewModels.imageUrl {
+        else if let url = viewModel.imageUrl {
             URLSession.shared.dataTask(with: url) { [weak self] data, _, error in
                 guard let data = data, error == nil else {
                     return
                 }
-                viewModels.imageData = data
+                viewModel.imageData = data
                 DispatchQueue.main.async {
                     self?.catUIImageView.image = UIImage(data: data)
                 }
             }.resume()
         }
+        
+   
+        func layoutSubviews() {
+        super.layoutSubviews()
     }
     
-    override func prepareForReuse() {
+        func prepareForReuse() {
         super.prepareForReuse()
         catUIImageView.image = nil
         breedLabel.text = nil
     }
+   
+        func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+    }
     
+}
 }
