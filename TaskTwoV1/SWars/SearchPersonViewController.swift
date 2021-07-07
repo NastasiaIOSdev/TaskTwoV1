@@ -15,6 +15,7 @@ class SearchPersonViewController: UIViewController, UITableViewDelegate, UITable
     @IBOutlet var secondTableView: UITableView!
     @IBOutlet var searchBar: UISearchBar!
     
+   
     private var searchVC = UISearchController(searchResultsController: nil)
     private var results = [Results]()
     private var viewModels = [CellTableViewModel]()
@@ -26,9 +27,27 @@ class SearchPersonViewController: UIViewController, UITableViewDelegate, UITable
         secondTableView.delegate = self
         secondTableView.dataSource = self
         
+        self.tabBarController?.tabBar.tintColor = UIColor(red: 255/255.0, green: 255/255.0, blue: 255/255.0, alpha: 1)
+        self.tabBarController?.tabBar.barTintColor = UIColor(red: 0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 1)
+       
         fetchPeopleList()
+       
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        navBarSetup()
+        }
+    
+    func navBarSetup() {
+        let navigationBar = self.navigationController?.navigationBar
+    navigationBar?.barStyle = UIBarStyle.black
+    navigationBar?.tintColor = UIColor.white
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 300, height: 300))
+    imageView.contentMode = .scaleAspectFit
+        let image = UIImage(named: "navBarImage")
+        imageView.image = image
+        navigationItem.titleView = imageView
+    }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
     }
@@ -92,22 +111,24 @@ class SearchPersonViewController: UIViewController, UITableViewDelegate, UITable
         guard let text = searchBar.text, !text.isEmpty else {
             return
         }
-        APIService.shared.searchPeopleList(with: text) { [weak self] result in
-            switch result {
-            case.success(let results):
-                self?.results = results
-                self?.viewModels = results.compactMap({
-                    CellTableViewModel(
-                        title: $0.name ,
-                        subtitle: $0.gender )
-                })
-                
-                DispatchQueue.main.async {
-                    self?.secondTableView.reloadData()
-                }
-            case.failure(let error):
-            print(error)
-            }
-        }
+        
+        print(text)
+//        APIService.shared.searchPeopleList(with: text) { [weak self] result in
+//            switch result {
+//            case.success(let results):
+//                self?.results = results
+//                self?.viewModels = results.compactMap({
+//                    CellTableViewModel(
+//                        title: $0.name ,
+//                        subtitle: $0.gender )
+//                })
+//
+//                DispatchQueue.main.async {
+//                    self?.secondTableView.reloadData()
+//                }
+//            case.failure(let error):
+//            print(error)
+//            }
+//        }
     }
 }
