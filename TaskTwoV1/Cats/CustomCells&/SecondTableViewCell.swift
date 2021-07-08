@@ -8,20 +8,20 @@
 import UIKit
 
 class SecondTableViewCell: UITableViewCell {
-
+    
     static let identifier = "SecondTableViewCell"
-
+    
     // MARK: - IBOUtlets
-
+    
     @IBOutlet weak var catUIImageView: UIImageView!
     @IBOutlet weak var breedLabel: UILabel!
     @IBOutlet weak var myView: UIView!
     @IBOutlet weak var shadowView: UIView!
-
+    
     static func nib() -> UINib {
         return UINib(nibName: "SecondTableViewCell", bundle: nil)
     }
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         catUIImageView.layer.cornerRadius = 9
@@ -33,10 +33,10 @@ class SecondTableViewCell: UITableViewCell {
         shadowView.layer.shadowOpacity = 0.3
         shadowView.layer.shadowOffset = CGSize.zero
     }
-
+    
     func configure(with viewModel: CellViewModel) {
         breedLabel.text = viewModel.title
-
+        
         if let data = viewModel.imageData {
             catUIImageView.image = UIImage(data: data)
         } else if let url = viewModel.imageUrl {
@@ -50,20 +50,21 @@ class SecondTableViewCell: UITableViewCell {
                 }
             }.resume()
         }
-
-        func layoutSubviews() {
-            super.layoutSubviews()
-        }
-
-        func prepareForReuse() {
+        
+        
+        
+    }
+    override func layoutSubviews() {
+        super.layoutSubviews()
+    }
+    
+    override func prepareForReuse() {
         super.prepareForReuse()
         catUIImageView.image = nil
         breedLabel.text = nil
     }
-        func setSelected(_ selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
-
-}
-
+    
 }
