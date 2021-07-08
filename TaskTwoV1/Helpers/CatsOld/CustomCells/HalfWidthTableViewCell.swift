@@ -8,11 +8,11 @@
 import UIKit
 
 class HalfWidthTableViewCell: UITableViewCell {
-    
+
     static let identifier = "HalfWidthTableViewCell"
-    
+
     // MARK: - IBOUTlets
-    
+
     @IBOutlet weak var catUIImageView: UIImageView!
     @IBOutlet weak var breedLabel: UILabel!
     @IBOutlet weak var myView: UIView!
@@ -21,11 +21,11 @@ class HalfWidthTableViewCell: UITableViewCell {
     @IBOutlet weak var rightBreedLabel: UILabel!
     @IBOutlet weak var rightMyView: UIView!
     @IBOutlet weak var rightCountryLabel: UILabel!
-    
+
     static func nib() -> UINib {
         return UINib(nibName: "HalfWidthTableViewCell", bundle: nil)
     }
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         catUIImageView.layer.cornerRadius = 10
@@ -35,16 +35,14 @@ class HalfWidthTableViewCell: UITableViewCell {
         rightMyView.layer.cornerRadius = 10
         rightCatUIImageView.layer.masksToBounds = true
     }
-    
-    
+
     func configure(with viewModel: CellViewModel) {
         breedLabel.text = viewModel.title
         countryLabel.text = viewModel.subtitle
 
         if let data = viewModel.imageData {
             catUIImageView.image = UIImage(data: data)
-        }
-        else if let url = viewModel.imageUrl {
+        } else if let url = viewModel.imageUrl {
             URLSession.shared.dataTask(with: url) { [weak self] data, _, error in
                 guard let data = data, error == nil else {
                     return
@@ -55,11 +53,11 @@ class HalfWidthTableViewCell: UITableViewCell {
                 }
             }.resume()
         }
-        
+
         func layoutSubviews() {
             super.layoutSubviews()
         }
-        
+
         func prepareForReuse() {
             super.prepareForReuse()
             breedLabel.text = nil
@@ -68,13 +66,13 @@ class HalfWidthTableViewCell: UITableViewCell {
             rightCatUIImageView.image = nil
             rightBreedLabel.text = nil
             rightCountryLabel.text = nil
-            
+
         }
-        
+
         func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
-        
+
     }
-    
+
 }

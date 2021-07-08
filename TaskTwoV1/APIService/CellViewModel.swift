@@ -11,8 +11,8 @@ class CellViewModel {
     let title: String
     let subtitle: String
     let imageUrl: URL?
-    var imageData: Data? = nil
-    
+    var imageData: Data?
+
     init (
         title: String,
         subtitle: String,

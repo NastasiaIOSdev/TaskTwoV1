@@ -8,15 +8,14 @@
 import UIKit
 
 class CollectionViewCell: UICollectionViewCell {
-    
-    
+
     @IBOutlet weak var catUIImageView: UIImageView!
     @IBOutlet weak var breedLabel: UILabel!
     @IBOutlet weak var myView: UIView!
     @IBOutlet weak var shadowView: UIView!
-    
+
     static let identifaer = "CollectionViewCell"
-    
+
     static func nib() -> UINib {
         return  UINib(nibName: "CollectionViewCell", bundle: nil
         )
@@ -26,7 +25,7 @@ class CollectionViewCell: UICollectionViewCell {
         catUIImageView.layer.cornerRadius = 10
         catUIImageView.layer.masksToBounds = true
     }
-    
+
     override func layoutSubviews() {
         super.layoutSubviews()
         myView.layer.cornerRadius = 9
@@ -37,15 +36,13 @@ class CollectionViewCell: UICollectionViewCell {
         shadowView.layer.shadowOpacity = 0.3
         shadowView.layer.shadowOffset = CGSize.zero
     }
-    
+
     func configure(with viewModels: CellViewModel) {
         breedLabel.text = viewModels.title
 
-        
         if let data = viewModels.imageData {
             catUIImageView.image = UIImage(data: data)
-        }
-        else if let url = viewModels.imageUrl {
+        } else if let url = viewModels.imageUrl {
             URLSession.shared.dataTask(with: url) { [weak self] data, _, error in
                 guard let data = data, error == nil else {
                     return
@@ -57,11 +54,11 @@ class CollectionViewCell: UICollectionViewCell {
             }.resume()
         }
     }
-    
+
     override func prepareForReuse() {
         super.prepareForReuse()
         catUIImageView.image = nil
         breedLabel.text = nil
     }
-    
+
 }

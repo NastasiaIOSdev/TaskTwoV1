@@ -7,23 +7,21 @@
 
 import UIKit
 
-    
 class FirstDogsTableViewCell: UITableViewCell {
 
     @IBOutlet weak var breedImageView: UIImageView!
     @IBOutlet weak var breedTitleLabel: UILabel!
     @IBOutlet weak var myView: UIView!
-    
-   
+
     func setBreed(breed: String, imageURL: String) {
         breedTitleLabel.text = breed
         let url = URL(string: imageURL)
-        
-        if (imageURL != ""){
+
+        if imageURL != "" {
             breedImageView.downloadedFrom(url: url!)
         }
     }
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -32,10 +30,10 @@ class FirstDogsTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
     }
-    
+
 }
 extension UIImageView {
-    
+
     func downloadedFrom(url: URL, contentMode mode: UIView.ContentMode = .scaleAspectFit) {
         contentMode = mode
         URLSession.shared.dataTask(with: url) { (data, response, error) in
@@ -45,7 +43,7 @@ extension UIImageView {
                 let data = data, error == nil,
                 let image = UIImage(data: data)
                 else { return }
-            DispatchQueue.main.async() { () -> Void in
+            DispatchQueue.main.async { () -> Void in
                 self.image = image
             }
             }.resume()

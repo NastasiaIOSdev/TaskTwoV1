@@ -10,5 +10,5 @@ import Foundation
 struct Image2: Decodable {
     let status: String
     let message: String
-    
+
 }
