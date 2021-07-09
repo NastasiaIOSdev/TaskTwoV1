@@ -38,6 +38,9 @@
 		2E48E379268D0C1300271A85 /* DetailPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E48E378268D0C1300271A85 /* DetailPageViewController.swift */; };
 		2E79B4A62690F35800C357C3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E79B4A52690F35800C357C3 /* Constants.swift */; };
 		2E79B4AA2690F45100C357C3 /* ProtocolNetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E79B4A92690F45100C357C3 /* ProtocolNetService.swift */; };
+		2E7D9248269814C100B3C64B /* CatsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7D9247269814C100B3C64B /* CatsCollectionViewController.swift */; };
+		2E7D924B2698169E00B3C64B /* DetailCatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7D924A2698169E00B3C64B /* DetailCatsViewController.swift */; };
+		2E7D92512698647D00B3C64B /* CollectionCatsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7D92502698647D00B3C64B /* CollectionCatsViewCell.swift */; };
 		2EB4A2A826930FAA00B652F3 /* ThirdViewPagerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB4A2A626930FAA00B652F3 /* ThirdViewPagerTableViewCell.swift */; };
 		2EB4A2A926930FAA00B652F3 /* ThirdViewPagerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EB4A2A726930FAA00B652F3 /* ThirdViewPagerTableViewCell.xib */; };
 		2ED290842694EB2C00B7630B /* MainDogsBreedsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED290832694EB2C00B7630B /* MainDogsBreedsViewController.swift */; };
@@ -79,6 +82,9 @@
 		2E48E378268D0C1300271A85 /* DetailPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPageViewController.swift; sourceTree = "<group>"; };
 		2E79B4A52690F35800C357C3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2E79B4A92690F45100C357C3 /* ProtocolNetService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolNetService.swift; sourceTree = "<group>"; };
+		2E7D9247269814C100B3C64B /* CatsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatsCollectionViewController.swift; sourceTree = "<group>"; };
+		2E7D924A2698169E00B3C64B /* DetailCatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCatsViewController.swift; sourceTree = "<group>"; };
+		2E7D92502698647D00B3C64B /* CollectionCatsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCatsViewCell.swift; sourceTree = "<group>"; };
 		2EB4A2A626930FAA00B652F3 /* ThirdViewPagerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewPagerTableViewCell.swift; sourceTree = "<group>"; };
 		2EB4A2A726930FAA00B652F3 /* ThirdViewPagerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThirdViewPagerTableViewCell.xib; sourceTree = "<group>"; };
 		2ED290832694EB2C00B7630B /* MainDogsBreedsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDogsBreedsViewController.swift; sourceTree = "<group>"; };
@@ -123,6 +129,9 @@
 			isa = PBXGroup;
 			children = (
 				2E2CFA8F2690619000458940 /* MainViewController.swift */,
+				2E7D9247269814C100B3C64B /* CatsCollectionViewController.swift */,
+				2E7D924F2698643500B3C64B /* CellCatsCollection */,
+				2E7D924A2698169E00B3C64B /* DetailCatsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -177,7 +186,6 @@
 				2E48E2832689CCA800271A85 /* App */,
 				2E48E2822689CCA400271A85 /* View */,
 				2E48E2A8268A0DA600271A85 /* APIService */,
-				2ED290952694ECAB00B7630B /* APIServiseDogs */,
 				2E79B4A42690F33100C357C3 /* Constants */,
 				2E79B4A82690F3FA00C357C3 /* Protocols */,
 				2E2CFA8A26905E8800458940 /* Cats */,
@@ -240,8 +248,7 @@
 			isa = PBXGroup;
 			children = (
 				2E48E35C268CEF0D00271A85 /* NetService.swift */,
-				2E48E36E268D0B5F00271A85 /* PersonList.swift */,
-				2E48E352268CEE8D00271A85 /* CatsModel.swift */,
+				2E7D92562698C6B200B3C64B /* Model */,
 				2E48E358268CEEE300271A85 /* CellViewModel.swift */,
 			);
 			path = APIService;
@@ -282,39 +289,49 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
-		2ED290822694EAD500B7630B /* Dogs */ = {
+		2E7D924F2698643500B3C64B /* CellCatsCollection */ = {
 			isa = PBXGroup;
 			children = (
-				2ED290832694EB2C00B7630B /* MainDogsBreedsViewController.swift */,
-				2ED2908B2694EB6B00B7630B /* New Group */,
+				2E7D92502698647D00B3C64B /* CollectionCatsViewCell.swift */,
 			);
-			name = Dogs;
-			path = SWars/Dogs;
+			path = CellCatsCollection;
 			sourceTree = "<group>";
 		};
-		2ED2908B2694EB6B00B7630B /* New Group */ = {
+		2E7D92562698C6B200B3C64B /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				2ED290862694EB6600B7630B /* FirstDogsTableViewCell.swift */,
-				2ED2908C2694EB7800B7630B /* Xib */,
+				2E48E352268CEE8D00271A85 /* CatsModel.swift */,
+				2E48E36E268D0B5F00271A85 /* PersonList.swift */,
+				2E7D925A2698C6FB00B3C64B /* DogsModel */,
 			);
-			path = "New Group";
+			path = Model;
 			sourceTree = "<group>";
 		};
-		2ED2908C2694EB7800B7630B /* Xib */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Xib;
-			sourceTree = "<group>";
-		};
-		2ED290952694ECAB00B7630B /* APIServiseDogs */ = {
+		2E7D925A2698C6FB00B3C64B /* DogsModel */ = {
 			isa = PBXGroup;
 			children = (
 				2ED290962694ED0C00B7630B /* Breed.swift */,
 				2ED290992694ED1C00B7630B /* Image.swift */,
 			);
-			path = APIServiseDogs;
+			path = DogsModel;
+			sourceTree = "<group>";
+		};
+		2ED290822694EAD500B7630B /* Dogs */ = {
+			isa = PBXGroup;
+			children = (
+				2ED290832694EB2C00B7630B /* MainDogsBreedsViewController.swift */,
+				2ED2908B2694EB6B00B7630B /* CustomCells */,
+			);
+			name = Dogs;
+			path = SWars/Dogs;
+			sourceTree = "<group>";
+		};
+		2ED2908B2694EB6B00B7630B /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				2ED290862694EB6600B7630B /* FirstDogsTableViewCell.swift */,
+			);
+			path = CustomCells;
 			sourceTree = "<group>";
 		};
 		2ED290A62694F71600B7630B /* Helpers */ = {
@@ -461,11 +478,14 @@
 				2E48E359268CEEE300271A85 /* CellViewModel.swift in Sources */,
 				2ED290972694ED0C00B7630B /* Breed.swift in Sources */,
 				2EB4A2A826930FAA00B652F3 /* ThirdViewPagerTableViewCell.swift in Sources */,
+				2E7D92512698647D00B3C64B /* CollectionCatsViewCell.swift in Sources */,
 				2E2CFAA7269065D800458940 /* CollectionViewCell.swift in Sources */,
 				2E0FB94626934DAE000C32C5 /* ThirdCollectionViewCell.swift in Sources */,
 				2E48E28F2689CE1300271A85 /* HalfWidthTableViewCell.swift in Sources */,
 				2E2CFA9C269061FA00458940 /* SecondTableViewCell.swift in Sources */,
 				2E48E2702689C59C00271A85 /* ViewController.swift in Sources */,
+				2E7D9248269814C100B3C64B /* CatsCollectionViewController.swift in Sources */,
+				2E7D924B2698169E00B3C64B /* DetailCatsViewController.swift in Sources */,
 				2E48E2942689CE4700271A85 /* TableViwInTableViewCell.swift in Sources */,
 				2E48E2892689CDF200271A85 /* FullWidthTableViewCell.swift in Sources */,
 				2E48E26C2689C59C00271A85 /* AppDelegate.swift in Sources */,

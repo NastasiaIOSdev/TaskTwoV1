@@ -8,23 +8,17 @@
 import UIKit
 
 class DetailPageViewController: UIViewController {
-
     var detail: Results?
-
     // MARK: - OUtlets
-
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var genderLabel: UILabel!
     @IBOutlet weak var personImage: UIImageView!
-
     @IBOutlet weak var myView: UIView!
     @IBOutlet weak var shadowView: UIView!
-
     var namePerson: String!
     var genderTipe: String!
     var starImage: UIImage!
     // MARK: - Life cycles
-
     override func viewDidLoad() {
         super.viewDidLoad()
         pageSetup()
@@ -36,12 +30,10 @@ class DetailPageViewController: UIViewController {
         shadowView.layer.shadowOpacity = 0.3
         shadowView.layer.shadowOffset = CGSize.zero
     }
-
     override func viewDidAppear(_ animated: Bool) {
         navBarSetup()
         pageSetup()
-        }
-
+    }
     func pageSetup() {
         nameLabel.text = namePerson
         genderLabel.text = genderTipe
@@ -67,14 +59,14 @@ class DetailPageViewController: UIViewController {
             starImage = UIImage(named: "9")
         default:
             starImage = UIImage(named: "10")
-    }
+        }
     }
     func navBarSetup() {
         let navigationBar = self.navigationController?.navigationBar
-    navigationBar?.barStyle = UIBarStyle.black
-    navigationBar?.tintColor = UIColor.white
+        navigationBar?.barStyle = UIBarStyle.black
+        navigationBar?.tintColor = UIColor.white
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 300, height: 300))
-    imageView.contentMode = .scaleAspectFit
+        imageView.contentMode = .scaleAspectFit
         let image = UIImage(named: "navBarImage")
         imageView.image = image
         navigationItem.titleView = imageView

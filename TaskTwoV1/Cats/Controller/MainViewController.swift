@@ -11,7 +11,7 @@ class MainViewController: UIViewController {
 
     // MARK: - IBOUtlets
 
-    @IBOutlet weak var tableViewSecond: UITableView!
+    @IBOutlet var tableViewSecond: UITableView!
 
     private var viewModels = [CellViewModel]()
 
@@ -23,9 +23,10 @@ class MainViewController: UIViewController {
         self.tabBarController?.tabBar.barTintColor = UIColor(red: 0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 1)
         tableViewSecond.register(FirstTableViewCell.nib(), forCellReuseIdentifier: FirstTableViewCell.identifier)
         tableViewSecond.register(SecondTableViewCell.nib(), forCellReuseIdentifier: SecondTableViewCell.identifier)
+
         tableViewSecond.delegate = self
         tableViewSecond.dataSource = self
-        title = "Cats breeds"
+        title = "Cats"
 
         APIService.shared.getBreed { [weak self] result in
             switch result {
@@ -50,7 +51,9 @@ class MainViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
     }
-
+    // MARK: - Segues
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    }
 }
 
 extension MainViewController: UITableViewDelegate {
@@ -89,6 +92,6 @@ extension MainViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        160.0
+        180.0
     }
 }

@@ -29,8 +29,9 @@ class FirstTableViewCell: UITableViewCell, UICollectionViewDelegate,
      override func awakeFromNib() {
          super.awakeFromNib()
 
-        collectionViewSecond.register(CollectionViewCell.nib(),
-                                      forCellWithReuseIdentifier: CollectionViewCell.identifaer)
+        collectionViewSecond.register(
+            CollectionViewCell.nib(),
+            forCellWithReuseIdentifier: CollectionViewCell.identifaer)
         collectionViewSecond.delegate = self
         collectionViewSecond.dataSource = self
      }
