@@ -22,8 +22,8 @@ class MainViewController: UIViewController {
         self.tabBarController?.tabBar.tintColor = UIColor(red: 255/255.0, green: 255/255.0, blue: 255/255.0, alpha: 1)
         self.tabBarController?.tabBar.barTintColor = UIColor(red: 0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 1)
         tableViewSecond.register(FirstTableViewCell.nib(), forCellReuseIdentifier: FirstTableViewCell.identifier)
+        tableViewSecond.register(LastTableViewCell.nib(), forCellReuseIdentifier: LastTableViewCell.identifier)
         tableViewSecond.register(SecondTableViewCell.nib(), forCellReuseIdentifier: SecondTableViewCell.identifier)
-
         tableViewSecond.delegate = self
         tableViewSecond.dataSource = self
         title = "Cats"
@@ -82,8 +82,8 @@ extension MainViewController: UITableViewDataSource {
             }
         } else if (indexPath.row - 1) % 2 == 0 || (indexPath.row - 1) % 2 == 1 || indexPath.row == 2 {
             if let cell3 = tableView.dequeueReusableCell(
-                withIdentifier: "SecondTableViewCell") as? SecondTableViewCell {
-                cell3.configure(with: viewModels[indexPath.row])
+                withIdentifier: "LastTableViewCell") as? LastTableViewCell {
+                cell3.configure(with: viewModels)
                 return cell3
             }
         }

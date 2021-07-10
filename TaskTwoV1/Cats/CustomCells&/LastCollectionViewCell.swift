@@ -1,33 +1,39 @@
 //
-//  ThirdCollectionViewCell.swift
+//  LastCollectionViewCell.swift
 //  TaskTwoV1
 //
-//  Created by Анастасия Ларина on 05.07.2021.
+//  Created by Анастасия Ларина on 10.07.2021.
 //
 
 import UIKit
 
-class ThirdCollectionViewCell: UICollectionViewCell {
-
+class LastCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var catUIImageView: UIImageView!
     @IBOutlet weak var breedLabel: UILabel!
-
-    static let identifaer = "ThirdCollectionViewCell"
-
+    @IBOutlet weak var myView: UIView!
+    @IBOutlet weak var shadowView: UIView!
+    static let identifaer = "LastCollectionViewCell"
     static func nib() -> UINib {
-        return  UINib(nibName: "ThirdCollectionViewCell", bundle: nil
+        return  UINib(nibName: "LastCollectionViewCell", bundle: nil
         )
     }
     override func awakeFromNib() {
         super.awakeFromNib()
+        catUIImageView.layer.cornerRadius = 10
+        catUIImageView.layer.masksToBounds = true
     }
-
     override func layoutSubviews() {
         super.layoutSubviews()
+        myView.layer.cornerRadius = 9
+        catUIImageView.layer.cornerRadius = 9
+        shadowView.layer.cornerRadius = 9
+        shadowView.layer.shadowRadius = 4.0
+        shadowView.layer.shadowColor = UIColor.black.cgColor
+        shadowView.layer.shadowOpacity = 0.3
+        shadowView.layer.shadowOffset = CGSize.zero
     }
     func configure(with viewModels: CellViewModel) {
         breedLabel.text = viewModels.title
-
         if let data = viewModels.imageData {
             catUIImageView.image = UIImage(data: data)
         } else if let url = viewModels.imageUrl {
@@ -42,11 +48,9 @@ class ThirdCollectionViewCell: UICollectionViewCell {
             }.resume()
         }
     }
-
     override func prepareForReuse() {
         super.prepareForReuse()
         catUIImageView.image = nil
         breedLabel.text = nil
     }
-
 }
