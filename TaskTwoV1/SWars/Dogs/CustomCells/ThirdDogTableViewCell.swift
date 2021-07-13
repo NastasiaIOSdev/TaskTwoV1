@@ -23,7 +23,9 @@ class ThirdDogTableViewCell: UITableViewCell, UICollectionViewDelegate,
             currentCellIndex = 0
         }
         pageBreedsControl.currentPage = currentCellIndex
-        collectionViewDogSecond.scrollToItem(at: IndexPath(item: currentCellIndex, section: 0), at: .right, animated: true)
+        collectionViewDogSecond.scrollToItem(at: IndexPath(
+                                                item: currentCellIndex,
+                                                section: 0), at: .right, animated: true)
     }
     static func nib() -> UINib {
         return UINib(nibName: "ThirdDogTableViewCell", bundle: nil)
@@ -37,7 +39,7 @@ class ThirdDogTableViewCell: UITableViewCell, UICollectionViewDelegate,
         collectionViewDogSecond.dataSource = self
     }
     func setBreed(breed: String, imageURL: String) {
-        //???????
+        // ???????
         collectionViewDogSecond.reloadData()
     }
     // MARK: - CollectionView
@@ -49,7 +51,8 @@ class ThirdDogTableViewCell: UITableViewCell, UICollectionViewDelegate,
         guard let breed = self.breeds?.message[indexPath.row] else {return UICollectionViewCell.init()}
 
         guard let cell = collectionViewDogSecond.dequeueReusableCell(
-                withReuseIdentifier: "ThirdCollectionDogViewCell", for: indexPath) as? ThirdCollectionDogViewCell else { fatalError()
+                withReuseIdentifier: "ThirdCollectionDogViewCell",
+                for: indexPath) as? ThirdCollectionDogViewCell else { fatalError()
         }
         for (index, image) in self.breeds!.message.enumerated() {
             if index == indexPath.row {
@@ -67,11 +70,9 @@ class ThirdDogTableViewCell: UITableViewCell, UICollectionViewDelegate,
         }
         return cell
         }
-    
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionViewDogSecond.frame.width, height: collectionViewDogSecond.frame.height)
     }
-    
 }

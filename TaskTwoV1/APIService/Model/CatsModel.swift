@@ -10,6 +10,7 @@ import Foundation
 struct Breed: Codable {
     var name: String
     var origin: String
+    var description: String
     var image: Image?
 }
 

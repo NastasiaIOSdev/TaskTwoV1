@@ -21,9 +21,9 @@ class MainDogsBreedsViewController: UIViewController {
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.fillArrays()
-        //tableView.register(FirstDogTableViewCell.nib(), forCellReuseIdentifier: FirstDogTableViewCell.identifier)
+        // tableView.register(FirstDogTableViewCell.nib(), forCellReuseIdentifier: FirstDogTableViewCell.identifier)
         tableView.register(SecondDogsTableViewCell.nib(), forCellReuseIdentifier: SecondDogsTableViewCell.identifier)
-        //tableView.register(ThirdDogTableViewCell.nib(), forCellReuseIdentifier: ThirdDogTableViewCell.identifier)
+        // tableView.register(ThirdDogTableViewCell.nib(), forCellReuseIdentifier: ThirdDogTableViewCell.identifier)
         title = "Dogs"
     }
 
@@ -54,9 +54,9 @@ extension MainDogsBreedsViewController: UITableViewDataSource, UITableViewDelega
         return breeds
     }
 
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        if indexPath.row % 3 == 0 {
+    func tableView(_ tableView: UITableView,
+                   cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        if indexPath.row % 3 == 0 {
         guard let breed = self.breeds?.message[indexPath.row] else {return UITableViewCell.init()}
 
         guard let cell = tableView.dequeueReusableCell(
@@ -78,27 +78,27 @@ extension MainDogsBreedsViewController: UITableViewDataSource, UITableViewDelega
         }
         return cell
 
-        } else if (indexPath.row - 1) % 3 == 0 || indexPath.row == 1 {
-            guard let breed = self.breeds?.message[indexPath.row] else {return UITableViewCell.init()}
-
-            guard let cell2 = tableView.dequeueReusableCell(
-                    withIdentifier: "SecondDogsTableViewCell") as? SecondDogsTableViewCell else { fatalError()
-            }
-            for (index, image) in self.breeds!.message.enumerated() {
-                if index == indexPath.row {
-                    APIService.shared.getPhoto(breeds: image) { result in
-                        switch result {
-                        case .success(let img):
-                            DispatchQueue.main.async {
-                                cell2.setBreed(breed: breed, imageURL: img.message)
-                            }
-                        case .failure(let error):
-                            print(error.localizedDescription)
-                        }
-                    }
-                }
-            }
-            return cell2
+//        } else if (indexPath.row - 1) % 3 == 0 || indexPath.row == 1 {
+//            guard let breed = self.breeds?.message[indexPath.row] else {return UITableViewCell.init()}
+//
+//            guard let cell2 = tableView.dequeueReusableCell(
+//                    withIdentifier: "SecondDogsTableViewCell") as? SecondDogsTableViewCell else { fatalError()
+//            }
+//            for (index, image) in self.breeds!.message.enumerated() {
+//                if index == indexPath.row {
+//                    APIService.shared.getPhoto(breeds: image) { result in
+//                        switch result {
+//                        case .success(let img):
+//                            DispatchQueue.main.async {
+//                                cell2.setBreed(breed: breed, imageURL: img.message)
+//                            }
+//                        case .failure(let error):
+//                            print(error.localizedDescription)
+//                        }
+//                    }
+//                }
+//            }
+//            return cell2
         }
 //        } else if (indexPath.row - 1) % 2 == 0 || (indexPath.row - 1) % 2 == 1 || indexPath.row == 2 {
 //            guard let breed = self.breeds?.message[indexPath.row] else {return UITableViewCell.init()}
@@ -121,9 +121,9 @@ extension MainDogsBreedsViewController: UITableViewDataSource, UITableViewDelega
 //                }
 //            }
 //            return cell3
-//        }
-        return UITableViewCell()
-    } 
+////        }
+//        return UITableViewCell()
+//    }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         180.0
     }

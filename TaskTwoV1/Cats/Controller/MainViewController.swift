@@ -12,7 +12,7 @@ class MainViewController: UIViewController {
     // MARK: - IBOUtlets
 
     @IBOutlet var tableViewSecond: UITableView!
-
+    private var breed = [Breed]()
     private var viewModels = [CellViewModel]()
 
     // MARK: - Life cycles
@@ -35,6 +35,7 @@ class MainViewController: UIViewController {
                     CellViewModel(
                         title: $0.name,
                         subtitle: $0.origin,
+                        aboutBreed: $0.origin,
                         imageUrl: URL(string: $0.image?.url ?? "")
                     )
                 })
@@ -53,6 +54,11 @@ class MainViewController: UIViewController {
     }
     // MARK: - Segues
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let contoller = segue.destination as? CatsCollectionViewController,
+              let indexPath = tableViewSecond.indexPathForSelectedRow
+        else { return }
+        let item = viewModels[indexPath.row]
+        contoller.nameBreed = item.title
     }
 }
 

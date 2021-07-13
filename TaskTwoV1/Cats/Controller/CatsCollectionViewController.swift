@@ -8,6 +8,13 @@
 import UIKit
 
 class CatsCollectionViewController: UIViewController {
+    var detail: Breed?
+    // MARK: - OUtlets
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var myView: UIView!
+    @IBOutlet weak var shadowView: UIView!
+    var nameBreed: String!
+
     var selectedCell: CollectionViewCell?
     private var viewModels = [CellViewModel]()
     @IBOutlet private var collectionView: UICollectionView!

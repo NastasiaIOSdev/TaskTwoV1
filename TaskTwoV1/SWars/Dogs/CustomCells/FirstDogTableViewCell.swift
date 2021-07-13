@@ -26,7 +26,7 @@ class FirstDogTableViewCell: UITableViewCell, UICollectionViewDelegate,
         collectionViewDogSecond.dataSource = self
     }
     func setBreed(breed: String, imageURL: String) {
-        //???????
+        // ???????
         collectionViewDogSecond.reloadData()
     }
     // MARK: - CollectionView
@@ -39,7 +39,8 @@ class FirstDogTableViewCell: UITableViewCell, UICollectionViewDelegate,
         guard let breed = self.breeds?.message[indexPath.row] else {return UICollectionViewCell.init()}
 
         guard let cell = collectionViewDogSecond.dequeueReusableCell(
-                withReuseIdentifier: "CollectionDogsViewCell", for: indexPath) as? CollectionDogsViewCell else { fatalError()
+                withReuseIdentifier: "CollectionDogsViewCell",
+                for: indexPath) as? CollectionDogsViewCell else { fatalError()
         }
         for (index, image) in self.breeds!.message.enumerated() {
             if index == indexPath.row {
@@ -57,11 +58,9 @@ class FirstDogTableViewCell: UITableViewCell, UICollectionViewDelegate,
         }
         return cell
         }
-    
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 320, height: 150)
     }
-    
 }

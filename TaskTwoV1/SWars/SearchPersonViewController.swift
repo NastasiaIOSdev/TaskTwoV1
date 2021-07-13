@@ -24,12 +24,13 @@ class SearchPersonViewController: UIViewController, UITableViewDelegate, UITable
         super.viewDidLoad()
         secondTableView.delegate = self
         secondTableView.dataSource = self
-
+        searchBar.delegate = self
+        fetchPeopleList()
+        setupColorTabbar()
+ }
+    func setupColorTabbar() {
         self.tabBarController?.tabBar.tintColor = UIColor(red: 255/255.0, green: 255/255.0, blue: 255/255.0, alpha: 1)
         self.tabBarController?.tabBar.barTintColor = UIColor(red: 0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 1)
-
-        fetchPeopleList()
-
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -112,22 +113,31 @@ class SearchPersonViewController: UIViewController, UITableViewDelegate, UITable
         }
 
         print(text)
-//        APIService.shared.searchPeopleList(with: text) { [weak self] result in
-//            switch result {
-//            case.success(let results):
-//                self?.results = results
-//                self?.viewModels = results.compactMap({
-//                    CellTableViewModel(
-//                        title: $0.name ,
-//                        subtitle: $0.gender )
-//                })
-//
-//                DispatchQueue.main.async {
-//                    self?.secondTableView.reloadData()
-//                }
-//            case.failure(let error):
-//            print(error)
-//            }
-//        }
+        APIService.shared.searchPeopleList(with: text) { [weak self] result in
+            switch result {
+            case.success(let results):
+                self?.results = results
+                self?.viewModels = results.compactMap({
+                    CellTableViewModel(
+                        title: $0.name ,
+                        subtitle: $0.gender )
+                })
+
+                DispatchQueue.main.async {
+                    self?.secondTableView.reloadData()
+                }
+            case.failure(let error):
+            print(error)
+            }
+        }
+    }
+    
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        guard let text = searchBar.text, !text.isEmpty else {
+            return
+        }
+        
+        print(text)
     }
 }
