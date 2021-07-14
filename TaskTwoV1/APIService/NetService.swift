@@ -55,11 +55,11 @@ final class APIService {
         task.resume()
     }
 
-    public func searchPeopleList(with query: String, completion: @escaping (Result<[Results], Error>) -> Void) {
-        guard !query.trimmingCharacters(in: .whitespaces).isEmpty else {
+    public func searchPeopleList(with text: String, completion: @escaping (Result<[Results], Error>) -> Void) {
+        guard !text.trimmingCharacters(in: .whitespaces).isEmpty else {
             return
         }
-        let urlstring = Constants.searchURLString + query
+        let urlstring = "https://swapi.dev/api/people/?search=\(text)&format=json"
 
         guard let url = URL(string: urlstring) else {
             return

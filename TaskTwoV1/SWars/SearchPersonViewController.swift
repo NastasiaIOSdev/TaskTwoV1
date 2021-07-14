@@ -13,8 +13,7 @@ class SearchPersonViewController: UIViewController, UITableViewDelegate, UITable
 
     @IBOutlet var secondTableView: UITableView!
     @IBOutlet var searchBar: UISearchBar!
-
-//    private var searchVC = UISearchController(searchResultsController: nil)
+    
     private var results = [Results]()
     private var viewModels = [CellTableViewModel]()
 

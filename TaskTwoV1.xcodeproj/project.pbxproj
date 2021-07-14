@@ -233,7 +233,7 @@
 				2E48E2822689CCA400271A85 /* View */,
 				2E48E2A8268A0DA600271A85 /* APIService */,
 				2E79B4A42690F33100C357C3 /* Constants */,
-				2E79B4A82690F3FA00C357C3 /* Protocols */,
+				2E79B4A82690F3FA00C357C3 /* Protocols&Extensions */,
 				86E09ED9269C5A6E00049522 /* Detail */,
 				2E7A622E269B088500D54D10 /* CatsBreeds */,
 				2E48E36C268D0AA000271A85 /* SWars */,
@@ -290,13 +290,13 @@
 			path = Constants;
 			sourceTree = "<group>";
 		};
-		2E79B4A82690F3FA00C357C3 /* Protocols */ = {
+		2E79B4A82690F3FA00C357C3 /* Protocols&Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				2E79B4A92690F45100C357C3 /* ProtocolNetService.swift */,
 				86E09EDE269C5B0300049522 /* UIImageView.swift */,
 			);
-			path = Protocols;
+			path = "Protocols&Extensions";
 			sourceTree = "<group>";
 		};
 		2E7A622E269B088500D54D10 /* CatsBreeds */ = {

@@ -58,7 +58,7 @@ class DetailPageViewController: UIViewController {
         case "Biggs Darklighter":
             starImage = UIImage(named: "9")
         default:
-            starImage = UIImage(named: "10")
+            starImage = UIImage(named: "11")
         }
     }
     func navBarSetup() {
