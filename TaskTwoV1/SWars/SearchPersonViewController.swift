@@ -11,8 +11,8 @@ class SearchPersonViewController: UIViewController, UITableViewDelegate, UITable
 
     // MARK: - IBOutlets
 
-    @IBOutlet var secondTableView: UITableView!
-    @IBOutlet var searchBar: UISearchBar!
+    @IBOutlet weak var secondTableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     private var results = [Results]()
     private var viewModels = [CellTableViewModel]()

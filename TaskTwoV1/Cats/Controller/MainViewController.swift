@@ -11,7 +11,7 @@ class MainViewController: UIViewController {
 
     // MARK: - IBOUtlets
 
-    @IBOutlet var tableViewSecond: UITableView!
+    @IBOutlet weak var tableViewSecond: UITableView!
     private var breed = [Breed]()
     private var viewModels = [CellViewModel]()
 
