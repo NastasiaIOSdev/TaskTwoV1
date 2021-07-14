@@ -35,7 +35,9 @@ class SearchPersonViewController: UIViewController, UITableViewDelegate, UITable
     override func viewDidAppear(_ animated: Bool) {
         navBarSetup()
         }
-
+    func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+            self.view.endEditing(true)
+        }
     func navBarSetup() {
         let navigationBar = self.navigationController?.navigationBar
     navigationBar?.barStyle = UIBarStyle.black
@@ -107,6 +109,7 @@ class SearchPersonViewController: UIViewController, UITableViewDelegate, UITable
     // MARK: - Search
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        self.searchBar.endEditing(true)
         guard let text = searchBar.text, !text.isEmpty else {
             return
         }
