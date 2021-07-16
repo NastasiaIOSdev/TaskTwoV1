@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E23CD9726A180CF003B92A8 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E23CD9626A180CF003B92A8 /* TestViewController.swift */; };
+		2E23CD9C26A1811D003B92A8 /* SecondCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E23CD9A26A1811D003B92A8 /* SecondCollectionViewCell.swift */; };
+		2E23CD9D26A1811D003B92A8 /* SecondCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E23CD9B26A1811D003B92A8 /* SecondCollectionViewCell.xib */; };
+		2E23CDA426A1950E003B92A8 /* FirstCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E23CDA226A1950E003B92A8 /* FirstCollectionViewCell.swift */; };
+		2E23CDA526A1950E003B92A8 /* FirstCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E23CDA326A1950E003B92A8 /* FirstCollectionViewCell.xib */; };
+		2E23CDAA26A19606003B92A8 /* InsideFirstCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E23CDA826A19606003B92A8 /* InsideFirstCollectionViewCell.swift */; };
+		2E23CDAB26A19606003B92A8 /* InsideFirstCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E23CDA926A19606003B92A8 /* InsideFirstCollectionViewCell.xib */; };
+		2E23CDB126A19AC1003B92A8 /* ThirdCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E23CDAF26A19AC1003B92A8 /* ThirdCollectionViewCell.swift */; };
+		2E23CDB226A19AC1003B92A8 /* ThirdCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E23CDB026A19AC1003B92A8 /* ThirdCollectionViewCell.xib */; };
+		2E23CDB726A19ADD003B92A8 /* InsideThirdCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E23CDB526A19ADD003B92A8 /* InsideThirdCollectionViewCell.swift */; };
+		2E23CDB826A19ADD003B92A8 /* InsideThirdCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E23CDB626A19ADD003B92A8 /* InsideThirdCollectionViewCell.xib */; };
+		2E23CDBD26A1A065003B92A8 /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E23CDBC26A1A065003B92A8 /* TabbarViewController.swift */; };
 		2E2CFA902690619000458940 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2CFA8F2690619000458940 /* MainViewController.swift */; };
 		2E2CFA9C269061FA00458940 /* SecondTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2CFA9A269061FA00458940 /* SecondTableViewCell.swift */; };
 		2E2CFA9D269061FA00458940 /* SecondTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E2CFA9B269061FA00458940 /* SecondTableViewCell.xib */; };
@@ -67,6 +79,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2E23CD9626A180CF003B92A8 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		2E23CD9A26A1811D003B92A8 /* SecondCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondCollectionViewCell.swift; sourceTree = "<group>"; };
+		2E23CD9B26A1811D003B92A8 /* SecondCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecondCollectionViewCell.xib; sourceTree = "<group>"; };
+		2E23CDA226A1950E003B92A8 /* FirstCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstCollectionViewCell.swift; sourceTree = "<group>"; };
+		2E23CDA326A1950E003B92A8 /* FirstCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FirstCollectionViewCell.xib; sourceTree = "<group>"; };
+		2E23CDA826A19606003B92A8 /* InsideFirstCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsideFirstCollectionViewCell.swift; sourceTree = "<group>"; };
+		2E23CDA926A19606003B92A8 /* InsideFirstCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InsideFirstCollectionViewCell.xib; sourceTree = "<group>"; };
+		2E23CDAF26A19AC1003B92A8 /* ThirdCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdCollectionViewCell.swift; sourceTree = "<group>"; };
+		2E23CDB026A19AC1003B92A8 /* ThirdCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThirdCollectionViewCell.xib; sourceTree = "<group>"; };
+		2E23CDB526A19ADD003B92A8 /* InsideThirdCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsideThirdCollectionViewCell.swift; sourceTree = "<group>"; };
+		2E23CDB626A19ADD003B92A8 /* InsideThirdCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InsideThirdCollectionViewCell.xib; sourceTree = "<group>"; };
+		2E23CDBC26A1A065003B92A8 /* TabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
 		2E2CFA8F2690619000458940 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		2E2CFA9A269061FA00458940 /* SecondTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondTableViewCell.swift; sourceTree = "<group>"; };
 		2E2CFA9B269061FA00458940 /* SecondTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecondTableViewCell.xib; sourceTree = "<group>"; };
@@ -150,13 +174,55 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		2E2CFA8A26905E8800458940 /* Cats */ = {
+		2E23CD9526A180A1003B92A8 /* AllBreeds */ = {
+			isa = PBXGroup;
+			children = (
+				2E23CD9626A180CF003B92A8 /* TestViewController.swift */,
+				2E23CD9F26A18124003B92A8 /* Cell */,
+			);
+			path = AllBreeds;
+			sourceTree = "<group>";
+		};
+		2E23CD9F26A18124003B92A8 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				2E23CDA226A1950E003B92A8 /* FirstCollectionViewCell.swift */,
+				2E23CDA826A19606003B92A8 /* InsideFirstCollectionViewCell.swift */,
+				2E23CD9A26A1811D003B92A8 /* SecondCollectionViewCell.swift */,
+				2E23CDAF26A19AC1003B92A8 /* ThirdCollectionViewCell.swift */,
+				2E23CDB526A19ADD003B92A8 /* InsideThirdCollectionViewCell.swift */,
+				2E23CDAD26A196F6003B92A8 /* Xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		2E23CDAD26A196F6003B92A8 /* Xib */ = {
+			isa = PBXGroup;
+			children = (
+				2E23CDA326A1950E003B92A8 /* FirstCollectionViewCell.xib */,
+				2E23CDA926A19606003B92A8 /* InsideFirstCollectionViewCell.xib */,
+				2E23CD9B26A1811D003B92A8 /* SecondCollectionViewCell.xib */,
+				2E23CDB026A19AC1003B92A8 /* ThirdCollectionViewCell.xib */,
+				2E23CDB626A19ADD003B92A8 /* InsideThirdCollectionViewCell.xib */,
+			);
+			path = Xib;
+			sourceTree = "<group>";
+		};
+		2E23CDBF26A1A0D2003B92A8 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				2E23CDBC26A1A065003B92A8 /* TabbarViewController.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		2E2CFA8A26905E8800458940 /* Cancel */ = {
 			isa = PBXGroup;
 			children = (
 				2E2CFA8D269060FB00458940 /* Controller */,
 				2E2CFA8E2690612A00458940 /* CustomCells& */,
 			);
-			path = Cats;
+			path = Cancel;
 			sourceTree = "<group>";
 		};
 		2E2CFA8D269060FB00458940 /* Controller */ = {
@@ -211,6 +277,7 @@
 			isa = PBXGroup;
 			children = (
 				2E48E26A2689C59C00271A85 /* TaskTwoV1 */,
+				2E2CFA8A26905E8800458940 /* Cancel */,
 				2E48E2692689C59C00271A85 /* Products */,
 				A20E8AC542E018FA61A32E1C /* Pods */,
 				2C28DF2E01949AC127176D23 /* Frameworks */,
@@ -232,12 +299,13 @@
 				2E48E2832689CCA800271A85 /* App */,
 				2E48E2822689CCA400271A85 /* View */,
 				2E48E2A8268A0DA600271A85 /* APIService */,
+				2E23CDBF26A1A0D2003B92A8 /* Helper */,
 				2E79B4A42690F33100C357C3 /* Constants */,
 				2E79B4A82690F3FA00C357C3 /* Protocols&Extensions */,
 				86E09ED9269C5A6E00049522 /* Detail */,
 				2E7A622E269B088500D54D10 /* CatsBreeds */,
 				2E48E36C268D0AA000271A85 /* SWars */,
-				2E2CFA8A26905E8800458940 /* Cats */,
+				2E23CD9526A180A1003B92A8 /* AllBreeds */,
 				2ED290822694EAD500B7630B /* Dogs */,
 			);
 			path = TaskTwoV1;
@@ -481,11 +549,16 @@
 				2E48E2782689C5A100271A85 /* LaunchScreen.storyboard in Resources */,
 				2E2CFAA22690621900458940 /* FirstTableViewCell.xib in Resources */,
 				86E09EE4269C645C00049522 /* DetailTableViewController.xib in Resources */,
+				2E23CD9D26A1811D003B92A8 /* SecondCollectionViewCell.xib in Resources */,
 				2E3F85DF2699EBCE006A5845 /* CollectionDogsViewCell.xib in Resources */,
 				2E7A6246269B0A7300D54D10 /* LastUITableViewCell.xib in Resources */,
+				2E23CDAB26A19606003B92A8 /* InsideFirstCollectionViewCell.xib in Resources */,
+				2E23CDB826A19ADD003B92A8 /* InsideThirdCollectionViewCell.xib in Resources */,
 				2E2CFAA8269065D800458940 /* CollectionViewCell.xib in Resources */,
 				2E3F85B12699B3A2006A5845 /* LastTableViewCell.xib in Resources */,
 				2E7A6241269B0A4600D54D10 /* SecondUITableViewCell.xib in Resources */,
+				2E23CDA526A1950E003B92A8 /* FirstCollectionViewCell.xib in Resources */,
+				2E23CDB226A19AC1003B92A8 /* ThirdCollectionViewCell.xib in Resources */,
 				2E3F85B72699B48D006A5845 /* LastCollectionViewCell.xib in Resources */,
 				2E48E2752689C5A100271A85 /* Assets.xcassets in Resources */,
 				2E7A6236269B099800D54D10 /* FirstUITableViewCell.xib in Resources */,
@@ -549,6 +622,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E23CDB126A19AC1003B92A8 /* ThirdCollectionViewCell.swift in Sources */,
 				2E3F85B02699B3A2006A5845 /* LastTableViewCell.swift in Sources */,
 				2E3F85D12699E450006A5845 /* FirstDogTableViewCell.swift in Sources */,
 				2E48E379268D0C1300271A85 /* DetailPageViewController.swift in Sources */,
@@ -563,12 +637,18 @@
 				2E3F85CA2699DDAA006A5845 /* SecondDogsTableViewCell.swift in Sources */,
 				2E48E26C2689C59C00271A85 /* AppDelegate.swift in Sources */,
 				2E2CFA902690619000458940 /* MainViewController.swift in Sources */,
+				2E23CD9C26A1811D003B92A8 /* SecondCollectionViewCell.swift in Sources */,
+				2E23CDAA26A19606003B92A8 /* InsideFirstCollectionViewCell.swift in Sources */,
+				2E23CDA426A1950E003B92A8 /* FirstCollectionViewCell.swift in Sources */,
+				2E23CDB726A19ADD003B92A8 /* InsideThirdCollectionViewCell.swift in Sources */,
 				2E3F85EA2699EC32006A5845 /* ThirdCollectionDogViewCell.swift in Sources */,
 				2E7A6231269B08F300D54D10 /* MainUIViewController.swift in Sources */,
 				2E48E375268D0BD700271A85 /* PersonTableViewCell.swift in Sources */,
 				2ED290842694EB2C00B7630B /* MainDogsBreedsViewController.swift in Sources */,
 				2ED290882694EB6600B7630B /* FirstDogsTableViewCell.swift in Sources */,
+				2E23CDBD26A1A065003B92A8 /* TabbarViewController.swift in Sources */,
 				2E7A6235269B099800D54D10 /* FirstUITableViewCell.swift in Sources */,
+				2E23CD9726A180CF003B92A8 /* TestViewController.swift in Sources */,
 				2E2CFAA12690621900458940 /* FirstTableViewCell.swift in Sources */,
 				2E3F85DE2699EBCE006A5845 /* CollectionDogsViewCell.swift in Sources */,
 				2E48E26E2689C59C00271A85 /* SceneDelegate.swift in Sources */,
