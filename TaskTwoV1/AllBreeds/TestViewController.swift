@@ -49,9 +49,28 @@ class TestViewController: UIViewController{
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
     }
+    // MARK: - Segue
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? DelailCollectionViewController,
+           let model = sender as? CellViewModel {
+            vc.cellViewModel = model
+        }
+    }
 
 }
-extension TestViewController:  UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+
+extension TestViewController:  UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+       
+        let CellViewModel = viewModels[indexPath.row]
+        performSegue(withIdentifier: "Detail", sender: CellViewModel)
+    }
+}
+
+extension TestViewController:  UICollectionViewDataSource {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModels.count
     }
@@ -78,6 +97,10 @@ extension TestViewController:  UICollectionViewDelegate, UICollectionViewDataSou
 
         return UICollectionViewCell()
     }
+}
+
+extension TestViewController:  UICollectionViewDelegateFlowLayout {
+   
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionTestView.frame.width, height: collectionTestView.frame.height/3 - 10)
     }
@@ -88,6 +111,8 @@ extension TestViewController:  UICollectionViewDelegate, UICollectionViewDataSou
         return UIEdgeInsets(top: 5, left: 0, bottom: 5, right: 0)
     }
 }
+
+
     
     
 

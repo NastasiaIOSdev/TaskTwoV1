@@ -35,8 +35,18 @@ class FirstCollectionViewCell: UICollectionViewCell, UICollectionViewDelegate,
             collectionViewTestSecond.delegate = self
             collectionViewTestSecond.dataSource = self
           }
+        func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? DelailCollectionViewController, let model = sender as? CellViewModel {
+            vc.cellViewModel = model
+            }
+         }
 
          // MARK: - CollectionView
+    
+       func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+      //  let CellViewModel = models[indexPath.row]
+//        performSegue(withIdentifier: "Detail", sender: CellViewModel)
+       }
 
          func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
              return models.count

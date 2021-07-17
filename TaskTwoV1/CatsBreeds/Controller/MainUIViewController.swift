@@ -81,10 +81,10 @@ extension MainUIViewController: UITableViewDelegate {
         } else if (indexPath.row - 1) % 2 == 0 || (indexPath.row - 1) % 2 == 1 || indexPath.row == 2 {
             if let cell3 = tableView.dequeueReusableCell(
                 withIdentifier: "LastUITableViewCell") as? LastUITableViewCell {
-                let vc = DetailTableViewController()
-                self.present(vc, animated: true, completion: nil)
-                cell3.collectionViewSecond.dataSource = cell3
-                cell3.collectionViewSecond.delegate = cell3
+//                let vc = DetailTableViewController()
+//                self.present(vc, animated: true, completion: nil)
+//                cell3.collectionViewSecond.dataSource = cell3
+//                cell3.collectionViewSecond.delegate = cell3
                
             }
         }

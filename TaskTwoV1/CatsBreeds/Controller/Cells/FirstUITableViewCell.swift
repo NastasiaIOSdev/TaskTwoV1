@@ -13,7 +13,7 @@ class FirstUITableViewCell: UITableViewCell {
     @IBOutlet weak var catUIImageView: UIImageView!
     @IBOutlet weak var breedLabel: UILabel!
     @IBOutlet weak var countryLabel: UILabel!
-    @IBOutlet weak var aboutBreedLabel: UITextView!
+    @IBOutlet weak var aboutBreedLabel: UILabel!
     @IBOutlet weak var myView: UIView!
     @IBOutlet weak var shadowView: UIView!
     static func nib() -> UINib {
