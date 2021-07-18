@@ -24,7 +24,6 @@
                         <segue destination="wZR-eg-RsW" kind="relationship" relationship="viewControllers" id="74P-NO-6tW"/>
                         <segue destination="3K8-jF-Qah" kind="relationship" relationship="viewControllers" id="m3D-uH-k6N"/>
                         <segue destination="IOw-wZ-Pda" kind="relationship" relationship="viewControllers" id="FF4-W6-Tju"/>
-                        <segue destination="C0T-AZ-vXq" kind="relationship" relationship="viewControllers" id="DYg-bW-6eq"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C9A-Yu-Tly" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -179,9 +178,12 @@
                             <constraint firstItem="2fH-8i-kix" firstAttribute="leading" secondItem="q9Q-nU-cVt" secondAttribute="leading" id="nFJ-fg-OD6"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="ZNZ-P8-gi1"/>
+                    <navigationItem key="navigationItem" id="ZNZ-P8-gi1">
+                        <barButtonItem key="backBarButtonItem" title=" " id="Oyz-wm-hqB"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="2fH-8i-kix" id="n8Q-nX-Ndk"/>
+                        <segue destination="SWN-5b-69l" kind="show" id="Phr-4f-LCR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v6j-Fa-mwq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -191,13 +193,13 @@
         <!--TEST-->
         <scene sceneID="dsV-YJ-w66">
             <objects>
-                <viewController id="SWN-5b-69l" customClass="TestDetailViewController" customModule="TaskTwoV1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TestDetailViewController" id="SWN-5b-69l" customClass="TestDetailViewController" customModule="TaskTwoV1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ImK-Qm-mt4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4lf-Z4-fHm">
-                                <rect key="frame" x="10" y="98" width="394" height="705"/>
+                                <rect key="frame" x="10" y="150" width="394" height="653"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="2" minimumInteritemSpacing="0.0" id="8rg-b5-6Z2">
                                     <size key="itemSize" width="128" height="128"/>
@@ -231,12 +233,12 @@
                     </navigationItem>
                     <connections>
                         <outlet property="testCollectionView" destination="4lf-Z4-fHm" id="VLR-ui-yfo"/>
-                        <segue destination="tIY-JH-uQO" kind="show" id="Zl7-kB-NnT"/>
+                        <segue destination="tIY-JH-uQO" kind="show" id="ck8-Db-hzB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="64E-RV-p34" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1096" y="1384"/>
+            <point key="canvasLocation" x="1767" y="710"/>
         </scene>
         <!--Fullscreen View Controller-->
         <scene sceneID="Nw8-kK-eeE">
@@ -283,7 +285,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZkR-wn-gAn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1839" y="1383"/>
+            <point key="canvasLocation" x="2491" y="710"/>
         </scene>
         <!--Cats Breeds-->
         <scene sceneID="ZXZ-sK-KQR">
@@ -520,7 +522,7 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fyf-SF-QGl">
                                 <rect key="frame" x="10" y="88" width="394" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="avj-aU-DeH">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="avj-aU-DeH">
                                     <size key="itemSize" width="191" height="185"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -598,32 +600,12 @@
             </objects>
             <point key="canvasLocation" x="277" y="-64"/>
         </scene>
-        <!--Test-->
-        <scene sceneID="lf1-Ae-05a">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="C0T-AZ-vXq" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Test" image="questionmark" catalog="system" id="uwh-1x-y9c"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="OzJ-Yn-CwV">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="SWN-5b-69l" kind="relationship" relationship="rootViewController" id="RCg-UR-uw2"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="sLQ-gB-iZT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="307" y="1384"/>
-        </scene>
     </scenes>
     <resources>
         <image name="book" catalog="system" width="128" height="102"/>
         <image name="list.bullet.rectangle" catalog="system" width="128" height="93"/>
         <image name="note.text" catalog="system" width="128" height="106"/>
         <image name="person.3" catalog="system" width="128" height="62"/>
-        <image name="questionmark" catalog="system" width="96" height="128"/>
         <image name="right" width="48" height="48"/>
         <image name="simonCat" width="1522" height="1165"/>
         <systemColor name="systemBackgroundColor">

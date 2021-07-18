@@ -8,6 +8,9 @@
 import UIKit
 
 class LastUICollectionViewCell: UICollectionViewCell {
+    
+    // MARK: - IBOUtlets
+    
     @IBOutlet weak var catUIImageView: UIImageView!
     @IBOutlet weak var breedLabel: UILabel!
     @IBOutlet weak var countryLabel: UILabel!

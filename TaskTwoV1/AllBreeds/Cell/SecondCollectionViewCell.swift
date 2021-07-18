@@ -8,8 +8,11 @@
 import UIKit
 
 class SecondCollectionViewCell: UICollectionViewCell {
+    
     static let identifier = "SecondCollectionViewCell"
+    
     // MARK: - IBOUtlets
+   
     @IBOutlet weak var catUIImageView: UIImageView!
     @IBOutlet weak var breedLabel: UILabel!
     @IBOutlet weak var myView: UIView!
@@ -20,9 +23,11 @@ class SecondCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var rightCountryLabel: UILabel!
     @IBOutlet weak var rightMyView: UIView!
     @IBOutlet weak var rightShadowView: UIView!
+    
     static func nib() -> UINib {
         return UINib(nibName: "SecondCollectionViewCell", bundle: nil)
     }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         catUIImageView.layer.cornerRadius = 9
@@ -42,6 +47,7 @@ class SecondCollectionViewCell: UICollectionViewCell {
         rightShadowView.layer.shadowOpacity = 0.3
         rightShadowView.layer.shadowOffset = CGSize.zero
     }
+    
     func configure(with viewModel: CellViewModel) {
         breedLabel.text = viewModel.title
         countryLabel.text = viewModel.subtitle
@@ -63,9 +69,11 @@ class SecondCollectionViewCell: UICollectionViewCell {
             }.resume()
         }
     }
+    
     override func layoutSubviews() {
         super.layoutSubviews()
     }
+    
     override func prepareForReuse() {
         super.prepareForReuse()
         catUIImageView.image = nil

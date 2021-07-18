@@ -8,8 +8,11 @@
 import UIKit
 
 class SecondUITableViewCell: UITableViewCell {
+   
     static let identifier = "SecondUITableViewCell"
+    
     // MARK: - IBOUtlets
+    
     @IBOutlet weak var catUIImageView: UIImageView!
     @IBOutlet weak var breedLabel: UILabel!
     @IBOutlet weak var countryLabel: UILabel!
@@ -20,9 +23,11 @@ class SecondUITableViewCell: UITableViewCell {
     @IBOutlet weak var rightBreedLabel: UILabel!
     @IBOutlet weak var rightMyView: UIView!
     @IBOutlet weak var rightShadowView: UIView!
+   
     static func nib() -> UINib {
         return UINib(nibName: "SecondUITableViewCell", bundle: nil)
     }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         catUIImageView.layer.cornerRadius = 9
@@ -42,6 +47,7 @@ class SecondUITableViewCell: UITableViewCell {
         rightShadowView.layer.shadowOpacity = 0.3
         rightShadowView.layer.shadowOffset = CGSize.zero
     }
+    
     func configure(with viewModel: CellViewModel) {
         breedLabel.text = viewModel.title
         rightBreedLabel.text = viewModel.title
@@ -63,9 +69,11 @@ class SecondUITableViewCell: UITableViewCell {
             }.resume()
         }
     }
+    
     override func layoutSubviews() {
         super.layoutSubviews()
     }
+    
     override func prepareForReuse() {
         super.prepareForReuse()
         catUIImageView.image = nil
@@ -75,6 +83,7 @@ class SecondUITableViewCell: UITableViewCell {
         rightCountryLabel.text = nil
         countryLabel.text = nil
     }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }

@@ -9,7 +9,6 @@ import Foundation
 import UIKit
 
 extension UIImageView {
-
     func downloadedFrom(url: URL, contentMode mode: UIView.ContentMode = .scaleAspectFill) {
         contentMode = mode
         URLSession.shared.dataTask(with: url) { (data, response, error) in
@@ -18,11 +17,11 @@ extension UIImageView {
                 let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
                 let data = data, error == nil,
                 let image = UIImage(data: data)
-                else { return }
+            else { return }
             DispatchQueue.main.async { () -> Void in
                 self.image = image
             }
-            }.resume()
+        }.resume()
     }
     func downloadedFrom(link: String, contentMode mode: UIView.ContentMode = .scaleAspectFit) {
         guard let url = URL(string: link) else { return }

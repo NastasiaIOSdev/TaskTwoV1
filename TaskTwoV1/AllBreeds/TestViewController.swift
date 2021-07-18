@@ -9,10 +9,12 @@ import UIKit
 
 class TestViewController: UIViewController{
 
+    // MARK: - IBOUtlets
+    
     @IBOutlet weak var collectionTestView: UICollectionView!
     
     private var breed = [Breed]()
-    private var viewModels = [CellViewModel]()
+    var viewModels = [CellViewModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +26,7 @@ class TestViewController: UIViewController{
         title = "List All Breed"
         allBreed()
     }
+    
     func allBreed() {
         APIService.shared.getBreed { [weak self] result in
             switch result {
@@ -49,70 +52,4 @@ class TestViewController: UIViewController{
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
     }
-    // MARK: - Segue
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let vc = segue.destination as? DelailCollectionViewController,
-           let model = sender as? CellViewModel {
-            vc.cellViewModel = model
-        }
-    }
-
 }
-
-extension TestViewController:  UICollectionViewDelegate {
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-       
-        let CellViewModel = viewModels[indexPath.row]
-        performSegue(withIdentifier: "Detail", sender: CellViewModel)
-    }
-}
-
-extension TestViewController:  UICollectionViewDataSource {
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModels.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if indexPath.row % 3 == 0 {
-            if let cell = collectionTestView.dequeueReusableCell(withReuseIdentifier: "FirstCollectionViewCell", for: indexPath) as? FirstCollectionViewCell {
-                cell.configure(with: viewModels)
-                return cell
-            }
-        } else if (indexPath.row - 1) % 3 == 0 || indexPath.row == 1 {
-            if let cell2 = collectionTestView.dequeueReusableCell(
-                withReuseIdentifier: "SecondCollectionViewCell", for: indexPath) as? SecondCollectionViewCell {
-                cell2.configure(with: viewModels[indexPath.row])
-                return cell2
-            }
-        } else if (indexPath.row - 1) % 2 == 0 || (indexPath.row - 1) % 2 == 1 || indexPath.row == 2 {
-            if let cell3 = collectionTestView.dequeueReusableCell(
-                withReuseIdentifier: "ThirdCollectionViewCell", for: indexPath) as? ThirdCollectionViewCell {
-                cell3.configure(with: viewModels)
-                return cell3
-            }
-        }
-
-        return UICollectionViewCell()
-    }
-}
-
-extension TestViewController:  UICollectionViewDelegateFlowLayout {
-   
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionTestView.frame.width, height: collectionTestView.frame.height/3 - 10)
-    }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-      return 10
-    }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 5, left: 0, bottom: 5, right: 0)
-    }
-}
-
-
-    
-    
-

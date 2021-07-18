@@ -8,6 +8,9 @@
 import UIKit
 
 class InsideThirdCollectionViewCell: UICollectionViewCell {
+    
+    // MARK: - IBOUtlets
+    
     @IBOutlet weak var catUIImageView: UIImageView!
     @IBOutlet weak var breedLabel: UILabel!
     @IBOutlet weak var myView: UIView!
@@ -19,6 +22,7 @@ class InsideThirdCollectionViewCell: UICollectionViewCell {
         return  UINib(nibName: "InsideThirdCollectionViewCell", bundle: nil
         )
     }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         catUIImageView.layer.cornerRadius = 10
@@ -58,5 +62,4 @@ class InsideThirdCollectionViewCell: UICollectionViewCell {
         catUIImageView.image = nil
         breedLabel.text = nil
     }
-
 }
