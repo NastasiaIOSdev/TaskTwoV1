@@ -24,7 +24,6 @@ class SearchPersonViewController: UIViewController {
         secondTableView.delegate = self
         secondTableView.dataSource = self
         searchBar.delegate = self
-        fetchPeopleList()
         setupColorTabbar()
     }
     
@@ -54,27 +53,6 @@ class SearchPersonViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-    }
-    
-    private func fetchPeopleList() {
-        APIService.shared.getPeopleList { [weak self] result in
-            switch result {
-            case.success(let results):
-                self?.results = results
-                self?.viewModels = results.compactMap({
-                    CellTableViewModel(
-                        title: $0.name,
-                        subtitle: $0.gender)
-                })
-                DispatchQueue.main.async {
-                    self?.secondTableView.reloadData()
-                }
-                
-            case.failure(let error):
-                print(error)
-            }
-        }
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
