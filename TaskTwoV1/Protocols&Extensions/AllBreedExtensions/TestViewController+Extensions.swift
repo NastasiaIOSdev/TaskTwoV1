@@ -60,7 +60,7 @@ extension TestViewController:  UICollectionViewDataSource {
         } else if (indexPath.row - 1) % 3 == 0 || indexPath.row == 1 {
             if let cell2 = collectionTestView.dequeueReusableCell(
                 withReuseIdentifier: "SecondCollectionViewCell", for: indexPath) as? SecondCollectionViewCell {
-                cell2.configure(with: viewModels[indexPath.row])
+                cell2.configure(with: viewModels)
                 return cell2
             }
         } else if (indexPath.row - 1) % 2 == 0 || (indexPath.row - 1) % 2 == 1 || indexPath.row == 2 {

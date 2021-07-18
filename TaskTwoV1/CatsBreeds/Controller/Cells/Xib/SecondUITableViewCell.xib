@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -18,16 +19,16 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="teL-zv-1Uy">
-                        <rect key="frame" x="0.0" y="0.0" width="167.5" height="164"/>
+                        <rect key="frame" x="0.0" y="0.0" width="167.5" height="167.5"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NHS-Hg-HcW">
-                                <rect key="frame" x="20" y="10" width="137.5" height="144"/>
+                                <rect key="frame" x="20" y="10" width="137.5" height="147.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EuM-c3-B8B">
-                                        <rect key="frame" x="0.0" y="0.0" width="137.5" height="144"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="137.5" height="147.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="GcR-Uo-zyc">
-                                                <rect key="frame" x="5" y="5" width="127.5" height="134"/>
+                                                <rect key="frame" x="5" y="5" width="127.5" height="137.5"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BsF-Zz-TLN">
                                                         <rect key="frame" x="0.0" y="0.0" width="127.5" height="91"/>
@@ -39,7 +40,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zPH-Iy-eVG">
-                                                        <rect key="frame" x="0.0" y="119.5" width="127.5" height="14.5"/>
+                                                        <rect key="frame" x="0.0" y="119.5" width="127.5" height="18"/>
                                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="12"/>
                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -69,21 +70,22 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="NHS-Hg-HcW" secondAttribute="trailing" constant="10" id="CfT-Ae-A4C"/>
                             <constraint firstAttribute="bottom" secondItem="NHS-Hg-HcW" secondAttribute="bottom" constant="10" id="S6G-UT-T9O"/>
+                            <constraint firstAttribute="width" secondItem="teL-zv-1Uy" secondAttribute="height" multiplier="1:1" id="dVL-Ey-7BU"/>
                             <constraint firstItem="NHS-Hg-HcW" firstAttribute="leading" secondItem="teL-zv-1Uy" secondAttribute="leading" constant="20" id="jFU-xl-jiT"/>
                             <constraint firstItem="NHS-Hg-HcW" firstAttribute="top" secondItem="teL-zv-1Uy" secondAttribute="top" constant="10" id="lLy-Ng-7KT"/>
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7ga-ND-e6R">
-                        <rect key="frame" x="167.5" y="0.0" width="167.5" height="164"/>
+                        <rect key="frame" x="167.5" y="0.0" width="167.5" height="167.5"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dDk-EF-HZ0">
-                                <rect key="frame" x="10" y="10" width="137.5" height="144"/>
+                                <rect key="frame" x="10" y="10" width="137.5" height="147.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cec-H9-8tB">
-                                        <rect key="frame" x="0.0" y="0.0" width="137.5" height="144"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="137.5" height="147.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="ey4-q8-lgQ">
-                                                <rect key="frame" x="5" y="5" width="127.5" height="134"/>
+                                                <rect key="frame" x="5" y="5" width="127.5" height="137.5"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1Py-4H-4TB">
                                                         <rect key="frame" x="0.0" y="0.0" width="127.5" height="92"/>
@@ -95,7 +97,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vzc-yU-qc0">
-                                                        <rect key="frame" x="0.0" y="116.5" width="127.5" height="17.5"/>
+                                                        <rect key="frame" x="0.0" y="116.5" width="127.5" height="21"/>
                                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="12"/>
                                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -126,6 +128,7 @@
                             <constraint firstAttribute="trailing" secondItem="dDk-EF-HZ0" secondAttribute="trailing" constant="20" id="Bgk-cH-OGV"/>
                             <constraint firstItem="dDk-EF-HZ0" firstAttribute="top" secondItem="7ga-ND-e6R" secondAttribute="top" constant="10" id="Dkm-hR-8pp"/>
                             <constraint firstItem="dDk-EF-HZ0" firstAttribute="leading" secondItem="7ga-ND-e6R" secondAttribute="leading" constant="10" id="Lfx-Wz-mrm"/>
+                            <constraint firstAttribute="width" secondItem="7ga-ND-e6R" secondAttribute="height" multiplier="1:1" id="jhn-w7-PHD"/>
                             <constraint firstAttribute="bottom" secondItem="dDk-EF-HZ0" secondAttribute="bottom" constant="10" id="u9K-Cn-hWt"/>
                         </constraints>
                     </view>

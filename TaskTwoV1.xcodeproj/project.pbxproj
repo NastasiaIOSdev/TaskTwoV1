@@ -42,6 +42,9 @@
 		2E48E372268D0B8300271A85 /* SearchPersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E48E371268D0B8300271A85 /* SearchPersonViewController.swift */; };
 		2E48E375268D0BD700271A85 /* PersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E48E374268D0BD700271A85 /* PersonTableViewCell.swift */; };
 		2E48E379268D0C1300271A85 /* DetailPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E48E378268D0C1300271A85 /* DetailPageViewController.swift */; };
+		2E4E2BDA26A4A1E200B2D89F /* InsideSecondCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4E2BD826A4A1E200B2D89F /* InsideSecondCollectionViewCell.swift */; };
+		2E4E2BDB26A4A1E200B2D89F /* InsideSecondCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E4E2BD926A4A1E200B2D89F /* InsideSecondCollectionViewCell.xib */; };
+		2E4E2BDE26A4A2A100B2D89F /* SecondCollectionViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4E2BDD26A4A2A100B2D89F /* SecondCollectionViewCell+Extensions.swift */; };
 		2E79B4A62690F35800C357C3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E79B4A52690F35800C357C3 /* Constants.swift */; };
 		2E79B4AA2690F45100C357C3 /* ProtocolNetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E79B4A92690F45100C357C3 /* ProtocolNetService.swift */; };
 		2E7A6231269B08F300D54D10 /* MainUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7A6230269B08F300D54D10 /* MainUIViewController.swift */; };
@@ -117,6 +120,9 @@
 		2E48E371268D0B8300271A85 /* SearchPersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPersonViewController.swift; sourceTree = "<group>"; };
 		2E48E374268D0BD700271A85 /* PersonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTableViewCell.swift; sourceTree = "<group>"; };
 		2E48E378268D0C1300271A85 /* DetailPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPageViewController.swift; sourceTree = "<group>"; };
+		2E4E2BD826A4A1E200B2D89F /* InsideSecondCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsideSecondCollectionViewCell.swift; sourceTree = "<group>"; };
+		2E4E2BD926A4A1E200B2D89F /* InsideSecondCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InsideSecondCollectionViewCell.xib; sourceTree = "<group>"; };
+		2E4E2BDD26A4A2A100B2D89F /* SecondCollectionViewCell+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SecondCollectionViewCell+Extensions.swift"; sourceTree = "<group>"; };
 		2E79B4A52690F35800C357C3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2E79B4A92690F45100C357C3 /* ProtocolNetService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolNetService.swift; sourceTree = "<group>"; };
 		2E7A6230269B08F300D54D10 /* MainUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainUIViewController.swift; sourceTree = "<group>"; };
@@ -188,6 +194,7 @@
 				2E23CDA226A1950E003B92A8 /* FirstCollectionViewCell.swift */,
 				2E23CDA826A19606003B92A8 /* InsideFirstCollectionViewCell.swift */,
 				2E23CD9A26A1811D003B92A8 /* SecondCollectionViewCell.swift */,
+				2E4E2BD826A4A1E200B2D89F /* InsideSecondCollectionViewCell.swift */,
 				2E23CDAF26A19AC1003B92A8 /* ThirdCollectionViewCell.swift */,
 				2E23CDB526A19ADD003B92A8 /* InsideThirdCollectionViewCell.swift */,
 				2E23CDAD26A196F6003B92A8 /* Xib */,
@@ -202,6 +209,7 @@
 				2E23CDA326A1950E003B92A8 /* FirstCollectionViewCell.xib */,
 				2E23CDA926A19606003B92A8 /* InsideFirstCollectionViewCell.xib */,
 				2E23CD9B26A1811D003B92A8 /* SecondCollectionViewCell.xib */,
+				2E4E2BD926A4A1E200B2D89F /* InsideSecondCollectionViewCell.xib */,
 				2E23CDB026A19AC1003B92A8 /* ThirdCollectionViewCell.xib */,
 				2E23CDB626A19ADD003B92A8 /* InsideThirdCollectionViewCell.xib */,
 			);
@@ -424,6 +432,7 @@
 			isa = PBXGroup;
 			children = (
 				2EC77CF726A40B19007C0A7D /* FirstCollectionViewCell+Extensions.swift */,
+				2E4E2BDD26A4A2A100B2D89F /* SecondCollectionViewCell+Extensions.swift */,
 				2EC77CFA26A40D04007C0A7D /* ThirdCollectionViewCell+Extensions.swift */,
 			);
 			path = CellExtensions;
@@ -542,6 +551,7 @@
 				2E3F85CB2699DDAA006A5845 /* SecondDogsTableViewCell.xib in Resources */,
 				2E48E2782689C5A100271A85 /* LaunchScreen.storyboard in Resources */,
 				2E23CDD126A1DB01003B92A8 /* DetailCollectionViewCell.xib in Resources */,
+				2E4E2BDB26A4A1E200B2D89F /* InsideSecondCollectionViewCell.xib in Resources */,
 				2E23CD9D26A1811D003B92A8 /* SecondCollectionViewCell.xib in Resources */,
 				2E3F85DF2699EBCE006A5845 /* CollectionDogsViewCell.xib in Resources */,
 				2E7A6246269B0A7300D54D10 /* LastUITableViewCell.xib in Resources */,
@@ -614,6 +624,7 @@
 			files = (
 				2EC77CED26A408A8007C0A7D /* TestViewController+Extensions.swift in Sources */,
 				2E23CDB126A19AC1003B92A8 /* ThirdCollectionViewCell.swift in Sources */,
+				2E4E2BDE26A4A2A100B2D89F /* SecondCollectionViewCell+Extensions.swift in Sources */,
 				2E3F85D12699E450006A5845 /* FirstDogTableViewCell.swift in Sources */,
 				2E48E379268D0C1300271A85 /* DetailPageViewController.swift in Sources */,
 				2E79B4A62690F35800C357C3 /* Constants.swift in Sources */,
@@ -633,6 +644,7 @@
 				2E7A6231269B08F300D54D10 /* MainUIViewController.swift in Sources */,
 				2E48E375268D0BD700271A85 /* PersonTableViewCell.swift in Sources */,
 				2EC77CFB26A40D04007C0A7D /* ThirdCollectionViewCell+Extensions.swift in Sources */,
+				2E4E2BDA26A4A1E200B2D89F /* InsideSecondCollectionViewCell.swift in Sources */,
 				2ED290842694EB2C00B7630B /* MainDogsBreedsViewController.swift in Sources */,
 				2EC77CF826A40B19007C0A7D /* FirstCollectionViewCell+Extensions.swift in Sources */,
 				2ED290882694EB6600B7630B /* FirstDogsTableViewCell.swift in Sources */,

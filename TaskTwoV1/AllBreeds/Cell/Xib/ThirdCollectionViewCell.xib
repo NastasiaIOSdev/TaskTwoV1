@@ -19,7 +19,7 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="77R-nw-gce">
-                        <rect key="frame" x="10" y="10" width="322" height="143"/>
+                        <rect key="frame" x="10" y="0.0" width="322" height="153"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="2e2-j1-wo7">
                             <size key="itemSize" width="128" height="128"/>
@@ -29,7 +29,7 @@
                         </collectionViewFlowLayout>
                     </collectionView>
                     <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="xGB-07-7ll">
-                        <rect key="frame" x="110" y="145" width="123" height="28"/>
+                        <rect key="frame" x="0.0" y="145" width="342" height="28"/>
                         <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="currentPageIndicatorTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </pageControl>
@@ -37,12 +37,12 @@
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstItem="xGB-07-7ll" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="110" id="DDB-zU-7mQ"/>
+                <constraint firstItem="xGB-07-7ll" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="DDB-zU-7mQ"/>
                 <constraint firstAttribute="trailing" secondItem="77R-nw-gce" secondAttribute="trailing" constant="10" id="Lxt-as-nec"/>
                 <constraint firstAttribute="bottom" secondItem="77R-nw-gce" secondAttribute="bottom" constant="20" id="Xjg-M0-H57"/>
                 <constraint firstItem="77R-nw-gce" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="eli-y1-uWT"/>
-                <constraint firstAttribute="trailing" secondItem="xGB-07-7ll" secondAttribute="trailing" constant="109" id="pGw-F3-XxH"/>
-                <constraint firstItem="77R-nw-gce" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="qPU-ob-Pkm"/>
+                <constraint firstAttribute="trailing" secondItem="xGB-07-7ll" secondAttribute="trailing" id="pGw-F3-XxH"/>
+                <constraint firstItem="77R-nw-gce" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="qPU-ob-Pkm"/>
                 <constraint firstAttribute="bottom" secondItem="xGB-07-7ll" secondAttribute="bottom" id="xd4-qO-UwZ"/>
             </constraints>
             <size key="customSize" width="342" height="173"/>

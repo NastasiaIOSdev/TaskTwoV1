@@ -19,31 +19,31 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FuL-W7-DaO">
-                        <rect key="frame" x="10" y="10" width="287" height="93"/>
+                        <rect key="frame" x="10" y="10" width="287" height="98"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BJK-Fi-CXI">
-                                <rect key="frame" x="0.0" y="0.0" width="287" height="93"/>
+                                <rect key="frame" x="0.0" y="0.0" width="287" height="98"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="s9L-rA-2J6">
-                                        <rect key="frame" x="5" y="5" width="143.5" height="83"/>
+                                        <rect key="frame" x="5" y="5" width="143.5" height="88"/>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="68U-Nb-li5">
-                                        <rect key="frame" x="158.5" y="10" width="118.5" height="73"/>
+                                        <rect key="frame" x="158.5" y="10" width="118.5" height="78"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hMU-9F-GKL">
-                                                <rect key="frame" x="0.0" y="0.0" width="118.5" height="10"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="118.5" height="12.5"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Nd-ty-6XK">
-                                                <rect key="frame" x="0.0" y="15" width="118.5" height="16.5"/>
+                                                <rect key="frame" x="0.0" y="17.5" width="118.5" height="16.5"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="12"/>
                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wU2-8w-oHt">
-                                                <rect key="frame" x="0.0" y="36.5" width="118.5" height="36.5"/>
+                                                <rect key="frame" x="0.0" y="39" width="118.5" height="39"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="12"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -82,7 +82,7 @@
                 <constraint firstAttribute="trailing" secondItem="FuL-W7-DaO" secondAttribute="trailing" constant="10" id="Akq-JM-I9u"/>
                 <constraint firstItem="FuL-W7-DaO" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="Ptg-jO-S1j"/>
                 <constraint firstItem="FuL-W7-DaO" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="VeA-dy-nua"/>
-                <constraint firstAttribute="bottom" secondItem="FuL-W7-DaO" secondAttribute="bottom" constant="10" id="uUR-kA-uCA"/>
+                <constraint firstAttribute="bottom" secondItem="FuL-W7-DaO" secondAttribute="bottom" constant="5" id="uUR-kA-uCA"/>
             </constraints>
             <size key="customSize" width="307" height="113"/>
             <connections>
