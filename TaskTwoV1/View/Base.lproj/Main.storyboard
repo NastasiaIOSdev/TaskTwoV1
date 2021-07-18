@@ -38,19 +38,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="vxT-PB-meN">
-                                <rect key="frame" x="0.0" y="98" width="414" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="mN8-Xr-T1c"/>
-                                </constraints>
-                                <textInputTraits key="textInputTraits"/>
-                                <scopeButtonTitles>
-                                    <string>Title</string>
-                                    <string>Title</string>
-                                </scopeButtonTitles>
-                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qBi-lD-6ZZ">
-                                <rect key="frame" x="0.0" y="152" width="414" height="744"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PersonTableViewCell" rowHeight="133" id="hkc-13-svB" customClass="PersonTableViewCell" customModule="TaskTwoV1" customModuleProvider="target">
@@ -135,12 +124,9 @@
                         <viewLayoutGuide key="safeArea" id="YsM-yW-Rzv"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="vxT-PB-meN" firstAttribute="trailing" secondItem="qBi-lD-6ZZ" secondAttribute="trailing" id="Kv6-Vf-UoC"/>
-                            <constraint firstItem="qBi-lD-6ZZ" firstAttribute="top" secondItem="vxT-PB-meN" secondAttribute="bottom" constant="10" id="ggG-uS-KyR"/>
+                            <constraint firstItem="qBi-lD-6ZZ" firstAttribute="top" secondItem="YsM-yW-Rzv" secondAttribute="top" id="As1-hM-nhd"/>
                             <constraint firstAttribute="bottom" secondItem="qBi-lD-6ZZ" secondAttribute="bottom" id="mby-J1-O9l"/>
                             <constraint firstItem="qBi-lD-6ZZ" firstAttribute="leading" secondItem="YsM-yW-Rzv" secondAttribute="leading" id="qzY-Fo-B7M"/>
-                            <constraint firstItem="vxT-PB-meN" firstAttribute="top" secondItem="YsM-yW-Rzv" secondAttribute="top" constant="10" id="tFx-rK-KbO"/>
-                            <constraint firstItem="vxT-PB-meN" firstAttribute="leading" secondItem="qBi-lD-6ZZ" secondAttribute="leading" id="tS8-yk-CGr"/>
                             <constraint firstItem="qBi-lD-6ZZ" firstAttribute="trailing" secondItem="YsM-yW-Rzv" secondAttribute="trailing" id="zek-Ce-xky"/>
                         </constraints>
                     </view>
@@ -148,13 +134,12 @@
                         <barButtonItem key="backBarButtonItem" title=" " id="SDF-lA-tq1"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="searchBar" destination="vxT-PB-meN" id="eox-aP-ZpR"/>
                         <outlet property="secondTableView" destination="qBi-lD-6ZZ" id="N1R-it-4wu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T7y-ne-iYj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1038" y="-771"/>
+            <point key="canvasLocation" x="1037.68115942029" y="-771.42857142857144"/>
         </scene>
         <!--Main Dogs Breeds View Controller-->
         <scene sceneID="e3E-J3-gVk">
@@ -422,16 +407,9 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="WKb-QA-dXb">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <textAttributes key="titleTextAttributes">
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <color key="textShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </textAttributes>
-                        <textAttributes key="largeTitleTextAttributes">
-                            <color key="textColor" systemColor="systemRedColor"/>
-                            <color key="textShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </textAttributes>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -610,9 +588,6 @@
         <image name="simonCat" width="1522" height="1165"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tertiarySystemGroupedBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

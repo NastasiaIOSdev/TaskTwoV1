@@ -38,7 +38,6 @@ class DetailPageViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        navBarSetup()
         pageSetup()
     }
     
@@ -68,16 +67,5 @@ class DetailPageViewController: UIViewController {
         default:
             starImage = UIImage(named: "11")
         }
-    }
-    
-    func navBarSetup() {
-        let navigationBar = self.navigationController?.navigationBar
-        navigationBar?.barStyle = UIBarStyle.black
-        navigationBar?.tintColor = UIColor.white
-        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 300, height: 300))
-        imageView.contentMode = .scaleAspectFit
-        let image = UIImage(named: "navBarImage")
-        imageView.image = image
-        navigationItem.titleView = imageView
     }
 }

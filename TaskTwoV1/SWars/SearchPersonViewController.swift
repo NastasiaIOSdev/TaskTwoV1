@@ -12,8 +12,8 @@ class SearchPersonViewController: UIViewController {
     // MARK: - IBOutlets
     
     @IBOutlet weak var secondTableView: UITableView!
-    @IBOutlet weak var searchBar: UISearchBar!
     
+    let searchVC = UISearchController(searchResultsController: nil)
     var results = [Results]()
     var viewModels = [CellTableViewModel]()
     
@@ -23,8 +23,13 @@ class SearchPersonViewController: UIViewController {
         super.viewDidLoad()
         secondTableView.delegate = self
         secondTableView.dataSource = self
-        searchBar.delegate = self
         setupColorTabbar()
+        createSearchBar()
+    }
+    
+    func createSearchBar() {
+        navigationItem.searchController = searchVC
+        searchVC.searchBar.delegate = self
     }
     
     func setupColorTabbar() {
@@ -33,22 +38,10 @@ class SearchPersonViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        navBarSetup()
     }
     
     func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         self.view.endEditing(true)
-    }
-    
-    func navBarSetup() {
-        let navigationBar = self.navigationController?.navigationBar
-        navigationBar?.barStyle = UIBarStyle.black
-        navigationBar?.tintColor = UIColor.white
-        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 300, height: 300))
-        imageView.contentMode = .scaleAspectFit
-        let image = UIImage(named: "navBarImage")
-        imageView.image = image
-        navigationItem.titleView = imageView
     }
     
     override func viewDidLayoutSubviews() {

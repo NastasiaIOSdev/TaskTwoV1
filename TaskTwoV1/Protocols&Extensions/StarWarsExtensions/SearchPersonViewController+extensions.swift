@@ -34,7 +34,6 @@ extension SearchPersonViewController: UITableViewDelegate, UITableViewDataSource
 
 extension SearchPersonViewController:  UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        self.searchBar.endEditing(true)
         guard let text = searchBar.text, !text.isEmpty else {
             return
         }
@@ -52,6 +51,7 @@ extension SearchPersonViewController:  UISearchBarDelegate {
 
                 DispatchQueue.main.async {
                     self?.secondTableView.reloadData()
+                    self?.searchVC.dismiss(animated: true, completion: nil)
                 }
             case.failure(let error):
             print(error)
@@ -66,5 +66,9 @@ extension SearchPersonViewController:  UISearchBarDelegate {
         }
         
         print(text)
+    }
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.text = ""
+        secondTableView.reloadData()
     }
 }
