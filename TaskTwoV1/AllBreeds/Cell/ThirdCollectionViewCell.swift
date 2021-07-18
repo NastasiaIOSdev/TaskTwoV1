@@ -20,6 +20,7 @@ class ThirdCollectionViewCell: UICollectionViewCell  {
     
     static func nib() -> UINib {
         return UINib(nibName: "ThirdCollectionViewCell", bundle: nil)
+       
     }
     
     func configure(with models: [CellViewModel]) {

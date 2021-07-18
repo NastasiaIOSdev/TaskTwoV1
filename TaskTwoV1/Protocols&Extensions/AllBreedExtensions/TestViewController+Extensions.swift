@@ -41,12 +41,12 @@ extension TestViewController:  UICollectionViewDataSource {
             if let cell3 = collectionTestView.dequeueReusableCell(
                 withReuseIdentifier: "ThirdCollectionViewCell", for: indexPath) as? ThirdCollectionViewCell {
                 
-                let vc = storyboard?.instantiateViewController(identifier: "TestDetailViewController") as! TestDetailViewController
-                vc.viewModels = viewModels
-                vc.indexPath = indexPath
-                self.navigationController?.pushViewController(vc, animated: true)
-                cell3.collectionViewTestThird.delegate = self
-                cell3.collectionViewTestThird.dataSource = self
+//                let vc = storyboard?.instantiateViewController(identifier: "TestDetailViewController") as! TestDetailViewController
+//                vc.viewModels = viewModels
+//                vc.indexPath = indexPath
+//                self.navigationController?.pushViewController(vc, animated: true)
+//                cell3.collectionViewTestThird.delegate = self
+//                cell3.collectionViewTestThird.dataSource = self
             }
         }
     }

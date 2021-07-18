@@ -23,6 +23,6 @@ class TestDetailViewController: UIViewController {
         testCollectionView.dataSource = self
         testCollectionView.delegate = self
         testCollectionView.register(UINib(nibName: "TestCollectionViewCell", bundle: nil), forCellWithReuseIdentifier:"TestCollectionViewCell")
-        title = "Test"
+        title = "Detail List"
     }
 }

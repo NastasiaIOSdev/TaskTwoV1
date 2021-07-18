@@ -8,6 +8,7 @@
 import UIKit
 
 class ThirdCollectionDogViewCell: UICollectionViewCell {
+   
     @IBOutlet weak var imageDogView: UIImageView!
     @IBOutlet weak var breedLabel: UILabel!
     @IBOutlet weak var myView: UIView!

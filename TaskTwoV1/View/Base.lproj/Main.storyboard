@@ -22,15 +22,15 @@
                     <connections>
                         <segue destination="THu-3K-RkM" kind="relationship" relationship="viewControllers" id="HqY-2P-lyh"/>
                         <segue destination="wZR-eg-RsW" kind="relationship" relationship="viewControllers" id="74P-NO-6tW"/>
-                        <segue destination="3K8-jF-Qah" kind="relationship" relationship="viewControllers" id="m3D-uH-k6N"/>
-                        <segue destination="IOw-wZ-Pda" kind="relationship" relationship="viewControllers" id="FF4-W6-Tju"/>
+                        <segue destination="99c-qs-JAR" kind="relationship" relationship="viewControllers" id="KJM-0y-uNd"/>
+                        <segue destination="IOw-wZ-Pda" kind="relationship" relationship="viewControllers" id="A4k-gm-xDm"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C9A-Yu-Tly" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-686" y="-188"/>
         </scene>
-        <!-- -->
+        <!-- Star Wars-->
         <scene sceneID="ZBT-oF-0ew">
             <objects>
                 <viewController id="HQM-TI-MAe" customClass="SearchPersonViewController" customModule="TaskTwoV1" customModuleProvider="target" sceneMemberID="viewController">
@@ -130,7 +130,7 @@
                             <constraint firstItem="qBi-lD-6ZZ" firstAttribute="trailing" secondItem="YsM-yW-Rzv" secondAttribute="trailing" id="zek-Ce-xky"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title=" " id="abx-0V-urT">
+                    <navigationItem key="navigationItem" title=" Star Wars" id="abx-0V-urT">
                         <barButtonItem key="backBarButtonItem" title=" " id="SDF-lA-tq1"/>
                     </navigationItem>
                     <connections>
@@ -139,7 +139,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T7y-ne-iYj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1037.68115942029" y="-771.42857142857144"/>
+            <point key="canvasLocation" x="1038" y="-771"/>
         </scene>
         <!--Main Dogs Breeds View Controller-->
         <scene sceneID="e3E-J3-gVk">
@@ -168,23 +168,23 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="2fH-8i-kix" id="n8Q-nX-Ndk"/>
-                        <segue destination="SWN-5b-69l" kind="show" id="Phr-4f-LCR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v6j-Fa-mwq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1038" y="710"/>
+            <point key="canvasLocation" x="1038" y="619"/>
         </scene>
         <!--TEST-->
         <scene sceneID="dsV-YJ-w66">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="64E-RV-p34" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="TestDetailViewController" id="SWN-5b-69l" customClass="TestDetailViewController" customModule="TaskTwoV1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ImK-Qm-mt4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4lf-Z4-fHm">
-                                <rect key="frame" x="10" y="150" width="394" height="653"/>
+                                <rect key="frame" x="10" y="98" width="394" height="705"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="2" minimumInteritemSpacing="0.0" id="8rg-b5-6Z2">
                                     <size key="itemSize" width="128" height="128"/>
@@ -221,20 +221,20 @@
                         <segue destination="tIY-JH-uQO" kind="show" id="ck8-Db-hzB"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="64E-RV-p34" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1767" y="710"/>
+            <point key="canvasLocation" x="1787" y="-64"/>
         </scene>
         <!--Fullscreen View Controller-->
         <scene sceneID="Nw8-kK-eeE">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZkR-wn-gAn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="FullscreenViewController" id="tIY-JH-uQO" customClass="FullscreenViewController" customModule="TaskTwoV1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GOZ-yz-FwU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="5qY-3X-Dg8">
-                                <rect key="frame" x="0.0" y="140" width="414" height="673"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Bak-6L-gao">
                                     <size key="itemSize" width="128" height="128"/>
@@ -268,9 +268,8 @@
                         <outlet property="collectionView" destination="5qY-3X-Dg8" id="H1T-ex-Ch9"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ZkR-wn-gAn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2491" y="710"/>
+            <point key="canvasLocation" x="2564" y="-64"/>
         </scene>
         <!--Cats Breeds-->
         <scene sceneID="ZXZ-sK-KQR">
@@ -280,7 +279,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" pagingEnabled="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="84V-za-Wtt">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="84V-za-Wtt">
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
@@ -313,7 +312,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l1e-m1-hAo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1037.68115942029" y="-1556.25"/>
+            <point key="canvasLocation" x="1038" y="-1453"/>
         </scene>
         <!--Detail Page View Controller-->
         <scene sceneID="qSm-lw-eAa">
@@ -396,7 +395,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M4h-3F-6Qh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1819" y="-771"/>
+            <point key="canvasLocation" x="1788" y="-771"/>
         </scene>
         <!--Star Wars-->
         <scene sceneID="czd-CB-69A">
@@ -407,9 +406,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="WKb-QA-dXb">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -437,7 +434,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z4m-Tl-Thh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="277" y="710"/>
+            <point key="canvasLocation" x="277" y="620"/>
         </scene>
         <!-- -->
         <scene sceneID="7mm-i4-bG4">
@@ -448,7 +445,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="6eh-u7-lSE">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="760"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="61P-Bv-1ou">
                                     <size key="itemSize" width="128" height="128"/>
@@ -474,7 +471,7 @@
                             <constraint firstItem="6eh-u7-lSE" firstAttribute="trailing" secondItem="9Ae-IF-tsB" secondAttribute="trailing" id="JDQ-fg-m1f"/>
                             <constraint firstItem="6eh-u7-lSE" firstAttribute="top" secondItem="9Ae-IF-tsB" secondAttribute="top" id="c0f-Rl-hHP"/>
                             <constraint firstItem="6eh-u7-lSE" firstAttribute="leading" secondItem="9Ae-IF-tsB" secondAttribute="leading" id="nux-7O-LDg"/>
-                            <constraint firstAttribute="bottom" secondItem="6eh-u7-lSE" secondAttribute="bottom" constant="83" id="xJT-eU-jdw"/>
+                            <constraint firstAttribute="bottom" secondItem="6eh-u7-lSE" secondAttribute="bottom" constant="48" id="xJT-eU-jdw"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title=" " id="gna-kB-BAx">
@@ -482,62 +479,12 @@
                     </navigationItem>
                     <connections>
                         <outlet property="collectionTestView" destination="6eh-u7-lSE" id="jNF-zw-msQ"/>
-                        <segue destination="RJb-tk-4fN" kind="show" identifier="Detail" id="wcF-oV-KfY"/>
+                        <segue destination="SWN-5b-69l" kind="show" id="dvP-Uj-Bas"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="guw-uX-lzv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1038" y="-64"/>
-        </scene>
-        <!--Detail about breed-->
-        <scene sceneID="gHb-d7-sMb">
-            <objects>
-                <viewController id="RJb-tk-4fN" customClass="DelailCollectionViewController" customModule="TaskTwoV1" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Vow-FO-Z3l">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fyf-SF-QGl">
-                                <rect key="frame" x="10" y="88" width="394" height="725"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="avj-aU-DeH">
-                                    <size key="itemSize" width="191" height="185"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="f7o-fH-gEb">
-                                        <rect key="frame" x="0.0" y="0.0" width="191" height="185"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="sC1-lQ-MyU">
-                                            <rect key="frame" x="0.0" y="0.0" width="191" height="185"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </collectionViewCellContentView>
-                                        <size key="customSize" width="191" height="185"/>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="jOS-ll-uje"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="fyf-SF-QGl" firstAttribute="centerX" secondItem="Vow-FO-Z3l" secondAttribute="centerX" id="54r-gC-5fa"/>
-                            <constraint firstItem="fyf-SF-QGl" firstAttribute="leading" secondItem="jOS-ll-uje" secondAttribute="leading" constant="10" id="UTr-5D-7pm"/>
-                            <constraint firstItem="fyf-SF-QGl" firstAttribute="top" secondItem="jOS-ll-uje" secondAttribute="top" id="gvt-wi-tZZ"/>
-                            <constraint firstItem="fyf-SF-QGl" firstAttribute="bottom" secondItem="jOS-ll-uje" secondAttribute="bottom" id="vlC-jn-PMm"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Detail about breed" id="CHk-9y-vob">
-                        <barButtonItem key="backBarButtonItem" title=" " id="HLb-bY-fRH"/>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="collectionDetailView" destination="fyf-SF-QGl" id="11q-JT-2ab"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="CS5-zL-dgh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1768" y="-64"/>
+            <point key="canvasLocation" x="1037.68115942029" y="-64.285714285714278"/>
         </scene>
         <!--Cats-->
         <scene sceneID="5wG-Qb-71s">
@@ -545,8 +492,8 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="THu-3K-RkM" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Cats" image="note.text" catalog="system" id="Fc8-Cp-df2"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="YKf-Dj-tM5">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="YKf-Dj-tM5">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -556,25 +503,25 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Eu-9i-IFQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="277" y="-1556"/>
+            <point key="canvasLocation" x="277" y="-1453"/>
         </scene>
         <!--All Breeds-->
-        <scene sceneID="2z4-B4-0Wu">
+        <scene sceneID="7Oa-Te-3CI">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3K8-jF-Qah" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="All Breeds" image="list.bullet.rectangle" catalog="system" id="rVK-U0-ccP"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="99c-qs-JAR" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="All Breeds" image="list.bullet.rectangle" catalog="system" id="e9T-OK-akY"/>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="ccB-N8-l0B"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="XUL-AY-HKa">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="VX9-1x-RwQ">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="ii6-JF-Gsv" kind="relationship" relationship="rootViewController" id="qc7-Di-tF2"/>
+                        <segue destination="ii6-JF-Gsv" kind="relationship" relationship="rootViewController" id="j9V-6M-HLw"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="IUf-P8-ZpA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3DP-Mx-CQE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="277" y="-64"/>
         </scene>
