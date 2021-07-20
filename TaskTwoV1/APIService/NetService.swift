@@ -111,4 +111,20 @@ final class APIService {
             }
         }.resume()
     }
+    public func getPhotoHound(breeds: String, completed: @escaping (Result<ImageHound, Error>) -> Void) {
+        let urlString = "https://dog.ceo/api/breed/hound-&q=\(breeds)"
+        guard let url = URL(string: urlString) else {return}
+        let task = URLSession.shared.dataTask(with: url) { data, _, error in
+            if let error = error {
+                completed(.failure(error))
+            } else if let data = data {
+                do {
+                    let result = try JSONDecoder().decode(ImageHound.self, from: data)
+                    completed(.success(result))
+                } catch {
+                    completed(.failure(error))
+                }
+            }
+        }.resume()
+    }
 }

@@ -45,6 +45,7 @@
 		2E4E2BDA26A4A1E200B2D89F /* InsideSecondCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4E2BD826A4A1E200B2D89F /* InsideSecondCollectionViewCell.swift */; };
 		2E4E2BDB26A4A1E200B2D89F /* InsideSecondCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E4E2BD926A4A1E200B2D89F /* InsideSecondCollectionViewCell.xib */; };
 		2E4E2BDE26A4A2A100B2D89F /* SecondCollectionViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4E2BDD26A4A2A100B2D89F /* SecondCollectionViewCell+Extensions.swift */; };
+		2E4E2BE326A55CF100B2D89F /* ImageHound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4E2BE226A55CF100B2D89F /* ImageHound.swift */; };
 		2E79B4A62690F35800C357C3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E79B4A52690F35800C357C3 /* Constants.swift */; };
 		2E79B4AA2690F45100C357C3 /* ProtocolNetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E79B4A92690F45100C357C3 /* ProtocolNetService.swift */; };
 		2E7A6231269B08F300D54D10 /* MainUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7A6230269B08F300D54D10 /* MainUIViewController.swift */; };
@@ -123,6 +124,7 @@
 		2E4E2BD826A4A1E200B2D89F /* InsideSecondCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsideSecondCollectionViewCell.swift; sourceTree = "<group>"; };
 		2E4E2BD926A4A1E200B2D89F /* InsideSecondCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InsideSecondCollectionViewCell.xib; sourceTree = "<group>"; };
 		2E4E2BDD26A4A2A100B2D89F /* SecondCollectionViewCell+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SecondCollectionViewCell+Extensions.swift"; sourceTree = "<group>"; };
+		2E4E2BE226A55CF100B2D89F /* ImageHound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHound.swift; sourceTree = "<group>"; };
 		2E79B4A52690F35800C357C3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2E79B4A92690F45100C357C3 /* ProtocolNetService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolNetService.swift; sourceTree = "<group>"; };
 		2E7A6230269B08F300D54D10 /* MainUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainUIViewController.swift; sourceTree = "<group>"; };
@@ -205,6 +207,8 @@
 		2E23CDAD26A196F6003B92A8 /* Xib */ = {
 			isa = PBXGroup;
 			children = (
+				2E23CDDC26A20FFF003B92A8 /* TestCollectionViewCell.xib */,
+				2EC77CAE26A339A8007C0A7D /* FullscreenCollectionViewCell.xib */,
 				2E23CDCF26A1DB01003B92A8 /* DetailCollectionViewCell.xib */,
 				2E23CDA326A1950E003B92A8 /* FirstCollectionViewCell.xib */,
 				2E23CDA926A19606003B92A8 /* InsideFirstCollectionViewCell.xib */,
@@ -385,6 +389,7 @@
 			children = (
 				2ED290962694ED0C00B7630B /* Breed.swift */,
 				2ED290992694ED1C00B7630B /* Image.swift */,
+				2E4E2BE226A55CF100B2D89F /* ImageHound.swift */,
 			);
 			path = DogsModel;
 			sourceTree = "<group>";
@@ -393,9 +398,7 @@
 			isa = PBXGroup;
 			children = (
 				2E23CDDB26A20FFF003B92A8 /* TestCollectionViewCell.swift */,
-				2E23CDDC26A20FFF003B92A8 /* TestCollectionViewCell.xib */,
 				2EC77CAD26A339A8007C0A7D /* FullscreenCollectionViewCell.swift */,
-				2EC77CAE26A339A8007C0A7D /* FullscreenCollectionViewCell.xib */,
 			);
 			path = DetailCells;
 			sourceTree = "<group>";
@@ -647,6 +650,7 @@
 				2E4E2BDA26A4A1E200B2D89F /* InsideSecondCollectionViewCell.swift in Sources */,
 				2ED290842694EB2C00B7630B /* MainDogsBreedsViewController.swift in Sources */,
 				2EC77CF826A40B19007C0A7D /* FirstCollectionViewCell+Extensions.swift in Sources */,
+				2E4E2BE326A55CF100B2D89F /* ImageHound.swift in Sources */,
 				2ED290882694EB6600B7630B /* FirstDogsTableViewCell.swift in Sources */,
 				2E23CDBD26A1A065003B92A8 /* TabbarViewController.swift in Sources */,
 				2EC77CE526A40373007C0A7D /* LastUITableViewCell+Extension.swift in Sources */,

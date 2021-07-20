@@ -41,6 +41,24 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qBi-lD-6ZZ">
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="011-am-iAc">
+                                    <rect key="frame" x="0.0" y="189" width="414" height="49"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tipe in the search bar name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kv3-IR-blZ">
+                                            <rect key="frame" x="20" y="8" width="374" height="20.5"/>
+                                            <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="15"/>
+                                            <color key="textColor" red="0.57874745130000005" green="0.32151988149999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstItem="Kv3-IR-blZ" firstAttribute="centerX" secondItem="011-am-iAc" secondAttribute="centerX" id="TT4-BJ-bYa"/>
+                                        <constraint firstItem="Kv3-IR-blZ" firstAttribute="top" secondItem="011-am-iAc" secondAttribute="topMargin" id="ejB-Q2-XRC"/>
+                                        <constraint firstItem="Kv3-IR-blZ" firstAttribute="leading" secondItem="011-am-iAc" secondAttribute="leading" constant="20" id="vvQ-GR-pdJ"/>
+                                    </constraints>
+                                </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PersonTableViewCell" rowHeight="133" id="hkc-13-svB" customClass="PersonTableViewCell" customModule="TaskTwoV1" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="133"/>
@@ -139,7 +157,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T7y-ne-iYj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1038" y="-771"/>
+            <point key="canvasLocation" x="1037.68115942029" y="-771.42857142857144"/>
         </scene>
         <!--Main Dogs Breeds View Controller-->
         <scene sceneID="e3E-J3-gVk">

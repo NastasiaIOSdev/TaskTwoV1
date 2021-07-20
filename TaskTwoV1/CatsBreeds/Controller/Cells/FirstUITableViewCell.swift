@@ -19,6 +19,7 @@ class FirstUITableViewCell: UITableViewCell {
     @IBOutlet weak var aboutBreedLabel: UILabel!
     @IBOutlet weak var myView: UIView!
     @IBOutlet weak var shadowView: UIView!
+    
     static func nib() -> UINib {
         return UINib(nibName: "FirstUITableViewCell", bundle: nil)
     }

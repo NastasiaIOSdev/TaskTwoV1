@@ -9,6 +9,16 @@ import UIKit
 
 extension TestViewController:  UICollectionViewDelegate {
     
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        cell.alpha = 0;
+        let transform = CATransform3DTranslate(CATransform3DIdentity, -250, 20, 0)
+        cell.layer.transform = transform
+        
+        UIView.animate(withDuration: 0.9){
+            cell.alpha = 1;
+            cell.layer.transform = CATransform3DIdentity
+        }
+    }
 }
 
 extension TestViewController:  UICollectionViewDataSource {

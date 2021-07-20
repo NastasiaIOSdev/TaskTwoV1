@@ -25,6 +25,10 @@ class SearchPersonViewController: UIViewController {
         secondTableView.dataSource = self
         setupColorTabbar()
         createSearchBar()
+        searchVC.searchBar.placeholder = "Search persone..."
+//        searchVC.searchBar.searchTextField.tintColor = UIColor.red
+        searchVC.searchBar.tintColor = UIColor.brown
+        
     }
     
     func createSearchBar() {
