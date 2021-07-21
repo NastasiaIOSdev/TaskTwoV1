@@ -15,16 +15,19 @@ class TestViewController: UIViewController{
     
     private var breed = [Breed]()
     var viewModels = [CellViewModel]()
+    var breeds: Breed2?
+    var images: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionTestView.delegate = self
         collectionTestView.dataSource = self
         self.collectionTestView.register(UINib(nibName: "FirstCollectionViewCell", bundle: nil), forCellWithReuseIdentifier:"FirstCollectionViewCell")
-        self.collectionTestView.register(UINib(nibName: "SecondCollectionViewCell", bundle: nil), forCellWithReuseIdentifier:"SecondCollectionViewCell")
+        self.collectionTestView.register(UINib(nibName: "FirstDogCollectionViewCell", bundle: nil), forCellWithReuseIdentifier:"FirstDogCollectionViewCell")
         self.collectionTestView.register(UINib(nibName: "ThirdCollectionViewCell", bundle: nil), forCellWithReuseIdentifier:"ThirdCollectionViewCell")
         title = "List All Breed"
         allBreed()
+        fillArrays()
     }
     
     func allBreed() {
@@ -48,6 +51,22 @@ class TestViewController: UIViewController{
             }
         }
     }
+  
+    func fillArrays() {
+        APIService.shared.getBreed2 { [weak self] result in
+            guard let strongSelf = self else { return }
+            switch result {
+            case.success(let breed):
+                strongSelf.breeds = breed
+                DispatchQueue.main.async {
+                    strongSelf.collectionTestView.reloadData()
+                }
+            case.failure(let error):
+                print(error)
+            }
+        }
+    }
+
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()

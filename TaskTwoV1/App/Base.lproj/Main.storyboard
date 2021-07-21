@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wBr-HJ-ZLI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RgQ-SY-dr0">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -10,6 +10,46 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Launch View Controller-->
+        <scene sceneID="WGj-VZ-6T2">
+            <objects>
+                <viewController id="RgQ-SY-dr0" customClass="LaunchViewController" customModule="TaskTwoV1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mdi-FZ-1GV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gif.gif" translatesAutoresizingMaskIntoConstraints="NO" id="ybU-yv-Hp0">
+                                <rect key="frame" x="0.0" y="264" width="414" height="368"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Custom cells &amp; API" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cPb-on-wpc">
+                                <rect key="frame" x="95" y="666" width="224.5" height="36"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="26"/>
+                                <color key="textColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="c6d-M1-pqV"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ybU-yv-Hp0" firstAttribute="leading" secondItem="c6d-M1-pqV" secondAttribute="leading" id="3aS-VB-noQ"/>
+                            <constraint firstItem="ybU-yv-Hp0" firstAttribute="centerY" secondItem="mdi-FZ-1GV" secondAttribute="centerY" id="5dZ-XN-3KY"/>
+                            <constraint firstItem="ybU-yv-Hp0" firstAttribute="top" secondItem="c6d-M1-pqV" secondAttribute="top" constant="220" id="H6J-sk-UA7"/>
+                            <constraint firstItem="c6d-M1-pqV" firstAttribute="trailing" secondItem="ybU-yv-Hp0" secondAttribute="trailing" id="JxM-yL-YHt"/>
+                            <constraint firstItem="cPb-on-wpc" firstAttribute="centerX" secondItem="mdi-FZ-1GV" secondAttribute="centerX" id="Zw3-c8-s4D"/>
+                            <constraint firstItem="cPb-on-wpc" firstAttribute="top" secondItem="ybU-yv-Hp0" secondAttribute="bottom" constant="34" id="fTv-SX-30B"/>
+                            <constraint firstItem="ybU-yv-Hp0" firstAttribute="centerX" secondItem="mdi-FZ-1GV" secondAttribute="centerX" id="qDk-Rg-BoO"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bg" destination="ybU-yv-Hp0" id="Mh8-bg-Ldd"/>
+                        <outlet property="label" destination="cPb-on-wpc" id="Ggy-4I-35t"/>
+                        <segue destination="wBr-HJ-ZLI" kind="presentation" identifier="Home" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="gGp-o2-c14"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ptA-6w-ixR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1420.289855072464" y="-188.16964285714286"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="f46-UH-Cua">
             <objects>
@@ -23,7 +63,6 @@
                         <segue destination="THu-3K-RkM" kind="relationship" relationship="viewControllers" id="HqY-2P-lyh"/>
                         <segue destination="wZR-eg-RsW" kind="relationship" relationship="viewControllers" id="74P-NO-6tW"/>
                         <segue destination="99c-qs-JAR" kind="relationship" relationship="viewControllers" id="KJM-0y-uNd"/>
-                        <segue destination="IOw-wZ-Pda" kind="relationship" relationship="viewControllers" id="A4k-gm-xDm"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C9A-Yu-Tly" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -158,39 +197,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T7y-ne-iYj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1037.68115942029" y="-771.42857142857144"/>
-        </scene>
-        <!--Main Dogs Breeds View Controller-->
-        <scene sceneID="e3E-J3-gVk">
-            <objects>
-                <viewController id="MQl-63-cjL" customClass="MainDogsBreedsViewController" customModule="TaskTwoV1" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Bgt-gt-SF3">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2fH-8i-kix">
-                                <rect key="frame" x="0.0" y="140" width="414" height="756"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </tableView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="q9Q-nU-cVt"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="2fH-8i-kix" firstAttribute="bottom" secondItem="q9Q-nU-cVt" secondAttribute="bottom" constant="83" id="90V-Ab-NZn"/>
-                            <constraint firstItem="2fH-8i-kix" firstAttribute="trailing" secondItem="q9Q-nU-cVt" secondAttribute="trailing" id="KXt-jT-kKw"/>
-                            <constraint firstItem="2fH-8i-kix" firstAttribute="top" secondItem="q9Q-nU-cVt" secondAttribute="top" id="eYx-AW-iSp"/>
-                            <constraint firstItem="2fH-8i-kix" firstAttribute="leading" secondItem="q9Q-nU-cVt" secondAttribute="leading" id="nFJ-fg-OD6"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="ZNZ-P8-gi1">
-                        <barButtonItem key="backBarButtonItem" title=" " id="Oyz-wm-hqB"/>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="tableView" destination="2fH-8i-kix" id="n8Q-nX-Ndk"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="v6j-Fa-mwq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1038" y="619"/>
         </scene>
         <!--TEST-->
         <scene sceneID="dsV-YJ-w66">
@@ -435,25 +441,6 @@
             </objects>
             <point key="canvasLocation" x="277" y="-771"/>
         </scene>
-        <!--Dogs-->
-        <scene sceneID="ZWN-9W-4P8">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="IOw-wZ-Pda" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Dogs" image="book" catalog="system" id="0Ii-Pl-PWo"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="sVI-sb-rLl">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="MQl-63-cjL" kind="relationship" relationship="rootViewController" id="lTd-TU-RQJ"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="z4m-Tl-Thh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="277" y="620"/>
-        </scene>
         <!-- -->
         <scene sceneID="7mm-i4-bG4">
             <objects>
@@ -545,7 +532,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="book" catalog="system" width="128" height="102"/>
+        <image name="gif.gif" width="2048" height="2048"/>
         <image name="list.bullet.rectangle" catalog="system" width="128" height="93"/>
         <image name="note.text" catalog="system" width="128" height="106"/>
         <image name="person.3" catalog="system" width="128" height="62"/>

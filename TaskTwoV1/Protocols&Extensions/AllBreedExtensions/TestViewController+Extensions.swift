@@ -62,18 +62,36 @@ extension TestViewController:  UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         if indexPath.row % 3 == 0 {
             if let cell = collectionTestView.dequeueReusableCell(withReuseIdentifier: "FirstCollectionViewCell", for: indexPath) as? FirstCollectionViewCell {
                 cell.configure(with: viewModels)
                 return cell
             }
+            
         } else if (indexPath.row - 1) % 3 == 0 || indexPath.row == 1 {
-            if let cell2 = collectionTestView.dequeueReusableCell(
-                withReuseIdentifier: "SecondCollectionViewCell", for: indexPath) as? SecondCollectionViewCell {
-                cell2.configure(with: viewModels)
-                return cell2
+            guard let breed = self.breeds?.message[indexPath.row].capitalized else {return UICollectionViewCell.init()}
+
+            guard let cell2 = collectionTestView.dequeueReusableCell(
+                    withReuseIdentifier: "FirstDogCollectionViewCell", for: indexPath) as? FirstDogCollectionViewCell else { fatalError()
             }
-        } else if (indexPath.row - 1) % 2 == 0 || (indexPath.row - 1) % 2 == 1 || indexPath.row == 2 {
+            for (index, image) in self.breeds!.message.enumerated() {
+                if index == indexPath.row {
+                    APIService.shared.getPhoto(breeds: image) { result in
+                        switch result {
+                        case .success(let img):
+                            DispatchQueue.main.async {
+                                cell2.setBreed(breed: breed, imageURL: img.message)
+                            }
+                        case .failure(let error):
+                            print(error.localizedDescription)
+                        }
+                    }
+                }
+            }
+            return cell2
+            }
+         else if (indexPath.row - 1) % 2 == 0 || (indexPath.row - 1) % 2 == 1 || indexPath.row == 2 {
             if let cell3 = collectionTestView.dequeueReusableCell(
                 withReuseIdentifier: "ThirdCollectionViewCell", for: indexPath) as? ThirdCollectionViewCell {
                 cell3.configure(with: viewModels)
@@ -82,8 +100,8 @@ extension TestViewController:  UICollectionViewDataSource {
         }
         return UICollectionViewCell()
     }
-}
 
+}
 extension TestViewController:  UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
