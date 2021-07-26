@@ -8,7 +8,7 @@
 import UIKit
 
 extension FirstCollectionViewCell: UICollectionViewDelegateFlowLayout {
-    
+
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -18,16 +18,16 @@ extension FirstCollectionViewCell: UICollectionViewDelegateFlowLayout {
 
 extension FirstCollectionViewCell: UICollectionViewDelegate,
                                    UICollectionViewDataSource {
-    
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return models.count
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let vc = TestDetailViewController()
-        vc.modalPresentationStyle = .overFullScreen
-        vc.viewModels = models
-        vc.indexPath = indexPath
+        let viewC = TestDetailViewController()
+        viewC.modalPresentationStyle = .overFullScreen
+        viewC.viewModels = models
+        viewC.indexPath = indexPath
     }
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

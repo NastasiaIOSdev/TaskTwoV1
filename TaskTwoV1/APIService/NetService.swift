@@ -93,7 +93,8 @@ final class APIService {
                     completed(.failure(error))
                 }
             }
-        }.resume()
+        }
+        task.resume()
     }
     public func getPhoto(breeds: String, completed: @escaping (Result<Image2, Error>) -> Void) {
         let urlString = "https://dog.ceo/api/breed/\(breeds)/images/random"
@@ -109,7 +110,8 @@ final class APIService {
                     completed(.failure(error))
                 }
             }
-        }.resume()
+        }
+        task.resume()
     }
     public func getPhotoHound(breeds: String, completed: @escaping (Result<ImageHound, Error>) -> Void) {
         let urlString = "https://dog.ceo/api/breed/hound-&q=\(breeds)"
@@ -125,6 +127,7 @@ final class APIService {
                     completed(.failure(error))
                 }
             }
-        }.resume()
+        }
+        task.resume()
     }
 }

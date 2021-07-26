@@ -10,10 +10,10 @@ import UIKit
 class FullscreenCollectionViewCell: UICollectionViewCell, UIScrollViewDelegate {
 
     static let identifier = "FullscreenCollectionViewCell"
-    
+
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var scrollView: UIScrollView!
-    
+
     static func nib() -> UINib {
         return UINib(nibName: "FullscreenCollectionViewCell", bundle: nil)
     }
@@ -23,14 +23,14 @@ class FullscreenCollectionViewCell: UICollectionViewCell, UIScrollViewDelegate {
         self.scrollView.minimumZoomScale = 0.5
         self.scrollView.maximumZoomScale = 3.5
     }
-    
+
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
      return imageView
     }
     func scrollViewDidEndZooming(_ scrollView: UIScrollView, with view: UIView?, atScale scale: CGFloat) {
         scrollView.zoomScale = 1.0
     }
-    
+
     func configure(with viewModel: CellViewModel) {
         if let data = viewModel.imageData {
             imageView.image = UIImage(data: data)

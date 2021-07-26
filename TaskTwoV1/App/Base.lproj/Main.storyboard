@@ -43,7 +43,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="bg" destination="ybU-yv-Hp0" id="Mh8-bg-Ldd"/>
+                        <outlet property="backG" destination="ybU-yv-Hp0" id="eGc-lN-m6C"/>
                         <outlet property="label" destination="cPb-on-wpc" id="Ggy-4I-35t"/>
                         <segue destination="wBr-HJ-ZLI" kind="presentation" identifier="Home" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="gGp-o2-c14"/>
                     </connections>
@@ -218,7 +218,7 @@
                                     <inset key="sectionInset" minX="2" minY="2" maxX="2" maxY="2"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="OzV-4V-Siu">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="OzV-4V-Siu">
                                         <rect key="frame" x="2" y="2" width="128" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="0Tz-GY-z9n">
@@ -243,7 +243,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="testCollectionView" destination="4lf-Z4-fHm" id="VLR-ui-yfo"/>
-                        <segue destination="tIY-JH-uQO" kind="show" id="ck8-Db-hzB"/>
+                        <segue destination="tIY-JH-uQO" kind="show" identifier="Detail" id="ck8-Db-hzB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="64E-RV-p34" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -268,7 +268,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="dfL-4w-qvL">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="dfL-4w-qvL">
                                         <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="GSe-df-TKb">
@@ -309,7 +309,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="buG-rq-hre">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="buG-rq-hre">
                                         <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="buG-rq-hre" id="QbN-wL-hu5">
@@ -461,7 +461,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="r37-Xe-89C">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="r37-Xe-89C">
                                         <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="L7I-T2-DMF">
@@ -486,7 +486,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="collectionTestView" destination="6eh-u7-lSE" id="jNF-zw-msQ"/>
-                        <segue destination="SWN-5b-69l" kind="show" id="dvP-Uj-Bas"/>
+                        <segue destination="SWN-5b-69l" kind="show" identifier="Detail" id="dvP-Uj-Bas"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="guw-uX-lzv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -497,7 +497,7 @@
         <scene sceneID="5wG-Qb-71s">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="THu-3K-RkM" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Cats" image="note.text" catalog="system" id="Fc8-Cp-df2"/>
+                    <tabBarItem key="tabBarItem" title="Cats" image="archivebox" catalog="system" id="Fc8-Cp-df2"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="YKf-Dj-tM5">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -516,7 +516,7 @@
         <scene sceneID="7Oa-Te-3CI">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="99c-qs-JAR" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="All Breeds" image="list.bullet.rectangle" catalog="system" id="e9T-OK-akY"/>
+                    <tabBarItem key="tabBarItem" title="All Breeds" image="tray.full" catalog="system" id="e9T-OK-akY"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="VX9-1x-RwQ">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -534,12 +534,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="archivebox" catalog="system" width="128" height="106"/>
         <image name="gif.gif" width="2048" height="2048"/>
-        <image name="list.bullet.rectangle" catalog="system" width="128" height="93"/>
-        <image name="note.text" catalog="system" width="128" height="106"/>
         <image name="person.3" catalog="system" width="128" height="62"/>
         <image name="right" width="48" height="48"/>
         <image name="simonCat" width="1522" height="1165"/>
+        <image name="tray.full" catalog="system" width="128" height="88"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

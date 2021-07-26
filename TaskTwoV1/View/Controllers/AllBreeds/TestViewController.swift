@@ -7,29 +7,35 @@
 
 import UIKit
 
-class TestViewController: UIViewController{
+class TestViewController: UIViewController {
 
     // MARK: - IBOUtlets
-    
+
     @IBOutlet weak var collectionTestView: UICollectionView!
-    
+
     private var breed = [Breed]()
     var viewModels = [CellViewModel]()
     var breeds: Breed2?
     var images: [String] = []
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionTestView.delegate = self
         collectionTestView.dataSource = self
-        self.collectionTestView.register(UINib(nibName: "FirstCollectionViewCell", bundle: nil), forCellWithReuseIdentifier:"FirstCollectionViewCell")
-        self.collectionTestView.register(UINib(nibName: "FirstDogCollectionViewCell", bundle: nil), forCellWithReuseIdentifier:"FirstDogCollectionViewCell")
-        self.collectionTestView.register(UINib(nibName: "ThirdCollectionViewCell", bundle: nil), forCellWithReuseIdentifier:"ThirdCollectionViewCell")
+        self.collectionTestView.register(UINib(nibName: "FirstCollectionViewCell",
+                                               bundle: nil),
+                                               forCellWithReuseIdentifier: "FirstCollectionViewCell")
+        self.collectionTestView.register(UINib(nibName: "FirstDogCollectionViewCell",
+                                               bundle: nil),
+                                               forCellWithReuseIdentifier: "FirstDogCollectionViewCell")
+        self.collectionTestView.register(UINib(nibName: "ThirdCollectionViewCell",
+                                               bundle: nil),
+                                               forCellWithReuseIdentifier: "ThirdCollectionViewCell")
         title = "List All Breed"
         allBreed()
         fillArrays()
     }
-    
+
     func allBreed() {
         APIService.shared.getBreed { [weak self] result in
             switch result {
@@ -51,7 +57,7 @@ class TestViewController: UIViewController{
             }
         }
     }
-  
+
     func fillArrays() {
         APIService.shared.getBreed2 { [weak self] result in
             guard let strongSelf = self else { return }
@@ -67,7 +73,6 @@ class TestViewController: UIViewController{
         }
     }
 
-    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
     }

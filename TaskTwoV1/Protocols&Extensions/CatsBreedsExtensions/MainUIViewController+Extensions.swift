@@ -8,17 +8,17 @@
 import UIKit
 
 extension MainUIViewController: UITableViewDataSource, UITableViewDelegate {
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         viewModels.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row % 3 == 0 {
             if let cell = tableView.dequeueReusableCell(
                 withIdentifier: "FirstUITableViewCell") as? FirstUITableViewCell {
                 cell.configure(with: viewModels[indexPath.row])
-                
+
                 return cell
             }
         } else if (indexPath.row - 1) % 3 == 0 || indexPath.row == 1 {
@@ -34,24 +34,22 @@ extension MainUIViewController: UITableViewDataSource, UITableViewDelegate {
                 return cell3
             }
         }
-        
+
         return UITableViewCell()
     }
-    
+
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        cell.alpha = 0;
+        cell.alpha = 0
         let transform = CATransform3DTranslate(CATransform3DIdentity, -250, 20, 0)
         cell.layer.transform = transform
-        
-        UIView.animate(withDuration: 1.2){
-            cell.alpha = 1;
+
+        UIView.animate(withDuration: 1.2) {
+            cell.alpha = 1
             cell.layer.transform = CATransform3DIdentity
         }
     }
-    
+
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         180.0
     }
 }
-
-

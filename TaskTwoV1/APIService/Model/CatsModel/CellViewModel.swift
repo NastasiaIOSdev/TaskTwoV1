@@ -15,13 +15,13 @@ class CellViewModel {
     let imageUrl: URL?
     var imageData: Data?
     var imagesArray: [UIImage] = []
-    
+
     init (
         title: String,
         subtitle: String,
         aboutBreed: String,
         imageUrl: URL?
-        
+
     ) {
         self.title = title
         self.subtitle = subtitle

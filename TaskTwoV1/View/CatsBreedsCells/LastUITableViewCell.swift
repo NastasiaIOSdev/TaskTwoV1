@@ -7,8 +7,8 @@
 
 import UIKit
 
-class LastUITableViewCell: UITableViewCell  {
-  
+class LastUITableViewCell: UITableViewCell {
+
     static let identifier = "LastUITableViewCell"
 
      // MARK: - IBOutlets
@@ -36,8 +36,3 @@ class LastUITableViewCell: UITableViewCell  {
          collectionViewSecond.dataSource = self
       }
 }
-
-
-
-     
- 

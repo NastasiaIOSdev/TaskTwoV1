@@ -8,16 +8,16 @@
 import UIKit
 
 class MainUIViewController: UIViewController {
-    
+
     // MARK: - IBOUtlets
-    
+
     @IBOutlet weak var tableViewSecond: UITableView!
-    
+
     private var breed = [Breed]()
     var viewModels = [CellViewModel]()
-    
+
     // MARK: - Life cycles
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tabBarController?.tabBar.tintColor = UIColor(red: 255/255.0, green: 255/255.0, blue: 255/255.0, alpha: 1)
@@ -29,9 +29,9 @@ class MainUIViewController: UIViewController {
         tableViewSecond.dataSource = self
         title = "Cats"
         getAllBreed()
-        
+
     }
-    
+
     func getAllBreed() {
         APIService.shared.getBreed { [weak self] result in
             switch result {
@@ -44,19 +44,18 @@ class MainUIViewController: UIViewController {
                         imageUrl: URL(string: $0.image?.url ?? "")
                     )
                 })
-                
+
                 DispatchQueue.main.async {
                     self?.tableViewSecond.reloadData()
                 }
-                
+
             case.failure(let error):
                 print(error)
             }
         }
     }
-    
+
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
     }
 }
-

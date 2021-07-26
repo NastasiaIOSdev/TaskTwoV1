@@ -10,11 +10,11 @@ import UIKit
 class LaunchViewController: UIViewController {
 
     @IBOutlet weak var label: UILabel!
-    @IBOutlet weak var bg: UIImageView!
-    
+    @IBOutlet weak var backG: UIImageView!
+
 override func viewDidLoad() {
     super.viewDidLoad()
-    bg.loadGif(name: "gif")
+    backG.loadGif(name: "gif")
 }
 override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
@@ -43,6 +43,5 @@ private func animate() {
 private func home() {
     performSegue(withIdentifier: "Home", sender: nil)
 }
-
 
 }

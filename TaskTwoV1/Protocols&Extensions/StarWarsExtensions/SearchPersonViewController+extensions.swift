@@ -8,12 +8,11 @@
 import UIKit
 
 extension SearchPersonViewController: UITableViewDelegate, UITableViewDataSource {
-    
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         viewModels.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = secondTableView.dequeueReusableCell(
                 withIdentifier: "PersonTableViewCell", for: indexPath) as? PersonTableViewCell else {
@@ -22,17 +21,17 @@ extension SearchPersonViewController: UITableViewDelegate, UITableViewDataSource
         cell.configure(with: viewModels[indexPath.row])
         return cell
     }
-    
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         secondTableView.deselectRow(at: indexPath, animated: true)
     }
-    
+
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         100
     }
 }
 
-extension SearchPersonViewController:  UISearchBarDelegate {
+extension SearchPersonViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let text = searchBar.text, !text.isEmpty else {
             return
@@ -58,13 +57,12 @@ extension SearchPersonViewController:  UISearchBarDelegate {
             }
         }
     }
-    
-    
+
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         guard let text = searchBar.text, !text.isEmpty else {
             return
         }
-        
+
         print(text)
     }
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {

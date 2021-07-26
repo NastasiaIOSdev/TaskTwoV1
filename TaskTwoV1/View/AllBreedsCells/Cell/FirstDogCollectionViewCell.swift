@@ -10,9 +10,9 @@ import UIKit
 class FirstDogCollectionViewCell: UICollectionViewCell {
 
     static let identifier = "FirstDogCollectionViewCell"
-   
+
     // MARK: - IBOUtlets
-   
+
     @IBOutlet weak var imageDogView: UIImageView!
     @IBOutlet weak var breedLabel: UILabel!
     @IBOutlet weak var myView: UIView!
@@ -21,12 +21,11 @@ class FirstDogCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var rightBreedLabel: UILabel!
     @IBOutlet weak var rightMyView: UIView!
     @IBOutlet weak var rightShadowView: UIView!
-    
-   
+
     static func nib() -> UINib {
         return UINib(nibName: "FirstDogCollectionViewCell", bundle: nil)
     }
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         imageDogView.layer.cornerRadius = 9
@@ -44,7 +43,7 @@ class FirstDogCollectionViewCell: UICollectionViewCell {
         shadowView.layer.shadowColor = UIColor.black.cgColor
         shadowView.layer.shadowOpacity = 0.3
         shadowView.layer.shadowOffset = CGSize.zero
-        
+
         rightImageDogView.layer.cornerRadius = 9
         rightMyView.layer.cornerRadius = 9
         rightImageDogView.layer.masksToBounds = true
@@ -54,7 +53,7 @@ class FirstDogCollectionViewCell: UICollectionViewCell {
         rightShadowView.layer.shadowOpacity = 0.3
         rightShadowView.layer.shadowOffset = CGSize.zero
     }
-    
+
     func setBreed(breed: String, imageURL: String) {
         breedLabel.text = breed
         rightBreedLabel.text = breed
@@ -65,13 +64,13 @@ class FirstDogCollectionViewCell: UICollectionViewCell {
             rightImageDogView.downloadedFrom(url: url!)
         }
     }
-   
+
     override func prepareForReuse() {
         super.prepareForReuse()
         imageDogView.image = nil
         breedLabel.text = nil
         rightImageDogView.image = nil
         rightBreedLabel.text = nil
-        
+
     }
 }

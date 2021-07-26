@@ -6,5 +6,6 @@ target 'TaskTwoV1' do
   use_frameworks!
 
   # Pods for TaskTwoV1
+  pod 'SwiftLint'  
   
 end

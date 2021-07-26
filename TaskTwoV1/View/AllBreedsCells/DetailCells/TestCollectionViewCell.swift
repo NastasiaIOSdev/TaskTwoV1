@@ -8,11 +8,11 @@
 import UIKit
 
 class TestCollectionViewCell: UICollectionViewCell {
-    
+
     static let identifier = "TestCollectionViewCell"
-    
+
     @IBOutlet weak var imageView: UIImageView!
-    
+
     static func nib() -> UINib {
         return UINib(nibName: "TestCollectionViewCell", bundle: nil)
     }
@@ -39,6 +39,6 @@ class TestCollectionViewCell: UICollectionViewCell {
     }
     override func prepareForReuse() {
         super.prepareForReuse()
-        imageView.image = nil     
+        imageView.image = nil
     }
 }

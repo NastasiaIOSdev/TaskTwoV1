@@ -8,22 +8,22 @@
 import UIKit
 
 class FirstUITableViewCell: UITableViewCell {
-    
+
     static let identifier = "FirstUITableViewCell"
-    
+
     // MARK: - IBOUtlets
-    
+
     @IBOutlet weak var catUIImageView: UIImageView!
     @IBOutlet weak var breedLabel: UILabel!
     @IBOutlet weak var countryLabel: UILabel!
     @IBOutlet weak var aboutBreedLabel: UILabel!
     @IBOutlet weak var myView: UIView!
     @IBOutlet weak var shadowView: UIView!
-    
+
     static func nib() -> UINib {
         return UINib(nibName: "FirstUITableViewCell", bundle: nil)
     }
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         catUIImageView.layer.cornerRadius = 9
@@ -35,8 +35,7 @@ class FirstUITableViewCell: UITableViewCell {
         shadowView.layer.shadowOpacity = 0.3
         shadowView.layer.shadowOffset = CGSize.zero
     }
-    
-    
+
     func configure(with viewModel: CellViewModel) {
         breedLabel.text = viewModel.title
         countryLabel.text = viewModel.subtitle
@@ -55,11 +54,11 @@ class FirstUITableViewCell: UITableViewCell {
             }.resume()
         }
     }
-    
+
     override func layoutSubviews() {
         super.layoutSubviews()
     }
-    
+
     override func prepareForReuse() {
         super.prepareForReuse()
         catUIImageView.image = nil
@@ -67,7 +66,7 @@ class FirstUITableViewCell: UITableViewCell {
         countryLabel.text = nil
         aboutBreedLabel.text = nil
     }
-    
+
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }

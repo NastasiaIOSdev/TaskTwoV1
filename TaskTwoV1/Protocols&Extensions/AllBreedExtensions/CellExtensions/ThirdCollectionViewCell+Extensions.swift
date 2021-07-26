@@ -9,12 +9,11 @@ import UIKit
 
 extension ThirdCollectionViewCell: UICollectionViewDelegate,
                                    UICollectionViewDataSource, UIScrollViewDelegate {
-    
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 3
     }
-    
-    
+
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionViewTestThird.dequeueReusableCell(
@@ -24,7 +23,7 @@ extension ThirdCollectionViewCell: UICollectionViewDelegate,
         cell.configure(with: models[indexPath.row])
         return cell
     }
-    
+
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
 pageControl?.currentPage = Int(scrollView.contentOffset.x) / Int(scrollView.frame.width)
     }
@@ -35,7 +34,7 @@ pageControl?.currentPage = Int(scrollView.contentOffset.x) / Int(scrollView.fram
 }
 
 extension ThirdCollectionViewCell: UICollectionViewDelegateFlowLayout {
-    
+
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
