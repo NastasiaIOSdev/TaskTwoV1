@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RgQ-SY-dr0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wBr-HJ-ZLI">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -10,48 +10,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Launch View Controller-->
-        <scene sceneID="WGj-VZ-6T2">
-            <objects>
-                <viewController id="RgQ-SY-dr0" customClass="LaunchViewController" customModule="TaskTwoV1" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="mdi-FZ-1GV">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gif.gif" translatesAutoresizingMaskIntoConstraints="NO" id="ybU-yv-Hp0">
-                                <rect key="frame" x="0.0" y="264" width="414" height="368"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="ybU-yv-Hp0" secondAttribute="height" multiplier="9:8" id="SI2-De-ugS"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Custom cells &amp; API" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cPb-on-wpc">
-                                <rect key="frame" x="95" y="666" width="224.5" height="36"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="26"/>
-                                <color key="textColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="c6d-M1-pqV"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="ybU-yv-Hp0" firstAttribute="leading" secondItem="c6d-M1-pqV" secondAttribute="leading" id="3aS-VB-noQ"/>
-                            <constraint firstItem="ybU-yv-Hp0" firstAttribute="centerY" secondItem="mdi-FZ-1GV" secondAttribute="centerY" id="5dZ-XN-3KY"/>
-                            <constraint firstItem="c6d-M1-pqV" firstAttribute="trailing" secondItem="ybU-yv-Hp0" secondAttribute="trailing" id="JxM-yL-YHt"/>
-                            <constraint firstItem="cPb-on-wpc" firstAttribute="centerX" secondItem="mdi-FZ-1GV" secondAttribute="centerX" id="Zw3-c8-s4D"/>
-                            <constraint firstItem="cPb-on-wpc" firstAttribute="top" secondItem="ybU-yv-Hp0" secondAttribute="bottom" constant="34" id="fTv-SX-30B"/>
-                            <constraint firstItem="ybU-yv-Hp0" firstAttribute="centerX" secondItem="mdi-FZ-1GV" secondAttribute="centerX" id="qDk-Rg-BoO"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="backG" destination="ybU-yv-Hp0" id="eGc-lN-m6C"/>
-                        <outlet property="label" destination="cPb-on-wpc" id="Ggy-4I-35t"/>
-                        <segue destination="wBr-HJ-ZLI" kind="presentation" identifier="Home" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="gGp-o2-c14"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ptA-6w-ixR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1420.289855072464" y="-188.16964285714286"/>
-        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="f46-UH-Cua">
             <objects>
@@ -458,7 +416,6 @@
     </scenes>
     <resources>
         <image name="archivebox" catalog="system" width="128" height="106"/>
-        <image name="gif.gif" width="2048" height="2048"/>
         <image name="person.3" catalog="system" width="128" height="62"/>
         <image name="simonCat" width="1522" height="1165"/>
         <image name="tray.full" catalog="system" width="128" height="88"/>
