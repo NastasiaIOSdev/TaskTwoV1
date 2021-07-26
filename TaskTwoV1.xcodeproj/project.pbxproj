@@ -20,6 +20,8 @@
 		2E23CDB826A19ADD003B92A8 /* InsideThirdCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E23CDB626A19ADD003B92A8 /* InsideThirdCollectionViewCell.xib */; };
 		2E23CDBD26A1A065003B92A8 /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E23CDBC26A1A065003B92A8 /* TabbarViewController.swift */; };
 		2E23CDD126A1DB01003B92A8 /* DetailCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E23CDCF26A1DB01003B92A8 /* DetailCollectionViewCell.xib */; };
+		2E28D26226AEF5360062CD22 /* ItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E28D26026AEF5360062CD22 /* ItemCollectionViewCell.swift */; };
+		2E28D26326AEF5360062CD22 /* ItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E28D26126AEF5360062CD22 /* ItemCollectionViewCell.xib */; };
 		2E48E26C2689C59C00271A85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E48E26B2689C59C00271A85 /* AppDelegate.swift */; };
 		2E48E26E2689C59C00271A85 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E48E26D2689C59C00271A85 /* SceneDelegate.swift */; };
 		2E48E2732689C59C00271A85 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E48E2712689C59C00271A85 /* Main.storyboard */; };
@@ -30,7 +32,6 @@
 		2E48E35D268CEF0D00271A85 /* NetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E48E35C268CEF0D00271A85 /* NetService.swift */; };
 		2E48E36F268D0B6100271A85 /* PersonList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E48E36E268D0B5F00271A85 /* PersonList.swift */; };
 		2E48E372268D0B8300271A85 /* SearchPersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E48E371268D0B8300271A85 /* SearchPersonViewController.swift */; };
-		2E48E375268D0BD700271A85 /* PersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E48E374268D0BD700271A85 /* PersonTableViewCell.swift */; };
 		2E48E379268D0C1300271A85 /* DetailPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E48E378268D0C1300271A85 /* DetailPageViewController.swift */; };
 		2E4E2BDA26A4A1E200B2D89F /* InsideSecondCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4E2BD826A4A1E200B2D89F /* InsideSecondCollectionViewCell.swift */; };
 		2E4E2BDB26A4A1E200B2D89F /* InsideSecondCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E4E2BD926A4A1E200B2D89F /* InsideSecondCollectionViewCell.xib */; };
@@ -90,6 +91,8 @@
 		2E23CDD726A20D8D003B92A8 /* TestDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDetailViewController.swift; sourceTree = "<group>"; };
 		2E23CDDB26A20FFF003B92A8 /* TestCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCollectionViewCell.swift; sourceTree = "<group>"; };
 		2E23CDDC26A20FFF003B92A8 /* TestCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestCollectionViewCell.xib; sourceTree = "<group>"; };
+		2E28D26026AEF5360062CD22 /* ItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCollectionViewCell.swift; sourceTree = "<group>"; };
+		2E28D26126AEF5360062CD22 /* ItemCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemCollectionViewCell.xib; sourceTree = "<group>"; };
 		2E48E2682689C59C00271A85 /* TaskTwoV1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaskTwoV1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E48E26B2689C59C00271A85 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2E48E26D2689C59C00271A85 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -102,7 +105,6 @@
 		2E48E35C268CEF0D00271A85 /* NetService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetService.swift; sourceTree = "<group>"; };
 		2E48E36E268D0B5F00271A85 /* PersonList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonList.swift; sourceTree = "<group>"; };
 		2E48E371268D0B8300271A85 /* SearchPersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPersonViewController.swift; sourceTree = "<group>"; };
-		2E48E374268D0BD700271A85 /* PersonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTableViewCell.swift; sourceTree = "<group>"; };
 		2E48E378268D0C1300271A85 /* DetailPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPageViewController.swift; sourceTree = "<group>"; };
 		2E4E2BD826A4A1E200B2D89F /* InsideSecondCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsideSecondCollectionViewCell.swift; sourceTree = "<group>"; };
 		2E4E2BD926A4A1E200B2D89F /* InsideSecondCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InsideSecondCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -292,7 +294,8 @@
 		2E4E2CC926A83B9000B2D89F /* StarWarsCells */ = {
 			isa = PBXGroup;
 			children = (
-				2E48E374268D0BD700271A85 /* PersonTableViewCell.swift */,
+				2E28D26026AEF5360062CD22 /* ItemCollectionViewCell.swift */,
+				2E28D26126AEF5360062CD22 /* ItemCollectionViewCell.xib */,
 			);
 			path = StarWarsCells;
 			sourceTree = "<group>";
@@ -538,6 +541,7 @@
 				2E48E2752689C5A100271A85 /* Assets.xcassets in Resources */,
 				2E7A6236269B099800D54D10 /* FirstUITableViewCell.xib in Resources */,
 				2E7A624D269B0B2800D54D10 /* LastUICollectionViewCell.xib in Resources */,
+				2E28D26326AEF5360062CD22 /* ItemCollectionViewCell.xib in Resources */,
 				2EC77CB026A339A8007C0A7D /* FullscreenCollectionViewCell.xib in Resources */,
 				2E48E2732689C59C00271A85 /* Main.storyboard in Resources */,
 				2E4E2CE526A845EF00B2D89F /* FirstDogCollectionViewCell.xib in Resources */,
@@ -630,7 +634,6 @@
 				2EC77CE926A40673007C0A7D /* SearchPersonViewController+extensions.swift in Sources */,
 				2E23CDB726A19ADD003B92A8 /* InsideThirdCollectionViewCell.swift in Sources */,
 				2E7A6231269B08F300D54D10 /* MainUIViewController.swift in Sources */,
-				2E48E375268D0BD700271A85 /* PersonTableViewCell.swift in Sources */,
 				2EC77CFB26A40D04007C0A7D /* ThirdCollectionViewCell+Extensions.swift in Sources */,
 				2E4E2BDA26A4A1E200B2D89F /* InsideSecondCollectionViewCell.swift in Sources */,
 				2EC77CF826A40B19007C0A7D /* FirstCollectionViewCell+Extensions.swift in Sources */,
@@ -639,6 +642,7 @@
 				2EC77CE526A40373007C0A7D /* LastUITableViewCell+Extension.swift in Sources */,
 				2E7A6235269B099800D54D10 /* FirstUITableViewCell.swift in Sources */,
 				2E23CD9726A180CF003B92A8 /* TestViewController.swift in Sources */,
+				2E28D26226AEF5360062CD22 /* ItemCollectionViewCell.swift in Sources */,
 				2EC77CAA26A33193007C0A7D /* FullscreenViewController.swift in Sources */,
 				2EC77CFE26A44491007C0A7D /* CellTableViewModel.swift in Sources */,
 				2E48E26E2689C59C00271A85 /* SceneDelegate.swift in Sources */,

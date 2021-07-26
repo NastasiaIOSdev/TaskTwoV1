@@ -7,32 +7,39 @@
 
 import UIKit
 
-extension SearchPersonViewController: UITableViewDelegate, UITableViewDataSource {
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        viewModels.count
+extension SearchPersonViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return viewModels.count
     }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = secondTableView.dequeueReusableCell(
-                withIdentifier: "PersonTableViewCell", for: indexPath) as? PersonTableViewCell else {
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: "ItemCollectionViewCell", for: indexPath) as? ItemCollectionViewCell else {
             fatalError()
         }
         cell.configure(with: viewModels[indexPath.row])
         return cell
     }
-
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        secondTableView.deselectRow(at: indexPath, animated: true)
-    }
-
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        100
-    }
+  func collectionView(_ collectionView: UICollectionView,
+                      didSelectItemAt indexPath: IndexPath) {
+     print("DID select item\(indexPath)")
+       let item = viewModels[indexPath.item]
+       performSegue(withIdentifier: segueIdentifier, sender: item)
+  }
 }
-
+    extension SearchPersonViewController: UICollectionViewDelegateFlowLayout {
+        func collectionView(_ collectionView: UICollectionView,
+                            layout collectionViewLayout: UICollectionViewLayout,
+                            sizeForItemAt indexPath: IndexPath) -> CGSize {
+            let frameCV = collectionView.frame
+            let widthCell = frameCV.width/CGFloat(countCells)
+            let heightCell = widthCell
+            let spasing = CGFloat((countCells + 1)) * offset / CGFloat(countCells)
+            return CGSize(width: widthCell - spasing, height: heightCell - (offset*2))
+        }
+    }
 extension SearchPersonViewController: UISearchBarDelegate {
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+    func searchBarSearchButtonClicked (_ searchBar: UISearchBar) {
         guard let text = searchBar.text, !text.isEmpty else {
             return
         }
@@ -49,15 +56,13 @@ extension SearchPersonViewController: UISearchBarDelegate {
                 })
 
                 DispatchQueue.main.async {
-                    self?.secondTableView.reloadData()
-                    self?.searchVC.dismiss(animated: true, completion: nil)
+                    self?.collectionView.reloadData()
                 }
             case.failure(let error):
             print(error)
             }
         }
     }
-
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         guard let text = searchBar.text, !text.isEmpty else {
             return
@@ -67,6 +72,6 @@ extension SearchPersonViewController: UISearchBarDelegate {
     }
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.text = ""
-        secondTableView.reloadData()
+        collectionView.reloadData()
     }
 }

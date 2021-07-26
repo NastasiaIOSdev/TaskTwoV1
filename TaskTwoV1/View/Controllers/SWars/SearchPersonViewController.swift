@@ -11,31 +11,38 @@ class SearchPersonViewController: UIViewController {
 
     // MARK: - IBOutlets
 
-    @IBOutlet weak var secondTableView: UITableView!
-
-    let searchVC = UISearchController(searchResultsController: nil)
+    @IBOutlet weak var collectionView: UICollectionView!
+    let cellIdentifier = "ItemCollectionViewCell"
     var results = [Results]()
     var viewModels = [CellTableViewModel]()
+    let countCells = 2
+    let offset: CGFloat = 10.0
+    let segueIdentifier = "Detail"
 
     // MARK: - Life cycles
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        secondTableView.delegate = self
-        secondTableView.dataSource = self
+        setupCollectionView()
+        setUpNavigationBar()
         setupColorTabbar()
-        createSearchBar()
-        searchVC.searchBar.placeholder = "Search persone..."
-//        searchVC.searchBar.searchTextField.tintColor = UIColor.red
-        searchVC.searchBar.tintColor = UIColor.brown
-
+   }
+    func setupCollectionView() {
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        let nib = UINib(nibName: "ItemCollectionViewCell", bundle: nil)
+        collectionView.register(nib, forCellWithReuseIdentifier: cellIdentifier)
     }
-
-    func createSearchBar() {
-        navigationItem.searchController = searchVC
-        searchVC.searchBar.delegate = self
+    func setUpNavigationBar() {
+        navigationController?.navigationBar.prefersLargeTitles = true
+        let searchController = UISearchController(searchResultsController: nil)
+        navigationItem.searchController = searchController
+        searchController.searchBar.delegate = self
+        navigationItem.hidesSearchBarWhenScrolling = false
+        title = "Star Wars"
+        searchController.searchBar.placeholder = "Search persone..."
+        searchController.searchBar.tintColor = UIColor.black
     }
-
     func setupColorTabbar() {
         self.tabBarController?.tabBar.tintColor = UIColor(red: 255/255.0, green: 255/255.0, blue: 255/255.0, alpha: 1)
         self.tabBarController?.tabBar.barTintColor = UIColor(red: 0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 1)
@@ -53,11 +60,24 @@ class SearchPersonViewController: UIViewController {
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let contoller = segue.destination as? DetailPageViewController,
-              let indexPath = secondTableView.indexPathForSelectedRow
-        else { return }
-        let item = results[indexPath.row]
-        contoller.namePerson = item.name
-        contoller.genderTipe = item.gender
+        guard let item = sender as? CellTableViewModel else { return }
+        if segue.identifier == segueIdentifier {
+            if let viewC = segue.destination as? DetailPageViewController {
+                viewC.namePerson = item.title
+                viewC.genderTipe = item.subtitle
+            }
+        }
+    }
+  // MARK: - Animation
+  func collectionView(_ collectionView: UICollectionView,
+                      willDisplay cell: UICollectionViewCell,
+                      forItemAt indexPath: IndexPath) {
+        cell.alpha = 0
+        let transform = CATransform3DTranslate(CATransform3DIdentity, -250, 20, 0)
+        cell.layer.transform = transform
+        UIView.animate(withDuration: 1.2) {
+            cell.alpha = 1
+            cell.layer.transform = CATransform3DIdentity
+        }
     }
 }
