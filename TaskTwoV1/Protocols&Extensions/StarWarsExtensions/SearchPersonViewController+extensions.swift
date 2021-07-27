@@ -43,7 +43,7 @@ extension SearchPersonViewController: UISearchBarDelegate {
         guard let text = searchBar.text, !text.isEmpty else {
             return
         }
-        
+
         print(text)
         APIService.shared.searchPeopleList(with: text) { [weak self] result in
             switch result {
@@ -54,7 +54,7 @@ extension SearchPersonViewController: UISearchBarDelegate {
                         title: $0.name ,
                         subtitle: $0.gender )
                 })
-                
+
                 DispatchQueue.main.async {
                     self?.collectionView.reloadData()
                 }
@@ -67,7 +67,7 @@ extension SearchPersonViewController: UISearchBarDelegate {
         guard let text = searchBar.text, !text.isEmpty else {
             return
         }
-        
+
         print(text)
     }
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {

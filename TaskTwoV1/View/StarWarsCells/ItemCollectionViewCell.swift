@@ -12,7 +12,7 @@ class ItemCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var genderLabel: UILabel!
     @IBOutlet weak var myView: UIView!
     @IBOutlet weak var shadowView: UIView!
-    
+
     override func layoutSubviews() {
         super.layoutSubviews()
         myView.layer.cornerRadius = 9
@@ -22,13 +22,13 @@ class ItemCollectionViewCell: UICollectionViewCell {
         shadowView.layer.shadowOpacity = 0.3
         shadowView.layer.shadowOffset = CGSize.zero
     }
-    
+
     override func prepareForReuse() {
         super.prepareForReuse()
         nameLabel.text = nil
         genderLabel.text = nil
     }
-    
+
     func configure(with viewModel: CellTableViewModel) {
         nameLabel.text = viewModel.title
         genderLabel.text = viewModel.subtitle

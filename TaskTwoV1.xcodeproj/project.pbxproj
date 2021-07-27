@@ -25,6 +25,8 @@
 		2E28D26C26AFDF530062CD22 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E28D26B26AFDF530062CD22 /* MapViewController.swift */; };
 		2E28D27026AFDF960062CD22 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E28D26F26AFDF960062CD22 /* SettingsViewController.swift */; };
 		2E28D27326AFDFBC0062CD22 /* WeatherDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E28D27226AFDFBC0062CD22 /* WeatherDetailViewController.swift */; };
+		2E28D27926AFFB210062CD22 /* PinInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E28D27826AFFB210062CD22 /* PinInfo.swift */; };
+		2E28D27C26B00AE60062CD22 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E28D27B26B00AE60062CD22 /* CoreLocation.framework */; };
 		2E48E26C2689C59C00271A85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E48E26B2689C59C00271A85 /* AppDelegate.swift */; };
 		2E48E26E2689C59C00271A85 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E48E26D2689C59C00271A85 /* SceneDelegate.swift */; };
 		2E48E2732689C59C00271A85 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E48E2712689C59C00271A85 /* Main.storyboard */; };
@@ -96,6 +98,8 @@
 		2E28D26B26AFDF530062CD22 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		2E28D26F26AFDF960062CD22 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		2E28D27226AFDFBC0062CD22 /* WeatherDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailViewController.swift; sourceTree = "<group>"; };
+		2E28D27826AFFB210062CD22 /* PinInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinInfo.swift; sourceTree = "<group>"; };
+		2E28D27B26B00AE60062CD22 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		2E48E2682689C59C00271A85 /* TaskTwoV1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaskTwoV1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E48E26B2689C59C00271A85 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2E48E26D2689C59C00271A85 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -151,6 +155,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E28D27C26B00AE60062CD22 /* CoreLocation.framework in Frameworks */,
 				86E09ED6269C555900049522 /* Pods_TaskTwoV1.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -161,6 +166,7 @@
 		2C28DF2E01949AC127176D23 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2E28D27B26B00AE60062CD22 /* CoreLocation.framework */,
 				A3B7D787AB753A76262E4B51 /* Pods_TaskTwoV1.framework */,
 			);
 			name = Frameworks;
@@ -286,6 +292,7 @@
 			isa = PBXGroup;
 			children = (
 				2E48E35C268CEF0D00271A85 /* NetService.swift */,
+				2E28D27826AFFB210062CD22 /* PinInfo.swift */,
 			);
 			path = APIService;
 			sourceTree = "<group>";
@@ -622,6 +629,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E28D27926AFFB210062CD22 /* PinInfo.swift in Sources */,
 				2EC77CED26A408A8007C0A7D /* TestViewController+Extensions.swift in Sources */,
 				2E23CDB126A19AC1003B92A8 /* ThirdCollectionViewCell.swift in Sources */,
 				2E4E2BDE26A4A2A100B2D89F /* SecondCollectionViewCell+Extensions.swift in Sources */,
