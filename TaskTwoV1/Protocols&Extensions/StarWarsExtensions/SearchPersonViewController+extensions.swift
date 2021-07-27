@@ -20,30 +20,30 @@ extension SearchPersonViewController: UICollectionViewDelegate, UICollectionView
         cell.configure(with: viewModels[indexPath.row])
         return cell
     }
-  func collectionView(_ collectionView: UICollectionView,
-                      didSelectItemAt indexPath: IndexPath) {
-     print("DID select item\(indexPath)")
-       let item = viewModels[indexPath.item]
-       performSegue(withIdentifier: segueIdentifier, sender: item)
-  }
-}
-    extension SearchPersonViewController: UICollectionViewDelegateFlowLayout {
-        func collectionView(_ collectionView: UICollectionView,
-                            layout collectionViewLayout: UICollectionViewLayout,
-                            sizeForItemAt indexPath: IndexPath) -> CGSize {
-            let frameCV = collectionView.frame
-            let widthCell = frameCV.width/CGFloat(countCells)
-            let heightCell = widthCell
-            let spasing = CGFloat((countCells + 1)) * offset / CGFloat(countCells)
-            return CGSize(width: widthCell - spasing, height: heightCell - (offset*2))
-        }
+    func collectionView(_ collectionView: UICollectionView,
+                        didSelectItemAt indexPath: IndexPath) {
+        print("DID select item\(indexPath)")
+        let item = viewModels[indexPath.item]
+        performSegue(withIdentifier: segueIdentifier, sender: item)
     }
+}
+extension SearchPersonViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let frameCV = collectionView.frame
+        let widthCell = frameCV.width/CGFloat(countCells)
+        let heightCell = widthCell
+        let spasing = CGFloat((countCells + 1)) * offset / CGFloat(countCells)
+        return CGSize(width: widthCell - spasing, height: heightCell - (offset*2))
+    }
+}
 extension SearchPersonViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked (_ searchBar: UISearchBar) {
         guard let text = searchBar.text, !text.isEmpty else {
             return
         }
-
+        
         print(text)
         APIService.shared.searchPeopleList(with: text) { [weak self] result in
             switch result {
@@ -54,12 +54,12 @@ extension SearchPersonViewController: UISearchBarDelegate {
                         title: $0.name ,
                         subtitle: $0.gender )
                 })
-
+                
                 DispatchQueue.main.async {
                     self?.collectionView.reloadData()
                 }
             case.failure(let error):
-            print(error)
+                print(error)
             }
         }
     }
@@ -67,7 +67,7 @@ extension SearchPersonViewController: UISearchBarDelegate {
         guard let text = searchBar.text, !text.isEmpty else {
             return
         }
-
+        
         print(text)
     }
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {

@@ -8,23 +8,23 @@
 import UIKit
 
 class DetailPageViewController: UIViewController {
-
+    
     var detail: Results?
-
+    
     // MARK: - OUtlets
-
+    
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var genderLabel: UILabel!
     @IBOutlet weak var personImage: UIImageView!
     @IBOutlet weak var myView: UIView!
     @IBOutlet weak var shadowView: UIView!
-
+    
     var namePerson: String!
     var genderTipe: String!
     var starImage: UIImage!
-
+    
     // MARK: - Life cycles
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         pageSetup()
@@ -36,11 +36,11 @@ class DetailPageViewController: UIViewController {
         shadowView.layer.shadowOpacity = 0.3
         shadowView.layer.shadowOffset = CGSize.zero
     }
-
+    
     override func viewDidAppear(_ animated: Bool) {
         pageSetup()
     }
-
+    
     func pageSetup() {
         nameLabel.text = namePerson
         genderLabel.text = genderTipe

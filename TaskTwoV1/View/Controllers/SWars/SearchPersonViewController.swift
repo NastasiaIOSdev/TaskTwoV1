@@ -8,9 +8,9 @@
 import UIKit
 
 class SearchPersonViewController: UIViewController {
-
+    
     // MARK: - IBOutlets
-
+    
     @IBOutlet weak var collectionView: UICollectionView!
     let cellIdentifier = "ItemCollectionViewCell"
     var results = [Results]()
@@ -18,15 +18,15 @@ class SearchPersonViewController: UIViewController {
     let countCells = 2
     let offset: CGFloat = 10.0
     let segueIdentifier = "Detail"
-
+    
     // MARK: - Life cycles
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
         setUpNavigationBar()
         setupColorTabbar()
-   }
+    }
     func setupCollectionView() {
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -47,18 +47,18 @@ class SearchPersonViewController: UIViewController {
         self.tabBarController?.tabBar.tintColor = UIColor(red: 255/255.0, green: 255/255.0, blue: 255/255.0, alpha: 1)
         self.tabBarController?.tabBar.barTintColor = UIColor(red: 0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 1)
     }
-
+    
     override func viewDidAppear(_ animated: Bool) {
     }
-
+    
     func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         self.view.endEditing(true)
     }
-
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
     }
-
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let item = sender as? CellTableViewModel else { return }
         if segue.identifier == segueIdentifier {
@@ -68,10 +68,10 @@ class SearchPersonViewController: UIViewController {
             }
         }
     }
-  // MARK: - Animation
-  func collectionView(_ collectionView: UICollectionView,
-                      willDisplay cell: UICollectionViewCell,
-                      forItemAt indexPath: IndexPath) {
+    // MARK: - Animation
+    func collectionView(_ collectionView: UICollectionView,
+                        willDisplay cell: UICollectionViewCell,
+                        forItemAt indexPath: IndexPath) {
         cell.alpha = 0
         let transform = CATransform3DTranslate(CATransform3DIdentity, -250, 20, 0)
         cell.layer.transform = transform

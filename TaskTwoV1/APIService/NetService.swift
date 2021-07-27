@@ -34,27 +34,6 @@ final class APIService {
 
     }
 
-    public func getPeopleList(completion: @escaping (Result<[Results], Error>) -> Void) {
-        guard let url = Constants.peopleURL else {
-            return
-        }
-        let task = URLSession.shared.dataTask(with: url) { data, _, error in
-            if let error = error {
-                completion(.failure(error))
-            } else if let data = data {
-
-                do {
-                    let result = try JSONDecoder().decode(APIResponse.self, from: data)
-                    print("People: \(String(describing: result.results.count))")
-                    completion(.success(result.results ))
-                } catch {
-                    completion(.failure(error))
-                }
-            }
-        }
-        task.resume()
-    }
-
     public func searchPeopleList(with text: String, completion: @escaping (Result<[Results], Error>) -> Void) {
         guard !text.trimmingCharacters(in: .whitespaces).isEmpty else {
             return
@@ -105,23 +84,6 @@ final class APIService {
             } else if let data = data {
                 do {
                     let result = try JSONDecoder().decode(Image2.self, from: data)
-                    completed(.success(result))
-                } catch {
-                    completed(.failure(error))
-                }
-            }
-        }
-        task.resume()
-    }
-    public func getPhotoHound(breeds: String, completed: @escaping (Result<ImageHound, Error>) -> Void) {
-        let urlString = "https://dog.ceo/api/breed/hound-&q=\(breeds)"
-        guard let url = URL(string: urlString) else {return}
-        let task = URLSession.shared.dataTask(with: url) { data, _, error in
-            if let error = error {
-                completed(.failure(error))
-            } else if let data = data {
-                do {
-                    let result = try JSONDecoder().decode(ImageHound.self, from: data)
                     completed(.success(result))
                 } catch {
                     completed(.failure(error))
