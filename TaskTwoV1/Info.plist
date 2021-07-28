@@ -13,7 +13,9 @@
 	<key>CFBundleName</key>
 	<string>$(PRODUCT_NAME)</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Do you ...</string>
+	<string>We need your location for directions.</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string></string>
 	<key>CFBundlePackageType</key>
 	<string>$(PRODUCT_BUNDLE_PACKAGE_TYPE)</string>
 	<key>CFBundleShortVersionString</key>

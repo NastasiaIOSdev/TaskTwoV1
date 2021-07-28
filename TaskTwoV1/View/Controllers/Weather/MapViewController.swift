@@ -10,9 +10,10 @@ import MapKit
 import Contacts
 import CoreLocation
 
-class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UISearchBarDelegate {
+class MapViewController: UIViewController {
 
-    let locationManager = CLLocationManager()
+    fileprivate let locationManager: CLLocationManager = CLLocationManager()
+    var myPosition = CLLocationCoordinate2D()
 
     // MARK: - IBOutlets
 
@@ -41,14 +42,33 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         }
     }
 
+    @IBAction func addPin(_ sender: UILongPressGestureRecognizer) {
+        let location = sender.location(in: self.mainMap)
+        let locCoord = self.mainMap.convert(location, toCoordinateFrom: self.mainMap)
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = locCoord
+        annotation.title = "Place"
+        annotation.subtitle = "Location place"
+
+        let allAnnotations = self.mainMap.annotations
+        self.mainMap.removeAnnotations(allAnnotations)
+        self.mainMap.addAnnotation(annotation)
+
+    }
     // MARK: - lifeCycles
 
     override func viewDidLoad() {
         super.viewDidLoad()
         mainMap.delegate = self
+        mainMap.showsUserLocation = true
+
         locationManager.delegate = self
         locationManager.startUpdatingLocation()
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.distanceFilter = kCLDistanceFilterNone
         mainMap.showsUserLocation = true
+
         setupPin()
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -67,6 +87,14 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
                                                 longitudinalMeters: region)
             mainMap.setRegion(coordinate, animated: true)
         }
+        let locCoordinate = CLLocationCoordinate2D(latitude: 55.165218,
+                                                   longitude: 61.366593)
+
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = locCoordinate
+        annotation.title = "Place"
+        annotation.subtitle = "Location place"
+
         let pin = PinInfo(coordinatePin: CLLocationCoordinate2D(
                             latitude: 55.165218,
                             longitude: 61.366593),
@@ -74,7 +102,18 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
                           titlePin: "Good park",
                           namePin: "Gagarin park")
         mainMap.addAnnotation(pin)
+        mainMap.addAnnotation(annotation)
+
     }
+}
+
+extension MapViewController: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        locationManager.stopUpdatingLocation()
+    }
+}
+
+extension MapViewController: UISearchBarDelegate {
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         UIApplication.shared.beginIgnoringInteractionEvents()
@@ -106,6 +145,9 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
             }
         }
     }
+}
+
+extension MapViewController: MKMapViewDelegate {
 
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         guard let annotation = annotation as? PinInfo else {
