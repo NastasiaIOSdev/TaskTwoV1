@@ -7,6 +7,7 @@
 
 import UIKit
 import MapKit
+import Contacts
 
 class PinInfo: NSObject, MKAnnotation {
     var coordinate: CLLocationCoordinate2D
@@ -21,8 +22,14 @@ class PinInfo: NSObject, MKAnnotation {
         self.pinName = namePin
         super.init()
     }
+    func mapItem() -> MKMapItem {
+        let addressDict = [CNPostalAddressCityKey: sub]
+        let placemark = MKPlacemark(coordinate: coordinate, addressDictionary: addressDict)
+        let mapItem = MKMapItem(placemark: placemark)
+        mapItem.name = title
+        return mapItem
+        }
     var sub: String {
         return desc
     }
-
 }
