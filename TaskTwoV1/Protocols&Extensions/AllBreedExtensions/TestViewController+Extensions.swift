@@ -84,8 +84,7 @@ extension TestViewController: UICollectionViewDataSource {
                     withReuseIdentifier: "FirstDogCollectionViewCell",
                     for: indexPath) as? FirstDogCollectionViewCell else { fatalError()
             }
-            for (index, image) in self.breeds!.message.enumerated() {
-                if index == indexPath.row {
+            for (index, image) in self.breeds!.message.enumerated() where index == indexPath.row {
                     APIService.shared.getPhoto(breeds: image) { result in
                         switch result {
                         case .success(let img):
@@ -96,7 +95,6 @@ extension TestViewController: UICollectionViewDataSource {
                             print(error.localizedDescription)
                         }
                     }
-                }
             }
             return cell2
             } else if (indexPath.row - 1) % 2 == 0 || (indexPath.row - 1) % 2 == 1 || indexPath.row == 2 {

@@ -1,4 +1,7 @@
 line_length:
-- 200 # warning
-- 300 # error
-e
+- 500 # warning
+- 600 # error
+
+cyclomatic_complexity:
+- 12 # warning
+

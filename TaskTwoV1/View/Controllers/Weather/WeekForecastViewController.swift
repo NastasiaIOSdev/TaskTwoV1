@@ -11,11 +11,9 @@ class WeekForecastViewController: UIViewController {
 
     @IBOutlet weak var tableview: UITableView!
     @IBOutlet weak var weatherView: UIView!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         weatherView.layer.cornerRadius = 20
     }
-
-
 }

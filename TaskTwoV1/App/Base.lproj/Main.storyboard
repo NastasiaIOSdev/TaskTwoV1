@@ -533,29 +533,13 @@
                                         <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <size key="shadowOffset" width="1" height="1"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mDS-Ne-4yM">
-                                        <rect key="frame" x="62" y="553" width="250" height="50"/>
-                                        <color key="backgroundColor" red="0.66274509800000003" green="0.85581728329999995" blue="0.89708914969999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="vd1-kK-KUW"/>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="vxZ-Ov-svj"/>
-                                        </constraints>
-                                        <state key="normal" title="Wheather forecast for the week">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="9ot-6U-GaV" kind="show" id="Mys-Ec-OI8"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="0.62213720034246578" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="Zg3-iF-W5a" firstAttribute="centerX" secondItem="Qon-ev-ZVD" secondAttribute="centerX" id="09T-f9-9S9"/>
                                     <constraint firstItem="gLQ-6G-8FU" firstAttribute="trailing" secondItem="Qon-ev-ZVD" secondAttribute="trailingMargin" id="3Ob-Rl-hHC"/>
                                     <constraint firstItem="gLQ-6G-8FU" firstAttribute="top" secondItem="Zg3-iF-W5a" secondAttribute="bottom" constant="15" id="OFc-cj-990"/>
-                                    <constraint firstItem="mDS-Ne-4yM" firstAttribute="centerX" secondItem="Qon-ev-ZVD" secondAttribute="centerX" id="Qta-Zb-0FS"/>
                                     <constraint firstItem="Zg3-iF-W5a" firstAttribute="leading" secondItem="Qon-ev-ZVD" secondAttribute="leading" constant="10" id="S5I-nD-Lk3"/>
-                                    <constraint firstAttribute="bottom" secondItem="mDS-Ne-4yM" secondAttribute="bottom" constant="20" id="aaL-Cl-v10"/>
                                     <constraint firstItem="Zg3-iF-W5a" firstAttribute="top" secondItem="Qon-ev-ZVD" secondAttribute="top" constant="30" id="nbf-PX-h29"/>
                                     <constraint firstItem="gLQ-6G-8FU" firstAttribute="leading" secondItem="Qon-ev-ZVD" secondAttribute="leading" constant="12" id="x3M-LA-ash"/>
                                 </constraints>
@@ -572,10 +556,14 @@
                     </view>
                     <navigationItem key="navigationItem" title="Details" id="KTT-Nc-KLo">
                         <barButtonItem key="backBarButtonItem" title=" " id="QNW-TX-YO1"/>
+                        <barButtonItem key="rightBarButtonItem" title="Forecast" id="Eul-F9-pNS">
+                            <connections>
+                                <segue destination="9ot-6U-GaV" kind="show" id="qbb-JM-vKt"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="cityWeatherLabel" destination="Zg3-iF-W5a" id="m4F-dN-ST6"/>
-                        <outlet property="forecastButton" destination="mDS-Ne-4yM" id="kFj-bA-SbW"/>
                         <outlet property="weatherPicture" destination="Afw-SE-qm6" id="REj-uh-snj"/>
                         <outlet property="weatherView" destination="Qon-ev-ZVD" id="aaA-Wt-ZlF"/>
                     </connections>
