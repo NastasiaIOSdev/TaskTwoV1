@@ -56,7 +56,8 @@
 		2E7A624C269B0B2800D54D10 /* LastUICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7A624A269B0B2800D54D10 /* LastUICollectionViewCell.swift */; };
 		2E7A624D269B0B2800D54D10 /* LastUICollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E7A624B269B0B2800D54D10 /* LastUICollectionViewCell.xib */; };
 		2E98DCD026B1949E00BA6778 /* WeekForecastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E98DCCF26B1949E00BA6778 /* WeekForecastViewController.swift */; };
-		2E98DCD626B1F46400BA6778 /* WeekForecastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E98DCD526B1F46400BA6778 /* WeekForecastCell.swift */; };
+		2E98DCDB26B2A46800BA6778 /* WeekForecastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E98DCD926B2A46800BA6778 /* WeekForecastCell.swift */; };
+		2E98DCDC26B2A46800BA6778 /* WeekForecastCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E98DCDA26B2A46800BA6778 /* WeekForecastCell.xib */; };
 		2EC77CA326A3198D007C0A7D /* TestCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E23CDDC26A20FFF003B92A8 /* TestCollectionViewCell.xib */; };
 		2EC77CA526A31992007C0A7D /* TestCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E23CDDB26A20FFF003B92A8 /* TestCollectionViewCell.swift */; };
 		2EC77CA726A31995007C0A7D /* TestDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E23CDD726A20D8D003B92A8 /* TestDetailViewController.swift */; };
@@ -133,7 +134,8 @@
 		2E7A624A269B0B2800D54D10 /* LastUICollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastUICollectionViewCell.swift; sourceTree = "<group>"; };
 		2E7A624B269B0B2800D54D10 /* LastUICollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LastUICollectionViewCell.xib; sourceTree = "<group>"; };
 		2E98DCCF26B1949E00BA6778 /* WeekForecastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekForecastViewController.swift; sourceTree = "<group>"; };
-		2E98DCD526B1F46400BA6778 /* WeekForecastCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekForecastCell.swift; sourceTree = "<group>"; };
+		2E98DCD926B2A46800BA6778 /* WeekForecastCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekForecastCell.swift; sourceTree = "<group>"; };
+		2E98DCDA26B2A46800BA6778 /* WeekForecastCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeekForecastCell.xib; sourceTree = "<group>"; };
 		2EC77CA926A33193007C0A7D /* FullscreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullscreenViewController.swift; sourceTree = "<group>"; };
 		2EC77CAD26A339A8007C0A7D /* FullscreenCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullscreenCollectionViewCell.swift; sourceTree = "<group>"; };
 		2EC77CAE26A339A8007C0A7D /* FullscreenCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FullscreenCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -233,7 +235,8 @@
 				2E28D26F26AFDF960062CD22 /* SettingsViewController.swift */,
 				2E28D27226AFDFBC0062CD22 /* WeatherDetailViewController.swift */,
 				2E98DCCF26B1949E00BA6778 /* WeekForecastViewController.swift */,
-				2E98DCD526B1F46400BA6778 /* WeekForecastCell.swift */,
+				2E98DCD926B2A46800BA6778 /* WeekForecastCell.swift */,
+				2E98DCDA26B2A46800BA6778 /* WeekForecastCell.xib */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
@@ -566,6 +569,7 @@
 				2E48E2782689C5A100271A85 /* LaunchScreen.storyboard in Resources */,
 				2E23CDD126A1DB01003B92A8 /* DetailCollectionViewCell.xib in Resources */,
 				2E4E2BDB26A4A1E200B2D89F /* InsideSecondCollectionViewCell.xib in Resources */,
+				2E98DCDC26B2A46800BA6778 /* WeekForecastCell.xib in Resources */,
 				2E23CD9D26A1811D003B92A8 /* SecondCollectionViewCell.xib in Resources */,
 				2E7A6246269B0A7300D54D10 /* LastUITableViewCell.xib in Resources */,
 				2E23CDAB26A19606003B92A8 /* InsideFirstCollectionViewCell.xib in Resources */,
@@ -655,7 +659,7 @@
 				2EC77CED26A408A8007C0A7D /* TestViewController+Extensions.swift in Sources */,
 				2E23CDB126A19AC1003B92A8 /* ThirdCollectionViewCell.swift in Sources */,
 				2E4E2BDE26A4A2A100B2D89F /* SecondCollectionViewCell+Extensions.swift in Sources */,
-				2E98DCD626B1F46400BA6778 /* WeekForecastCell.swift in Sources */,
+				2E98DCDB26B2A46800BA6778 /* WeekForecastCell.swift in Sources */,
 				2E48E379268D0C1300271A85 /* DetailPageViewController.swift in Sources */,
 				2E79B4A62690F35800C357C3 /* Constants.swift in Sources */,
 				2E48E359268CEEE300271A85 /* CellViewModel.swift in Sources */,
