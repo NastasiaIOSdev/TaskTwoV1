@@ -15,10 +15,26 @@ class MapViewController: UIViewController {
     fileprivate let locationManager: CLLocationManager = CLLocationManager()
     var myPosition = CLLocationCoordinate2D()
     let segueIdentifier = "Detail"
+    let geocoder = CLGeocoder()
 
     // MARK: - IBOutlets
 
     @IBOutlet weak var mainMap: MKMapView!
+
+    // MARK: - lifeCycles
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        mainMap.delegate = self
+        mainMap.showsUserLocation = true
+        locationManager.delegate = self
+        locationManager.startUpdatingLocation()
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.distanceFilter = kCLDistanceFilterNone
+        mainMap.showsUserLocation = true
+        startingPin()
+    }
 
     // MARK: - Action
 
@@ -57,20 +73,6 @@ class MapViewController: UIViewController {
         self.mainMap.addAnnotation(annotation)
 
     }
-    // MARK: - lifeCycles
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        mainMap.delegate = self
-        mainMap.showsUserLocation = true
-        locationManager.delegate = self
-        locationManager.startUpdatingLocation()
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.distanceFilter = kCLDistanceFilterNone
-        mainMap.showsUserLocation = true
-        setupPin()
-    }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -80,7 +82,7 @@ class MapViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
 
-    func setupPin() {
+    func startingPin() {
         let location = CLLocation(latitude: 56.305768, longitude: 44.070186)
         let pin = PinInfo(coordinatePin: CLLocationCoordinate2D(
                             latitude: 56.305768,
@@ -98,6 +100,7 @@ class MapViewController: UIViewController {
         mainMap.addAnnotation(pin)
     }
 }
+
 extension MapViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         locationManager.stopUpdatingLocation()
@@ -107,35 +110,25 @@ extension MapViewController: CLLocationManagerDelegate {
 extension MapViewController: UISearchBarDelegate {
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-//        UIApplication.shared.beginIgnoringInteractionEvents()
         searchBar.resignFirstResponder()
         dismiss(animated: true, completion: nil)
 
-//        if mainMap.annotations.count > 1 {
-//            self.mainMap.removeAnnotation(mainMap.annotations)
-//        }
-    let searchRequest = MKLocalSearch.Request()
-        searchRequest.naturalLanguageQuery = searchBar.text
-        let activeSearch = MKLocalSearch(request: searchRequest)
-        activeSearch.start { (response, error) in UIApplication.shared.endIgnoringInteractionEvents()
-            if response == nil {
-                print(error.self ?? "Error")
-            } else {
-                let annotations = self.mainMap.annotations
-                self.mainMap.removeAnnotations(annotations)
+        geocoder.geocodeAddressString(searchBar.text!) { (placemarks: [CLPlacemark]?, error: Error?) in
 
-                let latitude = response?.boundingRegion.center.latitude
-                let longitude = response?.boundingRegion.center.longitude
-
+            if error == nil {
+                let placemark = placemarks?.first
                 let annotation = MKPointAnnotation()
-                annotation.title = searchBar.text
-                annotation.coordinate = CLLocationCoordinate2DMake(latitude!, longitude!)
-                self.mainMap.addAnnotation(annotation)
+                annotation.coordinate = (placemark?.location?.coordinate)!
+                annotation.title = searchBar.text!
 
-                let coordinate: CLLocationCoordinate2D = CLLocationCoordinate2DMake(latitude!, longitude!)
-                let span = MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2)
-                let region = MKCoordinateRegion(center: coordinate, span: span)
+                let spam = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
+                let region = MKCoordinateRegion(center: annotation.coordinate, span: spam)
+
                 self.mainMap.setRegion(region, animated: true)
+                self.mainMap.addAnnotation(annotation)
+                self.mainMap.selectAnnotation(annotation, animated: true)
+            } else {
+                print("Error")
             }
         }
     }
@@ -144,23 +137,27 @@ extension MapViewController: UISearchBarDelegate {
 extension MapViewController: MKMapViewDelegate {
 
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        guard let annotation = annotation as? PinInfo else {
+        if annotation is MKUserLocation {
             return nil
         }
-        let identifier = "Some Description"
-        var annotationView: MKMarkerAnnotationView
-        if let myAnnotation = mapView.dequeueReusableAnnotationView(
-            withIdentifier: identifier) as? MKMarkerAnnotationView {
-            myAnnotation.annotation = annotation
-            annotationView = myAnnotation
+        let annotationID = "AnnotationID"
+        var annotationView: MKAnnotationView?
+        if let dequeuedAnnotationView = mapView.dequeueReusableAnnotationView(withIdentifier: annotationID) {
+            annotationView = dequeuedAnnotationView
+            annotationView?.annotation = annotation
         } else {
-            annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: annotationID)
+            annotationView?.canShowCallout = true
+            annotationView?.calloutOffset = CGPoint(x: -4, y: 4)
+            annotationView?.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
+        }
+        if let annotationView = annotationView {
             annotationView.canShowCallout = true
-            annotationView.calloutOffset = CGPoint(x: -4, y: 4)
-            annotationView.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
+            annotationView.image = UIImage(named: "img_pin")
         }
         return annotationView
     }
+
     func mapView(_ mapView: MKMapView,
                  annotationView view: MKAnnotationView,
                  calloutAccessoryControlTapped control: UIControl) {
