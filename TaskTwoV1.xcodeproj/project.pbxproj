@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E0FD55826B53F190022DEBA /* RequestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0FD55726B53F190022DEBA /* RequestsViewController.swift */; };
+		2E0FD55C26B53F410022DEBA /* RaquestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0FD55A26B53F410022DEBA /* RaquestTableViewCell.swift */; };
+		2E0FD55D26B53F410022DEBA /* RaquestTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E0FD55B26B53F410022DEBA /* RaquestTableViewCell.xib */; };
+		2E0FD57726B563500022DEBA /* TaskTwoV1.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2E0FD57526B563500022DEBA /* TaskTwoV1.xcdatamodeld */; };
 		2E23CD9726A180CF003B92A8 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E23CD9626A180CF003B92A8 /* TestViewController.swift */; };
 		2E23CD9C26A1811D003B92A8 /* SecondCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E23CD9A26A1811D003B92A8 /* SecondCollectionViewCell.swift */; };
 		2E23CD9D26A1811D003B92A8 /* SecondCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E23CD9B26A1811D003B92A8 /* SecondCollectionViewCell.xib */; };
@@ -75,6 +79,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2E0FD55726B53F190022DEBA /* RequestsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestsViewController.swift; sourceTree = "<group>"; };
+		2E0FD55A26B53F410022DEBA /* RaquestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaquestTableViewCell.swift; sourceTree = "<group>"; };
+		2E0FD55B26B53F410022DEBA /* RaquestTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RaquestTableViewCell.xib; sourceTree = "<group>"; };
+		2E0FD57626B563500022DEBA /* TaskTwoV1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TaskTwoV1.xcdatamodel; sourceTree = "<group>"; };
 		2E23CD9626A180CF003B92A8 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		2E23CD9A26A1811D003B92A8 /* SecondCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondCollectionViewCell.swift; sourceTree = "<group>"; };
 		2E23CD9B26A1811D003B92A8 /* SecondCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecondCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -166,6 +174,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		2E0C2E8026B5B50100CEC0C6 /* Person */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Person;
+			sourceTree = "<group>";
+		};
+		2E0FD55F26B558B90022DEBA /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				2E0C2E8026B5B50100CEC0C6 /* Person */,
+				2E0FD57526B563500022DEBA /* TaskTwoV1.xcdatamodeld */,
+			);
+			path = "Core Data";
+			sourceTree = "<group>";
+		};
 		2E23CD9526A180A1003B92A8 /* AllBreeds */ = {
 			isa = PBXGroup;
 			children = (
@@ -239,6 +263,7 @@
 			children = (
 				2E48E2792689C5A100271A85 /* Info.plist */,
 				2E48E2832689CCA800271A85 /* App */,
+				2E0FD55F26B558B90022DEBA /* Core Data */,
 				2E48E2A8268A0DA600271A85 /* APIService */,
 				2E23CDBF26A1A0D2003B92A8 /* Helper */,
 				2E79B4A42690F33100C357C3 /* Constants */,
@@ -286,6 +311,9 @@
 			isa = PBXGroup;
 			children = (
 				2E48E371268D0B8300271A85 /* SearchPersonViewController.swift */,
+				2E0FD55726B53F190022DEBA /* RequestsViewController.swift */,
+				2E0FD55A26B53F410022DEBA /* RaquestTableViewCell.swift */,
+				2E0FD55B26B53F410022DEBA /* RaquestTableViewCell.xib */,
 				2E48E378268D0C1300271A85 /* DetailPageViewController.swift */,
 			);
 			path = SWars;
@@ -532,6 +560,7 @@
 				2E4E2BDB26A4A1E200B2D89F /* InsideSecondCollectionViewCell.xib in Resources */,
 				2E23CD9D26A1811D003B92A8 /* SecondCollectionViewCell.xib in Resources */,
 				2E4E2CDA26A8448600B2D89F /* gif.gif in Resources */,
+				2E0FD55D26B53F410022DEBA /* RaquestTableViewCell.xib in Resources */,
 				2E7A6246269B0A7300D54D10 /* LastUITableViewCell.xib in Resources */,
 				2E23CDAB26A19606003B92A8 /* InsideFirstCollectionViewCell.xib in Resources */,
 				2E23CDB826A19ADD003B92A8 /* InsideThirdCollectionViewCell.xib in Resources */,
@@ -628,6 +657,7 @@
 				2EC77CF326A409EC007C0A7D /* FullscreenViewController+Extensions.swift in Sources */,
 				2EC77CA726A31995007C0A7D /* TestDetailViewController.swift in Sources */,
 				2EC77CE226A40298007C0A7D /* MainUIViewController+Extensions.swift in Sources */,
+				2E0FD55C26B53F410022DEBA /* RaquestTableViewCell.swift in Sources */,
 				2E23CD9C26A1811D003B92A8 /* SecondCollectionViewCell.swift in Sources */,
 				2E23CDAA26A19606003B92A8 /* InsideFirstCollectionViewCell.swift in Sources */,
 				2E23CDA426A1950E003B92A8 /* FirstCollectionViewCell.swift in Sources */,
@@ -638,6 +668,7 @@
 				2E4E2BDA26A4A1E200B2D89F /* InsideSecondCollectionViewCell.swift in Sources */,
 				2EC77CF826A40B19007C0A7D /* FirstCollectionViewCell+Extensions.swift in Sources */,
 				2E4E2BE326A55CF100B2D89F /* ImageHound.swift in Sources */,
+				2E0FD55826B53F190022DEBA /* RequestsViewController.swift in Sources */,
 				2E23CDBD26A1A065003B92A8 /* TabbarViewController.swift in Sources */,
 				2EC77CE526A40373007C0A7D /* LastUITableViewCell+Extension.swift in Sources */,
 				2E7A6235269B099800D54D10 /* FirstUITableViewCell.swift in Sources */,
@@ -648,6 +679,7 @@
 				2E48E26E2689C59C00271A85 /* SceneDelegate.swift in Sources */,
 				2ED2909A2694ED1C00B7630B /* Image.swift in Sources */,
 				2E7A6245269B0A7300D54D10 /* LastUITableViewCell.swift in Sources */,
+				2E0FD57726B563500022DEBA /* TaskTwoV1.xcdatamodeld in Sources */,
 				2EC77CAF26A339A8007C0A7D /* FullscreenCollectionViewCell.swift in Sources */,
 				2EC77CF026A40989007C0A7D /* TestDetailViewController+Extensions.swift in Sources */,
 				2E48E35D268CEF0D00271A85 /* NetService.swift in Sources */,
@@ -864,6 +896,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		2E0FD57526B563500022DEBA /* TaskTwoV1.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				2E0FD57626B563500022DEBA /* TaskTwoV1.xcdatamodel */,
+			);
+			currentVersion = 2E0FD57626B563500022DEBA /* TaskTwoV1.xcdatamodel */;
+			path = TaskTwoV1.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 2E48E2602689C59C00271A85 /* Project object */;
 }

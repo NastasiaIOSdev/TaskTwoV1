@@ -6,12 +6,17 @@
 //
 
 import UIKit
+import CoreData
 
 class SearchPersonViewController: UIViewController {
 
     // MARK: - IBOutlets
 
     @IBOutlet weak var collectionView: UICollectionView!
+
+    // MARK: - Core Data Service
+    let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
+
     let cellIdentifier = "ItemCollectionViewCell"
     var results = [Results]()
     var viewModels = [CellTableViewModel]()
@@ -68,6 +73,7 @@ class SearchPersonViewController: UIViewController {
             }
         }
     }
+
   // MARK: - Animation
   func collectionView(_ collectionView: UICollectionView,
                       willDisplay cell: UICollectionViewCell,

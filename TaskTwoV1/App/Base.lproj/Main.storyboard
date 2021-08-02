@@ -74,7 +74,6 @@
         <!-- Star Wars-->
         <scene sceneID="ZBT-oF-0ew">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="T7y-ne-iYj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="SearchPersonViewController" id="HQM-TI-MAe" customClass="SearchPersonViewController" customModule="TaskTwoV1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LeU-e2-btQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -115,11 +114,17 @@
                     </view>
                     <navigationItem key="navigationItem" title=" Star Wars" id="abx-0V-urT">
                         <barButtonItem key="backBarButtonItem" title=" " id="SDF-lA-tq1"/>
+                        <barButtonItem key="rightBarButtonItem" title="Previous requests" id="Ma9-XM-hye">
+                            <connections>
+                                <segue destination="PXV-Jc-sPk" kind="show" id="cl0-YG-P27"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="SmK-ja-YoF" id="iAX-tF-Xxq"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T7y-ne-iYj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1037.68115942029" y="-771.42857142857144"/>
         </scene>
@@ -344,12 +349,42 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M4h-3F-6Qh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1759" y="-771"/>
+            <point key="canvasLocation" x="1932" y="-771"/>
+        </scene>
+        <!--Requests View Controller-->
+        <scene sceneID="vbz-b6-zlP">
+            <objects>
+                <viewController storyboardIdentifier="RequestsViewController" id="PXV-Jc-sPk" customClass="RequestsViewController" customModule="TaskTwoV1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SGS-Qv-zuA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IGn-kL-qoe">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="RM0-07-9jy"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="IGn-kL-qoe" firstAttribute="bottom" secondItem="RM0-07-9jy" secondAttribute="bottom" id="Xbb-0K-oHr"/>
+                            <constraint firstItem="IGn-kL-qoe" firstAttribute="trailing" secondItem="RM0-07-9jy" secondAttribute="trailing" id="qyD-zk-FUb"/>
+                            <constraint firstItem="IGn-kL-qoe" firstAttribute="top" secondItem="RM0-07-9jy" secondAttribute="top" id="uAs-oe-Jz8"/>
+                            <constraint firstItem="IGn-kL-qoe" firstAttribute="leading" secondItem="RM0-07-9jy" secondAttribute="leading" id="zTI-Pc-jAp"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="cDM-Vl-gGW"/>
+                    <connections>
+                        <outlet property="tableView" destination="IGn-kL-qoe" id="aLP-MI-LzJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f7c-F4-PdK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2091" y="-1453"/>
         </scene>
         <!--Star Wars-->
         <scene sceneID="czd-CB-69A">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="SXk-7I-2hv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wZR-eg-RsW" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Star Wars" image="person.3" catalog="system" id="fR9-xB-Lzn"/>
                     <toolbarItems/>
@@ -363,6 +398,7 @@
                         <segue destination="HQM-TI-MAe" kind="relationship" relationship="rootViewController" id="eiN-uJ-VrZ"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SXk-7I-2hv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="277" y="-771"/>
         </scene>

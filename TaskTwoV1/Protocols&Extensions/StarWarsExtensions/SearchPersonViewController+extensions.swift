@@ -8,9 +8,11 @@
 import UIKit
 
 extension SearchPersonViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModels.count
     }
+
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(
@@ -20,7 +22,8 @@ extension SearchPersonViewController: UICollectionViewDelegate, UICollectionView
         cell.configure(with: viewModels[indexPath.row])
         return cell
     }
-  func collectionView(_ collectionView: UICollectionView,
+
+    func collectionView(_ collectionView: UICollectionView,
                       didSelectItemAt indexPath: IndexPath) {
      print("DID select item\(indexPath)")
        let item = viewModels[indexPath.item]
