@@ -30,8 +30,8 @@ class RaquestTableViewCell: UITableViewCell {
         genderLabel.text = nil
     }
 
-    func configure(with viewModel: CellTableViewModel) {
-        nameLabel.text = viewModel.title
-        genderLabel.text = viewModel.subtitle
+    func configure(with viewModel: MyRequest) {
+        nameLabel.text = viewModel.text
+        genderLabel.text = "\(viewModel.persons?.count ?? 0)"
     }
 }

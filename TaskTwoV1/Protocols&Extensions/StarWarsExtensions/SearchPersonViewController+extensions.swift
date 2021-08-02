@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 extension SearchPersonViewController: UICollectionViewDelegate, UICollectionViewDataSource {
 
@@ -24,7 +25,7 @@ extension SearchPersonViewController: UICollectionViewDelegate, UICollectionView
     }
 
     func collectionView(_ collectionView: UICollectionView,
-                      didSelectItemAt indexPath: IndexPath) {
+                        didSelectItemAt indexPath: IndexPath) {
      print("DID select item\(indexPath)")
        let item = viewModels[indexPath.item]
        performSegue(withIdentifier: segueIdentifier, sender: item)
@@ -57,6 +58,10 @@ extension SearchPersonViewController: UISearchBarDelegate {
                         title: $0.name ,
                         subtitle: $0.gender )
                 })
+
+                if let self = self {
+                    self.addRequest(text: text, viewModels: self.viewModels)
+                }
 
                 DispatchQueue.main.async {
                     self?.collectionView.reloadData()

@@ -359,8 +359,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IGn-kL-qoe">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IGn-kL-qoe">
+                                <rect key="frame" x="0.0" y="98" width="414" height="715"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -369,7 +369,7 @@
                         <constraints>
                             <constraint firstItem="IGn-kL-qoe" firstAttribute="bottom" secondItem="RM0-07-9jy" secondAttribute="bottom" id="Xbb-0K-oHr"/>
                             <constraint firstItem="IGn-kL-qoe" firstAttribute="trailing" secondItem="RM0-07-9jy" secondAttribute="trailing" id="qyD-zk-FUb"/>
-                            <constraint firstItem="IGn-kL-qoe" firstAttribute="top" secondItem="RM0-07-9jy" secondAttribute="top" id="uAs-oe-Jz8"/>
+                            <constraint firstItem="IGn-kL-qoe" firstAttribute="top" secondItem="RM0-07-9jy" secondAttribute="top" constant="10" id="uAs-oe-Jz8"/>
                             <constraint firstItem="IGn-kL-qoe" firstAttribute="leading" secondItem="RM0-07-9jy" secondAttribute="leading" id="zTI-Pc-jAp"/>
                         </constraints>
                     </view>

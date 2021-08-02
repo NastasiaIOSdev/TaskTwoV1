@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class RequestsViewController: UIViewController {
 
@@ -13,7 +14,7 @@ class RequestsViewController: UIViewController {
 
     let cellIdentifier = "RaquestTableViewCell"
 
-    var viewModels = [CellTableViewModel]()
+    var requests: [MyRequest] = []
     let segueIdentifier = "Detail2"
 
     override func viewDidLoad() {
@@ -23,7 +24,17 @@ class RequestsViewController: UIViewController {
         let nib = UINib(nibName: "RaquestTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: cellIdentifier)
         title = "Previous requests"
+        getFronCoreData()
+    }
 
+    func getFronCoreData() {
+        let managedContext = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<MyRequest>(entityName: "MyRequest")
+        do {
+            requests = try managedContext!.fetch(fetchRequest)
+        } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
+        }
     }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -41,27 +52,4 @@ class RequestsViewController: UIViewController {
             cell.layer.transform = CATransform3DIdentity
         }
     }
-}
-
-extension RequestsViewController: UITableViewDelegate, UITableViewDataSource {
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       return viewModels.count
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "RaquestTableViewCell", for: indexPath) as? RaquestTableViewCell else {
-            fatalError()
-        }
-        cell.configure(with: viewModels[indexPath.row])
-        return cell
-    }
-
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            viewModels.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .bottom)
-        }
-    }
-
 }
