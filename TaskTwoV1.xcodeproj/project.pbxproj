@@ -40,9 +40,6 @@
 		2E4E2BDB26A4A1E200B2D89F /* InsideSecondCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E4E2BD926A4A1E200B2D89F /* InsideSecondCollectionViewCell.xib */; };
 		2E4E2BDE26A4A2A100B2D89F /* SecondCollectionViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4E2BDD26A4A2A100B2D89F /* SecondCollectionViewCell+Extensions.swift */; };
 		2E4E2BE326A55CF100B2D89F /* ImageHound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4E2BE226A55CF100B2D89F /* ImageHound.swift */; };
-		2E4E2CD226A83DF000B2D89F /* gifToImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4E2CD126A83DF000B2D89F /* gifToImage.swift */; };
-		2E4E2CD626A83FDD00B2D89F /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4E2CD526A83FDD00B2D89F /* LaunchViewController.swift */; };
-		2E4E2CDA26A8448600B2D89F /* gif.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2E4E2CD926A8448600B2D89F /* gif.gif */; };
 		2E4E2CE426A845EF00B2D89F /* FirstDogCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4E2CE226A845EF00B2D89F /* FirstDogCollectionViewCell.swift */; };
 		2E4E2CE526A845EF00B2D89F /* FirstDogCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E4E2CE326A845EF00B2D89F /* FirstDogCollectionViewCell.xib */; };
 		2E79B4A62690F35800C357C3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E79B4A52690F35800C357C3 /* Constants.swift */; };
@@ -118,9 +115,6 @@
 		2E4E2BD926A4A1E200B2D89F /* InsideSecondCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InsideSecondCollectionViewCell.xib; sourceTree = "<group>"; };
 		2E4E2BDD26A4A2A100B2D89F /* SecondCollectionViewCell+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SecondCollectionViewCell+Extensions.swift"; sourceTree = "<group>"; };
 		2E4E2BE226A55CF100B2D89F /* ImageHound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHound.swift; sourceTree = "<group>"; };
-		2E4E2CD126A83DF000B2D89F /* gifToImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gifToImage.swift; sourceTree = "<group>"; };
-		2E4E2CD526A83FDD00B2D89F /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
-		2E4E2CD926A8448600B2D89F /* gif.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = gif.gif; path = ../../../../paw/gif.gif; sourceTree = "<group>"; };
 		2E4E2CE226A845EF00B2D89F /* FirstDogCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstDogCollectionViewCell.swift; sourceTree = "<group>"; };
 		2E4E2CE326A845EF00B2D89F /* FirstDogCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FirstDogCollectionViewCell.xib; sourceTree = "<group>"; };
 		2E79B4A52690F35800C357C3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -292,8 +286,6 @@
 			children = (
 				2E48E26B2689C59C00271A85 /* AppDelegate.swift */,
 				2E48E26D2689C59C00271A85 /* SceneDelegate.swift */,
-				2E4E2CD926A8448600B2D89F /* gif.gif */,
-				2E4E2CD126A83DF000B2D89F /* gifToImage.swift */,
 				2E48E2742689C5A100271A85 /* Assets.xcassets */,
 				2E48E2762689C5A100271A85 /* LaunchScreen.storyboard */,
 				2E48E2712689C59C00271A85 /* Main.storyboard */,
@@ -342,7 +334,6 @@
 		2E4E2CD426A83FA800B2D89F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				2E4E2CD526A83FDD00B2D89F /* LaunchViewController.swift */,
 				2E7A622E269B088500D54D10 /* CatsBreeds */,
 				2E48E36C268D0AA000271A85 /* SWars */,
 				2E23CD9526A180A1003B92A8 /* AllBreeds */,
@@ -562,7 +553,6 @@
 				2E23CDD126A1DB01003B92A8 /* DetailCollectionViewCell.xib in Resources */,
 				2E4E2BDB26A4A1E200B2D89F /* InsideSecondCollectionViewCell.xib in Resources */,
 				2E23CD9D26A1811D003B92A8 /* SecondCollectionViewCell.xib in Resources */,
-				2E4E2CDA26A8448600B2D89F /* gif.gif in Resources */,
 				2E0FD55D26B53F410022DEBA /* RaquestTableViewCell.xib in Resources */,
 				2E7A6246269B0A7300D54D10 /* LastUITableViewCell.xib in Resources */,
 				2E23CDAB26A19606003B92A8 /* InsideFirstCollectionViewCell.xib in Resources */,
@@ -649,7 +639,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2EC77CED26A408A8007C0A7D /* TestViewController+Extensions.swift in Sources */,
-				2E4E2CD626A83FDD00B2D89F /* LaunchViewController.swift in Sources */,
 				2E23CDB126A19AC1003B92A8 /* ThirdCollectionViewCell.swift in Sources */,
 				2E4E2BDE26A4A2A100B2D89F /* SecondCollectionViewCell+Extensions.swift in Sources */,
 				2E48E379268D0C1300271A85 /* DetailPageViewController.swift in Sources */,
@@ -694,7 +683,6 @@
 				2E48E36F268D0B6100271A85 /* PersonList.swift in Sources */,
 				2E7A6240269B0A4600D54D10 /* SecondUITableViewCell.swift in Sources */,
 				2E4E2CE426A845EF00B2D89F /* FirstDogCollectionViewCell.swift in Sources */,
-				2E4E2CD226A83DF000B2D89F /* gifToImage.swift in Sources */,
 				2E7A624C269B0B2800D54D10 /* LastUICollectionViewCell.swift in Sources */,
 				2E48E353268CEE8D00271A85 /* CatsModel.swift in Sources */,
 			);
