@@ -105,8 +105,8 @@ final class APIService {
         task.resume()
     }
 
-    public func getPhotoHound(breeds: String, completed: @escaping (Result<ImageHound, Error>) -> Void) {
-        let urlString = "https://dog.ceo/api/breed/hound-&q=\(breeds)"
+    public func getPhotoHound(_ hound: String, completed: @escaping (Result<ImageHound, Error>) -> Void) {
+        let urlString = "https://dog.ceo/api/breed/\(hound)/images"
         guard let url = URL(string: urlString) else {return}
         let task = URLSession.shared.dataTask(with: url) { data, _, error in
             if let error = error {

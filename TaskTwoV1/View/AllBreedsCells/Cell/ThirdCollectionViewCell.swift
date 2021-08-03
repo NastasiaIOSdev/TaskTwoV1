@@ -15,6 +15,7 @@ class ThirdCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var collectionViewTestThird: UICollectionView!
     @IBOutlet weak var pageControl: UIPageControl!
+    var parentViewController: TestViewController?
 
     var models = [CellViewModel]()
 
@@ -23,8 +24,9 @@ class ThirdCollectionViewCell: UICollectionViewCell {
 
     }
 
-    func configure(with models: [CellViewModel]) {
+    func configure(with models: [CellViewModel], viewC: TestViewController?) {
         self.models = models
+        self.parentViewController = viewC
         collectionViewTestThird.reloadData()
     }
 

@@ -14,16 +14,17 @@ class TestDetailViewController: UIViewController {
     @IBOutlet weak var testCollectionView: UICollectionView!
 
     var viewModels = [CellViewModel]()
+    var viewModel: CellViewModel?
     let countCells = 2
     let offset: CGFloat = 2.0
-    var indexPath: IndexPath!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        testCollectionView.dataSource = self
-        testCollectionView.delegate = self
+        if let viewModel = viewModel {
+            viewModels = [viewModel]
+        }
         testCollectionView.register(UINib(nibName: "TestCollectionViewCell", bundle: nil),
                                     forCellWithReuseIdentifier: "TestCollectionViewCell")
-        title = "Detail List"
+        title = viewModel?.title
     }
 }

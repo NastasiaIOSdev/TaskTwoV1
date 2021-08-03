@@ -33,22 +33,19 @@ extension SecondCollectionViewCell: UICollectionViewDelegate,
                                    UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return models.count
+        return 5
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let viewC = TestDetailViewController()
         viewC.modalPresentationStyle = .overFullScreen
-        viewC.viewModels = models
-        viewC.indexPath = indexPath
     }
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionViewTestSecond.dequeueReusableCell(
-                withReuseIdentifier: InsideSecondCollectionViewCell.identifier,
-                for: indexPath) as? InsideSecondCollectionViewCell else { fatalError()
+                withReuseIdentifier: FirstDogCollectionViewCell.identifier,
+                for: indexPath) as? FirstDogCollectionViewCell else { fatalError()
         }
-        cell.configure(with: models[indexPath.row])
         return cell
     }
 }

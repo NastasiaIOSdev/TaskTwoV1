@@ -13,5 +13,5 @@ protocol NetService {
     func searchPeopleList(with query: String, completion: @escaping (Result<[Results], Error>) -> Void)
     func getBreed2(completion: @escaping (Result<Breed2, Error>) -> Void)
     func getPhoto(breeds: String, completion: @escaping (Result<Image2, Error>) -> Void)
-    func getPhotoHound(breeds: String, completed: @escaping (Result<ImageHound, Error>) -> Void)
+    func getPhotoHound(_ hound: String, completed: @escaping (Result<ImageHound, Error>) -> Void)
 }

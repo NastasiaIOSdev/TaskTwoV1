@@ -8,6 +8,6 @@
 import Foundation
 
 struct ImageHound: Decodable {
-    let message: String
+    let message: [String]
     let status: String
 }

@@ -21,7 +21,6 @@
 		2E23CDB226A19AC1003B92A8 /* ThirdCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E23CDB026A19AC1003B92A8 /* ThirdCollectionViewCell.xib */; };
 		2E23CDB726A19ADD003B92A8 /* InsideThirdCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E23CDB526A19ADD003B92A8 /* InsideThirdCollectionViewCell.swift */; };
 		2E23CDB826A19ADD003B92A8 /* InsideThirdCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E23CDB626A19ADD003B92A8 /* InsideThirdCollectionViewCell.xib */; };
-		2E23CDBD26A1A065003B92A8 /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E23CDBC26A1A065003B92A8 /* TabbarViewController.swift */; };
 		2E23CDD126A1DB01003B92A8 /* DetailCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E23CDCF26A1DB01003B92A8 /* DetailCollectionViewCell.xib */; };
 		2E28D26226AEF5360062CD22 /* ItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E28D26026AEF5360062CD22 /* ItemCollectionViewCell.swift */; };
 		2E28D26326AEF5360062CD22 /* ItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E28D26126AEF5360062CD22 /* ItemCollectionViewCell.xib */; };
@@ -36,8 +35,6 @@
 		2E48E36F268D0B6100271A85 /* PersonList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E48E36E268D0B5F00271A85 /* PersonList.swift */; };
 		2E48E372268D0B8300271A85 /* SearchPersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E48E371268D0B8300271A85 /* SearchPersonViewController.swift */; };
 		2E48E379268D0C1300271A85 /* DetailPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E48E378268D0C1300271A85 /* DetailPageViewController.swift */; };
-		2E4E2BDA26A4A1E200B2D89F /* InsideSecondCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4E2BD826A4A1E200B2D89F /* InsideSecondCollectionViewCell.swift */; };
-		2E4E2BDB26A4A1E200B2D89F /* InsideSecondCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E4E2BD926A4A1E200B2D89F /* InsideSecondCollectionViewCell.xib */; };
 		2E4E2BDE26A4A2A100B2D89F /* SecondCollectionViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4E2BDD26A4A2A100B2D89F /* SecondCollectionViewCell+Extensions.swift */; };
 		2E4E2BE326A55CF100B2D89F /* ImageHound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4E2BE226A55CF100B2D89F /* ImageHound.swift */; };
 		2E4E2CE426A845EF00B2D89F /* FirstDogCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4E2CE226A845EF00B2D89F /* FirstDogCollectionViewCell.swift */; };
@@ -91,7 +88,6 @@
 		2E23CDB026A19AC1003B92A8 /* ThirdCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThirdCollectionViewCell.xib; sourceTree = "<group>"; };
 		2E23CDB526A19ADD003B92A8 /* InsideThirdCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsideThirdCollectionViewCell.swift; sourceTree = "<group>"; };
 		2E23CDB626A19ADD003B92A8 /* InsideThirdCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InsideThirdCollectionViewCell.xib; sourceTree = "<group>"; };
-		2E23CDBC26A1A065003B92A8 /* TabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
 		2E23CDCF26A1DB01003B92A8 /* DetailCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailCollectionViewCell.xib; sourceTree = "<group>"; };
 		2E23CDD726A20D8D003B92A8 /* TestDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDetailViewController.swift; sourceTree = "<group>"; };
 		2E23CDDB26A20FFF003B92A8 /* TestCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -111,8 +107,6 @@
 		2E48E36E268D0B5F00271A85 /* PersonList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonList.swift; sourceTree = "<group>"; };
 		2E48E371268D0B8300271A85 /* SearchPersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPersonViewController.swift; sourceTree = "<group>"; };
 		2E48E378268D0C1300271A85 /* DetailPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPageViewController.swift; sourceTree = "<group>"; };
-		2E4E2BD826A4A1E200B2D89F /* InsideSecondCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsideSecondCollectionViewCell.swift; sourceTree = "<group>"; };
-		2E4E2BD926A4A1E200B2D89F /* InsideSecondCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InsideSecondCollectionViewCell.xib; sourceTree = "<group>"; };
 		2E4E2BDD26A4A2A100B2D89F /* SecondCollectionViewCell+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SecondCollectionViewCell+Extensions.swift"; sourceTree = "<group>"; };
 		2E4E2BE226A55CF100B2D89F /* ImageHound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHound.swift; sourceTree = "<group>"; };
 		2E4E2CE226A845EF00B2D89F /* FirstDogCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstDogCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -199,11 +193,10 @@
 		2E23CD9F26A18124003B92A8 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				2E4E2CE226A845EF00B2D89F /* FirstDogCollectionViewCell.swift */,
 				2E23CDA226A1950E003B92A8 /* FirstCollectionViewCell.swift */,
 				2E23CDA826A19606003B92A8 /* InsideFirstCollectionViewCell.swift */,
 				2E23CD9A26A1811D003B92A8 /* SecondCollectionViewCell.swift */,
-				2E4E2BD826A4A1E200B2D89F /* InsideSecondCollectionViewCell.swift */,
+				2E4E2CE226A845EF00B2D89F /* FirstDogCollectionViewCell.swift */,
 				2E23CDAF26A19AC1003B92A8 /* ThirdCollectionViewCell.swift */,
 				2E23CDB526A19ADD003B92A8 /* InsideThirdCollectionViewCell.swift */,
 				2E23CDAD26A196F6003B92A8 /* Xib */,
@@ -214,26 +207,17 @@
 		2E23CDAD26A196F6003B92A8 /* Xib */ = {
 			isa = PBXGroup;
 			children = (
-				2E4E2CE326A845EF00B2D89F /* FirstDogCollectionViewCell.xib */,
-				2E23CDDC26A20FFF003B92A8 /* TestCollectionViewCell.xib */,
-				2EC77CAE26A339A8007C0A7D /* FullscreenCollectionViewCell.xib */,
-				2E23CDCF26A1DB01003B92A8 /* DetailCollectionViewCell.xib */,
 				2E23CDA326A1950E003B92A8 /* FirstCollectionViewCell.xib */,
 				2E23CDA926A19606003B92A8 /* InsideFirstCollectionViewCell.xib */,
 				2E23CD9B26A1811D003B92A8 /* SecondCollectionViewCell.xib */,
-				2E4E2BD926A4A1E200B2D89F /* InsideSecondCollectionViewCell.xib */,
+				2E4E2CE326A845EF00B2D89F /* FirstDogCollectionViewCell.xib */,
 				2E23CDB026A19AC1003B92A8 /* ThirdCollectionViewCell.xib */,
 				2E23CDB626A19ADD003B92A8 /* InsideThirdCollectionViewCell.xib */,
+				2E23CDDC26A20FFF003B92A8 /* TestCollectionViewCell.xib */,
+				2E23CDCF26A1DB01003B92A8 /* DetailCollectionViewCell.xib */,
+				2EC77CAE26A339A8007C0A7D /* FullscreenCollectionViewCell.xib */,
 			);
 			path = Xib;
-			sourceTree = "<group>";
-		};
-		2E23CDBF26A1A0D2003B92A8 /* Helper */ = {
-			isa = PBXGroup;
-			children = (
-				2E23CDBC26A1A065003B92A8 /* TabbarViewController.swift */,
-			);
-			path = Helper;
 			sourceTree = "<group>";
 		};
 		2E48E25F2689C59C00271A85 = {
@@ -261,7 +245,6 @@
 				2E48E2832689CCA800271A85 /* App */,
 				2E0FD55F26B558B90022DEBA /* Core Data */,
 				2E48E2A8268A0DA600271A85 /* APIService */,
-				2E23CDBF26A1A0D2003B92A8 /* Helper */,
 				2E79B4A42690F33100C357C3 /* Constants */,
 				2E79B4A82690F3FA00C357C3 /* Protocols&Extensions */,
 				2E7D92562698C6B200B3C64B /* Model */,
@@ -551,7 +534,6 @@
 			files = (
 				2E48E2782689C5A100271A85 /* LaunchScreen.storyboard in Resources */,
 				2E23CDD126A1DB01003B92A8 /* DetailCollectionViewCell.xib in Resources */,
-				2E4E2BDB26A4A1E200B2D89F /* InsideSecondCollectionViewCell.xib in Resources */,
 				2E23CD9D26A1811D003B92A8 /* SecondCollectionViewCell.xib in Resources */,
 				2E0FD55D26B53F410022DEBA /* RaquestTableViewCell.xib in Resources */,
 				2E7A6246269B0A7300D54D10 /* LastUITableViewCell.xib in Resources */,
@@ -657,11 +639,9 @@
 				2E23CDB726A19ADD003B92A8 /* InsideThirdCollectionViewCell.swift in Sources */,
 				2E7A6231269B08F300D54D10 /* MainUIViewController.swift in Sources */,
 				2EC77CFB26A40D04007C0A7D /* ThirdCollectionViewCell+Extensions.swift in Sources */,
-				2E4E2BDA26A4A1E200B2D89F /* InsideSecondCollectionViewCell.swift in Sources */,
 				2EC77CF826A40B19007C0A7D /* FirstCollectionViewCell+Extensions.swift in Sources */,
 				2E4E2BE326A55CF100B2D89F /* ImageHound.swift in Sources */,
 				2E0FD55826B53F190022DEBA /* RequestsViewController.swift in Sources */,
-				2E23CDBD26A1A065003B92A8 /* TabbarViewController.swift in Sources */,
 				2EC77CE526A40373007C0A7D /* LastUITableViewCell+Extension.swift in Sources */,
 				2E7A6235269B099800D54D10 /* FirstUITableViewCell.swift in Sources */,
 				2E23CD9726A180CF003B92A8 /* TestViewController.swift in Sources */,

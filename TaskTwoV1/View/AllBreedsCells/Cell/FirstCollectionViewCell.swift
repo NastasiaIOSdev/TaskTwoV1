@@ -14,6 +14,7 @@ class FirstCollectionViewCell: UICollectionViewCell {
     // MARK: - IBOutlets
 
     @IBOutlet weak var collectionViewTestSecond: UICollectionView!
+    var parentViewController: TestViewController?
 
     var models = [CellViewModel]()
 
@@ -21,8 +22,9 @@ class FirstCollectionViewCell: UICollectionViewCell {
         return UINib(nibName: "FirstCollectionViewCell", bundle: nil)
     }
 
-    func configure(with models: [CellViewModel]) {
+    func configure(with models: [CellViewModel], viewC: TestViewController?) {
         self.models = models
+        self.parentViewController = viewC
         collectionViewTestSecond.reloadData()
     }
 

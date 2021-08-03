@@ -31,37 +31,25 @@ extension TestViewController: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.row % 3 == 0 {
-            if let cell = collectionTestView.dequeueReusableCell(withReuseIdentifier: "FirstCollectionViewCell",
-                                                                 for: indexPath) as? FirstCollectionViewCell {
+            if collectionTestView.dequeueReusableCell(withReuseIdentifier: "FirstCollectionViewCell",
+                                                      for: indexPath) is FirstCollectionViewCell {
 
-                guard let viewC = storyboard?.instantiateViewController(
+                guard (storyboard?.instantiateViewController(
                         identifier: "TestDetailViewController")
-                        as? TestDetailViewController else {
+                        as? TestDetailViewController) != nil else {
                     fatalError()
                 }
-                viewC.viewModels = viewModels
-                viewC.indexPath = indexPath
-                self.navigationController?.pushViewController(viewC, animated: true)
-                cell.collectionViewTestSecond.delegate = cell
-                cell.collectionViewTestSecond.dataSource = cell
             }
         } else if (indexPath.row - 1) % 3 == 0 || indexPath.row == 1 {
-            if collectionTestView.dequeueReusableCell(
-                withReuseIdentifier: "SecondCollectionViewCell",
-                for: indexPath) is SecondCollectionViewCell {
 
-                guard let viewC = storyboard?.instantiateViewController(
-                        identifier: "TestDetailViewController")
-                        as? TestDetailViewController else {
-                    fatalError()
-                }
-                viewC.viewModels = viewModels
-                viewC.indexPath = indexPath
-                self.navigationController?.pushViewController(viewC, animated: true)
-            }
         } else if (indexPath.row - 1) % 2 == 0 || (indexPath.row - 1) % 2 == 1 || indexPath.row == 2 {
             if collectionTestView.dequeueReusableCell(
                 withReuseIdentifier: "ThirdCollectionViewCell", for: indexPath) is ThirdCollectionViewCell {
+                guard (storyboard?.instantiateViewController(
+                        identifier: "TestDetailViewController")
+                        as? TestDetailViewController) != nil else {
+                    fatalError()
+                }
 
             }
         }
@@ -73,35 +61,28 @@ extension TestViewController: UICollectionViewDataSource {
         if indexPath.row % 3 == 0 {
             if let cell = collectionTestView.dequeueReusableCell(withReuseIdentifier: "FirstCollectionViewCell",
                                                                  for: indexPath) as? FirstCollectionViewCell {
-                cell.configure(with: viewModels)
+                cell.configure(with: viewModels, viewC: self)
                 return cell
             }
 
         } else if (indexPath.row - 1) % 3 == 0 || indexPath.row == 1 {
-            guard let breed = self.breeds?.message[indexPath.row].capitalized else {return UICollectionViewCell.init()}
+            guard let breed = self.breeds?.message[indexPath.row] else {return UICollectionViewCell.init()}
 
             guard let cell2 = collectionTestView.dequeueReusableCell(
                     withReuseIdentifier: "FirstDogCollectionViewCell",
                     for: indexPath) as? FirstDogCollectionViewCell else { fatalError()
             }
-            for (index, image) in self.breeds!.message.enumerated() where index == indexPath.row {
-
-                    APIService.shared.getPhoto(breeds: image) { result in
-                        switch result {
-                        case .success(let img):
-                            DispatchQueue.main.async {
-                                cell2.setBreed(breed: breed, imageURL: img.message)
-                            }
-                        case .failure(let error):
-                            print(error.localizedDescription)
-                        }
-                    }
+            self.getPhotoByBreed(breed) { image in
+                DispatchQueue.main.async {
+                    cell2.setBreed(breed: breed.capitalized, imageURL: image)
                 }
+            }
             return cell2
+
             } else if (indexPath.row - 1) % 2 == 0 || (indexPath.row - 1) % 2 == 1 || indexPath.row == 2 {
             if let cell3 = collectionTestView.dequeueReusableCell(
                 withReuseIdentifier: "ThirdCollectionViewCell", for: indexPath) as? ThirdCollectionViewCell {
-                cell3.configure(with: viewModels)
+                cell3.configure(with: viewModels, viewC: self)
                 return cell3
             }
         }

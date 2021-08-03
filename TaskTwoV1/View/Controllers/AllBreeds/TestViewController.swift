@@ -17,6 +17,7 @@ class TestViewController: UIViewController {
     var viewModels = [CellViewModel]()
     var breeds: Breed2?
     var images: [String] = []
+    var houndImages: [String] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +35,7 @@ class TestViewController: UIViewController {
         title = "List All Breed"
         allBreed()
         fillArrays()
+        getPhotosByHound("hound")
     }
 
     func allBreed() {
@@ -73,7 +75,41 @@ class TestViewController: UIViewController {
         }
     }
 
+    func getPhotosByHound(_ hound: String) {
+        APIService.shared.getPhotoHound(hound) {[weak self] result in
+            switch result {
+            case.success(let data):
+                self?.houndImages = data.message
+            case.failure(let error):
+                print(error)
+            }
+        }
+    }
+
+    func getPhotoByBreed(_ breed: String, completion: @escaping (String) -> Void) {
+        APIService.shared.getPhoto(breeds: breed) { result in
+            switch result {
+            case.success(let img):
+                completion(img.message)
+            case.failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
+
+    func makeSegue(data: CellViewModel) {
+        performSegue(withIdentifier: "Detail1", sender: data)
+    }
+
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "Detail1",
+           let data = sender as? CellViewModel,
+           let viewC = segue.destination as? TestDetailViewController {
+            viewC.viewModel = data
+        }
     }
 }

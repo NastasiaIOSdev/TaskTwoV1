@@ -14,6 +14,10 @@ extension ThirdCollectionViewCell: UICollectionViewDelegate,
         return 3
     }
 
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.parentViewController?.makeSegue(data: self.models[indexPath.row])
+    }
+
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionViewTestThird.dequeueReusableCell(

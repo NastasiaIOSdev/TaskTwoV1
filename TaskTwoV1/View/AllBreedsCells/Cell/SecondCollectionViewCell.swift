@@ -15,23 +15,20 @@ class SecondCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var collectionViewTestSecond: UICollectionView!
 
-    var models = [CellViewModel]()
+    var breeds: Breed2?
+    var images: [String] = []
+    var houndImages: [String] = []
 
     static func nib() -> UINib {
         return UINib(nibName: "SecondCollectionViewCell", bundle: nil)
-    }
-
-    func configure(with models: [CellViewModel]) {
-        self.models = models
-        collectionViewTestSecond.reloadData()
     }
 
     override func awakeFromNib() {
         super.awakeFromNib()
 
         collectionViewTestSecond.register(
-            InsideSecondCollectionViewCell.nib(),
-            forCellWithReuseIdentifier: InsideSecondCollectionViewCell.identifier)
+            FirstDogCollectionViewCell.nib(),
+            forCellWithReuseIdentifier: FirstDogCollectionViewCell.identifier)
         collectionViewTestSecond.delegate = self
         collectionViewTestSecond.dataSource = self
     }
