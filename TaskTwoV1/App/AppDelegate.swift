@@ -38,9 +38,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     // MARK: - Core Data stack
-
+    
+    let dataModel = "Person"
     lazy var persistentContainer: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: "Person")
+        let container = NSPersistentContainer(name: dataModel)
         container.loadPersistentStores(completionHandler: { (_, error) in
             if let error = error as NSError? {
                 fatalError("Unresolved error \(error), \(error.userInfo)")
