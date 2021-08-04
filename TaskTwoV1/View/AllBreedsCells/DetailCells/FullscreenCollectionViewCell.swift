@@ -31,20 +31,8 @@ class FullscreenCollectionViewCell: UICollectionViewCell, UIScrollViewDelegate {
         scrollView.zoomScale = 1.0
     }
 
-    func configure(with viewModel: CellViewModel) {
-        if let data = viewModel.imageData {
-            imageView.image = UIImage(data: data)
-        } else if let url = viewModel.imageUrl {
-            URLSession.shared.dataTask(with: url) { [weak self] data, _, error in
-                guard let data = data, error == nil else {
-                    return
-                }
-                viewModel.imageData = data
-                DispatchQueue.main.async {
-                    self?.imageView.image = UIImage(data: data)
-                }
-            }.resume()
-        }
+    func configure(with image: UIImage?) {
+        self.imageView.image = image
     }
     override func layoutSubviews() {
         super.layoutSubviews()

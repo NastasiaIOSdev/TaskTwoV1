@@ -14,8 +14,8 @@ class FirstCollectionViewCell: UICollectionViewCell {
     // MARK: - IBOutlets
 
     @IBOutlet weak var collectionViewTestSecond: UICollectionView!
-    var parentViewController: TestViewController?
 
+    var parentViewController: TestViewController?
     var models = [CellViewModel]()
 
     static func nib() -> UINib {

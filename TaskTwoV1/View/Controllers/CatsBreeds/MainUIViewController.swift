@@ -29,8 +29,8 @@ class MainUIViewController: UIViewController {
         tableViewSecond.dataSource = self
         title = "Cats"
         getAllBreed()
-
-    }
+        fileManagerWork()
+   }
 
     func getAllBreed() {
         APIService.shared.getBreed { [weak self] result in

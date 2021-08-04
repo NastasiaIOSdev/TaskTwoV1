@@ -13,18 +13,14 @@ class TestDetailViewController: UIViewController {
 
     @IBOutlet weak var testCollectionView: UICollectionView!
 
-    var viewModels = [CellViewModel]()
-    var viewModel: CellViewModel?
+    var viewModel: BreedImagesModel?
     let countCells = 2
     let offset: CGFloat = 2.0
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let viewModel = viewModel {
-            viewModels = [viewModel]
-        }
         testCollectionView.register(UINib(nibName: "TestCollectionViewCell", bundle: nil),
                                     forCellWithReuseIdentifier: "TestCollectionViewCell")
-        title = viewModel?.title
+        title = viewModel?.breed?.capitalized
     }
 }

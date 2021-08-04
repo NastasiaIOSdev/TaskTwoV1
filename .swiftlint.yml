@@ -1,6 +1,3 @@
 line_length:
 - 210 # warning
 - 300 # error
-
-cyclomatic_complexity:
-  12

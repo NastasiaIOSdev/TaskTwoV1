@@ -29,32 +29,6 @@ extension TestViewController: UICollectionViewDataSource {
         return viewModels.count
     }
 
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if indexPath.row % 3 == 0 {
-            if collectionTestView.dequeueReusableCell(withReuseIdentifier: "FirstCollectionViewCell",
-                                                      for: indexPath) is FirstCollectionViewCell {
-
-                guard (storyboard?.instantiateViewController(
-                        identifier: "TestDetailViewController")
-                        as? TestDetailViewController) != nil else {
-                    fatalError()
-                }
-            }
-        } else if (indexPath.row - 1) % 3 == 0 || indexPath.row == 1 {
-
-        } else if (indexPath.row - 1) % 2 == 0 || (indexPath.row - 1) % 2 == 1 || indexPath.row == 2 {
-            if collectionTestView.dequeueReusableCell(
-                withReuseIdentifier: "ThirdCollectionViewCell", for: indexPath) is ThirdCollectionViewCell {
-                guard (storyboard?.instantiateViewController(
-                        identifier: "TestDetailViewController")
-                        as? TestDetailViewController) != nil else {
-                    fatalError()
-                }
-
-            }
-        }
-    }
-
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
@@ -66,17 +40,12 @@ extension TestViewController: UICollectionViewDataSource {
             }
 
         } else if (indexPath.row - 1) % 3 == 0 || indexPath.row == 1 {
-            guard let breed = self.breeds?.message[indexPath.row] else {return UICollectionViewCell.init()}
-
             guard let cell2 = collectionTestView.dequeueReusableCell(
-                    withReuseIdentifier: "FirstDogCollectionViewCell",
-                    for: indexPath) as? FirstDogCollectionViewCell else { fatalError()
+                    withReuseIdentifier: "SecondCollectionViewCell",
+                    for: indexPath) as? SecondCollectionViewCell else { fatalError()
             }
-            self.getPhotoByBreed(breed) { image in
-                DispatchQueue.main.async {
-                    cell2.setBreed(breed: breed.capitalized, imageURL: image)
-                }
-            }
+            cell2.breeds = self.breeds
+            cell2.parentViewController = self
             return cell2
 
             } else if (indexPath.row - 1) % 2 == 0 || (indexPath.row - 1) % 2 == 1 || indexPath.row == 2 {

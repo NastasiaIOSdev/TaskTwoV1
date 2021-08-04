@@ -10,7 +10,7 @@ import UIKit
 extension FullscreenViewController: UICollectionViewDelegate, UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModels.count
+        return self.image != nil ? 1 : 0
     }
 
     func collectionView(_ collectionView: UICollectionView,
@@ -19,7 +19,7 @@ extension FullscreenViewController: UICollectionViewDelegate, UICollectionViewDa
                                                             for: indexPath) as? FullscreenCollectionViewCell else {
             fatalError()
         }
-        cell.configure(with: viewModels[indexPath.row])
+        cell.configure(with: self.image)
         return cell
     }
 }

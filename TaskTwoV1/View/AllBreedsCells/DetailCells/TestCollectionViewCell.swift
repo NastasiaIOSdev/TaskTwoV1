@@ -19,15 +19,12 @@ class TestCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-    func configure(with viewModel: CellViewModel) {
-        if let data = viewModel.imageData {
-            imageView.image = UIImage(data: data)
-        } else if let url = viewModel.imageUrl {
+    func configure(with urlString: String) {
+        if let url = URL(string: urlString) {
             URLSession.shared.dataTask(with: url) { [weak self] data, _, error in
                 guard let data = data, error == nil else {
                     return
                 }
-                viewModel.imageData = data
                 DispatchQueue.main.async {
                     self?.imageView.image = UIImage(data: data)
                 }

@@ -11,6 +11,8 @@ class SecondCollectionViewCell: UICollectionViewCell {
 
     static let identifier = "SecondCollectionViewCell"
 
+    var parentViewController: TestViewController?
+
     // MARK: - IBOutlets
 
     @IBOutlet weak var collectionViewTestSecond: UICollectionView!

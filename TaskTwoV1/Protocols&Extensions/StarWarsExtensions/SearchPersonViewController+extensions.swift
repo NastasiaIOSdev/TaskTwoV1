@@ -31,6 +31,7 @@ extension SearchPersonViewController: UICollectionViewDelegate, UICollectionView
        performSegue(withIdentifier: segueIdentifier, sender: item)
   }
 }
+
     extension SearchPersonViewController: UICollectionViewDelegateFlowLayout {
         func collectionView(_ collectionView: UICollectionView,
                             layout collectionViewLayout: UICollectionViewLayout,
@@ -42,6 +43,7 @@ extension SearchPersonViewController: UICollectionViewDelegate, UICollectionView
             return CGSize(width: widthCell - spasing, height: heightCell - (offset*2))
         }
     }
+
 extension SearchPersonViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked (_ searchBar: UISearchBar) {
         guard let text = searchBar.text, !text.isEmpty else {
@@ -71,13 +73,14 @@ extension SearchPersonViewController: UISearchBarDelegate {
             }
         }
     }
+
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         guard let text = searchBar.text, !text.isEmpty else {
             return
         }
-
         print(text)
     }
+
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.text = ""
         collectionView.reloadData()

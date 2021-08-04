@@ -33,18 +33,34 @@ extension SecondCollectionViewCell: UICollectionViewDelegate,
                                    UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return self.breeds?.message.count ?? 0
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let viewC = TestDetailViewController()
-        viewC.modalPresentationStyle = .overFullScreen
+        if let breed = self.breeds?.message[indexPath.row] {
+            APIService.shared.getPhotoHound(breed) {[weak self] result in
+                DispatchQueue.main.async { [weak self] in
+                    var images: [String] = []
+                    switch result {
+                    case.success(let data):
+                        images = data.message
+                    case.failure(let error):
+                        print(error)
+                    }
+                    self?.parentViewController?.makeSegue(data: BreedImagesModel(breed: breed, images: images))
+                }
+            }
+        }
     }
+
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionViewTestSecond.dequeueReusableCell(
                 withReuseIdentifier: FirstDogCollectionViewCell.identifier,
                 for: indexPath) as? FirstDogCollectionViewCell else { fatalError()
+        }
+        if let breed = self.breeds?.message[indexPath.row] {
+            cell.setBreed(breed)
         }
         return cell
     }

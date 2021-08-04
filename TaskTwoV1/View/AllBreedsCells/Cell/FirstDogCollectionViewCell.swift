@@ -17,10 +17,6 @@ class FirstDogCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var breedLabel: UILabel!
     @IBOutlet weak var myView: UIView!
     @IBOutlet weak var shadowView: UIView!
-    @IBOutlet weak var rightImageDogView: UIImageView!
-    @IBOutlet weak var rightBreedLabel: UILabel!
-    @IBOutlet weak var rightMyView: UIView!
-    @IBOutlet weak var rightShadowView: UIView!
 
     static func nib() -> UINib {
         return UINib(nibName: "FirstDogCollectionViewCell", bundle: nil)
@@ -30,8 +26,6 @@ class FirstDogCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         imageDogView.layer.cornerRadius = 9
         imageDogView.layer.masksToBounds = true
-        rightImageDogView.layer.cornerRadius = 9
-        rightImageDogView.layer.masksToBounds = true
     }
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -44,24 +38,30 @@ class FirstDogCollectionViewCell: UICollectionViewCell {
         shadowView.layer.shadowOpacity = 0.3
         shadowView.layer.shadowOffset = CGSize.zero
 
-        rightImageDogView.layer.cornerRadius = 9
-        rightMyView.layer.cornerRadius = 9
-        rightImageDogView.layer.masksToBounds = true
-        rightShadowView.layer.cornerRadius = 9
-        rightShadowView.layer.shadowRadius = 4.0
-        rightShadowView.layer.shadowColor = UIColor.black.cgColor
-        rightShadowView.layer.shadowOpacity = 0.3
-        rightShadowView.layer.shadowOffset = CGSize.zero
     }
 
-    func setBreed(breed: String, imageURL: String) {
+    func setBreed(_ breed: String) {
+        self.breedLabel.text = breed.capitalized
+        APIService.shared.getPhoto(breeds: breed, completed: { [weak self] result in
+            switch result {
+            case.success(let image):
+                if let url = URL(string: image.message) {
+                    self?.imageDogView.downloadedFrom(url: url)
+                } else {
+                    print("Invalid random image url for breed: \(breed)")
+                }
+            case.failure(let error):
+                print(error)
+            }
+        })
+    }
+
+    func setBreed_(breed: String, imageURL: String) {
         breedLabel.text = breed
-        rightBreedLabel.text = breed
         let url = URL(string: imageURL)
 
         if imageURL != "" {
             imageDogView.downloadedFrom(url: url!)
-            rightImageDogView.downloadedFrom(url: url!)
         }
     }
 
@@ -69,8 +69,5 @@ class FirstDogCollectionViewCell: UICollectionViewCell {
         super.prepareForReuse()
         imageDogView.image = nil
         breedLabel.text = nil
-        rightImageDogView.image = nil
-        rightBreedLabel.text = nil
-
-    }
+        }
 }

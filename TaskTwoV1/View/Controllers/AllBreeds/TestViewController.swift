@@ -26,9 +26,9 @@ class TestViewController: UIViewController {
         self.collectionTestView.register(UINib(nibName: "FirstCollectionViewCell",
                                                bundle: nil),
                                                forCellWithReuseIdentifier: "FirstCollectionViewCell")
-        self.collectionTestView.register(UINib(nibName: "FirstDogCollectionViewCell",
+        self.collectionTestView.register(UINib(nibName: "SecondCollectionViewCell",
                                                bundle: nil),
-                                               forCellWithReuseIdentifier: "FirstDogCollectionViewCell")
+                                               forCellWithReuseIdentifier: "SecondCollectionViewCell")
         self.collectionTestView.register(UINib(nibName: "ThirdCollectionViewCell",
                                                bundle: nil),
                                                forCellWithReuseIdentifier: "ThirdCollectionViewCell")
@@ -97,7 +97,7 @@ class TestViewController: UIViewController {
         }
     }
 
-    func makeSegue(data: CellViewModel) {
+    func makeSegue(data: BreedImagesModel) {
         performSegue(withIdentifier: "Detail1", sender: data)
     }
 
@@ -107,7 +107,7 @@ class TestViewController: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "Detail1",
-           let data = sender as? CellViewModel,
+           let data = sender as? BreedImagesModel,
            let viewC = segue.destination as? TestDetailViewController {
             viewC.viewModel = data
         }

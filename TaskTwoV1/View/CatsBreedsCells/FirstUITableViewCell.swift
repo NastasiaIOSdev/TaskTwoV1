@@ -10,6 +10,7 @@ import UIKit
 class FirstUITableViewCell: UITableViewCell {
 
     static let identifier = "FirstUITableViewCell"
+    lazy var photoCache = PhotoCacheService()
 
     // MARK: - IBOUtlets
 
@@ -40,9 +41,11 @@ class FirstUITableViewCell: UITableViewCell {
         breedLabel.text = viewModel.title
         countryLabel.text = viewModel.subtitle
         aboutBreedLabel.text = viewModel.aboutBreed
+
+        // load image cache
         if let data = viewModel.imageData {
             catUIImageView.image = UIImage(data: data)
-        } else if let url = viewModel.imageUrl {
+       } else if let url = viewModel.imageUrl {
             URLSession.shared.dataTask(with: url) { [weak self] data, _, error in
                 guard let data = data, error == nil else {
                     return
@@ -51,7 +54,8 @@ class FirstUITableViewCell: UITableViewCell {
                 DispatchQueue.main.async {
                     self?.catUIImageView.image = UIImage(data: data)
                 }
-            }.resume()
+            }
+            .resume()
         }
     }
 

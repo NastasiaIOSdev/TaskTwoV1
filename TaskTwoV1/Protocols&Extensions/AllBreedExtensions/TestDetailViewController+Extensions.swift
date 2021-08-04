@@ -22,7 +22,7 @@ extension TestDetailViewController: UICollectionViewDelegate, UICollectionViewDa
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModels.count
+        return self.viewModel?.images.count ?? 0
     }
 
     func collectionView(_ collectionView: UICollectionView,
@@ -31,17 +31,23 @@ extension TestDetailViewController: UICollectionViewDelegate, UICollectionViewDa
                                                                 for: indexPath) as? TestCollectionViewCell else {
             fatalError()
         }
-        cell.configure(with: viewModels[indexPath.row])
+        if let image = self.viewModel?.images[indexPath.row] {
+            cell.configure(with: image)
+        }
         return cell
     }
+
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let viewC = storyboard?.instantiateViewController(
-                identifier: "FullscreenViewController")
-                as? FullscreenViewController else {
+        guard let viewC = storyboard?.instantiateViewController(identifier: "FullscreenViewController")
+                                                                    as? FullscreenViewController else {
             fatalError()
         }
-        viewC.viewModels = viewModels
-        viewC.indexPath = indexPath
+        guard self.collectionView(collectionView, cellForItemAt: indexPath) is TestCollectionViewCell else {
+            fatalError()
+        }
+           if let image = self.viewModel?.images[indexPath.row] {
+            viewC.imageUrlString = image
+        }
         self.navigationController?.pushViewController(viewC, animated: true)
     }
 }

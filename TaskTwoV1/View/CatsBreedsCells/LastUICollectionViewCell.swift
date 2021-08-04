@@ -23,6 +23,7 @@ class LastUICollectionViewCell: UICollectionViewCell {
         return  UINib(nibName: "LastUICollectionViewCell", bundle: nil
         )
     }
+
     override func awakeFromNib() {
         super.awakeFromNib()
         catUIImageView.layer.cornerRadius = 10

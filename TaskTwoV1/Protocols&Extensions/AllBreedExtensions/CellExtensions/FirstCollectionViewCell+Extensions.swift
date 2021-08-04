@@ -24,8 +24,9 @@ extension FirstCollectionViewCell: UICollectionViewDelegate,
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.parentViewController?.makeSegue(data: self.models[indexPath.row])
+        self.parentViewController?.makeSegue(data: BreedImagesModel(cellViewModel: self.models[indexPath.row]))
     }
+
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionViewTestSecond.dequeueReusableCell(

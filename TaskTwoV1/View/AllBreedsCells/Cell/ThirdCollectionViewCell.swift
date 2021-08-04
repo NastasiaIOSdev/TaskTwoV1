@@ -15,8 +15,8 @@ class ThirdCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var collectionViewTestThird: UICollectionView!
     @IBOutlet weak var pageControl: UIPageControl!
-    var parentViewController: TestViewController?
 
+    var parentViewController: TestViewController?
     var models = [CellViewModel]()
 
     static func nib() -> UINib {
