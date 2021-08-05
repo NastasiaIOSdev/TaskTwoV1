@@ -42,7 +42,6 @@ class FirstUITableViewCell: UITableViewCell {
         countryLabel.text = viewModel.subtitle
         aboutBreedLabel.text = viewModel.aboutBreed
 
-        // load image cache
         if let data = viewModel.imageData {
             catUIImageView.image = UIImage(data: data)
        } else if let url = viewModel.imageUrl {

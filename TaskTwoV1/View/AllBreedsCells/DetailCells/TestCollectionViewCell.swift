@@ -11,6 +11,8 @@ class TestCollectionViewCell: UICollectionViewCell {
 
     static let identifier = "TestCollectionViewCell"
 
+    // MARK: - IBOUtlets
+    
     @IBOutlet weak var imageView: UIImageView!
 
     static func nib() -> UINib {

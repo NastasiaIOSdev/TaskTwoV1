@@ -74,7 +74,6 @@
 		2EF4886C26BA9AE800F32723 /* PhotoCatcheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF4886B26BA9AE800F32723 /* PhotoCatcheService.swift */; };
 		2EF4886F26BAAC3B00F32723 /* BreedImagesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF4886E26BAAC3B00F32723 /* BreedImagesModel.swift */; };
 		2EF4889126BBC4DF00F32723 /* BreedImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF4889026BBC4DF00F32723 /* BreedImages.swift */; };
-		2EF4889626BC1E1F00F32723 /* LazyImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF4889526BC1E1F00F32723 /* LazyImageView.swift */; };
 		86E09ED6269C555900049522 /* Pods_TaskTwoV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3B7D787AB753A76262E4B51 /* Pods_TaskTwoV1.framework */; };
 		86E09EDF269C5B0300049522 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E09EDE269C5B0300049522 /* UIImageView.swift */; };
 /* End PBXBuildFile section */
@@ -149,7 +148,6 @@
 		2EF4886B26BA9AE800F32723 /* PhotoCatcheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCatcheService.swift; sourceTree = "<group>"; };
 		2EF4886E26BAAC3B00F32723 /* BreedImagesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedImagesModel.swift; sourceTree = "<group>"; };
 		2EF4889026BBC4DF00F32723 /* BreedImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedImages.swift; sourceTree = "<group>"; };
-		2EF4889526BC1E1F00F32723 /* LazyImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyImageView.swift; sourceTree = "<group>"; };
 		86E09EDE269C5B0300049522 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		943F6830734BFA6B4B4F1FAE /* Pods-TaskTwoV1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaskTwoV1.release.xcconfig"; path = "Target Support Files/Pods-TaskTwoV1/Pods-TaskTwoV1.release.xcconfig"; sourceTree = "<group>"; };
 		A3B7D787AB753A76262E4B51 /* Pods_TaskTwoV1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TaskTwoV1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -348,7 +346,6 @@
 			children = (
 				2E79B4A92690F45100C357C3 /* ProtocolNetService.swift */,
 				86E09EDE269C5B0300049522 /* UIImageView.swift */,
-				2EF4889526BC1E1F00F32723 /* LazyImageView.swift */,
 				2EC77CE026A40254007C0A7D /* CatsBreedsExtensions */,
 				2EC77CE726A4061D007C0A7D /* StarWarsExtensions */,
 				2EC77CEB26A40832007C0A7D /* AllBreedExtensions */,
@@ -688,7 +685,6 @@
 				2E28D26226AEF5360062CD22 /* ItemCollectionViewCell.swift in Sources */,
 				2EC77CAA26A33193007C0A7D /* FullscreenViewController.swift in Sources */,
 				2EC77CFE26A44491007C0A7D /* CellTableViewModel.swift in Sources */,
-				2EF4889626BC1E1F00F32723 /* LazyImageView.swift in Sources */,
 				2E48E26E2689C59C00271A85 /* SceneDelegate.swift in Sources */,
 				2ED2909A2694ED1C00B7630B /* Image.swift in Sources */,
 				2E7A6245269B0A7300D54D10 /* LastUITableViewCell.swift in Sources */,

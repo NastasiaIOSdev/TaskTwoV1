@@ -10,8 +10,7 @@ import UIKit
 
 extension UIImageView {
     func downloadedFrom(url: URL, contentMode mode: UIView.ContentMode = .scaleAspectFill) {
-        contentMode = mode
-        URLSession.shared.dataTask(with: url) { (data, response, error) in
+                URLSession.shared.dataTask(with: url) { (data, response, error) in
             guard
                 let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
                 let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
@@ -20,6 +19,8 @@ extension UIImageView {
             else { return }
             DispatchQueue.main.async { () -> Void in
                 self.image = image
+                self.contentMode = mode
+
             }
         }.resume()
     }

@@ -8,6 +8,6 @@
 import Foundation
 
 struct BreedImages: Codable {
-    var id: String
+    var idBreed: String
     var url: String
 }
