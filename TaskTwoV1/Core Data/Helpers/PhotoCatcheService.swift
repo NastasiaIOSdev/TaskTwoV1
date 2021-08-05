@@ -6,9 +6,14 @@
 //
 
 import Foundation
+import UIKit
 
 final class PhotoCacheService {
 
     private let cacheLifeTime: TimeInterval = 1 * 24 * 60 * 60
+    
+    func photo(url: String) -> UIImage? {
+        return UIImage(named: "")
+    }
 
  }

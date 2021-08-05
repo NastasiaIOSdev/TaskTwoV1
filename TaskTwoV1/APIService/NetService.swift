@@ -35,7 +35,6 @@ final class APIService {
             }
         }
         task.resume()
-
     }
 
     // MARK: - CatsPhoto

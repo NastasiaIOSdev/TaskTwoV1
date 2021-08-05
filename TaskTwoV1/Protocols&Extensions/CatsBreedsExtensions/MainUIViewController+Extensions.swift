@@ -18,7 +18,6 @@ extension MainUIViewController: UITableViewDataSource, UITableViewDelegate {
             if let cell = tableView.dequeueReusableCell(
                 withIdentifier: "FirstUITableViewCell") as? FirstUITableViewCell {
                 cell.configure(with: viewModels[indexPath.row])
-
                 return cell
             }
         } else if (indexPath.row - 1) % 3 == 0 || indexPath.row == 1 {
