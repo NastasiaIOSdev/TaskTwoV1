@@ -38,7 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     // MARK: - Core Data stack
-    
+
     let dataModel = "Person"
     lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: dataModel)

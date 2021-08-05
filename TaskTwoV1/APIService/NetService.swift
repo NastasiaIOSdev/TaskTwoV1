@@ -38,6 +38,26 @@ final class APIService {
 
     }
 
+    // MARK: - CatsPhoto
+
+    public func getPhotos(breedId: String, completed: @escaping (Result<BreedImages, Error>) -> Void) {
+        let urlString = "https://api.thecatapi.com/v1/images/search?breed_id=\(breedId)&limit=\(100)"
+        guard let url = URL(string: urlString) else {return}
+        let task = URLSession.shared.dataTask(with: url) { data, _, error in
+            if let error = error {
+                completed(.failure(error))
+            } else if let data = data {
+                do {
+                    let result = try JSONDecoder().decode(BreedImages.self, from: data)
+                    completed(.success(result))
+                } catch {
+                    completed(.failure(error))
+                }
+            }
+        }
+        task.resume()
+    }
+
     // MARK: - StarWars
 
     public func searchPeopleList(with text: String, completion: @escaping (Result<[Results], Error>) -> Void) {
