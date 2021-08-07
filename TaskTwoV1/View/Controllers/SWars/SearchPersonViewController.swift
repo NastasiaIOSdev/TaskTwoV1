@@ -22,7 +22,7 @@ class SearchPersonViewController: UIViewController {
     let segueIdentifier = "Detail"
 
     // MARK: - Core Data Service
-    
+
     let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
     func addRequest(text: String, viewModels: [CellTableViewModel]) {
         let entity = NSEntityDescription.entity(forEntityName: "MyRequest", in: self.context!)!

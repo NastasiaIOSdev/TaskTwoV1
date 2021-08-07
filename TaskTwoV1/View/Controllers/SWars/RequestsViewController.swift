@@ -11,7 +11,7 @@ import CoreData
 class RequestsViewController: UIViewController {
 
     // MARK: - IBOUtlets
-    
+
     @IBOutlet weak var tableView: UITableView!
 
     let cellIdentifier = "RaquestTableViewCell"
@@ -20,7 +20,7 @@ class RequestsViewController: UIViewController {
     let segueIdentifier = "Detail2"
 
     // MARK: - LiveCycles
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self

@@ -10,7 +10,7 @@ import UIKit
 class RaquestTableViewCell: UITableViewCell {
 
     // MARK: - IBOUtlets
-    
+
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var genderLabel: UILabel!
     @IBOutlet weak var myView: UIView!

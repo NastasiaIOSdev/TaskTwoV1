@@ -12,7 +12,7 @@ class FullscreenCollectionViewCell: UICollectionViewCell, UIScrollViewDelegate {
     static let identifier = "FullscreenCollectionViewCell"
 
     // MARK: - IBOUtlets
-    
+
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var scrollView: UIScrollView!
 
