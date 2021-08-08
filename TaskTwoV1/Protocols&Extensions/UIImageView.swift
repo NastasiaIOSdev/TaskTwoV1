@@ -24,6 +24,7 @@ extension UIImageView {
             }
         }.resume()
     }
+
     func downloadedFrom(link: String, contentMode mode: UIView.ContentMode = .scaleAspectFit) {
         guard let url = URL(string: link) else { return }
         downloadedFrom(url: url, contentMode: mode)

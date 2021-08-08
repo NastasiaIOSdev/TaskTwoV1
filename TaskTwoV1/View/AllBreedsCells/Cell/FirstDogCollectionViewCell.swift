@@ -45,8 +45,11 @@ class FirstDogCollectionViewCell: UICollectionViewCell {
         APIService.shared.getPhoto(breeds: breed, completed: { [weak self] result in
             switch result {
             case.success(let image):
-                if let url = URL(string: image.message) {
-                    self?.imageDogView.downloadedFrom(url: url)
+                if let imageView = self?.imageDogView {
+                    DispatchQueue.main.async {
+                        imageView.image = PhotoCacheService.init(container: imageView).photo(atIndexpath: .init(), byUrl: image.message)
+                        // imageView.downloadedFrom(url: url)
+                    }
                 } else {
                     print("Invalid random image url for breed: \(breed)")
                 }
@@ -56,6 +59,7 @@ class FirstDogCollectionViewCell: UICollectionViewCell {
         })
     }
 
+    /*
     func setBreed_(breed: String, imageURL: String) {
         breedLabel.text = breed
         let url = URL(string: imageURL)
@@ -64,6 +68,7 @@ class FirstDogCollectionViewCell: UICollectionViewCell {
             imageDogView.downloadedFrom(url: url!)
         }
     }
+    */
 
     override func prepareForReuse() {
         super.prepareForReuse()

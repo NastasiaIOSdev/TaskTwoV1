@@ -10,7 +10,7 @@ import UIKit
 extension FullscreenViewController: UICollectionViewDelegate, UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.image != nil ? 1 : 0
+        return 1
     }
 
     func collectionView(_ collectionView: UICollectionView,
@@ -19,7 +19,9 @@ extension FullscreenViewController: UICollectionViewDelegate, UICollectionViewDa
                                                             for: indexPath) as? FullscreenCollectionViewCell else {
             fatalError()
         }
-        cell.configure(with: self.image)
+        if let urlString = self.imageUrlString {
+            cell.configure(with: photoCacheService.photo(atIndexpath: indexPath, byUrl: urlString))
+        }
         return cell
     }
 }

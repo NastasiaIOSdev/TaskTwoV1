@@ -71,7 +71,7 @@
 		2EF4882626B897DD00F32723 /* RequestsViewController+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF4882526B897DD00F32723 /* RequestsViewController+extensions.swift */; };
 		2EF4886326BA8F2800F32723 /* FileManagerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF4886226BA8F2800F32723 /* FileManagerExtension.swift */; };
 		2EF4886826BA983800F32723 /* FileManagerWorkExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF4886726BA983800F32723 /* FileManagerWorkExtension.swift */; };
-		2EF4886C26BA9AE800F32723 /* PhotoCatcheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF4886B26BA9AE800F32723 /* PhotoCatcheService.swift */; };
+		2EF4886C26BA9AE800F32723 /* PhotoCacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF4886B26BA9AE800F32723 /* PhotoCacheService.swift */; };
 		2EF4886F26BAAC3B00F32723 /* BreedImagesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF4886E26BAAC3B00F32723 /* BreedImagesModel.swift */; };
 		2EF4889126BBC4DF00F32723 /* BreedImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF4889026BBC4DF00F32723 /* BreedImages.swift */; };
 		86E09ED6269C555900049522 /* Pods_TaskTwoV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3B7D787AB753A76262E4B51 /* Pods_TaskTwoV1.framework */; };
@@ -145,7 +145,7 @@
 		2EF4882526B897DD00F32723 /* RequestsViewController+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RequestsViewController+extensions.swift"; sourceTree = "<group>"; };
 		2EF4886226BA8F2800F32723 /* FileManagerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerExtension.swift; sourceTree = "<group>"; };
 		2EF4886726BA983800F32723 /* FileManagerWorkExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerWorkExtension.swift; sourceTree = "<group>"; };
-		2EF4886B26BA9AE800F32723 /* PhotoCatcheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCatcheService.swift; sourceTree = "<group>"; };
+		2EF4886B26BA9AE800F32723 /* PhotoCacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCacheService.swift; sourceTree = "<group>"; };
 		2EF4886E26BAAC3B00F32723 /* BreedImagesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedImagesModel.swift; sourceTree = "<group>"; };
 		2EF4889026BBC4DF00F32723 /* BreedImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedImages.swift; sourceTree = "<group>"; };
 		86E09EDE269C5B0300049522 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
@@ -479,7 +479,7 @@
 			children = (
 				2EF4886226BA8F2800F32723 /* FileManagerExtension.swift */,
 				2EF4886726BA983800F32723 /* FileManagerWorkExtension.swift */,
-				2EF4886B26BA9AE800F32723 /* PhotoCatcheService.swift */,
+				2EF4886B26BA9AE800F32723 /* PhotoCacheService.swift */,
 			);
 			name = Helpers;
 			path = "Core Data/Helpers";
@@ -676,7 +676,7 @@
 				2EC77CFB26A40D04007C0A7D /* ThirdCollectionViewCell+Extensions.swift in Sources */,
 				2EC77CF826A40B19007C0A7D /* FirstCollectionViewCell+Extensions.swift in Sources */,
 				2E4E2BE326A55CF100B2D89F /* ImageHound.swift in Sources */,
-				2EF4886C26BA9AE800F32723 /* PhotoCatcheService.swift in Sources */,
+				2EF4886C26BA9AE800F32723 /* PhotoCacheService.swift in Sources */,
 				2E0FD55826B53F190022DEBA /* RequestsViewController.swift in Sources */,
 				2EC77CE526A40373007C0A7D /* LastUITableViewCell+Extension.swift in Sources */,
 				2EF4886326BA8F2800F32723 /* FileManagerExtension.swift in Sources */,

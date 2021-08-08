@@ -95,6 +95,7 @@ final class APIService {
             } else if let data = data {
                 do {
                     let result = try JSONDecoder().decode(Breed2.self, from: data)
+                    // TODO: delete all previous Breed2 and save new to CoreData
                     completed(.success(result))
                 } catch {
                     completed(.failure(error))
