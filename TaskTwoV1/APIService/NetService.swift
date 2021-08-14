@@ -6,99 +6,140 @@
 //
 
 import Foundation
-
-protocol NetService {
-    func getBreed(completion: @escaping (Result<[Breed], Error>) -> Void)
-    func getPeopleList(completion: @escaping (Result<[Results], Error>) -> Void)
-    func searchPeopleList(with query: String, completion: @escaping (Result<[Results], Error>) -> Void)
-}
+import CoreData
+import UIKit
 
 final class APIService {
-    
+
     static let shared = APIService()
-    
-    struct Constants {
-        static let breedsURL = URL(string: "https://api.thecatapi.com/v1/breeds")
-        static let peopleURL = URL(string: "https://swapi.dev/api/people/")
-        static let searchURLString = "https://swapi.dev/api/people/&q="
-    }
-   
-    
+
     private init() {}
-    
-    func getBreed(completion: @escaping (Result<[Breed], Error>) -> Void) {
+
+    // MARK: - Cats
+
+    public func getBreed(completion: @escaping (Result<[Breed], Error>) -> Void) {
         guard let url = Constants.breedsURL else {
-            return
-        }
-        let task = URLSession.shared.dataTask(with: url) { data,_,error in
-            if let error = error {
-                completion(.failure(error))
-            }
-            else if let data = data {
-                do {
-                    let result = try JSONDecoder().decode([Breed].self, from: data)
-                    print("Country:\(result.count)")
-                    completion(.success(result))
-                }
-                catch {
-                    completion(.failure(error))
-                }
-            }
-        }
-        task.resume()
-        
-    }
-    
-    public func getPeopleList(completion: @escaping (Result<[Results], Error>) -> Void) {
-        guard let url = Constants.peopleURL else {
             return
         }
         let task = URLSession.shared.dataTask(with: url) { data, _, error in
             if let error = error {
                 completion(.failure(error))
-            }
-            else if let data = data {
-                
+            } else if let data = data {
                 do {
-                    let result = try JSONDecoder().decode(APIResponse.self, from: data)
-                    print("People: \(String(describing: result.results.count))")
-                    completion(.success(result.results ))
-                }
-                catch {
+                    let result = try JSONDecoder().decode([Breed].self, from: data)
+                    print("Country:\(result.count)")
+                    completion(.success(result))
+                } catch {
                     completion(.failure(error))
                 }
             }
         }
         task.resume()
     }
-    
-    public func searchPeopleList(with query: String, completion: @escaping (Result<[Results], Error>) -> Void) {
-        guard !query.trimmingCharacters(in: .whitespaces).isEmpty else {
+
+    // MARK: - CatsPhoto
+
+    public func getPhotos(breedId: String, completed: @escaping (Result<BreedImages, Error>) -> Void) {
+        let urlString = "https://api.thecatapi.com/v1/images/search?breed_id=\(breedId)&limit=\(100)"
+        guard let url = URL(string: urlString) else {return}
+        let task = URLSession.shared.dataTask(with: url) { data, _, error in
+            if let error = error {
+                completed(.failure(error))
+            } else if let data = data {
+                do {
+                    let result = try JSONDecoder().decode(BreedImages.self, from: data)
+                    completed(.success(result))
+                } catch {
+                    completed(.failure(error))
+                }
+            }
+        }
+        task.resume()
+    }
+
+    // MARK: - StarWars
+
+    public func searchPeopleList(with text: String, completion: @escaping (Result<[Results], Error>) -> Void) {
+        guard !text.trimmingCharacters(in: .whitespaces).isEmpty else {
             return
         }
-        let urlstring = Constants.searchURLString + query
-        
+        let urlstring = "https://swapi.dev/api/people/?search=\(text)&format=json"
+
         guard let url = URL(string: urlstring) else {
             return
         }
         let task = URLSession.shared.dataTask(with: url) { data, _, error in
             if let error = error {
                 completion(.failure(error))
-            }
-            else if let data = data {
+            } else if let data = data {
 
                 do {
                     let result = try JSONDecoder().decode(APIResponse.self, from: data)
                     print("People: \(result.results.count)")
                     completion(.success(result.results ))
-                }
-                catch {
+                } catch {
                     completion(.failure(error))
                 }
             }
         }
         task.resume()
     }
+
+    // MARK: - DogsList
+
+    public func getBreed2(completed: @escaping (Result<Breed2, Error>) -> Void) {
+        guard let url = URL(string: "https://dog.ceo/api/breeds/list") else {return}
+        let task = URLSession.shared.dataTask(with: url) { data, _, error in
+            if let error = error {
+                completed(.failure(error))
+            } else if let data = data {
+                do {
+                    let result = try JSONDecoder().decode(Breed2.self, from: data)
+                    // TODO: delete all previous Breed2 and save new to CoreData
+                    completed(.success(result))
+                } catch {
+                    completed(.failure(error))
+                }
+            }
+        }
+        task.resume()
+    }
+
+    // MARK: - DogsPhoto
+
+    public func getPhoto(breeds: String, completed: @escaping (Result<Image2, Error>) -> Void) {
+        let urlString = "https://dog.ceo/api/breed/\(breeds)/images/random"
+        guard let url = URL(string: urlString) else {return}
+        let task = URLSession.shared.dataTask(with: url) { data, _, error in
+            if let error = error {
+                completed(.failure(error))
+            } else if let data = data {
+                do {
+                    let result = try JSONDecoder().decode(Image2.self, from: data)
+                    completed(.success(result))
+                } catch {
+                    completed(.failure(error))
+                }
+            }
+        }
+        task.resume()
+    }
+
+    public func getPhotoHound(_ hound: String, completed: @escaping (Result<ImageHound, Error>) -> Void) {
+        let urlString = "https://dog.ceo/api/breed/\(hound)/images"
+        guard let url = URL(string: urlString) else {return}
+        let task = URLSession.shared.dataTask(with: url) { data, _, error in
+            if let error = error {
+                completed(.failure(error))
+            } else if let data = data {
+                do {
+                    let result = try JSONDecoder().decode(ImageHound.self, from: data)
+                    completed(.success(result))
+                } catch {
+                    completed(.failure(error))
+                }
+            }
+        }
+        task.resume()
+    }
 }
-
-
