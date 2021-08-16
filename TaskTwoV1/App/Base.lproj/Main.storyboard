@@ -23,6 +23,7 @@
                         <segue destination="THu-3K-RkM" kind="relationship" relationship="viewControllers" id="HqY-2P-lyh"/>
                         <segue destination="wZR-eg-RsW" kind="relationship" relationship="viewControllers" id="74P-NO-6tW"/>
                         <segue destination="99c-qs-JAR" kind="relationship" relationship="viewControllers" id="KJM-0y-uNd"/>
+                        <segue destination="TEu-4s-xEI" kind="relationship" relationship="viewControllers" id="MH1-a1-qb9"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C9A-Yu-Tly" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -468,9 +469,45 @@
             </objects>
             <point key="canvasLocation" x="277" y="-64"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="aoB-o9-f1J">
+            <objects>
+                <viewController id="Ktt-3m-kgS" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jGG-kG-nBP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="BWC-zx-fNv"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="YVk-SU-JxB"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5hx-1H-5nf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1148" y="623"/>
+        </scene>
+        <!--Weather-->
+        <scene sceneID="jcW-Ap-M3j">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TEu-4s-xEI" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Weather" image="magnifyingglass" catalog="system" id="eYO-ue-OoB"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ggu-as-6Jm">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Ktt-3m-kgS" kind="relationship" relationship="rootViewController" id="hOm-gy-MUZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pQu-pu-Frz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="277" y="624"/>
+        </scene>
     </scenes>
     <resources>
         <image name="archivebox" catalog="system" width="128" height="106"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="person.3" catalog="system" width="128" height="62"/>
         <image name="simonCat" width="1522" height="1165"/>
         <image name="tray.full" catalog="system" width="128" height="88"/>
