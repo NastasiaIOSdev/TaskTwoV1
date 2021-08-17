@@ -6,23 +6,30 @@
 //
 
 import UIKit
+import MapKit
+import Contacts
+import CoreLocation
 
-class MapViewController: UIViewController {
+class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
+
+    // MARK: - Property
+    fileprivate let locationManager: CLLocationManager = CLLocationManager()
+
+    // MARK: - IBOutlets
+
+    @IBOutlet weak var mainMap: MKMapView!
+
+    // MARK: - Action
+
+    // MARK: - LifeCycles
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        mainMap.delegate = self
+        mainMap.showsUserLocation = true
+        locationManager.delegate = self
+        locationManager.startUpdatingLocation()
+        locationManager.requestWhenInUseAuthorization()
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

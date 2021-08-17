@@ -9,15 +9,62 @@ import UIKit
 
 class WeekForecastCell: UITableViewCell {
 
+    @IBOutlet weak var weatherPicture: UIImageView!
+    @IBOutlet weak var temperatureLabel: UILabel!
+    @IBOutlet weak var dayOfWeekLabel: UILabel!
+    var dailyModels: [DailyModel] = []
+    var conditionId: Int = 0
+
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+    var conditionName: String {
+        switch conditionId {
+        case 200...232:
+            return "cloud"
+        case 300...321:
+            return "cloud.drizzle"
+        case 500...531:
+            return "cloud.heavyrain"
+        case 600...622:
+            return "cloud.snow"
+        case 701...781:
+            return "cloud.fog"
+        case 800:
+            return "sun.max"
+        case 801...884:
+            return "cloud.bolt"
+        default:
+            return "cloud.sun"
+        }
+    }
 
-        // Configure the view for the selected state
+    var setDayContentToLabelsAndImages: DailyModel? {
+        didSet {
+            guard let day = setDayContentToLabelsAndImages else {
+                return
+            }
+            conditionId = day.dailyId
+            let formatNSDateToDayOfTheWeek = DateFormatter()
+            formatNSDateToDayOfTheWeek.dateFormat = ""
+            let date = NSDate(timeIntervalSince1970: day.dailyDt)
+            let dayName = formatNSDateToDayOfTheWeek.string(from: date as Date)
+
+            dayOfWeekLabel.text = dayName
+            temperatureLabel.text = String(format: "%.1f", day.dailyTemp) + "°C"
+
+            // MARK: - Multicolor symbols seems to not to work in UIKit
+
+            var image = UIImage(systemName: "sun.max.fill")
+            if #available(iOS 14, *) {
+                image = UIImage(systemName: conditionName)?.withTintColor(.label, renderingMode: .alwaysOriginal)
+            } else {
+                image = UIImage(systemName: conditionName)?.withTintColor(.label, renderingMode: .alwaysOriginal)
+            }
+            weatherPicture.image = image?.withAlignmentRectInsets(UIEdgeInsets(top: -5, left: -5, bottom: -5, right: -5))
+
+        }
     }
 
 }

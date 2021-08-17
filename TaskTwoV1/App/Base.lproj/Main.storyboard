@@ -512,6 +512,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="mainMap" destination="8zc-ln-TIt" id="3DN-H8-1oI"/>
                         <segue destination="696-7S-66D" kind="show" identifier="Detail" id="ycp-9m-VKe"/>
                     </connections>
                 </viewController>
@@ -717,6 +718,19 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="cityweatherLabel" destination="Bvp-gr-TXy" id="M60-ia-KY1"/>
+                        <outlet property="coverCloudsLabel" destination="yGQ-Rz-sLA" id="etu-jV-I1e"/>
+                        <outlet property="feelLikeLabel" destination="fXd-WD-2yy" id="p6K-gU-Wwj"/>
+                        <outlet property="humidityLabel" destination="DrL-Jm-NO7" id="tcp-M6-sNI"/>
+                        <outlet property="precipitationLabel" destination="9hh-TE-YWi" id="P3N-Pq-0PC"/>
+                        <outlet property="presureLabel" destination="tQm-XQ-nOG" id="dFn-Pw-8GD"/>
+                        <outlet property="temperatureLabel" destination="Gyl-Uv-SMd" id="BKh-ar-tuQ"/>
+                        <outlet property="weatherView" destination="g3r-mz-KgK" id="i8j-rI-kng"/>
+                        <outlet property="wetherPicture" destination="xyb-Ca-r9X" id="AS0-GP-mmz"/>
+                        <outlet property="windDirectionLabel" destination="5xy-sc-Yey" id="c4E-oH-0Ym"/>
+                        <outlet property="windSpeedLabel" destination="lEE-v2-kqR" id="xXb-Zd-qF0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P3o-5t-Bz7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
