@@ -481,13 +481,16 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                             </mapView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="tsC-WL-h2y">
-                                <rect key="frame" x="90" y="122" width="234" height="32"/>
+                                <rect key="frame" x="30" y="118" width="354" height="32"/>
                                 <color key="backgroundColor" red="0.96964118180000003" green="1" blue="0.99403354359999996" alpha="0.56659353599999995" colorSpace="custom" customColorSpace="sRGB"/>
                                 <segments>
                                     <segment title="Standart"/>
                                     <segment title="Satellite"/>
                                     <segment title="Hybrid"/>
                                 </segments>
+                                <connections>
+                                    <action selector="onChangeType:" destination="Ktt-3m-kgS" eventType="valueChanged" id="hdb-Ax-f6V"/>
+                                </connections>
                             </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="BWC-zx-fNv"/>
@@ -495,16 +498,20 @@
                         <constraints>
                             <constraint firstItem="8zc-ln-TIt" firstAttribute="top" secondItem="BWC-zx-fNv" secondAttribute="top" id="2SZ-Dm-hfL"/>
                             <constraint firstItem="8zc-ln-TIt" firstAttribute="trailing" secondItem="BWC-zx-fNv" secondAttribute="trailing" id="Bca-1m-pA0"/>
-                            <constraint firstItem="BWC-zx-fNv" firstAttribute="trailing" secondItem="tsC-WL-h2y" secondAttribute="trailing" constant="90" id="CCy-kO-xTQ"/>
                             <constraint firstItem="8zc-ln-TIt" firstAttribute="bottom" secondItem="BWC-zx-fNv" secondAttribute="bottom" id="HuW-aj-uqE"/>
                             <constraint firstItem="8zc-ln-TIt" firstAttribute="leading" secondItem="BWC-zx-fNv" secondAttribute="leading" id="JO5-RW-fzS"/>
-                            <constraint firstItem="tsC-WL-h2y" firstAttribute="leading" secondItem="BWC-zx-fNv" secondAttribute="leading" constant="90" id="Yeb-Ru-9uZ"/>
-                            <constraint firstItem="tsC-WL-h2y" firstAttribute="top" secondItem="BWC-zx-fNv" secondAttribute="top" constant="34" id="YwU-eW-leT"/>
+                            <constraint firstItem="tsC-WL-h2y" firstAttribute="top" secondItem="BWC-zx-fNv" secondAttribute="top" constant="30" id="QO6-QZ-2Cw"/>
+                            <constraint firstItem="BWC-zx-fNv" firstAttribute="trailing" secondItem="tsC-WL-h2y" secondAttribute="trailing" constant="30" id="bB9-qK-FP8"/>
+                            <constraint firstItem="tsC-WL-h2y" firstAttribute="leading" secondItem="BWC-zx-fNv" secondAttribute="leading" constant="30" id="syj-gy-nvT"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title=" " id="YVk-SU-JxB">
                         <barButtonItem key="backBarButtonItem" title=" " id="JsX-dp-mct"/>
-                        <barButtonItem key="leftBarButtonItem" title="I" image="magnifyingglass" catalog="system" id="GuU-Wm-eum"/>
+                        <barButtonItem key="leftBarButtonItem" title="I" image="magnifyingglass" catalog="system" id="GuU-Wm-eum">
+                            <connections>
+                                <action selector="searchBtn:" destination="Ktt-3m-kgS" id="7GB-I0-QK4"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Setting" id="cjI-qJ-4vY">
                             <connections>
                                 <segue destination="BbM-Kv-wHN" kind="show" id="Aui-GO-Q2p"/>
