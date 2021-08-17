@@ -13,11 +13,12 @@ import CoreLocation
 class MapViewController: UIViewController {
 
     // MARK: - Property
+
     fileprivate let locationManager: CLLocationManager = CLLocationManager()
     var myPosition = CLLocationCoordinate2D()
     let segueIdentifier = "Detail"
     var geocoder = CLGeocoder()
-    
+
     // MARK: - IBOutlets
 
     @IBOutlet weak var mainMap: MKMapView!
@@ -35,7 +36,7 @@ class MapViewController: UIViewController {
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.distanceFilter = kCLDistanceFilterNone
     }
-    
+
     // MARK: - Action
 
     @IBAction func onChangeType(_ sender: UISegmentedControl) {
@@ -50,7 +51,7 @@ class MapViewController: UIViewController {
             break
         }
     }
-    
+
     @IBAction func searchBtn(_ sender: UIBarButtonItem) {
         let searchController = UISearchController(searchResultsController: nil)
         searchController.hidesNavigationBarDuringPresentation = false
@@ -59,16 +60,28 @@ class MapViewController: UIViewController {
         searchController.searchBar.placeholder = "City search..."
         searchController.searchBar.tintColor = UIColor.black
     }
-    
-    
+
+    @IBAction func addPin(_ sender: UILongPressGestureRecognizer) {
+        let location = sender.location(in: self.mainMap)
+        let locCoord = self.mainMap.convert(location, toCoordinateFrom: self.mainMap)
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = locCoord
+        annotation.title = "Temperature"
+        annotation.subtitle = "Location place"
+        startingPin()
+        let allAnnotations = self.mainMap.annotations
+        self.mainMap.removeAnnotations(allAnnotations)
+        self.mainMap.addAnnotation(annotation)
+    }
+
     func startingPin() {
         let location = CLLocation(latitude: 55.165273, longitude: 61.367668)
         let pin = PinInfo(coordinatePin: CLLocationCoordinate2D(
                             latitude: 55.165273,
                             longitude: 61.367668),
-                            description: "Place",
-                            titlePin: "Gagarin Park",
-                            namePin: "Place")
+                          description: "Place",
+                          titlePin: "Gagarin Park",
+                          namePin: "Place")
         let region: CLLocationDistance = 2000
         func centerMap(location: CLLocation) {
             let coordinate = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: region, longitudinalMeters: region)
@@ -100,8 +113,8 @@ extension MapViewController: MKMapViewDelegate {
             annotationView.canShowCallout = true
             annotationView.image = UIImage(named: "img_pin")
         }
-    return annotationView
-}
+        return annotationView
+    }
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         performSegue(withIdentifier: segueIdentifier, sender: nil)
     }
@@ -114,7 +127,7 @@ extension MapViewController: CLLocationManagerDelegate {
 }
 
 extension MapViewController: UISearchBarDelegate {
-    
+
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
         dismiss(animated: true, completion: nil)

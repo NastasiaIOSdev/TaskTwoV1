@@ -479,6 +479,10 @@
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="8zc-ln-TIt">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="VJs-IG-frT" appends="YES" id="nZl-Qj-GeL"/>
+                                </connections>
                             </mapView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="tsC-WL-h2y">
                                 <rect key="frame" x="30" y="118" width="354" height="32"/>
@@ -524,6 +528,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5hx-1H-5nf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="VJs-IG-frT">
+                    <connections>
+                        <action selector="addPin:" destination="Ktt-3m-kgS" id="jdQ-Nl-9pD"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1147.8260869565217" y="622.76785714285711"/>
         </scene>
