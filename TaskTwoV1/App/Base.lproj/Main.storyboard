@@ -770,6 +770,10 @@
                                         <rect key="frame" x="10" y="10" width="354" height="645"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="JYI-Pk-2tQ" id="koq-Qk-1L0"/>
+                                            <outlet property="delegate" destination="JYI-Pk-2tQ" id="b2a-zc-ziN"/>
+                                        </connections>
                                     </tableView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.96964118180000003" green="1" blue="0.99403354359999996" alpha="0.56659353599999995" colorSpace="custom" customColorSpace="sRGB"/>
@@ -795,6 +799,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="kOT-D5-4EE"/>
+                    <connections>
+                        <outlet property="tableView" destination="c9z-mg-5kh" id="FzJ-1T-jMN"/>
+                        <outlet property="weatherView" destination="qSl-m8-Dnc" id="XBr-e3-bzn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cX8-3n-LuI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

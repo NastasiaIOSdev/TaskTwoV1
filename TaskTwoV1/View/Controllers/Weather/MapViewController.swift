@@ -18,6 +18,7 @@ class MapViewController: UIViewController {
     var myPosition = CLLocationCoordinate2D()
     let segueIdentifier = "Detail"
     var geocoder = CLGeocoder()
+    var weatherManager = WeatherManager()
 
     // MARK: - IBOutlets
 
@@ -91,9 +92,18 @@ class MapViewController: UIViewController {
         mainMap.addAnnotation(pin)
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+
 }
 
 extension MapViewController: MKMapViewDelegate {
+
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         if annotation is MKUserLocation {
             return nil
@@ -117,6 +127,13 @@ extension MapViewController: MKMapViewDelegate {
     }
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         performSegue(withIdentifier: segueIdentifier, sender: nil)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == segueIdentifier,
+           let viewC = segue.destination as? WeatherDetailViewController,
+           let annotation = self.mainMap.annotations.first {
+            viewC.locationCoordinates = annotation.coordinate
+        }
     }
 }
 

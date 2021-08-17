@@ -18,10 +18,12 @@ class WeatherManager {
     let weatherURL = "https://api.openweathermap.org/data/2.5/onecall?appid=ff554f01a90bb15acaa4b59c8e15462e&units=metric"
 
     weak var delegate: WeatherManagerDelegate?
-    func fetchWeather(latitude: Double, longtitude: Double) {
-        let urlString = "\(weatherURL)&lat=\(latitude)&lon=\(longtitude)&lang=\(Locale.current.languageCode!)&exclude=minutely,hourly,alerts"
+
+    func fetchWeather(latitude: Double, longitude: Double) {
+        let urlString = "\(weatherURL)&lat=\(latitude)&lon=\(longitude)&lang=\(Locale.current.languageCode!)&exclude=minutely,hourly,alerts"
         performRequest(with: urlString)
     }
+
     func performRequest(with urlString: String) {
         if let url = URL(string: urlString) {
             let session = URLSession(configuration: .default)
