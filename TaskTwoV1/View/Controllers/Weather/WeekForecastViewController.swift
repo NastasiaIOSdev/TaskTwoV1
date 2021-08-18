@@ -43,7 +43,6 @@ extension WeekForecastViewController: UITableViewDelegate, UITableViewDataSource
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "WeekForecastCell", for: indexPath) as? WeekForecastCell else {
             fatalError()
         }
-       // cell.day = day
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

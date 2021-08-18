@@ -55,22 +55,22 @@ class WeatherManager {
                 if ignoreFirst {
                     ignoreFirst = false
                 } else {
-                    let newDay = DailyModel(dailyDt: day.dtDaily,
-                                            dailyTemp: day.temp.day,
-                                            dailyId: day.weather[0].idWeather)
+                    let newDay = DailyModel(dailyDt: day.dtDaily ?? 0,
+                                            dailyTemp: day.temp?.day ?? 0,
+                                            dailyId: day.weather?[0].idWeather ?? 0)
                     daily.append(newDay)
                 }
             }
             let currentWeather: CurrentWeather = CurrentWeather(
-                curTemperature: current.temp,
+                curTemperature: current.temp ?? 0,
                 curFeelTemp: current.feelLike,
                 curHumidity: current.humidity,
                 curClouds: current.clouds,
                 curWindSpeed: current.windSpeed,
                 curWindDeg: current.windDeg,
                 curPressure: current.pressure,
-                curDescription: current.weather[0].description,
-                curId: current.weather[0].idWeather
+                curDescription: current.weather[0].description ?? "",
+                curId: current.weather[0].idWeather ?? 0
             )
             let weather = WeatherModel(current: currentWeather, daily: daily)
             return weather

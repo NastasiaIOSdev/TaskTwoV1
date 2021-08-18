@@ -19,6 +19,7 @@ class MapViewController: UIViewController {
     let segueIdentifier = "Detail"
     var geocoder = CLGeocoder()
     var weatherManager = WeatherManager()
+    var currentWeather: CurrentWeather?
 
     // MARK: - IBOutlets
 
