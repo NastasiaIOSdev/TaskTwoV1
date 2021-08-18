@@ -14,7 +14,7 @@ class FullscreenViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
 
     lazy var photoCacheService = PhotoCacheService.init(container: self.collectionView)
-    
+
     let countCells = 1
     let offset: CGFloat = 2.0
     var imageUrlString: String?

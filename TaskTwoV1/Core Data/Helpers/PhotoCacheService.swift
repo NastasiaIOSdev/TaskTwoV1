@@ -101,7 +101,7 @@ class PhotoCacheService {
     init(container: UICollectionView) {
         self.container = Collection(collection: container)
     }
-    
+
     init(container: UIImageView) {
         self.container = ImageView(imageView: container)
     }
@@ -134,13 +134,13 @@ extension PhotoCacheService {
             collection.reloadItems(at: [indexPath])
         }
     }
-    
+
     private class ImageView: DataReloadable {
         let imageView: UIImageView
         init(imageView: UIImageView) {
             self.imageView = imageView
         }
-        
+
         func reloadRow(atIndexpath indexPath: IndexPath, image: UIImage) {
             self.imageView.image = image
         }

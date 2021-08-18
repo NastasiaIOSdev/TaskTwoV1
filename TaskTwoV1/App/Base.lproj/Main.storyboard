@@ -23,6 +23,7 @@
                         <segue destination="THu-3K-RkM" kind="relationship" relationship="viewControllers" id="HqY-2P-lyh"/>
                         <segue destination="wZR-eg-RsW" kind="relationship" relationship="viewControllers" id="74P-NO-6tW"/>
                         <segue destination="99c-qs-JAR" kind="relationship" relationship="viewControllers" id="KJM-0y-uNd"/>
+                        <segue destination="Ndn-uU-erD" kind="relationship" relationship="viewControllers" id="c0X-81-U3L"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C9A-Yu-Tly" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -419,6 +420,22 @@
             </objects>
             <point key="canvasLocation" x="1037.68115942029" y="-64.285714285714278"/>
         </scene>
+        <!--News View Controller-->
+        <scene sceneID="RcF-lH-RSf">
+            <objects>
+                <viewController storyboardIdentifier="NewsViewController" id="cnN-9U-Hoq" customClass="NewsViewController" customModule="TaskTwoV1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ega-hG-Q8g">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="D0P-uK-vyE"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="w1F-gg-xKi"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cNT-9e-1wj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1038" y="-2130"/>
+        </scene>
         <!--Cats-->
         <scene sceneID="5wG-Qb-71s">
             <objects>
@@ -468,9 +485,29 @@
             </objects>
             <point key="canvasLocation" x="277" y="-64"/>
         </scene>
+        <!--News-->
+        <scene sceneID="Cba-Sx-iFz">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ndn-uU-erD" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="News" image="list.bullet.below.rectangle" catalog="system" id="M8i-uU-kvs"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="1Fm-Pq-iUW">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="cnN-9U-Hoq" kind="relationship" relationship="rootViewController" id="tpy-W7-Wrq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q6b-NM-Dax" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="276.81159420289856" y="-2129.4642857142858"/>
+        </scene>
     </scenes>
     <resources>
         <image name="archivebox" catalog="system" width="128" height="106"/>
+        <image name="list.bullet.below.rectangle" catalog="system" width="128" height="112"/>
         <image name="person.3" catalog="system" width="128" height="62"/>
         <image name="simonCat" width="1522" height="1165"/>
         <image name="tray.full" catalog="system" width="128" height="88"/>
