@@ -6,23 +6,26 @@
 //
 
 import UIKit
+import Foundation
 
 class NewsViewController: UIViewController {
 
+   // MARK: - IBOutlets
+
+    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var listButton: UIButton!
+    @IBOutlet weak var gridButton: UIButton!
+
+    // MARK: - Properties
+
+    let cellIdentifier = "GridCell"
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "News"
+        listButton.layer.cornerRadius = 5
+        gridButton.layer.cornerRadius = 5
 
-        // Do any additional setup after loading the view.
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
