@@ -28,6 +28,12 @@ extension NewsViewController: UICollectionViewDelegate, UICollectionViewDataSour
             return cell
         }
     }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
+        let item = viewModels[indexPath.row]
+        performSegue(withIdentifier: segueIdentifier, sender: item)
+        print("DID select item\(indexPath)")
+    }
 }
 
 extension NewsViewController: UICollectionViewDelegateFlowLayout {

@@ -19,6 +19,7 @@ class NewsViewController: UIViewController {
     // MARK: - Properties
 
     let cellIdentifier = "GridCell"
+    let segueIdentifier = "Detail"
     var viewModels = [NewsViewModel]()
     var articles = [Article]()
     var listType: CGFloat = 1
@@ -108,6 +109,18 @@ class NewsViewController: UIViewController {
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let item = sender as? NewsViewModel else { return }
+        if segue.identifier == segueIdentifier {
+            if let viewC = segue.destination as? DetailViewController {
+                viewC.nameArticle = item.title
+                viewC.descriptionArticle = item.subtitle
+                viewC.author = item.authorArticle
+                viewC.imageURL = item.imageUrl
+            }
+        }
     }
 
 }
