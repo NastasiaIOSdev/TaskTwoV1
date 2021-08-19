@@ -23,6 +23,7 @@ class NewsViewController: UIViewController {
     var viewModels = [NewsViewModel]()
     var articles = [Article]()
     var listType: CGFloat = 1
+    var searchVC = UISearchController(searchResultsController: nil)
 
     // MARK: - LifeCycles
 
@@ -37,6 +38,7 @@ class NewsViewController: UIViewController {
         fetchTopStories()
         setupCollectionView()
         flowLayoutForManagedGridAndList()
+        createSearchBar()
 
     }
 
@@ -105,6 +107,11 @@ class NewsViewController: UIViewController {
 
         let gridCellNib = UINib(nibName: GridCell.reuseIdentifierGridCell, bundle: nil)
         self.collectionView.register(gridCellNib, forCellWithReuseIdentifier: GridCell.reuseIdentifierGridCell)
+    }
+
+    func createSearchBar() {
+        navigationItem.searchController = searchVC
+        searchVC.searchBar.delegate = self
     }
 
     override func viewDidLayoutSubviews() {

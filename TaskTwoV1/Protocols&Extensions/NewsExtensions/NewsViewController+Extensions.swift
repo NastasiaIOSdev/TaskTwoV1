@@ -50,3 +50,29 @@ extension NewsViewController: UICollectionViewDelegateFlowLayout {
         return UIEdgeInsets(top: 10, left: 5, bottom: 10, right: 5)
     }
 }
+
+extension NewsViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let text = searchBar.text, !text.isEmpty else { return }
+        APIService.shared.searchNews(with: text) { [weak self] result in
+            switch result {
+            case.success(let articles):
+                self?.articles = articles
+                self?.viewModels = articles.compactMap({ NewsViewModel(
+                    title: $0.title,
+                    subtitle: $0.description ?? "No Description",
+                    authorArticle: $0.author ?? "No Author",
+                    imageUrl: URL(string: $0.urlToImage ?? "imagePlaceholder")
+                    )
+                })
+                DispatchQueue.main.async {
+                    self?.collectionView.reloadData()
+                    self?.searchVC.dismiss(animated: true, completion: nil)
+                }
+            case.failure(let error):
+                print(error)
+            }
+        }
+        print(text)
+    }
+}
