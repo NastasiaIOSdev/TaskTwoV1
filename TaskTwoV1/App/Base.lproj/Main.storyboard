@@ -445,6 +445,9 @@
                                 <state key="normal" image="clear" catalog="system">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="closeButtonPressed:" destination="GQE-jU-kCK" eventType="touchUpInside" id="Wso-WY-wEG"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O9n-OS-IvF">
                                 <rect key="frame" x="113" y="746" width="188" height="37"/>
@@ -474,6 +477,11 @@
                             <constraint firstItem="nUY-dQ-vuU" firstAttribute="top" secondItem="k2C-TA-tcf" secondAttribute="top" constant="15" id="pYm-lP-pAq"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="applayFilterButton" destination="O9n-OS-IvF" id="PRL-Co-QaC"/>
+                        <outlet property="filterTableView" destination="B2o-c8-Wzz" id="5uD-ap-2IA"/>
+                        <outlet property="filterTypeSegmentControl" destination="nUY-dQ-vuU" id="1Fh-l7-zzY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J9x-v8-wNH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
