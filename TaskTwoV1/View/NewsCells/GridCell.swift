@@ -10,6 +10,7 @@ import UIKit
 class GridCell: UICollectionViewCell {
 
     static var reuseIdentifierListCell: String = "ListCell"
+    static var reuseIdentifierGridCell: String = "GridCell"
 
     // MARK: - OUtlets
 
@@ -33,5 +34,25 @@ class GridCell: UICollectionViewCell {
         descriptionLabel.text = nil
         newsImage.image = nil
         authorLabel.text = nil
+    }
+
+    func configure(with viewModel: NewsViewModel) {
+        nameLabel.text = viewModel.title
+        descriptionLabel.text = viewModel.subtitle
+        authorLabel.text = viewModel.authorArticle
+        if let data = viewModel.imageData {
+            newsImage.image = UIImage(data: data)
+        } else if let url = viewModel.imageUrl {
+               URLSession.shared.dataTask(with: url) { [weak self] data, _, error in
+                guard let data = data, error == nil
+                else {
+                    return
+                }
+                viewModel.imageData = data
+                DispatchQueue.main.async {
+                    self?.newsImage.image = UIImage(data: data)
+                }
+            }.resume()
+        }
     }
 }

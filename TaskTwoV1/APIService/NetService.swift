@@ -144,7 +144,7 @@ final class APIService {
 
    // MARK: - News
 
-    public func getTopstories(completion: @escaping (Result<[Article], Error>) -> Void) {
+    public func getTopStories(completion: @escaping (Result<[Article], Error>) -> Void) {
         guard let url = Constants.topHeadlinesURL else {
             return
         }

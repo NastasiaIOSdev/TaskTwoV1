@@ -75,6 +75,7 @@
 		2EF34E7B26CD431E00E1167A /* GridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF34E7926CD431E00E1167A /* GridCell.swift */; };
 		2EF34E7C26CD431E00E1167A /* GridCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EF34E7A26CD431E00E1167A /* GridCell.xib */; };
 		2EF34E8526CD437B00E1167A /* ListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EF34E8326CD437B00E1167A /* ListCell.xib */; };
+		2EF34E8A26CE2BD800E1167A /* NewsViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF34E8926CE2BD700E1167A /* NewsViewController+Extensions.swift */; };
 		2EF4882026B88A7D00F32723 /* Person.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2EF4881E26B88A7D00F32723 /* Person.xcdatamodeld */; };
 		2EF4882626B897DD00F32723 /* RequestsViewController+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF4882526B897DD00F32723 /* RequestsViewController+extensions.swift */; };
 		2EF4886326BA8F2800F32723 /* FileManagerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF4886226BA8F2800F32723 /* FileManagerExtension.swift */; };
@@ -157,6 +158,7 @@
 		2EF34E7926CD431E00E1167A /* GridCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridCell.swift; sourceTree = "<group>"; };
 		2EF34E7A26CD431E00E1167A /* GridCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GridCell.xib; sourceTree = "<group>"; };
 		2EF34E8326CD437B00E1167A /* ListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListCell.xib; sourceTree = "<group>"; };
+		2EF34E8926CE2BD700E1167A /* NewsViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NewsViewController+Extensions.swift"; sourceTree = "<group>"; };
 		2EF4881F26B88A7D00F32723 /* Person.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Person.xcdatamodel; sourceTree = "<group>"; };
 		2EF4882526B897DD00F32723 /* RequestsViewController+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RequestsViewController+extensions.swift"; sourceTree = "<group>"; };
 		2EF4886226BA8F2800F32723 /* FileManagerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerExtension.swift; sourceTree = "<group>"; };
@@ -526,6 +528,7 @@
 		2EF34E6B26CD3A0D00E1167A /* NewsExtensions */ = {
 			isa = PBXGroup;
 			children = (
+				2EF34E8926CE2BD700E1167A /* NewsViewController+Extensions.swift */,
 			);
 			path = NewsExtensions;
 			sourceTree = "<group>";
@@ -753,6 +756,7 @@
 				2E7A6245269B0A7300D54D10 /* LastUITableViewCell.swift in Sources */,
 				2EF4882026B88A7D00F32723 /* Person.xcdatamodeld in Sources */,
 				2EC77CAF26A339A8007C0A7D /* FullscreenCollectionViewCell.swift in Sources */,
+				2EF34E8A26CE2BD800E1167A /* NewsViewController+Extensions.swift in Sources */,
 				2EC77CF026A40989007C0A7D /* TestDetailViewController+Extensions.swift in Sources */,
 				2E48E35D268CEF0D00271A85 /* NetService.swift in Sources */,
 				2EC77CA526A31992007C0A7D /* TestCollectionViewCell.swift in Sources */,
