@@ -27,7 +27,6 @@ class WeekForecastViewController: UIViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        weatherView.layer.cornerRadius = 20
         tableView.register(UINib(nibName: "WeekForecastCell", bundle: nil), forCellReuseIdentifier: "WeekForecastCell")
     }
 
@@ -43,6 +42,7 @@ extension WeekForecastViewController: UITableViewDelegate, UITableViewDataSource
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "WeekForecastCell", for: indexPath) as? WeekForecastCell else {
             fatalError()
         }
+        cell.setDayContentToLabelsAndImages = day
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

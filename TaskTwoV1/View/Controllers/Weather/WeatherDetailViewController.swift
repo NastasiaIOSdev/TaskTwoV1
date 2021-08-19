@@ -41,7 +41,6 @@ class WeatherDetailViewController: UIViewController, WeatherManagerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        weatherView.layer.cornerRadius = 20
         weatherManager.delegate = self
         if let location = self.locationCoordinates {
             weatherManager.fetchWeather(latitude: location.latitude, longitude: location.longitude)
@@ -94,7 +93,7 @@ class WeatherDetailViewController: UIViewController, WeatherManagerDelegate {
                         renderingMode:
                         .alwaysOriginal)
             }
-            wetherPicture.image = image?.withAlignmentRectInsets(UIEdgeInsets(top: -5, left: -5, bottom: -5, right: -5))
+            wetherPicture.image = image
         }
     }
 

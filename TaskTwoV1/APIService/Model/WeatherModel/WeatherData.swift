@@ -55,16 +55,15 @@ struct Daily: Codable {
     let temp: Temp?
     let weather: [Weather]?
 
-    enum CodingKeys3: String, CodingKey {
-        case temp, weather
-        case dtDaily = "dt"
+    enum CodingKeys: String, CodingKey {
+        case temp, weather, dtDaily = "dt"
     }
 
     init(from decoder: Decoder) {
         let values = try? decoder.container(keyedBy: CodingKeys.self)
         dtDaily = try? values?.decodeIfPresent(Double.self, forKey: .dtDaily)
         temp = try? values?.decodeIfPresent(Temp.self, forKey: .temp)
-        weather = try? values?.decodeIfPresent([Weather].self, forKey: .temp)
+        weather = try? values?.decodeIfPresent([Weather].self, forKey: .weather)
     }
 }
 

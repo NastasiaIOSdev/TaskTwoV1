@@ -712,6 +712,11 @@
                                     <constraint firstItem="CI8-HW-gPN" firstAttribute="centerX" secondItem="g3r-mz-KgK" secondAttribute="centerX" id="HPz-Ug-QfX"/>
                                     <constraint firstItem="CI8-HW-gPN" firstAttribute="centerY" secondItem="g3r-mz-KgK" secondAttribute="centerY" id="tYm-4V-Wxd"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="GNM-2X-oCX"/>
@@ -728,6 +733,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="CNM-NE-8lx">
+                        <barButtonItem key="backBarButtonItem" title=" " id="5Ud-O8-A7g"/>
                         <barButtonItem key="rightBarButtonItem" title="Forecast" id="BcA-hn-UzW">
                             <connections>
                                 <segue destination="JYI-Pk-2tQ" kind="show" identifier="Weekly" id="Act-DN-Es3"/>
@@ -783,6 +789,11 @@
                                     <constraint firstItem="c9z-mg-5kh" firstAttribute="leading" secondItem="qSl-m8-Dnc" secondAttribute="leading" constant="10" id="fNd-D9-FQL"/>
                                     <constraint firstItem="c9z-mg-5kh" firstAttribute="top" secondItem="qSl-m8-Dnc" secondAttribute="top" constant="10" id="jZg-F0-EVT"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="06h-Fx-nOT"/>

@@ -13,7 +13,7 @@
 	<key>CFBundleName</key>
 	<string>$(PRODUCT_NAME)</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>Do you ....</string>
+	<string>Allow &quot;Maps&quot; to use your approximate location</string>
 	<key>CFBundlePackageType</key>
 	<string>$(PRODUCT_BUNDLE_PACKAGE_TYPE)</string>
 	<key>CFBundleShortVersionString</key>

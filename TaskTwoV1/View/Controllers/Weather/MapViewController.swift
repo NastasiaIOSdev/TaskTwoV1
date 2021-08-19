@@ -15,6 +15,7 @@ class MapViewController: UIViewController {
     // MARK: - Property
 
     fileprivate let locationManager: CLLocationManager = CLLocationManager()
+    let zoomLevelDelta = 0.05
     var myPosition = CLLocationCoordinate2D()
     let segueIdentifier = "Detail"
     var geocoder = CLGeocoder()
@@ -117,7 +118,6 @@ extension MapViewController: MKMapViewDelegate {
         } else {
             annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: annotationId)
             annotationView?.canShowCallout = true
-            annotationView?.calloutOffset = CGPoint(x: -4, y: 4)
             annotationView?.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
         }
         if let annotationView = annotationView {
@@ -150,22 +150,21 @@ extension MapViewController: UISearchBarDelegate {
         searchBar.resignFirstResponder()
         dismiss(animated: true, completion: nil)
 
-        geocoder.geocodeAddressString(searchBar.text!) { (placemarks: [CLPlacemark]?, error: Error?) in
+        geocoder.geocodeAddressString(searchBar.text!) { [zoomLevelDelta] (placemarks: [CLPlacemark]?, error: Error?) in
 
-            if error == nil {
-                let placemark = placemarks?.first
+            if let error = error {
+                print("Error: \(error)")
+            } else if let location = placemarks?.first?.location {
                 let annotation = MKPointAnnotation()
-                annotation.coordinate = (placemark?.location?.coordinate)!
+                annotation.coordinate = location.coordinate
                 annotation.title = searchBar.text!
 
-                let spam = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
+                let spam = MKCoordinateSpan(latitudeDelta: zoomLevelDelta, longitudeDelta: zoomLevelDelta)
                 let region = MKCoordinateRegion(center: annotation.coordinate, span: spam)
 
                 self.mainMap.setRegion(region, animated: true)
                 self.mainMap.addAnnotation(annotation)
                 self.mainMap.selectAnnotation(annotation, animated: true)
-            } else {
-                print("Error")
             }
         }
     }

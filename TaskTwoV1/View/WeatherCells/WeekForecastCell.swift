@@ -47,7 +47,7 @@ class WeekForecastCell: UITableViewCell {
             }
             conditionId = day.dailyId
             let formatNSDateToDayOfTheWeek = DateFormatter()
-            formatNSDateToDayOfTheWeek.dateFormat = ""
+            formatNSDateToDayOfTheWeek.dateFormat = "EEEE"
             let date = NSDate(timeIntervalSince1970: day.dailyDt)
             let dayName = formatNSDateToDayOfTheWeek.string(from: date as Date)
 
@@ -57,13 +57,8 @@ class WeekForecastCell: UITableViewCell {
             // MARK: - Multicolor symbols seems to not to work in UIKit
 
             var image = UIImage(systemName: "sun.max.fill")
-            if #available(iOS 14, *) {
-                image = UIImage(systemName: conditionName)?.withTintColor(.label, renderingMode: .alwaysOriginal)
-            } else {
-                image = UIImage(systemName: conditionName)?.withTintColor(.label, renderingMode: .alwaysOriginal)
-            }
-            weatherPicture.image = image?.withAlignmentRectInsets(UIEdgeInsets(top: -5, left: -5, bottom: -5, right: -5))
-
+            image = UIImage(systemName: conditionName)?.withTintColor(.label, renderingMode: .alwaysOriginal)
+            self.weatherPicture?.image = image
         }
     }
 
