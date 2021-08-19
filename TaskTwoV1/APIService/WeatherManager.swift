@@ -15,12 +15,13 @@ protocol WeatherManagerDelegate: class {
 
 class WeatherManager {
 
-    let weatherURL = "https://api.openweathermap.org/data/2.5/onecall?appid=ff554f01a90bb15acaa4b59c8e15462e&units=metric"
+    let weatherURL = "https://api.openweathermap.org/data/2.5/onecall?appid="
 
     weak var delegate: WeatherManagerDelegate?
 
     func fetchWeather(latitude: Double, longitude: Double) {
-        let urlString = "\(weatherURL)&lat=\(latitude)&lon=\(longitude)&lang=\(Locale.current.languageCode!)&exclude=minutely,hourly,alerts"
+        let apiKey = "ff554f01a90bb15acaa4b59c8e15462e"
+        let urlString = "\(weatherURL)\(apiKey)&units=metric&lat=\(latitude)&lon=\(longitude)&lang=\(Locale.current.languageCode!)&exclude=minutely,hourly,alerts"
         performRequest(with: urlString)
     }
 
