@@ -127,13 +127,11 @@ extension MapViewController: MKMapViewDelegate {
         return annotationView
     }
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
-        performSegue(withIdentifier: segueIdentifier, sender: nil)
-    }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == segueIdentifier,
-           let viewC = segue.destination as? WeatherDetailViewController,
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let weatherdetailViewController = storyboard.instantiateViewController(identifier: "WeatherDetailViewController") as? WeatherDetailViewController,
            let annotation = self.mainMap.annotations.first {
-            viewC.locationCoordinates = annotation.coordinate
+            weatherdetailViewController.locationCoordinates = annotation.coordinate
+            show(weatherdetailViewController, sender: nil)
         }
     }
 }

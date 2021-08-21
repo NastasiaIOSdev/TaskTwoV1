@@ -524,7 +524,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="mainMap" destination="8zc-ln-TIt" id="3DN-H8-1oI"/>
-                        <segue destination="696-7S-66D" kind="show" identifier="Detail" id="ycp-9m-VKe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5hx-1H-5nf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -579,10 +578,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g3r-mz-KgK">
-                                <rect key="frame" x="20" y="118" width="374" height="665"/>
+                                <rect key="frame" x="20" y="74" width="374" height="758"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="CI8-HW-gPN">
-                                        <rect key="frame" x="74.5" y="142" width="225" height="381.5"/>
+                                        <rect key="frame" x="74.5" y="188.5" width="225" height="381.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bvp-gr-TXy">
                                                 <rect key="frame" x="97.5" y="0.0" width="30.5" height="20.5"/>
