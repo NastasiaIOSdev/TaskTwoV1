@@ -48,6 +48,16 @@ class WeatherDetailViewController: UIViewController, WeatherManagerDelegate {
         }
     }
 
+    // MARK: - Actions
+
+    @IBAction func passData(_ sender: UIBarButtonItem) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+
+        guard let weekDetailViewController = storyboard.instantiateViewController(identifier: "WeekForecastViewController") as? WeekForecastViewController else { return }
+        weekDetailViewController.dailyModels = self.daily
+        show(weekDetailViewController, sender: nil)
+    }
+
     var conditionName: String {
         switch conditionId {
         case 200...232:
@@ -108,13 +118,6 @@ class WeatherDetailViewController: UIViewController, WeatherManagerDelegate {
 
     func didFailWithError(error: Error) {
         print("Weather did not load: \(error.localizedDescription)")
-    }
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "Weekly",
-        let viewC = segue.destination as? WeekForecastViewController {
-            viewC.dailyModels = self.daily
-        }
     }
 
 }

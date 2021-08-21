@@ -736,7 +736,7 @@
                         <barButtonItem key="backBarButtonItem" title=" " id="5Ud-O8-A7g"/>
                         <barButtonItem key="rightBarButtonItem" title="Forecast" id="BcA-hn-UzW">
                             <connections>
-                                <segue destination="JYI-Pk-2tQ" kind="show" identifier="Weekly" id="Act-DN-Es3"/>
+                                <action selector="passData:" destination="696-7S-66D" id="oX9-iv-WCB"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -770,10 +770,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qSl-m8-Dnc">
-                                <rect key="frame" x="20" y="118" width="374" height="665"/>
+                                <rect key="frame" x="20" y="74" width="374" height="758"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="c9z-mg-5kh">
-                                        <rect key="frame" x="10" y="10" width="354" height="645"/>
+                                        <rect key="frame" x="10" y="10" width="354" height="738"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
