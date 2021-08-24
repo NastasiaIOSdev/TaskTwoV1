@@ -481,7 +481,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <gestureRecognizers/>
                                 <connections>
-                                    <outletCollection property="gestureRecognizers" destination="VJs-IG-frT" appends="YES" id="nZl-Qj-GeL"/>
+                                    <outletCollection property="gestureRecognizers" destination="r0T-DK-aEL" appends="YES" id="tdp-8M-gkT"/>
                                 </connections>
                             </mapView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="tsC-WL-h2y">
@@ -494,6 +494,7 @@
                                 </segments>
                                 <connections>
                                     <action selector="onChangeType:" destination="Ktt-3m-kgS" eventType="valueChanged" id="hdb-Ax-f6V"/>
+                                    <action selector="onChangeTypeDegrees:" destination="ZlV-4d-Kpx" eventType="valueChanged" id="Ldd-5y-ibx"/>
                                 </connections>
                             </segmentedControl>
                         </subviews>
@@ -516,7 +517,8 @@
                                 <action selector="searchBtn:" destination="Ktt-3m-kgS" id="7GB-I0-QK4"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Setting" id="cjI-qJ-4vY">
+                        <barButtonItem key="rightBarButtonItem" image="icons8-settings-100" id="cjI-qJ-4vY">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <segue destination="BbM-Kv-wHN" kind="show" id="Aui-GO-Q2p"/>
                             </connections>
@@ -527,11 +529,12 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5hx-1H-5nf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="VJs-IG-frT">
+                <exit id="ZlV-4d-Kpx" userLabel="Exit" sceneMemberID="exit"/>
+                <tapGestureRecognizer id="r0T-DK-aEL">
                     <connections>
-                        <action selector="addPin:" destination="Ktt-3m-kgS" id="jdQ-Nl-9pD"/>
+                        <action selector="addPinWithSender:" destination="Ktt-3m-kgS" id="0BO-mm-P5f"/>
                     </connections>
-                </pongPressGestureRecognizer>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1147.8260869565217" y="622.76785714285711"/>
         </scene>
@@ -550,21 +553,42 @@
                                     <segment title="Faringets"/>
                                 </segments>
                             </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="icF-j5-amT">
+                                <rect key="frame" x="137" y="214" width="140" height="34"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="140" id="A8Y-4d-knz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
+                                <state key="normal" title="Applay settings">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="9"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fFE-1d-sWu"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="icF-j5-amT" firstAttribute="centerX" secondItem="xDa-PA-1Qe" secondAttribute="centerX" id="3ER-zb-mXZ"/>
                             <constraint firstItem="vHo-4V-8X2" firstAttribute="top" secondItem="fFE-1d-sWu" secondAttribute="top" constant="43" id="Xjs-FT-XVW"/>
                             <constraint firstItem="vHo-4V-8X2" firstAttribute="centerX" secondItem="xDa-PA-1Qe" secondAttribute="centerX" id="ac2-h5-45G"/>
+                            <constraint firstItem="icF-j5-amT" firstAttribute="top" secondItem="vHo-4V-8X2" secondAttribute="bottom" constant="52" id="pI9-l5-pAV"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="xvg-aV-YJH">
                         <barButtonItem key="backBarButtonItem" title=" " id="fOw-xJ-414"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="applaySettingsButton" destination="icF-j5-amT" id="QRN-ZX-hri"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LYq-bN-fQY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1148" y="1319"/>
+            <point key="canvasLocation" x="1147.8260869565217" y="1317.8571428571429"/>
         </scene>
         <!--Weather Detail View Controller-->
         <scene sceneID="b8J-YO-f7Z">
@@ -827,6 +851,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ggu-as-6Jm">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -842,6 +870,7 @@
         <image name="archivebox" catalog="system" width="128" height="106"/>
         <image name="background" width="1377" height="1377"/>
         <image name="background2" width="2000" height="1581"/>
+        <image name="icons8-settings-100" width="33" height="33"/>
         <image name="imagePlaceholder" width="200" height="150"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="person.3" catalog="system" width="128" height="62"/>

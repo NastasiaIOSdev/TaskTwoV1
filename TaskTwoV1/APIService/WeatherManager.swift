@@ -15,13 +15,13 @@ protocol WeatherManagerDelegate: class {
 
 class WeatherManager {
 
-    let weatherURL = "https://api.openweathermap.org/data/2.5/onecall?appid="
-
     weak var delegate: WeatherManagerDelegate?
 
     func fetchWeather(latitude: Double, longitude: Double) {
-        let apiKey = "ff554f01a90bb15acaa4b59c8e15462e"
-        let urlString = "\(weatherURL)\(apiKey)&units=metric&lat=\(latitude)&lon=\(longitude)&lang=\(Locale.current.languageCode ?? "en")&exclude=minutely,hourly,alerts"
+        let url = Constants().weatherURL
+        let apikey = Constants().apiAccessKeyWeather
+        let degrees = Constants().pathCelsius
+        let urlString = "\(url)&appid=\(apikey)&\(degrees)&lat=\(latitude)&lon=\(longitude)&lang=\(Locale.current.languageCode ?? "en")&exclude=minutely,hourly,alerts"
         performRequest(with: urlString)
     }
 
@@ -75,5 +75,29 @@ class WeatherManager {
             delegate?.didFailWithError(error: error)
             return nil
         }
+    }
+
+    func sendRequest(coordinates: CLLocationCoordinate2D, completion: @escaping (WeatherData2?) -> Void) {
+        let decoder = JSONDecoder()
+        let latitude = coordinates.latitude
+        let longitude = coordinates.longitude
+
+        let urlString = "\(Constants().weatherURL2)lat=\(latitude)&lon=\(longitude)&\(Constants().pathCelsius)&appid=\(Constants().apiAccessKeyWeather)"
+        guard let url = URL(string: urlString) else { return }
+
+        let task = URLSession.shared.dataTask(with: url) { (data, _, error) in
+            if error == nil, let data = data {
+                do {
+                    let weather = try decoder.decode(WeatherData2.self, from: data)
+                    completion(weather)
+                } catch {
+                    completion(nil)
+                }
+            } else {
+                print(error?.localizedDescription ?? "sendRequest error")
+                completion(nil)
+            }
+        }
+        task.resume()
     }
 }

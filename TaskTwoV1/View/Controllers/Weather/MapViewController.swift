@@ -9,18 +9,20 @@ import UIKit
 import MapKit
 import Contacts
 import CoreLocation
+import Network
 
 class MapViewController: UIViewController {
 
     // MARK: - Property
 
-    fileprivate let locationManager: CLLocationManager = CLLocationManager()
-    let zoomLevelDelta = 0.05
+    let locationManager: CLLocationManager = CLLocationManager()
     var myPosition = CLLocationCoordinate2D()
-    let segueIdentifier = "Detail"
+    var locationCoordinates: CLLocationCoordinate2D?
     var geocoder = CLGeocoder()
     var weatherManager = WeatherManager()
-    var currentWeather: CurrentWeather?
+    let zoomLevelDelta = 0.05
+    var latitude: Double = 0
+    var longitude: Double = 0
 
     // MARK: - IBOutlets
 
@@ -38,6 +40,11 @@ class MapViewController: UIViewController {
         locationManager.requestWhenInUseAuthorization()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.distanceFilter = kCLDistanceFilterNone
+        if let location = self.locationCoordinates {
+            weatherManager.fetchWeather(latitude: location.latitude, longitude: location.longitude)
+            let recognizer = UITapGestureRecognizer(target: self, action: #selector(addPin(sender:)))
+            mainMap.addGestureRecognizer(recognizer)
+        }
     }
 
     // MARK: - Action
@@ -64,17 +71,26 @@ class MapViewController: UIViewController {
         searchController.searchBar.tintColor = UIColor.black
     }
 
-    @IBAction func addPin(_ sender: UILongPressGestureRecognizer) {
-        let location = sender.location(in: self.mainMap)
-        let locCoord = self.mainMap.convert(location, toCoordinateFrom: self.mainMap)
-        let annotation = MKPointAnnotation()
-        annotation.coordinate = locCoord
-        annotation.title = "Temperature"
-        annotation.subtitle = "Location place"
-        startingPin()
-        let allAnnotations = self.mainMap.annotations
-        self.mainMap.removeAnnotations(allAnnotations)
-        self.mainMap.addAnnotation(annotation)
+    @IBAction func addPin(sender: UITapGestureRecognizer) {
+
+        let touchLocation = sender.location(in: mainMap)
+        let locCoord = mainMap.convert(touchLocation, toCoordinateFrom: mainMap)
+        print("Tapped at:\nlat: \(locCoord.latitude)\nlong: \(locCoord.longitude)")
+
+        weatherManager.sendRequest(coordinates: locCoord) { weather in
+            DispatchQueue.main.async {
+                let annotation = MKPointAnnotation()
+                annotation.coordinate = locCoord
+                if let weather = weather {
+                    annotation.title = "\(weather.main.temp) ℃"
+                } else {
+                    annotation.title = "error data"
+                }
+                let allAnnotation = self.mainMap.annotations
+                self.mainMap.removeAnnotations(allAnnotation)
+                self.mainMap.addAnnotation(annotation)
+            }
+        }
     }
 
     func startingPin() {
@@ -100,70 +116,5 @@ class MapViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-    }
-
-}
-
-extension MapViewController: MKMapViewDelegate {
-
-    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        if annotation is MKUserLocation {
-            return nil
-        }
-        let annotationId = "AnnotationId"
-        var annotationView: MKAnnotationView?
-        if let dequeueannotationView = mapView.dequeueReusableAnnotationView(withIdentifier: annotationId) {
-            annotationView = dequeueannotationView
-            annotationView?.annotation = annotation
-        } else {
-            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: annotationId)
-            annotationView?.canShowCallout = true
-            annotationView?.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
-        }
-        if let annotationView = annotationView {
-            annotationView.canShowCallout = true
-            annotationView.image = UIImage(named: "img_pin")
-        }
-        return annotationView
-    }
-    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        if let weatherdetailViewController = storyboard.instantiateViewController(identifier: "WeatherDetailViewController") as? WeatherDetailViewController,
-           let annotation = self.mainMap.annotations.first {
-            weatherdetailViewController.locationCoordinates = annotation.coordinate
-            show(weatherdetailViewController, sender: nil)
-        }
-    }
-}
-
-extension MapViewController: CLLocationManagerDelegate {
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        locationManager.stopUpdatingLocation()
-    }
-}
-
-extension MapViewController: UISearchBarDelegate {
-
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        searchBar.resignFirstResponder()
-        dismiss(animated: true, completion: nil)
-
-        geocoder.geocodeAddressString(searchBar.text!) { [zoomLevelDelta] (placemarks: [CLPlacemark]?, error: Error?) in
-
-            if let error = error {
-                print("Error: \(error)")
-            } else if let location = placemarks?.first?.location {
-                let annotation = MKPointAnnotation()
-                annotation.coordinate = location.coordinate
-                annotation.title = searchBar.text!
-
-                let spam = MKCoordinateSpan(latitudeDelta: zoomLevelDelta, longitudeDelta: zoomLevelDelta)
-                let region = MKCoordinateRegion(center: annotation.coordinate, span: spam)
-
-                self.mainMap.setRegion(region, animated: true)
-                self.mainMap.addAnnotation(annotation)
-                self.mainMap.selectAnnotation(annotation, animated: true)
-            }
-        }
     }
 }
