@@ -15,7 +15,9 @@ class MapViewController: UIViewController {
 
     // MARK: - Property
 
-    let locationManager: CLLocationManager = CLLocationManager()
+    var searchCompleter = MKLocalSearchCompleter()
+    var searchResults = [MKLocalSearchCompletion]()
+    fileprivate let locationManager: CLLocationManager = CLLocationManager()
     var myPosition = CLLocationCoordinate2D()
     var locationCoordinates: CLLocationCoordinate2D?
     var geocoder = CLGeocoder()
@@ -23,27 +25,38 @@ class MapViewController: UIViewController {
     let zoomLevelDelta = 0.05
     var latitude: Double = 0
     var longitude: Double = 0
+    var ignoresearchResults = true
+
+    func setSearchresults(_ results: [MKLocalSearchCompletion]) {
+        searchResults = results
+        let hidden = results.count == 0
+        self.searchresultsTableView.isHidden = hidden
+    }
 
     // MARK: - IBOutlets
 
     @IBOutlet weak var mainMap: MKMapView!
+    @IBOutlet weak var searchresultsTableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
 
     // MARK: - LifeCycles
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        startingPin()
         mainMap.delegate = self
         mainMap.showsUserLocation = true
-        locationManager.delegate = self
+        searchCompleter.delegate = self
         locationManager.startUpdatingLocation()
         locationManager.requestWhenInUseAuthorization()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.distanceFilter = kCLDistanceFilterNone
+        startingPin()
         if let location = self.locationCoordinates {
             weatherManager.fetchWeather(latitude: location.latitude, longitude: location.longitude)
+
             let recognizer = UITapGestureRecognizer(target: self, action: #selector(addPin(sender:)))
             mainMap.addGestureRecognizer(recognizer)
+
         }
     }
 
@@ -62,19 +75,11 @@ class MapViewController: UIViewController {
         }
     }
 
-    @IBAction func searchBtn(_ sender: UIBarButtonItem) {
-        let searchController = UISearchController(searchResultsController: nil)
-        searchController.hidesNavigationBarDuringPresentation = false
-        searchController.searchBar.delegate = self
-        present(searchController, animated: true, completion: nil)
-        searchController.searchBar.placeholder = "City search..."
-        searchController.searchBar.tintColor = UIColor.black
-    }
-
     @IBAction func addPin(sender: UITapGestureRecognizer) {
 
         let touchLocation = sender.location(in: mainMap)
         let locCoord = mainMap.convert(touchLocation, toCoordinateFrom: mainMap)
+
         print("Tapped at:\nlat: \(locCoord.latitude)\nlong: \(locCoord.longitude)")
 
         weatherManager.sendRequest(coordinates: locCoord) { weather in
@@ -89,6 +94,7 @@ class MapViewController: UIViewController {
                 let allAnnotation = self.mainMap.annotations
                 self.mainMap.removeAnnotations(allAnnotation)
                 self.mainMap.addAnnotation(annotation)
+                //  self.mainMap.selectAnnotation(annotation, animated: true)
             }
         }
     }
@@ -108,6 +114,18 @@ class MapViewController: UIViewController {
         }
         centerMap(location: location)
         mainMap.addAnnotation(pin)
+    }
+
+    func hightLightedText(_ text: String, inRanges ranges: [NSValue], size: CGFloat) -> NSAttributedString {
+        let attributedText = NSMutableAttributedString(string: text)
+        let regular = UIFont.systemFont(ofSize: size)
+        attributedText.addAttribute(NSAttributedString.Key.font, value: regular, range: NSRange(location: 0, length: text.count))
+
+        let bold = UIFont.boldSystemFont(ofSize: size)
+        for value in ranges {
+            attributedText.addAttribute(NSAttributedString.Key.font, value: bold, range: value.rangeValue)
+        }
+        return attributedText
     }
 
     override func viewWillAppear(_ animated: Bool) {

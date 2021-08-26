@@ -484,8 +484,24 @@
                                     <outletCollection property="gestureRecognizers" destination="r0T-DK-aEL" appends="YES" id="tdp-8M-gkT"/>
                                 </connections>
                             </mapView>
+                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SFH-Wv-urg">
+                                <rect key="frame" x="0.0" y="154" width="414" height="312"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Ktt-3m-kgS" id="mJB-5N-NmS"/>
+                                    <outlet property="delegate" destination="Ktt-3m-kgS" id="hUR-Q5-4iZ"/>
+                                </connections>
+                            </tableView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="RPd-wF-eu7">
+                                <rect key="frame" x="0.0" y="98" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Ktt-3m-kgS" id="Vky-yK-D6Y"/>
+                                </connections>
+                            </searchBar>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="tsC-WL-h2y">
-                                <rect key="frame" x="30" y="118" width="354" height="32"/>
+                                <rect key="frame" x="30" y="752" width="354" height="32"/>
                                 <color key="backgroundColor" red="0.96964118180000003" green="1" blue="0.99403354359999996" alpha="0.56659353599999995" colorSpace="custom" customColorSpace="sRGB"/>
                                 <segments>
                                     <segment title="Standart"/>
@@ -493,8 +509,7 @@
                                     <segment title="Hybrid"/>
                                 </segments>
                                 <connections>
-                                    <action selector="onChangeType:" destination="Ktt-3m-kgS" eventType="valueChanged" id="hdb-Ax-f6V"/>
-                                    <action selector="onChangeTypeDegrees:" destination="ZlV-4d-Kpx" eventType="valueChanged" id="Ldd-5y-ibx"/>
+                                    <action selector="onChangeType:" destination="Ktt-3m-kgS" eventType="valueChanged" id="OH6-aO-ic0"/>
                                 </connections>
                             </segmentedControl>
                         </subviews>
@@ -502,21 +517,23 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="8zc-ln-TIt" firstAttribute="top" secondItem="BWC-zx-fNv" secondAttribute="top" id="2SZ-Dm-hfL"/>
+                            <constraint firstItem="SFH-Wv-urg" firstAttribute="leading" secondItem="BWC-zx-fNv" secondAttribute="leading" id="87i-fN-ego"/>
                             <constraint firstItem="8zc-ln-TIt" firstAttribute="trailing" secondItem="BWC-zx-fNv" secondAttribute="trailing" id="Bca-1m-pA0"/>
+                            <constraint firstItem="BWC-zx-fNv" firstAttribute="bottom" secondItem="SFH-Wv-urg" secondAttribute="bottom" constant="347" id="E6c-rE-fbd"/>
                             <constraint firstItem="8zc-ln-TIt" firstAttribute="bottom" secondItem="BWC-zx-fNv" secondAttribute="bottom" id="HuW-aj-uqE"/>
                             <constraint firstItem="8zc-ln-TIt" firstAttribute="leading" secondItem="BWC-zx-fNv" secondAttribute="leading" id="JO5-RW-fzS"/>
-                            <constraint firstItem="tsC-WL-h2y" firstAttribute="top" secondItem="BWC-zx-fNv" secondAttribute="top" constant="30" id="QO6-QZ-2Cw"/>
+                            <constraint firstItem="BWC-zx-fNv" firstAttribute="bottom" secondItem="tsC-WL-h2y" secondAttribute="bottom" constant="30" id="apa-OM-2NC"/>
                             <constraint firstItem="BWC-zx-fNv" firstAttribute="trailing" secondItem="tsC-WL-h2y" secondAttribute="trailing" constant="30" id="bB9-qK-FP8"/>
+                            <constraint firstItem="RPd-wF-eu7" firstAttribute="leading" secondItem="BWC-zx-fNv" secondAttribute="leading" id="eNn-G9-XrA"/>
+                            <constraint firstItem="RPd-wF-eu7" firstAttribute="trailing" secondItem="BWC-zx-fNv" secondAttribute="trailing" id="gtL-qu-YiE"/>
+                            <constraint firstItem="SFH-Wv-urg" firstAttribute="trailing" secondItem="BWC-zx-fNv" secondAttribute="trailing" id="imI-E7-Vic"/>
+                            <constraint firstItem="SFH-Wv-urg" firstAttribute="top" secondItem="RPd-wF-eu7" secondAttribute="bottom" id="mtF-z1-UNo"/>
+                            <constraint firstItem="RPd-wF-eu7" firstAttribute="top" secondItem="BWC-zx-fNv" secondAttribute="top" constant="10" id="oXp-9M-nf9"/>
                             <constraint firstItem="tsC-WL-h2y" firstAttribute="leading" secondItem="BWC-zx-fNv" secondAttribute="leading" constant="30" id="syj-gy-nvT"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title=" " id="YVk-SU-JxB">
                         <barButtonItem key="backBarButtonItem" title=" " id="JsX-dp-mct"/>
-                        <barButtonItem key="leftBarButtonItem" title="I" image="magnifyingglass" catalog="system" id="GuU-Wm-eum">
-                            <connections>
-                                <action selector="searchBtn:" destination="Ktt-3m-kgS" id="7GB-I0-QK4"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="icons8-settings-100" id="cjI-qJ-4vY">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
@@ -526,10 +543,11 @@
                     </navigationItem>
                     <connections>
                         <outlet property="mainMap" destination="8zc-ln-TIt" id="3DN-H8-1oI"/>
+                        <outlet property="searchBar" destination="RPd-wF-eu7" id="z8h-TA-zsT"/>
+                        <outlet property="searchresultsTableView" destination="SFH-Wv-urg" id="079-LM-FdP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5hx-1H-5nf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="ZlV-4d-Kpx" userLabel="Exit" sceneMemberID="exit"/>
                 <tapGestureRecognizer id="r0T-DK-aEL">
                     <connections>
                         <action selector="addPinWithSender:" destination="Ktt-3m-kgS" id="0BO-mm-P5f"/>
@@ -553,38 +571,17 @@
                                     <segment title="Faringets"/>
                                 </segments>
                             </segmentedControl>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="icF-j5-amT">
-                                <rect key="frame" x="137" y="214" width="140" height="34"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="140" id="A8Y-4d-knz"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
-                                <state key="normal" title="Applay settings">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <integer key="value" value="9"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fFE-1d-sWu"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="icF-j5-amT" firstAttribute="centerX" secondItem="xDa-PA-1Qe" secondAttribute="centerX" id="3ER-zb-mXZ"/>
                             <constraint firstItem="vHo-4V-8X2" firstAttribute="top" secondItem="fFE-1d-sWu" secondAttribute="top" constant="43" id="Xjs-FT-XVW"/>
                             <constraint firstItem="vHo-4V-8X2" firstAttribute="centerX" secondItem="xDa-PA-1Qe" secondAttribute="centerX" id="ac2-h5-45G"/>
-                            <constraint firstItem="icF-j5-amT" firstAttribute="top" secondItem="vHo-4V-8X2" secondAttribute="bottom" constant="52" id="pI9-l5-pAV"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="xvg-aV-YJH">
                         <barButtonItem key="backBarButtonItem" title=" " id="fOw-xJ-414"/>
                     </navigationItem>
-                    <connections>
-                        <outlet property="applaySettingsButton" destination="icF-j5-amT" id="QRN-ZX-hri"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LYq-bN-fQY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
