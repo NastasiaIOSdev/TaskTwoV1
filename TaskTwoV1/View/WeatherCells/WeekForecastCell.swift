@@ -46,13 +46,14 @@ class WeekForecastCell: UITableViewCell {
                 return
             }
             conditionId = day.dailyId
+            let simbol = Constants().simboldegrees[simboldegree] ?? "℃"
             let formatNSDateToDayOfTheWeek = DateFormatter()
             formatNSDateToDayOfTheWeek.dateFormat = "EEEE"
             let date = NSDate(timeIntervalSince1970: day.dailyDt)
             let dayName = formatNSDateToDayOfTheWeek.string(from: date as Date)
 
             dayOfWeekLabel.text = dayName
-            temperatureLabel.text = String(format: "%.1f", day.dailyTemp) + "°C"
+            temperatureLabel.text = String(format: "%.1f", day.dailyTemp) + "\(simbol)"
 
             // MARK: - Multicolor symbols seems to not to work in UIKit
 

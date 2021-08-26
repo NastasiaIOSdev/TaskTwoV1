@@ -85,9 +85,10 @@ class WeatherDetailViewController: UIViewController, WeatherManagerDelegate {
             guard let data = currentWeather else {
                 return
         }
-            temperatureLabel.text = "\(data.curTemperature) °C"
+            let simbol = Constants().simboldegrees[simboldegree] ?? "℃"
+            temperatureLabel.text = "\(data.curTemperature) \(simbol)"
             coverCloudsLabel.text = "\(data.curClouds) %"
-            feelLikeLabel.text = "\(data.curFeelTemp) °C"
+            feelLikeLabel.text = "\(data.curFeelTemp) \(simbol)"
             humidityLabel.text = "\(data.curHumidity) %"
             presureLabel.text = "\(data.curPressure) hPa"
             windSpeedLabel.text = "\(data.curWindSpeed) meter/sec"

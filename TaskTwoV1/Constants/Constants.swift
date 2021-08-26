@@ -16,7 +16,14 @@ struct Constants {
     let weatherURL =  "https://api.openweathermap.org/data/2.5/onecall?&"
     let weatherURL2 = "https://api.openweathermap.org/data/2.5/weather?&"
 
-    let pathCelsius = "units=metric"
-    let pathFahrenheit = "units=imperial"
-    let pathKelvin = ""
+    let degreePaths = [
+        "celsius": "units=metric",
+        "fahrenheit": "units=imperial"
+    ]
+    
+    let simboldegrees = [
+        "celsius": "℃",
+        "fahrenheit": "℉"
+    ]
+
 }

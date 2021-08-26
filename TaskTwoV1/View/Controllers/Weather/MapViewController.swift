@@ -84,10 +84,11 @@ class MapViewController: UIViewController {
 
         weatherManager.sendRequest(coordinates: locCoord) { weather in
             DispatchQueue.main.async {
+                let simbol = Constants().simboldegrees[simboldegree] ?? "℃"
                 let annotation = MKPointAnnotation()
                 annotation.coordinate = locCoord
                 if let weather = weather {
-                    annotation.title = "\(weather.main.temp) ℃"
+                    annotation.title = "\(weather.main.temp) \(simbol)"
                 } else {
                     annotation.title = "error data"
                 }

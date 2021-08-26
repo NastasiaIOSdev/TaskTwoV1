@@ -9,23 +9,28 @@ import UIKit
 
 class SettingsViewController: UIViewController {
 
-    @IBOutlet weak var applaySettingsButton: UIButton!
-
-    var degrees: String = ""
-
+    @IBOutlet weak var typeOfTemperatureControl: UISegmentedControl!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        typeOfTemperatureControl.selectedSegmentIndex = (degreePath == "celsius") ? 0 : 1
+        typeOfTemperatureControl.selectedSegmentIndex = (simboldegree == "celsius") ? 0 : 1
+    }
+    
     @IBAction func onChangeTypeDegrees(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0:
-            degrees = Constants().pathCelsius
+            degreePath = "celsius"
+            simboldegree = "celsius"
+            print("Сelsius")
         case 1:
-            degrees = Constants().pathFahrenheit
+            degreePath = "fahrenheit"
+            simboldegree = "fahrenheit"
+            print("Fahrenheit")
         default:
             break
         }
     }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-
+    
 }
+

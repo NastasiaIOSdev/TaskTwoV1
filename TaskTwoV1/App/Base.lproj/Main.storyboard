@@ -570,6 +570,9 @@
                                     <segment title="Centigrates"/>
                                     <segment title="Faringets"/>
                                 </segments>
+                                <connections>
+                                    <action selector="onChangeTypeDegrees:" destination="BbM-Kv-wHN" eventType="valueChanged" id="fU5-uI-XrO"/>
+                                </connections>
                             </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fFE-1d-sWu"/>
@@ -582,6 +585,9 @@
                     <navigationItem key="navigationItem" id="xvg-aV-YJH">
                         <barButtonItem key="backBarButtonItem" title=" " id="fOw-xJ-414"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="typeOfTemperatureControl" destination="vHo-4V-8X2" id="qNQ-dt-AED"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LYq-bN-fQY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
