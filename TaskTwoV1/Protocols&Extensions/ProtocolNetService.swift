@@ -15,6 +15,8 @@ protocol NetService {
     func getBreed2(completion: @escaping (Result<Breed2, Error>) -> Void)
     func getPhoto(breeds: String, completion: @escaping (Result<Image2, Error>) -> Void)
     func getPhotoHound(_ hound: String, completed: @escaping (Result<ImageHound, Error>) -> Void)
-    func getTopStories(completion: @escaping (Result<[Article], Error>) -> Void)
+//    func getTopStories(completion: @escaping (Result<[Article], Error>) -> Void)
+    func getSourceFilters(completion: @escaping ([SourceFilter], Error?) -> Void)
+    func getNewsInfo(currentPage: Int, pageSize: Int, filters: [String: [String]], searchQuery: String, completion: @escaping (NewsInfo?, Error?) -> Void)
 
 }

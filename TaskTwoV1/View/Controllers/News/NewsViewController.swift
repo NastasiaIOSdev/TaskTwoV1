@@ -10,17 +10,26 @@ import Foundation
 
 class NewsViewController: UIViewController {
 
-   // MARK: - IBOutlets
+    // MARK: - IBOutlets
 
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var newsSearchBar: UISearchBar!
+    @IBOutlet weak var filterButton: UIBarButtonItem!
+
     @IBOutlet weak var listButton: UIButton!
     @IBOutlet weak var gridButton: UIButton!
 
     // MARK: - Properties
 
+    var refreshControl: UIRefreshControl!
+    var networkingManager: APIService = APIService()
+    var newsModel: NewsDataModel!
+    var newsUrl: String = ""
+
     let cellIdentifier = "GridCell"
     let segueIdentifier = "Detail"
-    var viewModels = [NewsViewModel]()
+    let segueIdentifier2 = "toFilter"
+
     var articles = [Article]()
     var listType: CGFloat = 1
     var searchVC = UISearchController(searchResultsController: nil)
@@ -29,17 +38,34 @@ class NewsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.collectionView.prefetchDataSource = self
+
         title = "News"
         listButton.layer.cornerRadius = 5
         gridButton.layer.cornerRadius = 5
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        self.collectionView.reloadData()
-        fetchTopStories()
+
         setupCollectionView()
         flowLayoutForManagedGridAndList()
-        createSearchBar()
 
+        newsSearchBar.delegate = self
+
+        refreshControl = UIRefreshControl()
+        refreshControl.attributedTitle = NSAttributedString(string: "Loading...")
+        refreshControl.addTarget(self, action: #selector(self.refresh(sender:)), for: UIControl.Event.valueChanged)
+        collectionView.addSubview(refreshControl)
+
+        newsModel = NewsDataModel(delegate: self)
+        newsModel.fetchNewsData(searchQuery: "")
+        if newsModel.filterOptions.isEmpty {
+            filterButton.isEnabled = true // было false
+        }
+    }
+
+    @objc func refresh(sender: AnyObject) {
+        newsModel.fetchedArticles.removeAll()
+        newsModel.currentPage = 0
+        self.collectionView.reloadData()
+        self.refreshControl?.endRefreshing()
     }
 
     // MARK: - Actions
@@ -68,27 +94,6 @@ class NewsViewController: UIViewController {
         self.collectionView.reloadData()
     }
 
-    func fetchTopStories() {
-        APIService.shared.getTopStories { [weak self] result in
-            switch result {
-            case.success(let articles):
-                self?.articles = articles
-                self?.viewModels = articles.compactMap({ NewsViewModel(
-                    title: $0.title,
-                    subtitle: $0.description ?? "No Description",
-                    authorArticle: $0.author ?? "No Author",
-                    imageUrl: URL(string: $0.urlToImage ?? "")
-                    )
-                })
-                DispatchQueue.main.async {
-                    self?.collectionView.reloadData()
-                }
-            case.failure(let error):
-                print(error)
-            }
-        }
-    }
-
     func configureCell(cell: GridCell, forIndexPath indexPath: IndexPath) {
         cell.layer.borderColor = UIColor.lightGray.cgColor
         cell.layer.borderWidth = 1
@@ -107,6 +112,7 @@ class NewsViewController: UIViewController {
 
         let gridCellNib = UINib(nibName: GridCell.reuseIdentifierGridCell, bundle: nil)
         self.collectionView.register(gridCellNib, forCellWithReuseIdentifier: GridCell.reuseIdentifierGridCell)
+        self.collectionView.reloadData()
     }
 
     func createSearchBar() {
@@ -118,16 +124,23 @@ class NewsViewController: UIViewController {
         super.viewDidLayoutSubviews()
     }
 
+    // MARK: - Prepare for segue
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let item = sender as? NewsViewModel else { return }
-        if segue.identifier == segueIdentifier {
-            if let viewC = segue.destination as? DetailViewController {
-                viewC.nameArticle = item.title
-                viewC.descriptionArticle = item.subtitle
-                viewC.author = item.authorArticle
-                viewC.imageURL = item.imageUrl
+        if segue.identifier == segueIdentifier2 {
+            guard let filterVC = segue.destination as? FilterViewController else { return }
+            filterVC.allFilters = newsModel.filterOptions
+            filterVC.chosenFilters = newsModel.chosenFilters
+            filterVC.delegate = self
+        } else if segue.identifier == segueIdentifier,
+                  let viewC = segue.destination as? DetailViewController,
+                  let item = sender as? Article {
+            viewC.nameArticle = item.title
+            viewC.descriptionArticle = item.description
+            viewC.author = item.author
+            if let urlString = item.urlToImage {
+                viewC.imageURL = URL(string: urlString)
             }
         }
     }
-
 }

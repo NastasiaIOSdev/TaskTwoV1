@@ -13,7 +13,7 @@ final class APIService {
 
     static let shared = APIService()
 
-    private init() {}
+    init() {}
 
     // MARK: - Cats
 
@@ -142,50 +142,102 @@ final class APIService {
         task.resume()
     }
 
-   // MARK: - News
+//    public func getTopStories(completion: @escaping (Result<[Article], Error>) -> Void) {
+//        guard let url = Constants.topHeadlinesURL else {
+//            return
+//        }
+//        let task = URLSession.shared.dataTask(with: url) { data, _, error in
+//            if let error = error {
+//                completion(.failure(error))
+//            } else if let data = data {
+//                do {
+//                    let result = try
+//                        JSONDecoder().decode(NewsInfo.self, from: data)
+//                    print("Articles: \(result.articles.count)")
+//                    completion(.success(result.articles))
+//                } catch {
+//                    completion(.failure(error))
+//                }
+//            }
+//        }
+//        task.resume()
+//    }
 
-    public func getTopStories(completion: @escaping (Result<[Article], Error>) -> Void) {
-        guard let url = Constants.topHeadlinesURL else {
+//    public func searchNews(with query: String, completion: @escaping (Result<[Article], Error>) -> Void) {
+//        guard !query.trimmingCharacters(in: .whitespaces).isEmpty else {
+//            return
+//        }
+//        let urlString = Constants.searchURLString + query
+//        guard let url = URL(string: urlString) else {
+//            return
+//        }
+//        let task = URLSession.shared.dataTask(with: url) { data, _, error in
+//            if let error = error {
+//                completion(.failure(error))
+//            } else if let data = data {
+//                do {
+//                    let result = try JSONDecoder().decode(NewsInfo.self, from: data)
+//                    print("Articles: \(result.articles.count)")
+//                    completion(.success(result.articles))
+//                } catch {
+//                    completion(.failure(error))
+//                }
+//            }
+//        }
+//        task.resume()
+//    }
+
+    // MARK: - News
+
+    func getSourceFilters(completion: @escaping ([SourceFilter], Error?) -> Void) {
+        guard var url: URLComponents = URLComponents(url: NewsEndPoints.Endpoints.sourceFilters.url, resolvingAgainstBaseURL: true) else {
+            print("An error with URL convertation has occured")
             return
         }
-        let task = URLSession.shared.dataTask(with: url) { data, _, error in
-            if let error = error {
-                completion(.failure(error))
-            } else if let data = data {
-                do {
-                    let result = try
-                        JSONDecoder().decode(APIResponse2.self, from: data)
-                    print("Articles: \(result.articles.count)")
-                    completion(.success(result.articles))
-                } catch {
-                    completion(.failure(error))
-                }
+        url.queryItems = [URLQueryItem(name: "apiKey", value: Constants.apiKeyNews), URLQueryItem(name: "language", value: "en")]
+        NetworkingTasks.taskForRequest(url: url.url!, responseType: SourceFilterResponse.self) { (response, error) in
+            guard let sourceFilters = response?.sources else {
+                completion([], error)
+                return
             }
+            completion(sourceFilters, nil)
         }
-        task.resume()
     }
 
-    public func searchNews(with query: String, completion: @escaping (Result<[Article], Error>) -> Void) {
-        guard !query.trimmingCharacters(in: .whitespaces).isEmpty else {
+    func getNewsInfo(currentPage: Int, pageSize: Int, filters: [String: [String]], searchQuery: String, completion: @escaping (NewsInfo?, Error?) -> Void) {
+        guard var url: URLComponents = URLComponents(url: NewsEndPoints.Endpoints.topHeadlines.url, resolvingAgainstBaseURL: true) else {
+            print("An error with URL convertation has occured")
             return
         }
-        let urlString = Constants.searchURLString + query
-        guard let url = URL(string: urlString) else {
-            return
-        }
-        let task = URLSession.shared.dataTask(with: url) { data, _, error in
-            if let error = error {
-                completion(.failure(error))
-            } else if let data = data {
-                do {
-                    let result = try JSONDecoder().decode(APIResponse2.self, from: data)
-                    print("Articles: \(result.articles.count)")
-                    completion(.success(result.articles))
-                } catch {
-                    completion(.failure(error))
+        url.queryItems = [
+            URLQueryItem(
+                name: "apiKey",
+                value: Constants.apiKeyNews
+            ),
+            URLQueryItem(
+                name: "page",
+                value: "\(currentPage)"
+            ),
+            URLQueryItem(
+                name: "language",
+                value: "en"
+            ),
+            URLQueryItem(
+                name: "pageSize",
+                value: "\(pageSize)"
+            )
+        ]
+        if searchQuery.isEmpty {
+            for filterType in FilterType.asArray {
+                if let chosenFilteroptions = filters[filterType.rawValue] {
+                    let filterName = filterType.rawValue.lowercased() == "source" ? "sources" : filterType.rawValue.lowercased()
+                    url.queryItems?.append(URLQueryItem(name: filterName, value: chosenFilteroptions.joined(separator: ",")))
                 }
             }
+        } else { url.queryItems?.append(URLQueryItem(name: "q", value: searchQuery)) }
+        NetworkingTasks.taskForRequest(url: url.url!, responseType: NewsInfo.self) { (response, error) in
+            completion(response, error)
         }
-        task.resume()
     }
+
 }

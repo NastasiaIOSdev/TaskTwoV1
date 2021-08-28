@@ -428,16 +428,42 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="nUY-dQ-vuU">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="nUY-dQ-vuU">
                                 <rect key="frame" x="130.5" y="15" width="153" height="32"/>
                                 <segments>
                                     <segment title="Category"/>
-                                    <segment title="Sourse"/>
+                                    <segment title="Source"/>
                                 </segments>
+                                <connections>
+                                    <action selector="indexChanged:" destination="GQE-jU-kCK" eventType="valueChanged" id="odU-sx-ndv"/>
+                                </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="B2o-c8-Wzz">
                                 <rect key="frame" x="20" y="56" width="374" height="682"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="filterCell" textLabel="eBn-Dh-JeE" style="IBUITableViewCellStyleDefault" id="Z5F-hQ-FB0">
+                                        <rect key="frame" x="0.0" y="28" width="374" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Z5F-hQ-FB0" id="kIs-uf-exk">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Filter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eBn-Dh-JeE">
+                                                    <rect key="frame" x="20" y="0.0" width="334" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="GQE-jU-kCK" id="1hF-n3-ktB"/>
+                                    <outlet property="delegate" destination="GQE-jU-kCK" id="t2g-aJ-QvI"/>
+                                </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VgH-yU-L0Q">
                                 <rect key="frame" x="356.5" y="24" width="20" height="22"/>
@@ -458,6 +484,9 @@
                                 <state key="normal" title="Applay Filter">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="applyFiltersButtonPressed:" destination="GQE-jU-kCK" eventType="touchUpInside" id="IUs-8I-evC"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="k2C-TA-tcf"/>
@@ -477,8 +506,9 @@
                             <constraint firstItem="nUY-dQ-vuU" firstAttribute="top" secondItem="k2C-TA-tcf" secondAttribute="top" constant="15" id="pYm-lP-pAq"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="WJp-OX-1cP"/>
                     <connections>
-                        <outlet property="applayFilterButton" destination="O9n-OS-IvF" id="PRL-Co-QaC"/>
+                        <outlet property="applayFilterButton" destination="O9n-OS-IvF" id="OVL-k9-afd"/>
                         <outlet property="filterTableView" destination="B2o-c8-Wzz" id="5uD-ap-2IA"/>
                         <outlet property="filterTypeSegmentControl" destination="nUY-dQ-vuU" id="1Fh-l7-zzY"/>
                     </connections>
@@ -495,8 +525,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="I93-rb-Gj4">
+                                <rect key="frame" x="20" y="192" width="374" height="704"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="UHJ-Qf-BRK">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                            <searchBar contentMode="redraw" placeholder="Enter search query" translatesAutoresizingMaskIntoConstraints="NO" id="aPN-3I-61A">
+                                <rect key="frame" x="0.0" y="98" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="bCM-SO-jYx">
-                                <rect key="frame" x="38" y="98" width="338" height="30"/>
+                                <rect key="frame" x="38" y="154" width="338" height="30"/>
                                 <subviews>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vee-ni-i11">
                                         <rect key="frame" x="0.0" y="0.0" width="165" height="30"/>
@@ -527,43 +572,40 @@
                                     <constraint firstItem="vee-ni-i11" firstAttribute="height" secondItem="srC-P4-rGK" secondAttribute="height" id="Mwz-Ll-Adt"/>
                                 </constraints>
                             </stackView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="I93-rb-Gj4">
-                                <rect key="frame" x="20" y="133" width="374" height="763"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="UHJ-Qf-BRK">
-                                    <size key="itemSize" width="128" height="128"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells/>
-                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="D0P-uK-vyE"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="aPN-3I-61A" firstAttribute="trailing" secondItem="D0P-uK-vyE" secondAttribute="trailing" id="5Uu-cz-sMc"/>
+                            <constraint firstItem="aPN-3I-61A" firstAttribute="top" secondItem="D0P-uK-vyE" secondAttribute="top" constant="10" id="7WP-uY-Xxg"/>
+                            <constraint firstItem="aPN-3I-61A" firstAttribute="leading" secondItem="D0P-uK-vyE" secondAttribute="leading" id="H7V-EO-Whg"/>
                             <constraint firstAttribute="bottom" secondItem="I93-rb-Gj4" secondAttribute="bottom" id="Lsi-go-gGJ"/>
-                            <constraint firstItem="I93-rb-Gj4" firstAttribute="top" secondItem="bCM-SO-jYx" secondAttribute="bottom" constant="5" id="YTu-yF-ZJ7"/>
+                            <constraint firstItem="bCM-SO-jYx" firstAttribute="leading" secondItem="D0P-uK-vyE" secondAttribute="leading" constant="38" id="OhY-Y2-upH"/>
+                            <constraint firstItem="I93-rb-Gj4" firstAttribute="top" secondItem="bCM-SO-jYx" secondAttribute="bottom" constant="8" id="YTu-yF-ZJ7"/>
                             <constraint firstItem="I93-rb-Gj4" firstAttribute="leading" secondItem="D0P-uK-vyE" secondAttribute="leading" constant="20" id="eIH-0p-BdO"/>
-                            <constraint firstItem="bCM-SO-jYx" firstAttribute="top" secondItem="D0P-uK-vyE" secondAttribute="top" constant="10" id="gMj-Bm-IRD"/>
+                            <constraint firstItem="bCM-SO-jYx" firstAttribute="top" secondItem="D0P-uK-vyE" secondAttribute="top" constant="66" id="gMj-Bm-IRD"/>
                             <constraint firstItem="bCM-SO-jYx" firstAttribute="centerX" secondItem="Ega-hG-Q8g" secondAttribute="centerX" id="i4Z-J0-Ekh"/>
+                            <constraint firstItem="D0P-uK-vyE" firstAttribute="trailing" secondItem="bCM-SO-jYx" secondAttribute="trailing" constant="38" id="qNc-oo-b6a"/>
                             <constraint firstItem="I93-rb-Gj4" firstAttribute="trailing" secondItem="D0P-uK-vyE" secondAttribute="trailing" constant="-20" id="rrM-qS-ymG"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="w1F-gg-xKi">
                         <barButtonItem key="backBarButtonItem" title=" " id="sjy-F4-5mt"/>
-                        <barButtonItem key="rightBarButtonItem" image="filter" id="AZ7-VW-Bfc">
+                        <barButtonItem key="rightBarButtonItem" image="filter" id="k8J-Hb-muK">
+                            <color key="tintColor" red="0.094117647060000004" green="0.36862745099999999" blue="0.67450980390000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
-                                <segue destination="GQE-jU-kCK" kind="presentation" id="q7x-Qm-K6Q"/>
+                                <segue destination="GQE-jU-kCK" kind="presentation" identifier="toFilter" id="1Wp-TI-YRf"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="collectionView" destination="I93-rb-Gj4" id="PdM-JY-eOl"/>
+                        <outlet property="filterButton" destination="k8J-Hb-muK" id="QDj-mr-0ue"/>
                         <outlet property="gridButton" destination="srC-P4-rGK" id="lJI-VI-DwG"/>
                         <outlet property="listButton" destination="vee-ni-i11" id="4um-43-B0W"/>
+                        <outlet property="newsSearchBar" destination="aPN-3I-61A" id="hip-o9-dtf"/>
                         <segue destination="SvP-Pl-gbb" kind="show" identifier="Detail" id="S0U-3Z-2jh"/>
                     </connections>
                 </viewController>

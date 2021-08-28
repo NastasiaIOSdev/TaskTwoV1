@@ -7,34 +7,49 @@
 
 import UIKit
 
-extension NewsViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+// MARK: - CollectionView Delegate & DataSource
+
+extension NewsViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDataSourcePrefetching {
+
+    func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
+        if indexPaths.contains(where: isLoadingCell) {
+            newsModel.fetchNewsData(searchQuery: "")
+        }
+    }
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return articles.count
+        return newsModel.totalArticlesCount
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if self.listType == 1 {
 
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GridCell.reuseIdentifierListCell, for: indexPath) as? GridCell else {
-            fatalError()
-        }
-        cell.configure(with: viewModels[indexPath.row])
-        return cell
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GridCell.reuseIdentifierListCell, for: indexPath) as? GridCell else {
+                fatalError()
+            }
+            var currentArticle = isLoadingCell(for: indexPath) ? nil : newsModel.fetchedArticles[indexPath.row]
+            cell.configure(with: &currentArticle, targetVC: self)
+            return cell
         } else {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GridCell.reuseIdentifierGridCell, for: indexPath) as? GridCell else {
                 fatalError()
             }
-            cell.configure(with: viewModels[indexPath.row])
+            var currentArticle = isLoadingCell(for: indexPath) ? nil : newsModel.fetchedArticles[indexPath.row]
+            cell.configure(with: &currentArticle, targetVC: self)
             return cell
         }
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
-        let item = viewModels[indexPath.row]
-        performSegue(withIdentifier: segueIdentifier, sender: item)
-        print("DID select item\(indexPath)")
+        if newsModel.fetchedArticles.count > indexPath.row {
+            let item = newsModel.fetchedArticles[indexPath.row]
+            performSegue(withIdentifier: segueIdentifier, sender: item)
+            print("DID select item\(indexPath)")
+        }
     }
 }
+
+// MARK: - FloyLayoyt
 
 extension NewsViewController: UICollectionViewDelegateFlowLayout {
 
@@ -51,28 +66,57 @@ extension NewsViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
+// MARK: SearchBar Delegate
+
 extension NewsViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        guard let text = searchBar.text, !text.isEmpty else { return }
-        APIService.shared.searchNews(with: text) { [weak self] result in
-            switch result {
-            case.success(let articles):
-                self?.articles = articles
-                self?.viewModels = articles.compactMap({ NewsViewModel(
-                    title: $0.title,
-                    subtitle: $0.description ?? "No Description",
-                    authorArticle: $0.author ?? "No Author",
-                    imageUrl: URL(string: $0.urlToImage ?? "imagePlaceholder")
-                    )
-                })
-                DispatchQueue.main.async {
-                    self?.collectionView.reloadData()
-                    self?.searchVC.dismiss(animated: true, completion: nil)
-                }
-            case.failure(let error):
-                print(error)
-            }
+        refresh(sender: self)
+        newsModel.fetchNewsData(searchQuery: searchBar.text ?? "")
+        searchBar.text = ""
+    }
+}
+
+// MARK: - NewsViewModelDelegate
+
+extension NewsViewController: NewsViewModelDelegate {
+    func onFetchCompleted(with newIndexPathsToReload: [IndexPath]?) {
+        guard let newIndexPathsToReload = newIndexPathsToReload else {
+            collectionView.reloadData()
+            return
         }
-        print(text)
+        let indexPathsToReload = visibleIndexPathsToReload(indexPaths: newIndexPathsToReload)
+        collectionView.reloadItems(at: indexPathsToReload)
+    }
+
+    func onFetchFailed(with reason: String) {
+        HelperMethods.showFailureAlert(title: "Warning", message: reason, controller: self)
+    }
+}
+
+// MARK: - PopupDelegate
+
+extension NewsViewController: PopupDelegate {
+    func popupValueSelected(value: [String: [String]]) {
+        newsModel.chosenFilters = value
+        newsModel.totalArticlesCount = 100
+        refresh(sender: self)
+    }
+}
+
+extension UIImage {
+    func getImageRatio() -> CGFloat {
+        return CGFloat(self.size.width / self.size.height)
+    }
+}
+
+extension NewsViewController {
+    func isLoadingCell(for indexPath: IndexPath) -> Bool {
+        return indexPath.row >= newsModel.fetchedArticles.count
+    }
+
+    func visibleIndexPathsToReload(indexPaths: [IndexPath]) -> [IndexPath] {
+        let indexPathsForVisibleRows = collectionView.indexPathsForVisibleItems
+        let indexPathsIntersection = Set(indexPathsForVisibleRows).intersection(indexPaths)
+        return Array(indexPathsIntersection)
     }
 }

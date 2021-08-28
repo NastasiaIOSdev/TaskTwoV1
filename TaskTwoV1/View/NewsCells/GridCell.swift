@@ -18,6 +18,7 @@ class GridCell: UICollectionViewCell {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var newsImage: UIImageView!
     @IBOutlet weak var authorLabel: UILabel!
+
     @IBOutlet weak var myView: UIView!
     @IBOutlet weak var shadowView: UIView!
 
@@ -36,23 +37,36 @@ class GridCell: UICollectionViewCell {
         authorLabel.text = nil
     }
 
-    func configure(with viewModel: NewsViewModel) {
-        nameLabel.text = viewModel.title
-        descriptionLabel.text = viewModel.subtitle
-        authorLabel.text = viewModel.authorArticle
-        if let data = viewModel.imageData {
-            newsImage.image = UIImage(data: data)
-        } else if let url = viewModel.imageUrl {
-               URLSession.shared.dataTask(with: url) { [weak self] data, _, error in
-                guard let data = data, error == nil
-                else {
-                    return
+    func configure(with articleInfo: inout Article?, targetVC: UIViewController) {
+        if let article = articleInfo {
+            nameLabel.text = article.title ?? ""
+           descriptionLabel.text = article.description ?? ""
+//            sourceLabel.text = article.source?.name ?? ""
+            if let author = article.author {
+                authorLabel.text = author.contains("{") || author.contains("/") ? "by \(article.source?.name ?? "unknown author")" : "by \(author)"
+            } else {
+                authorLabel.text = "by \(article.source?.name ?? "unknown author")"
+            }
+            if let articleImage = article.image {
+                self.newsImage.image = articleImage
+            } else {
+                NetworkingTasks.downloadImage(urlString: article.urlToImage) { (image, error) in
+                    DispatchQueue.main.async { [self] in
+                        if let image = image {
+                            self.newsImage.image = HelperMethods.resizeImage(originalImage: image, targetHeight: newsImage.bounds.height)
+                        } else {
+                            print(error?.localizedDescription ?? "An error with image loading has occured")
+                            self.newsImage.image = UIImage(named: "imagePlaceholder")
+                        }
+                    }
                 }
-                viewModel.imageData = data
-                DispatchQueue.main.async {
-                    self?.newsImage.image = UIImage(data: data)
-                }
-            }.resume()
+            }
+        } else {
+            nameLabel.text = ""
+            newsImage.image = nil
+            descriptionLabel.text = ""
+            authorLabel.text = ""
         }
     }
+
 }

@@ -20,7 +20,7 @@ class DetailViewController: UIViewController {
 
     // MARK: - Properties
 
-    var viewModels = [NewsViewModel]()
+    var mewsModel = [NewsDataModel]()
     var nameArticle: String?
     var author: String?
     var descriptionArticle: String?
