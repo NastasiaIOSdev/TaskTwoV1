@@ -62,10 +62,11 @@ extension MapViewController: UISearchBarDelegate {
                 annotation.title = self.searchBar.text!
                 self.weatherManager.sendRequest(coordinates: locCoord) { weather in
                     DispatchQueue.main.async {
+                        let simbol = Constants().simboldegrees[degreePath] ?? "℃"
                         let annotation = MKPointAnnotation()
                         annotation.coordinate = locCoord
                         if let weather = weather {
-                            annotation.subtitle = "\(weather.main.temp)"
+                            annotation.subtitle = "\(weather.main.temp)\(simbol)"
                         } else {
                             annotation.subtitle = "error data"
                         }

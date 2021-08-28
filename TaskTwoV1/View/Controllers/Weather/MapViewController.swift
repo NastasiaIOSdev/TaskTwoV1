@@ -84,7 +84,7 @@ class MapViewController: UIViewController {
 
         weatherManager.sendRequest(coordinates: locCoord) { weather in
             DispatchQueue.main.async {
-                let simbol = Constants().simboldegrees[simboldegree] ?? "℃"
+                let simbol = Constants().simboldegrees[degreePath] ?? "℃"
                 let annotation = MKPointAnnotation()
                 annotation.coordinate = locCoord
                 if let weather = weather {

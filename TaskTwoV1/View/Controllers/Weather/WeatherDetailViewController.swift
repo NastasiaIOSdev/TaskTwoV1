@@ -85,7 +85,7 @@ class WeatherDetailViewController: UIViewController, WeatherManagerDelegate {
             guard let data = currentWeather else {
                 return
         }
-            let simbol = Constants().simboldegrees[simboldegree] ?? "℃"
+            let simbol = Constants().simboldegrees[degreePath] ?? "℃"
             temperatureLabel.text = "\(data.curTemperature) \(simbol)"
             coverCloudsLabel.text = "\(data.curClouds) %"
             feelLikeLabel.text = "\(data.curFeelTemp) \(simbol)"

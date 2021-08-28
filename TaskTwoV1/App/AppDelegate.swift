@@ -9,7 +9,6 @@ import UIKit
 import CoreData
 
 var degreePath = "celsius"
-var simboldegree = "celsius"
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -60,7 +59,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func save() {
         UserDefaults.standard.set(degreePath, forKey: "degree")
-        
+
         let context = persistentContainer.viewContext
         if context.hasChanges {
             do {

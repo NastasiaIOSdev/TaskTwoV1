@@ -20,7 +20,7 @@ struct Constants {
         "celsius": "units=metric",
         "fahrenheit": "units=imperial"
     ]
-    
+
     let simboldegrees = [
         "celsius": "℃",
         "fahrenheit": "℉"
