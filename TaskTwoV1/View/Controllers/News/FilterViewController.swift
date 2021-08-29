@@ -20,7 +20,7 @@ class FilterViewController: UIViewController {
     var allFilters: [String: [String]] = [:]
     var chosenFilters: [String: [String]] = [:]
     var currentFiltersType: String = "Category"
-    var delegate: PopupDelegate?
+    weak var delegate: PopupDelegate?
 
     @IBAction func closeButtonPressed(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)

@@ -200,14 +200,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		2E05674C26DA0D6700FFA740 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Helpers;
-			path = APIService/Helpers;
-			sourceTree = "<group>";
-		};
 		2E0C2E8026B5B50100CEC0C6 /* Person */ = {
 			isa = PBXGroup;
 			children = (
@@ -287,7 +279,6 @@
 				2E48E2712689C59C00271A85 /* Main.storyboard */,
 				2EF4886126BA8EF700F32723 /* Helpers */,
 				2E0FD55F26B558B90022DEBA /* Core Data */,
-				2E05674C26DA0D6700FFA740 /* Helpers */,
 				2E48E2A8268A0DA600271A85 /* APIService */,
 				2E79B4A42690F33100C357C3 /* Constants */,
 				2E79B4A82690F3FA00C357C3 /* Protocols&Extensions */,
@@ -591,12 +582,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2E48E27C2689C5A100271A85 /* Build configuration list for PBXNativeTarget "TaskTwoV1" */;
 			buildPhases = (
-				2E28D25C26AED8080062CD22 /* ShellScript */,
 				BED2B493A11FD2F0200A522D /* [CP] Check Pods Manifest.lock */,
+				2E28D25C26AED8080062CD22 /* ShellScript */,
 				2E7D9242269718E400B3C64B /* ShellScript */,
 				2E48E2642689C59C00271A85 /* Sources */,
 				2E48E2652689C59C00271A85 /* Frameworks */,
 				2E48E2662689C59C00271A85 /* Resources */,
+				D43970D60F701051959075B1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -703,8 +695,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "
-";
+			shellScript = "\n";
 		};
 		BED2B493A11FD2F0200A522D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -726,6 +717,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D43970D60F701051959075B1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TaskTwoV1/Pods-TaskTwoV1-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TaskTwoV1/Pods-TaskTwoV1-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TaskTwoV1/Pods-TaskTwoV1-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

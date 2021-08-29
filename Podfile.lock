@@ -1,16 +1,20 @@
 PODS:
+  - SideMenu (6.5.0)
   - SwiftLint (0.43.1)
 
 DEPENDENCIES:
+  - SideMenu
   - SwiftLint
 
 SPEC REPOS:
   trunk:
+    - SideMenu
     - SwiftLint
 
 SPEC CHECKSUMS:
+  SideMenu: f583187d21c5b1dd04c72002be544b555a2627a2
   SwiftLint: 99f82d07b837b942dd563c668de129a03fc3fb52
 
-PODFILE CHECKSUM: 84a21b0d3a13e45a0cada7e66d8762e1943dbef2
+PODFILE CHECKSUM: 4c1c681ecfc32c54bc5d05a7e2335b56605b1438
 
 COCOAPODS: 1.10.1
