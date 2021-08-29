@@ -6,13 +6,14 @@
 //
 
 import UIKit
+import SideMenu
 
 class MainUIViewController: UIViewController {
 
     // MARK: - IBOUtlets
 
     @IBOutlet weak var tableViewSecond: UITableView!
-
+    private var sideMenu: SideMenuNavigationController?
     private var breed = [Breed]()
     var viewModels = [CellViewModel]()
 
@@ -30,7 +31,19 @@ class MainUIViewController: UIViewController {
         title = "Cats"
         getAllBreed()
         fileManagerWork()
+        setupSideMenu()
    }
+    func setupSideMenu() {
+        let menu = MenuController(with: ["Cats",
+                                         "StarWars",
+                                         "AllBreeds",
+                                         "News"])
+        // menu.delegate = self
+        sideMenu = SideMenuNavigationController(rootViewController: menu)
+        sideMenu?.leftSide = true
+        SideMenuManager.default.leftMenuNavigationController = sideMenu
+        SideMenuManager.default.addPanGestureToPresent(toView: view)
+    }
 
     func getAllBreed() {
         APIService.shared.getBreed { [weak self] result in
@@ -57,5 +70,11 @@ class MainUIViewController: UIViewController {
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+    }
+
+    // MARK: - Actions
+
+    @IBAction func didTapMenuButton() {
+        present(sideMenu!, animated: true)
     }
 }

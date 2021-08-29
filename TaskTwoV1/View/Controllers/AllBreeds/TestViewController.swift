@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SideMenu
 
 class TestViewController: UIViewController {
 
@@ -18,6 +19,7 @@ class TestViewController: UIViewController {
     var breeds: Breed2?
     var images: [String] = []
     var houndImages: [String] = []
+    private var sideMenu: SideMenuNavigationController?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +38,25 @@ class TestViewController: UIViewController {
         allBreed()
         fillArrays()
         getPhotosByHound("hound")
+        setupSideMenu()
+    }
+
+    // MARK: - Actions
+
+    @IBAction func didTapMenuButton() {
+        present(sideMenu!, animated: true)
+    }
+
+    func setupSideMenu() {
+        let menu = MenuController(with: ["Cats",
+                                         "StarWars",
+                                         "AllBreeds",
+                                         "News"])
+        // menu.delegate = self
+        sideMenu = SideMenuNavigationController(rootViewController: menu)
+        sideMenu?.leftSide = true
+        SideMenuManager.default.leftMenuNavigationController = sideMenu
+        SideMenuManager.default.addPanGestureToPresent(toView: view)
     }
 
     func allBreed() {

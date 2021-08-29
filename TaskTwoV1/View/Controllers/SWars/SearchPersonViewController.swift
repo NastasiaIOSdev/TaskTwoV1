@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreData
+import SideMenu
 
 class SearchPersonViewController: UIViewController {
 
@@ -14,6 +15,7 @@ class SearchPersonViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
 
+    private var sideMenu: SideMenuNavigationController?
     let cellIdentifier = "ItemCollectionViewCell"
     var results = [Results]()
     var viewModels = [CellTableViewModel]()
@@ -51,7 +53,26 @@ class SearchPersonViewController: UIViewController {
         setupCollectionView()
         setUpNavigationBar()
         setupColorTabbar()
+        setupSideMenu()
    }
+
+    // MARK: - Actions
+
+    @IBAction func didTapMenuButton() {
+        present(sideMenu!, animated: true)
+    }
+
+    func setupSideMenu() {
+        let menu = MenuController(with: ["Cats",
+                                         "StarWars",
+                                         "AllBreeds",
+                                         "News"])
+        // menu.delegate = self
+        sideMenu = SideMenuNavigationController(rootViewController: menu)
+        sideMenu?.leftSide = true
+        SideMenuManager.default.leftMenuNavigationController = sideMenu
+        SideMenuManager.default.addPanGestureToPresent(toView: view)
+    }
 
     func setupCollectionView() {
         collectionView.delegate = self
