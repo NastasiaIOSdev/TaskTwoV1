@@ -7,8 +7,9 @@
 
 import UIKit
 import Foundation
+import SideMenu
 
-class NewsViewController: UIViewController {
+class NewsViewController: UIViewController, MenuControllerDelegate, UINavigationControllerDelegate {
 
     // MARK: - IBOutlets
 
@@ -20,7 +21,10 @@ class NewsViewController: UIViewController {
     @IBOutlet weak var gridButton: UIButton!
 
     // MARK: - Properties
-
+    private var sideMenu: SideMenuNavigationController?
+    private let catsUIViewController = FirstViewController()
+    private let starWarsViewController = SecondViewController()
+    private let allBreedsViewController = ThirdViewController()
     var refreshControl: UIRefreshControl!
     var networkingManager: APIService = APIService()
     var newsModel: NewsDataModel!
@@ -39,36 +43,31 @@ class NewsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.collectionView.prefetchDataSource = self
-
+        newsSearchBar.delegate = self
         title = "News"
         listButton.layer.cornerRadius = 5
         gridButton.layer.cornerRadius = 5
-
         setupCollectionView()
         flowLayoutForManagedGridAndList()
-
-        newsSearchBar.delegate = self
-
-        refreshControl = UIRefreshControl()
-        refreshControl.attributedTitle = NSAttributedString(string: "Loading...")
-        refreshControl.addTarget(self, action: #selector(self.refresh(sender:)), for: UIControl.Event.valueChanged)
-        collectionView.addSubview(refreshControl)
-
+        setupRefreshControl()
+        setupNewsModel()
+        setupSideMenu()
+        addChildControllers()
+    }
+    
+    func setupNewsModel() {
         newsModel = NewsDataModel(delegate: self)
         newsModel.fetchNewsData(searchQuery: "")
         if newsModel.filterOptions.isEmpty {
-            filterButton.isEnabled = true // было false
+            filterButton.isEnabled = true
         }
     }
-
-    @objc func refresh(sender: AnyObject) {
-        newsModel.fetchedArticles.removeAll()
-        newsModel.currentPage = 0
-        self.collectionView.reloadData()
-        self.refreshControl?.endRefreshing()
-    }
-
+    
     // MARK: - Actions
+
+    @IBAction func didTapMenuButton() {
+        present(sideMenu!, animated: true)
+    }
 
     @IBAction func gridListButtonTap(_ sender: UIButton) {
         switch sender.tag {
@@ -82,6 +81,32 @@ class NewsViewController: UIViewController {
             print("Default Button Called ")
         }
         self.collectionView.reloadData()
+    }
+    
+    @objc func refresh(sender: AnyObject) {
+        newsModel.fetchedArticles.removeAll()
+        newsModel.currentPage = 0
+        self.collectionView.reloadData()
+        self.refreshControl?.endRefreshing()
+    }
+    
+    func setupRefreshControl() {
+        refreshControl = UIRefreshControl()
+        refreshControl.attributedTitle = NSAttributedString(string: "Loading...")
+        refreshControl.addTarget(self, action: #selector(self.refresh(sender:)), for: UIControl.Event.valueChanged)
+        collectionView.addSubview(refreshControl)
+    }
+    
+    func setupSideMenu() {
+        let menu = MenuController(with: ["Cats",
+                                         "StarWars",
+                                         "AllBreeds",
+                                         "News"])
+        menu.delegate = self
+        sideMenu = SideMenuNavigationController(rootViewController: menu)
+        sideMenu?.leftSide = true
+        SideMenuManager.default.leftMenuNavigationController = sideMenu
+        SideMenuManager.default.addPanGestureToPresent(toView: view)
     }
 
     func flowLayoutForManagedGridAndList() {
@@ -143,4 +168,81 @@ class NewsViewController: UIViewController {
             }
         }
     }
+    
+    private func addChildControllers() {
+        addChild(catsUIViewController)
+        addChild(starWarsViewController)
+        addChild(allBreedsViewController)
+
+        view.addSubview(catsUIViewController.view)
+        view.addSubview(starWarsViewController.view)
+        view.addSubview(allBreedsViewController.view)
+
+        catsUIViewController.view.frame = view.bounds
+        starWarsViewController.view.frame = view.bounds
+        allBreedsViewController.view.frame = view.bounds
+
+        catsUIViewController.didMove(toParent: self)
+        starWarsViewController.didMove(toParent: self)
+        allBreedsViewController.didMove(toParent: self)
+
+        catsUIViewController.view.isHidden = true
+        starWarsViewController.view.isHidden = true
+        allBreedsViewController.view.isHidden = true
+    }
+
+    func didselectMenuItem(named: String) {
+        sideMenu?.dismiss(animated: true, completion: { [weak self] in
+            self?.title = named
+            
+            if named == "News" {
+                self?.catsUIViewController.view.isHidden = true
+                self?.starWarsViewController.view.isHidden = true
+                self?.allBreedsViewController.view.isHidden = true
+//                self?.showViewController(viewController: UINavigationController.self, storyboardId: "NewsNavID")
+            } else if named == "StarWars" {
+                self?.catsUIViewController.view.isHidden = true
+                self?.starWarsViewController.view.isHidden = false
+                self?.allBreedsViewController.view.isHidden = true
+//             self?.showViewController(viewController: UINavigationController.self, storyboardId: "StarNavID")
+            } else if named == "AllBreeds" {
+                self?.catsUIViewController.view.isHidden = true
+                self?.starWarsViewController.view.isHidden = true
+                self?.allBreedsViewController.view.isHidden = false
+ //               self?.showViewController(viewController: UINavigationController.self, storyboardId: "AllBreedNavID")
+            } else if named == "Cats" {
+                self?.catsUIViewController.view.isHidden = false
+                self?.starWarsViewController.view.isHidden = true
+                self?.allBreedsViewController.view.isHidden = true
+               //self?.showViewController(viewController: UINavigationController.self, storyboardId: "CatsNavID")
+            }
+           })
+    }
+
+//    private var sideMenuShadowView: UIView!
+//    private var sideMenuRevealWidth: CGFloat = 260
+//    private var isExpanded: Bool = false
+//    private var revealSideMenuOnTop: Bool = true
+//
+//    func showViewController<T: UIViewController>(viewController: T.Type, storyboardId: String) -> () {
+//        // Remove the previous View
+//        for subview in view.subviews where subview.tag == 99 {
+//                subview.removeFromSuperview()
+//        }
+//
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        guard let viewC = storyboard.instantiateViewController(withIdentifier: storyboardId) as? T else { return }
+//        viewC.view.tag = 99
+//        view.insertSubview(viewC.view, at: self.revealSideMenuOnTop ? 0 : 1)
+//        addChild(viewC)
+//        if !self.revealSideMenuOnTop {
+//            if isExpanded {
+//                viewC.view.frame.origin.x = self.sideMenuRevealWidth
+//            }
+//            if self.sideMenuShadowView != nil {
+//                viewC.view.addSubview(self.sideMenuShadowView)
+//            }
+//        }
+//        viewC.didMove(toParent: self)
+//    }
 }

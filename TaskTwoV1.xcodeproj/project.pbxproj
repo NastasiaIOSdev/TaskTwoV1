@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,6 +11,11 @@
 		2E05674726D96F1400FFA740 /* NetworkingTasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E05674626D96F1400FFA740 /* NetworkingTasks.swift */; };
 		2E05674A26DA017100FFA740 /* NewsEndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E05674926DA017100FFA740 /* NewsEndPoints.swift */; };
 		2E05675326DA424D00FFA740 /* NewsFilters.json in Resources */ = {isa = PBXBuildFile; fileRef = 2E05674D26DA0D7300FFA740 /* NewsFilters.json */; };
+		2E0567AC26DBD77500FFA740 /* SideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0567AB26DBD77500FFA740 /* SideMenu.swift */; };
+		2E0567B126DBF01700FFA740 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0567B026DBF01700FFA740 /* FirstViewController.swift */; };
+		2E0567B426DBF03F00FFA740 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0567B326DBF03F00FFA740 /* SecondViewController.swift */; };
+		2E0567B726DBF06700FFA740 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0567B626DBF06700FFA740 /* ThirdViewController.swift */; };
+		2E0567BA26DBF07800FFA740 /* FourthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0567B926DBF07800FFA740 /* FourthViewController.swift */; };
 		2E0FD55826B53F190022DEBA /* RequestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0FD55726B53F190022DEBA /* RequestsViewController.swift */; };
 		2E0FD55C26B53F410022DEBA /* RaquestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0FD55A26B53F410022DEBA /* RaquestTableViewCell.swift */; };
 		2E0FD55D26B53F410022DEBA /* RaquestTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E0FD55B26B53F410022DEBA /* RaquestTableViewCell.xib */; };
@@ -96,6 +101,11 @@
 		2E05674626D96F1400FFA740 /* NetworkingTasks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingTasks.swift; sourceTree = "<group>"; };
 		2E05674926DA017100FFA740 /* NewsEndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsEndPoints.swift; sourceTree = "<group>"; };
 		2E05674D26DA0D7300FFA740 /* NewsFilters.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = NewsFilters.json; sourceTree = "<group>"; };
+		2E0567AB26DBD77500FFA740 /* SideMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenu.swift; sourceTree = "<group>"; };
+		2E0567B026DBF01700FFA740 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		2E0567B326DBF03F00FFA740 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		2E0567B626DBF06700FFA740 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
+		2E0567B926DBF07800FFA740 /* FourthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthViewController.swift; sourceTree = "<group>"; };
 		2E0FD55726B53F190022DEBA /* RequestsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestsViewController.swift; sourceTree = "<group>"; };
 		2E0FD55A26B53F410022DEBA /* RaquestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaquestTableViewCell.swift; sourceTree = "<group>"; };
 		2E0FD55B26B53F410022DEBA /* RaquestTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RaquestTableViewCell.xib; sourceTree = "<group>"; };
@@ -198,6 +208,26 @@
 				A3B7D787AB753A76262E4B51 /* Pods_TaskTwoV1.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2E0567A226DBC2EC00FFA740 /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				2E0567AB26DBD77500FFA740 /* SideMenu.swift */,
+				2E0567AE26DBEFD200FFA740 /* Navigation */,
+			);
+			path = SideMenu;
+			sourceTree = "<group>";
+		};
+		2E0567AE26DBEFD200FFA740 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				2E0567B026DBF01700FFA740 /* FirstViewController.swift */,
+				2E0567B326DBF03F00FFA740 /* SecondViewController.swift */,
+				2E0567B626DBF06700FFA740 /* ThirdViewController.swift */,
+				2E0567B926DBF07800FFA740 /* FourthViewController.swift */,
+			);
+			path = Navigation;
 			sourceTree = "<group>";
 		};
 		2E0C2E8026B5B50100CEC0C6 /* Person */ = {
@@ -352,6 +382,7 @@
 		2E4E2CD426A83FA800B2D89F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				2E0567A226DBC2EC00FFA740 /* SideMenu */,
 				2EF34E5F26CD33B300E1167A /* News */,
 				2E7A622E269B088500D54D10 /* CatsBreeds */,
 				2E48E36C268D0AA000271A85 /* SWars */,
@@ -695,7 +726,8 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\n";
+			shellScript = "
+";
 		};
 		BED2B493A11FD2F0200A522D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -766,6 +798,7 @@
 				2EC77CE926A40673007C0A7D /* SearchPersonViewController+extensions.swift in Sources */,
 				2E23CDB726A19ADD003B92A8 /* InsideThirdCollectionViewCell.swift in Sources */,
 				2E7A6231269B08F300D54D10 /* MainUIViewController.swift in Sources */,
+				2E0567AC26DBD77500FFA740 /* SideMenu.swift in Sources */,
 				2E05674A26DA017100FFA740 /* NewsEndPoints.swift in Sources */,
 				2EF4889126BBC4DF00F32723 /* BreedImages.swift in Sources */,
 				2EC77CFB26A40D04007C0A7D /* ThirdCollectionViewCell+Extensions.swift in Sources */,
@@ -781,12 +814,15 @@
 				2E23CD9726A180CF003B92A8 /* TestViewController.swift in Sources */,
 				2E28D26226AEF5360062CD22 /* ItemCollectionViewCell.swift in Sources */,
 				2EC77CAA26A33193007C0A7D /* FullscreenViewController.swift in Sources */,
+				2E0567B426DBF03F00FFA740 /* SecondViewController.swift in Sources */,
 				2EF34E6D26CD3A9F00E1167A /* APIResponse.swift in Sources */,
 				2EC77CFE26A44491007C0A7D /* CellTableViewModel.swift in Sources */,
 				2E48E26E2689C59C00271A85 /* SceneDelegate.swift in Sources */,
 				2ED2909A2694ED1C00B7630B /* Image.swift in Sources */,
+				2E0567BA26DBF07800FFA740 /* FourthViewController.swift in Sources */,
 				2E7A6245269B0A7300D54D10 /* LastUITableViewCell.swift in Sources */,
 				2EF4882026B88A7D00F32723 /* Person.xcdatamodeld in Sources */,
+				2E0567B726DBF06700FFA740 /* ThirdViewController.swift in Sources */,
 				2E05674426D96CF500FFA740 /* HelperMethods.swift in Sources */,
 				2EC77CAF26A339A8007C0A7D /* FullscreenCollectionViewCell.swift in Sources */,
 				2EF34E8A26CE2BD800E1167A /* NewsViewController+Extensions.swift in Sources */,
@@ -801,6 +837,7 @@
 				2E48E36F268D0B6100271A85 /* PersonList.swift in Sources */,
 				2E7A6240269B0A4600D54D10 /* SecondUITableViewCell.swift in Sources */,
 				2E4E2CE426A845EF00B2D89F /* FirstDogCollectionViewCell.swift in Sources */,
+				2E0567B126DBF01700FFA740 /* FirstViewController.swift in Sources */,
 				2E7A624C269B0B2800D54D10 /* LastUICollectionViewCell.swift in Sources */,
 				2E48E353268CEE8D00271A85 /* CatsModel.swift in Sources */,
 			);

@@ -73,6 +73,9 @@
                     </view>
                     <navigationItem key="navigationItem" title=" Star Wars" id="abx-0V-urT">
                         <barButtonItem key="backBarButtonItem" title=" " id="SDF-lA-tq1"/>
+                        <barButtonItem key="leftBarButtonItem" image="line.horizontal.3" catalog="system" id="OMR-Bk-ory">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Previous requests" id="Ma9-XM-hye">
                             <connections>
                                 <segue destination="PXV-Jc-sPk" kind="show" id="cl0-YG-P27"/>
@@ -222,6 +225,9 @@
                     </view>
                     <navigationItem key="navigationItem" title="Cats Breeds" id="Xm1-pw-5ME">
                         <barButtonItem key="backBarButtonItem" title=" " id="wLw-7n-EI3"/>
+                        <barButtonItem key="leftBarButtonItem" image="line.horizontal.3" catalog="system" id="KRr-X2-I43">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableViewSecond" destination="84V-za-Wtt" id="kfj-jz-HRV"/>
@@ -348,7 +354,7 @@
         <!--Star Wars-->
         <scene sceneID="czd-CB-69A">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wZR-eg-RsW" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="StarNavID" automaticallyAdjustsScrollViewInsets="NO" id="wZR-eg-RsW" customClass="SecondViewController" customModule="TaskTwoV1" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Star Wars" image="person.3" catalog="system" id="fR9-xB-Lzn"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="WKb-QA-dXb">
@@ -410,6 +416,9 @@
                     </view>
                     <navigationItem key="navigationItem" title=" " id="gna-kB-BAx">
                         <barButtonItem key="backBarButtonItem" title=" " id="YQg-4q-Szm"/>
+                        <barButtonItem key="leftBarButtonItem" image="line.horizontal.3" catalog="system" id="f2I-wh-gN7">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="collectionTestView" destination="6eh-u7-lSE" id="jNF-zw-msQ"/>
@@ -592,8 +601,14 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="w1F-gg-xKi">
                         <barButtonItem key="backBarButtonItem" title=" " id="sjy-F4-5mt"/>
+                        <barButtonItem key="leftBarButtonItem" image="line.horizontal.3" catalog="system" id="5cN-Ho-t4D">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="didTapMenuButton" destination="cnN-9U-Hoq" id="F4p-RK-ccD"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="filter" id="k8J-Hb-muK">
-                            <color key="tintColor" red="0.094117647060000004" green="0.36862745099999999" blue="0.67450980390000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <segue destination="GQE-jU-kCK" kind="presentation" identifier="toFilter" id="1Wp-TI-YRf"/>
                             </connections>
@@ -702,10 +717,7 @@
                                                     </stackView>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstItem="Chr-2X-rsR" firstAttribute="height" secondItem="dEH-jU-9qi" secondAttribute="height" multiplier="0.130159" id="5oE-tZ-Rph"/>
-                                                    <constraint firstItem="Chr-2X-rsR" firstAttribute="height" secondItem="78N-nf-Jna" secondAttribute="height" multiplier="0.1025" id="Vmk-0v-SEp"/>
                                                     <constraint firstItem="Chr-2X-rsR" firstAttribute="height" secondItem="Fbg-Pq-bKN" secondAttribute="height" multiplier="0.41" id="ann-mB-GxJ"/>
-                                                    <constraint firstItem="Chr-2X-rsR" firstAttribute="height" secondItem="h87-Zx-Spb" secondAttribute="height" multiplier="0.170833" id="fS7-KN-IHK"/>
                                                 </constraints>
                                             </stackView>
                                         </subviews>
@@ -753,7 +765,7 @@
         <!--Cats-->
         <scene sceneID="5wG-Qb-71s">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="THu-3K-RkM" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="CatsNavID" automaticallyAdjustsScrollViewInsets="NO" id="THu-3K-RkM" customClass="FirstViewController" customModule="TaskTwoV1" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Cats" image="archivebox" catalog="system" id="Fc8-Cp-df2"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="YKf-Dj-tM5">
@@ -777,7 +789,7 @@
         <!--All Breeds-->
         <scene sceneID="7Oa-Te-3CI">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="99c-qs-JAR" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="AllBreedNavID" automaticallyAdjustsScrollViewInsets="NO" id="99c-qs-JAR" customClass="ThirdViewController" customModule="TaskTwoV1" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="All Breeds" image="tray.full" catalog="system" id="e9T-OK-akY"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="VX9-1x-RwQ">
@@ -802,7 +814,7 @@
         <!--News-->
         <scene sceneID="Cba-Sx-iFz">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ndn-uU-erD" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="NewsNavID" automaticallyAdjustsScrollViewInsets="NO" id="Ndn-uU-erD" customClass="FourthViewController" customModule="TaskTwoV1" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="News" image="list.bullet.below.rectangle" catalog="system" id="M8i-uU-kvs"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="1Fm-Pq-iUW">
@@ -827,6 +839,7 @@
         <image name="filter" width="24" height="24"/>
         <image name="heart" catalog="system" width="128" height="109"/>
         <image name="imagePlaceholder" width="200" height="150"/>
+        <image name="line.horizontal.3" catalog="system" width="128" height="64"/>
         <image name="list.bullet.below.rectangle" catalog="system" width="128" height="112"/>
         <image name="message" catalog="system" width="128" height="113"/>
         <image name="person.3" catalog="system" width="128" height="62"/>
