@@ -29,7 +29,7 @@ class GridCell: UICollectionViewCell {
         shadowView.layer.shadowOpacity = 0.3
         shadowView.layer.shadowOffset = CGSize.zero
     }
-    
+
     override func prepareForReuse() {
         super.prepareForReuse()
         nameLabel.text = nil

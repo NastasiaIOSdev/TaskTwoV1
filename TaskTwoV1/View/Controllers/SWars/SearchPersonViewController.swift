@@ -17,6 +17,7 @@ class SearchPersonViewController: UIViewController {
 
     private var sideMenu: SideMenuNavigationController?
     let cellIdentifier = "ItemCollectionViewCell"
+    let searchController = UISearchController()
     var results = [Results]()
     var viewModels = [CellTableViewModel]()
     let countCells = 2
@@ -89,7 +90,6 @@ class SearchPersonViewController: UIViewController {
         navigationItem.hidesSearchBarWhenScrolling = false
         title = "Star Wars"
         searchController.searchBar.placeholder = "Search persone..."
-        searchController.searchBar.tintColor = UIColor.black
     }
 
     func setupColorTabbar() {
