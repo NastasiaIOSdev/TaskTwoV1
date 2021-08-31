@@ -39,6 +39,7 @@ class MenuController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.backgroundColor = color
+        tableView.separatorStyle = .none
         view.backgroundColor = color
         addSwitch()
         addLabelSwitch()

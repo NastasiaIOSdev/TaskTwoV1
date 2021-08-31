@@ -34,6 +34,7 @@ class NewsDataModel {
     var isFerchInProgress = false
     let apiClient = APIService()
     let pageSize = 30
+    let responseNumber = 100
     var totalArticlesCount = 0
     var currentPage = 0
 
@@ -77,7 +78,7 @@ class NewsDataModel {
                 }
                 self.currentPage += 1
                 self.fetchedArticles.append(contentsOf: response.articles)
-                self.totalArticlesCount = response.totalResults < 100 ? response.totalResults : 100
+                self.totalArticlesCount = response.totalResults < self.responseNumber ? response.totalResults : self.responseNumber
                 if self.currentPage > 1 {
                     let indexPathsToReload = self.calculateIndexPathsToReload(from: response.articles, total: response.totalResults)
                     self.delegate?.onFetchCompleted(with: indexPathsToReload)
