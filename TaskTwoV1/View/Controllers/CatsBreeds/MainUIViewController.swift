@@ -31,20 +31,16 @@ class MainUIViewController: UIViewController {
         title = "Cats"
         getAllBreed()
         fileManagerWork()
-        setupSideMenu()
    }
-    func setupSideMenu() {
-        let menu = MenuController(with: ["Cats",
-                                         "StarWars",
-                                         "AllBreeds",
-                                         "News"])
-        // menu.delegate = self
-        sideMenu = SideMenuNavigationController(rootViewController: menu)
-        sideMenu?.leftSide = true
-        SideMenuManager.default.leftMenuNavigationController = sideMenu
-        SideMenuManager.default.addPanGestureToPresent(toView: view)
-    }
 
+    // MARK: - Action
+    
+    @IBAction func didTapMenuButton() {
+        if let viewController = (UIApplication.shared.windows.first?.rootViewController as? TabBarViewController) {
+            viewController.presentMenu()
+        }
+    }
+    
     func getAllBreed() {
         APIService.shared.getBreed { [weak self] result in
             switch result {
@@ -70,11 +66,5 @@ class MainUIViewController: UIViewController {
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-    }
-
-    // MARK: - Actions
-
-    @IBAction func didTapMenuButton() {
-        present(sideMenu!, animated: true)
     }
 }

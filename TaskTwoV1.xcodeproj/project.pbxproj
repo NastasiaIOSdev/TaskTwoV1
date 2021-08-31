@@ -35,6 +35,7 @@
 		2E28D26326AEF5360062CD22 /* ItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E28D26126AEF5360062CD22 /* ItemCollectionViewCell.xib */; };
 		2E29F9DB26DD4285007B8957 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E29F9DA26DD4285007B8957 /* UIColor+Extension.swift */; };
 		2E29F9DF26DD7654007B8957 /* MenuController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E29F9DE26DD7654007B8957 /* MenuController+Extensions.swift */; };
+		2E42813126DE589C002FA553 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E42813026DE589C002FA553 /* TabBarViewController.swift */; };
 		2E48E26C2689C59C00271A85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E48E26B2689C59C00271A85 /* AppDelegate.swift */; };
 		2E48E26E2689C59C00271A85 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E48E26D2689C59C00271A85 /* SceneDelegate.swift */; };
 		2E48E2732689C59C00271A85 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E48E2712689C59C00271A85 /* Main.storyboard */; };
@@ -130,6 +131,7 @@
 		2E28D26126AEF5360062CD22 /* ItemCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemCollectionViewCell.xib; sourceTree = "<group>"; };
 		2E29F9DA26DD4285007B8957 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		2E29F9DE26DD7654007B8957 /* MenuController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MenuController+Extensions.swift"; sourceTree = "<group>"; };
+		2E42813026DE589C002FA553 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		2E48E2682689C59C00271A85 /* TaskTwoV1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaskTwoV1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E48E26B2689C59C00271A85 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2E48E26D2689C59C00271A85 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -218,6 +220,7 @@
 			isa = PBXGroup;
 			children = (
 				2E0567AB26DBD77500FFA740 /* SideMenu.swift */,
+				2E42813026DE589C002FA553 /* TabBarViewController.swift */,
 				2E0567AE26DBEFD200FFA740 /* Navigation */,
 			);
 			path = SideMenu;
@@ -849,6 +852,7 @@
 				86E09EDF269C5B0300049522 /* UIImageView.swift in Sources */,
 				2E48E372268D0B8300271A85 /* SearchPersonViewController.swift in Sources */,
 				2E79B4AA2690F45100C357C3 /* ProtocolNetService.swift in Sources */,
+				2E42813126DE589C002FA553 /* TabBarViewController.swift in Sources */,
 				2EF34E7726CD42E800E1167A /* FilterViewController.swift in Sources */,
 				2E48E36F268D0B6100271A85 /* PersonList.swift in Sources */,
 				2E7A6240269B0A4600D54D10 /* SecondUITableViewCell.swift in Sources */,

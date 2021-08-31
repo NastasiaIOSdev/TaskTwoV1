@@ -11,10 +11,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Tab Bar Controller-->
+        <!--Tab Bar View Controller-->
         <scene sceneID="f46-UH-Cua">
             <objects>
-                <tabBarController id="wBr-HJ-ZLI" sceneMemberID="viewController">
+                <tabBarController id="wBr-HJ-ZLI" customClass="TabBarViewController" customModule="TaskTwoV1" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Pz7-9L-Hcp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -77,7 +77,7 @@
                         <barButtonItem key="leftBarButtonItem" image="line.horizontal.3" catalog="system" id="OMR-Bk-ory">
                             <color key="tintColor" name="ColorGreyWhite"/>
                             <connections>
-                                <action selector="didTapMenuButton" destination="HQM-TI-MAe" id="exl-kA-RyY"/>
+                                <action selector="didTabMenuButton" destination="HQM-TI-MAe" id="vcg-si-fzW"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Previous requests" id="Ma9-XM-hye">
@@ -233,7 +233,7 @@
                         <barButtonItem key="leftBarButtonItem" image="line.horizontal.3" catalog="system" id="KRr-X2-I43">
                             <color key="tintColor" name="ColorGreyWhite"/>
                             <connections>
-                                <action selector="didTapMenuButton" destination="h2I-Ps-aBE" id="nr5-gc-KWa"/>
+                                <action selector="didTapMenuButton" destination="h2I-Ps-aBE" id="Krs-29-4P4"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -427,7 +427,7 @@
                         <barButtonItem key="leftBarButtonItem" image="line.horizontal.3" catalog="system" id="f2I-wh-gN7">
                             <color key="tintColor" name="ColorGreyWhite"/>
                             <connections>
-                                <action selector="didTapMenuButton" destination="ii6-JF-Gsv" id="dXp-St-20t"/>
+                                <action selector="didTapMenuButton" destination="ii6-JF-Gsv" id="F5E-fV-3aa"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

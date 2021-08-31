@@ -7,9 +7,8 @@
 
 import UIKit
 import Foundation
-import SideMenu
 
-class NewsViewController: UIViewController, MenuControllerDelegate, UINavigationControllerDelegate {
+class NewsViewController: UIViewController, UINavigationControllerDelegate {
 
     // MARK: - IBOutlets
 
@@ -22,7 +21,6 @@ class NewsViewController: UIViewController, MenuControllerDelegate, UINavigation
 
     // MARK: - Properties
 
-    private var sideMenu: SideMenuNavigationController?
     private let catsUIViewController = FirstViewController()
     private let starWarsViewController = SecondViewController()
     private let allBreedsViewController = ThirdViewController()
@@ -56,13 +54,14 @@ class NewsViewController: UIViewController, MenuControllerDelegate, UINavigation
         flowLayoutForManagedGridAndList()
         setupRefreshControl()
         setupNewsModel()
-        setupSideMenu()
         setupDarkModeColor()
     }
     // MARK: - Actions
 
     @IBAction func didTapMenuButton() {
-        present(sideMenu!, animated: true)
+        if let viewController = (UIApplication.shared.windows.first?.rootViewController as? TabBarViewController) {
+            viewController.presentMenu()
+        }
     }
 
     @IBAction func gridListButtonTap(_ sender: UIButton) {
@@ -99,18 +98,6 @@ class NewsViewController: UIViewController, MenuControllerDelegate, UINavigation
         if newsModel.filterOptions.isEmpty {
             filterButton.isEnabled = true
         }
-    }
-
-    func setupSideMenu() {
-        let menu = MenuController(with: ["Cats",
-                                         "StarWars",
-                                         "AllBreeds",
-                                         "News"])
-        menu.delegate = self
-        sideMenu = SideMenuNavigationController(rootViewController: menu)
-        sideMenu?.leftSide = true
-        SideMenuManager.default.leftMenuNavigationController = sideMenu
-        SideMenuManager.default.addPanGestureToPresent(toView: view)
     }
 
     func flowLayoutForManagedGridAndList() {
@@ -171,23 +158,6 @@ class NewsViewController: UIViewController, MenuControllerDelegate, UINavigation
                 viewC.imageURL = URL(string: urlString)
             }
         }
-    }
-
-    func didselectMenuItem(named: String) {
-        sideMenu?.dismiss(animated: true, completion: { [weak self] in
-
-            if named == "News" {
-                self?.showViewController(viewController: UINavigationController.self, storyboardId: "NewsNavID")
-            } else if named == "StarWars" {
-
-                self?.showViewController(viewController: UINavigationController.self, storyboardId: "StarNavID")
-            } else if named == "AllBreeds" {
-
-                self?.showViewController(viewController: UINavigationController.self, storyboardId: "AllBreedNavID")
-            } else if named == "Cats" {
-                self?.showViewController(viewController: UINavigationController.self, storyboardId: "CatsNavID")
-            }
-        })
     }
 
     func showViewController<T: UIViewController>(viewController: T.Type, storyboardId: String) {

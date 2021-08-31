@@ -142,51 +142,6 @@ final class APIService {
         task.resume()
     }
 
-//    public func getTopStories(completion: @escaping (Result<[Article], Error>) -> Void) {
-//        guard let url = Constants.topHeadlinesURL else {
-//            return
-//        }
-//        let task = URLSession.shared.dataTask(with: url) { data, _, error in
-//            if let error = error {
-//                completion(.failure(error))
-//            } else if let data = data {
-//                do {
-//                    let result = try
-//                        JSONDecoder().decode(NewsInfo.self, from: data)
-//                    print("Articles: \(result.articles.count)")
-//                    completion(.success(result.articles))
-//                } catch {
-//                    completion(.failure(error))
-//                }
-//            }
-//        }
-//        task.resume()
-//    }
-
-//    public func searchNews(with query: String, completion: @escaping (Result<[Article], Error>) -> Void) {
-//        guard !query.trimmingCharacters(in: .whitespaces).isEmpty else {
-//            return
-//        }
-//        let urlString = Constants.searchURLString + query
-//        guard let url = URL(string: urlString) else {
-//            return
-//        }
-//        let task = URLSession.shared.dataTask(with: url) { data, _, error in
-//            if let error = error {
-//                completion(.failure(error))
-//            } else if let data = data {
-//                do {
-//                    let result = try JSONDecoder().decode(NewsInfo.self, from: data)
-//                    print("Articles: \(result.articles.count)")
-//                    completion(.success(result.articles))
-//                } catch {
-//                    completion(.failure(error))
-//                }
-//            }
-//        }
-//        task.resume()
-//    }
-
     // MARK: - News
 
     func getSourceFilters(completion: @escaping ([SourceFilter], Error?) -> Void) {

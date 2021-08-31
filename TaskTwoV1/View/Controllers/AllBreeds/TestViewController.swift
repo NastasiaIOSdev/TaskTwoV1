@@ -38,25 +38,14 @@ class TestViewController: UIViewController {
         allBreed()
         fillArrays()
         getPhotosByHound("hound")
-        setupSideMenu()
     }
 
     // MARK: - Actions
 
     @IBAction func didTapMenuButton() {
-        present(sideMenu!, animated: true)
-    }
-
-    func setupSideMenu() {
-        let menu = MenuController(with: ["Cats",
-                                         "StarWars",
-                                         "AllBreeds",
-                                         "News"])
-        // menu.delegate = self
-        sideMenu = SideMenuNavigationController(rootViewController: menu)
-        sideMenu?.leftSide = true
-        SideMenuManager.default.leftMenuNavigationController = sideMenu
-        SideMenuManager.default.addPanGestureToPresent(toView: view)
+        if let viewController = (UIApplication.shared.windows.first?.rootViewController as? TabBarViewController) {
+            viewController.presentMenu()
+        }
     }
 
     func allBreed() {

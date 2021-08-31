@@ -54,25 +54,14 @@ class SearchPersonViewController: UIViewController {
         setupCollectionView()
         setUpNavigationBar()
         setupColorTabbar()
-        setupSideMenu()
    }
 
     // MARK: - Actions
-
-    @IBAction func didTapMenuButton() {
-        present(sideMenu!, animated: true)
-    }
-
-    func setupSideMenu() {
-        let menu = MenuController(with: ["Cats",
-                                         "StarWars",
-                                         "AllBreeds",
-                                         "News"])
-        // menu.delegate = self
-        sideMenu = SideMenuNavigationController(rootViewController: menu)
-        sideMenu?.leftSide = true
-        SideMenuManager.default.leftMenuNavigationController = sideMenu
-        SideMenuManager.default.addPanGestureToPresent(toView: view)
+    
+    @IBAction func didTabMenuButton() {
+        if let viewController = (UIApplication.shared.windows.first?.rootViewController as? TabBarViewController) {
+            viewController.presentMenu()
+        }
     }
 
     func setupCollectionView() {
