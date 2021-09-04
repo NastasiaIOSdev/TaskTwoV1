@@ -34,7 +34,7 @@
         <!-- Star Wars-->
         <scene sceneID="ZBT-oF-0ew">
             <objects>
-                <viewController storyboardIdentifier="SearchPersonViewController" id="HQM-TI-MAe" customClass="SearchPersonViewController" customModule="TaskTwoV1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StarWarsSearchViewController" id="HQM-TI-MAe" customClass="StarWarsSearchViewController" customModule="TaskTwoV1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LeU-e2-btQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -98,7 +98,7 @@
         <!--TEST-->
         <scene sceneID="dsV-YJ-w66">
             <objects>
-                <viewController storyboardIdentifier="TestDetailViewController" id="SWN-5b-69l" customClass="TestDetailViewController" customModule="TaskTwoV1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AllBreedsDetailViewController" id="SWN-5b-69l" customClass="AllBreedsDetailViewController" customModule="TaskTwoV1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ImK-Qm-mt4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -149,10 +149,10 @@
             </objects>
             <point key="canvasLocation" x="1787" y="-64"/>
         </scene>
-        <!--Fullscreen View Controller-->
+        <!--All Breeds Fullscreen View Controller-->
         <scene sceneID="Nw8-kK-eeE">
             <objects>
-                <viewController storyboardIdentifier="FullscreenViewController" id="tIY-JH-uQO" customClass="FullscreenViewController" customModule="TaskTwoV1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AllBreedsFullscreenViewController" id="tIY-JH-uQO" customClass="AllBreedsFullscreenViewController" customModule="TaskTwoV1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GOZ-yz-FwU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -194,7 +194,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZkR-wn-gAn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2564" y="-64"/>
+            <point key="canvasLocation" x="2545" y="-64"/>
         </scene>
         <!--Cats Breeds-->
         <scene sceneID="ZXZ-sK-KQR">
@@ -245,10 +245,10 @@
             </objects>
             <point key="canvasLocation" x="1023" y="-1430"/>
         </scene>
-        <!--Detail Page View Controller-->
+        <!--Star Wars Detail Page View Controller-->
         <scene sceneID="qSm-lw-eAa">
             <objects>
-                <viewController storyboardIdentifier="DetailPageViewController" id="kzb-VF-A02" customClass="DetailPageViewController" customModule="TaskTwoV1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StarWarsDetailPageViewController" id="kzb-VF-A02" customClass="StarWarsDetailPageViewController" customModule="TaskTwoV1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wY7-oi-jH6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -326,12 +326,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M4h-3F-6Qh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1932" y="-771"/>
+            <point key="canvasLocation" x="1787" y="-771"/>
         </scene>
-        <!--Requests View Controller-->
+        <!--Star Wars Requests View Controller-->
         <scene sceneID="vbz-b6-zlP">
             <objects>
-                <viewController storyboardIdentifier="RequestsViewController" id="PXV-Jc-sPk" customClass="RequestsViewController" customModule="TaskTwoV1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StarWarsRequestsViewController" id="PXV-Jc-sPk" customClass="StarWarsRequestsViewController" customModule="TaskTwoV1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SGS-Qv-zuA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -357,7 +357,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f7c-F4-PdK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2091" y="-1453"/>
+            <point key="canvasLocation" x="2438" y="-1430"/>
         </scene>
         <!--Star Wars-->
         <scene sceneID="czd-CB-69A">
@@ -387,7 +387,7 @@
         <!-- -->
         <scene sceneID="7mm-i4-bG4">
             <objects>
-                <viewController id="ii6-JF-Gsv" customClass="TestViewController" customModule="TaskTwoV1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AllBreedsViewController" id="ii6-JF-Gsv" customClass="AllBreedsViewController" customModule="TaskTwoV1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DUt-yn-rrw">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -535,7 +535,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J9x-v8-wNH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1787" y="-2784"/>
+            <point key="canvasLocation" x="1787" y="-2835"/>
         </scene>
         <!--News View Controller-->
         <scene sceneID="RcF-lH-RSf">
@@ -773,7 +773,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VgQ-bG-K8U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1781" y="-2113"/>
+            <point key="canvasLocation" x="1787" y="-2130"/>
         </scene>
         <!--Cats-->
         <scene sceneID="5wG-Qb-71s">
@@ -797,7 +797,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Eu-9i-IFQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="277" y="-1453"/>
+            <point key="canvasLocation" x="277" y="-1430"/>
         </scene>
         <!--All Breeds-->
         <scene sceneID="7Oa-Te-3CI">

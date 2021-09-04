@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension FullscreenViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension AllBreedsFullscreenViewController: UICollectionViewDelegate, UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 1
@@ -15,8 +15,8 @@ extension FullscreenViewController: UICollectionViewDelegate, UICollectionViewDa
 
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FullscreenCollectionViewCell",
-                                                            for: indexPath) as? FullscreenCollectionViewCell else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AllBreedsFullScreenCollectionViewCell",
+                                                            for: indexPath) as? AllBreedsFullScreenCollectionViewCell else {
             fatalError()
         }
         if let urlString = self.imageUrlString {
@@ -26,7 +26,7 @@ extension FullscreenViewController: UICollectionViewDelegate, UICollectionViewDa
     }
 }
 
-extension FullscreenViewController: UICollectionViewDelegateFlowLayout {
+extension AllBreedsFullscreenViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {

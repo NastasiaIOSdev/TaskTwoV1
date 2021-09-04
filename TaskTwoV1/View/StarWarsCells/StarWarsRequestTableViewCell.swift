@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RaquestTableViewCell: UITableViewCell {
+class StarWarsRequestTableViewCell: UITableViewCell {
 
     // MARK: - IBOUtlets
 

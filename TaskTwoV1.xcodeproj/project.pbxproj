@@ -12,14 +12,10 @@
 		2E05674A26DA017100FFA740 /* NewsEndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E05674926DA017100FFA740 /* NewsEndPoints.swift */; };
 		2E05675326DA424D00FFA740 /* NewsFilters.json in Resources */ = {isa = PBXBuildFile; fileRef = 2E05674D26DA0D7300FFA740 /* NewsFilters.json */; };
 		2E0567AC26DBD77500FFA740 /* SideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0567AB26DBD77500FFA740 /* SideMenu.swift */; };
-		2E0567B126DBF01700FFA740 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0567B026DBF01700FFA740 /* FirstViewController.swift */; };
-		2E0567B426DBF03F00FFA740 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0567B326DBF03F00FFA740 /* SecondViewController.swift */; };
-		2E0567B726DBF06700FFA740 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0567B626DBF06700FFA740 /* ThirdViewController.swift */; };
-		2E0567BA26DBF07800FFA740 /* FourthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0567B926DBF07800FFA740 /* FourthViewController.swift */; };
-		2E0FD55826B53F190022DEBA /* RequestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0FD55726B53F190022DEBA /* RequestsViewController.swift */; };
-		2E0FD55C26B53F410022DEBA /* RaquestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0FD55A26B53F410022DEBA /* RaquestTableViewCell.swift */; };
-		2E0FD55D26B53F410022DEBA /* RaquestTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E0FD55B26B53F410022DEBA /* RaquestTableViewCell.xib */; };
-		2E23CD9726A180CF003B92A8 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E23CD9626A180CF003B92A8 /* TestViewController.swift */; };
+		2E0FD55826B53F190022DEBA /* StarWarsRequestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0FD55726B53F190022DEBA /* StarWarsRequestsViewController.swift */; };
+		2E0FD55C26B53F410022DEBA /* StarWarsRequestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0FD55A26B53F410022DEBA /* StarWarsRequestTableViewCell.swift */; };
+		2E0FD55D26B53F410022DEBA /* StarWarsRequestTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E0FD55B26B53F410022DEBA /* StarWarsRequestTableViewCell.xib */; };
+		2E23CD9726A180CF003B92A8 /* AllBreedsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E23CD9626A180CF003B92A8 /* AllBreedsViewController.swift */; };
 		2E23CD9C26A1811D003B92A8 /* SecondCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E23CD9A26A1811D003B92A8 /* SecondCollectionViewCell.swift */; };
 		2E23CD9D26A1811D003B92A8 /* SecondCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E23CD9B26A1811D003B92A8 /* SecondCollectionViewCell.xib */; };
 		2E23CDA426A1950E003B92A8 /* FirstCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E23CDA226A1950E003B92A8 /* FirstCollectionViewCell.swift */; };
@@ -30,9 +26,8 @@
 		2E23CDB226A19AC1003B92A8 /* ThirdCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E23CDB026A19AC1003B92A8 /* ThirdCollectionViewCell.xib */; };
 		2E23CDB726A19ADD003B92A8 /* InsideThirdCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E23CDB526A19ADD003B92A8 /* InsideThirdCollectionViewCell.swift */; };
 		2E23CDB826A19ADD003B92A8 /* InsideThirdCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E23CDB626A19ADD003B92A8 /* InsideThirdCollectionViewCell.xib */; };
-		2E23CDD126A1DB01003B92A8 /* DetailCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E23CDCF26A1DB01003B92A8 /* DetailCollectionViewCell.xib */; };
-		2E28D26226AEF5360062CD22 /* ItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E28D26026AEF5360062CD22 /* ItemCollectionViewCell.swift */; };
-		2E28D26326AEF5360062CD22 /* ItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E28D26126AEF5360062CD22 /* ItemCollectionViewCell.xib */; };
+		2E28D26226AEF5360062CD22 /* StarWarsItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E28D26026AEF5360062CD22 /* StarWarsItemCollectionViewCell.swift */; };
+		2E28D26326AEF5360062CD22 /* StarWarsItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E28D26126AEF5360062CD22 /* StarWarsItemCollectionViewCell.xib */; };
 		2E29F9DB26DD4285007B8957 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E29F9DA26DD4285007B8957 /* UIColor+Extension.swift */; };
 		2E29F9DF26DD7654007B8957 /* MenuController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E29F9DE26DD7654007B8957 /* MenuController+Extensions.swift */; };
 		2E42813126DE589C002FA553 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E42813026DE589C002FA553 /* TabBarViewController.swift */; };
@@ -45,8 +40,8 @@
 		2E48E359268CEEE300271A85 /* CellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E48E358268CEEE300271A85 /* CellViewModel.swift */; };
 		2E48E35D268CEF0D00271A85 /* NetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E48E35C268CEF0D00271A85 /* NetService.swift */; };
 		2E48E36F268D0B6100271A85 /* PersonList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E48E36E268D0B5F00271A85 /* PersonList.swift */; };
-		2E48E372268D0B8300271A85 /* SearchPersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E48E371268D0B8300271A85 /* SearchPersonViewController.swift */; };
-		2E48E379268D0C1300271A85 /* DetailPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E48E378268D0C1300271A85 /* DetailPageViewController.swift */; };
+		2E48E372268D0B8300271A85 /* StarWarsSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E48E371268D0B8300271A85 /* StarWarsSearchViewController.swift */; };
+		2E48E379268D0C1300271A85 /* StarWarsDetailPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E48E378268D0C1300271A85 /* StarWarsDetailPageViewController.swift */; };
 		2E4E2BDE26A4A2A100B2D89F /* SecondCollectionViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4E2BDD26A4A2A100B2D89F /* SecondCollectionViewCell+Extensions.swift */; };
 		2E4E2BE326A55CF100B2D89F /* ImageHound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4E2BE226A55CF100B2D89F /* ImageHound.swift */; };
 		2E4E2CE426A845EF00B2D89F /* FirstDogCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4E2CE226A845EF00B2D89F /* FirstDogCollectionViewCell.swift */; };
@@ -64,18 +59,18 @@
 		2E7A624C269B0B2800D54D10 /* LastUICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7A624A269B0B2800D54D10 /* LastUICollectionViewCell.swift */; };
 		2E7A624D269B0B2800D54D10 /* LastUICollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E7A624B269B0B2800D54D10 /* LastUICollectionViewCell.xib */; };
 		2E7FB18726E280230005250E /* FilterViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7FB18626E280230005250E /* FilterViewController+Extensions.swift */; };
-		2EC77CA326A3198D007C0A7D /* TestCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E23CDDC26A20FFF003B92A8 /* TestCollectionViewCell.xib */; };
-		2EC77CA526A31992007C0A7D /* TestCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E23CDDB26A20FFF003B92A8 /* TestCollectionViewCell.swift */; };
-		2EC77CA726A31995007C0A7D /* TestDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E23CDD726A20D8D003B92A8 /* TestDetailViewController.swift */; };
-		2EC77CAA26A33193007C0A7D /* FullscreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC77CA926A33193007C0A7D /* FullscreenViewController.swift */; };
-		2EC77CAF26A339A8007C0A7D /* FullscreenCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC77CAD26A339A8007C0A7D /* FullscreenCollectionViewCell.swift */; };
-		2EC77CB026A339A8007C0A7D /* FullscreenCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EC77CAE26A339A8007C0A7D /* FullscreenCollectionViewCell.xib */; };
+		2EC77CA326A3198D007C0A7D /* AllBreedsDetailCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E23CDDC26A20FFF003B92A8 /* AllBreedsDetailCollectionViewCell.xib */; };
+		2EC77CA526A31992007C0A7D /* AllBreedsDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E23CDDB26A20FFF003B92A8 /* AllBreedsDetailCollectionViewCell.swift */; };
+		2EC77CA726A31995007C0A7D /* AllBreedsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E23CDD726A20D8D003B92A8 /* AllBreedsDetailViewController.swift */; };
+		2EC77CAA26A33193007C0A7D /* AllBreedsFullscreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC77CA926A33193007C0A7D /* AllBreedsFullscreenViewController.swift */; };
+		2EC77CAF26A339A8007C0A7D /* AllBreedsFullScreenCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC77CAD26A339A8007C0A7D /* AllBreedsFullScreenCollectionViewCell.swift */; };
+		2EC77CB026A339A8007C0A7D /* AllBreedsFullScreenCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EC77CAE26A339A8007C0A7D /* AllBreedsFullScreenCollectionViewCell.xib */; };
 		2EC77CE226A40298007C0A7D /* MainUIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC77CE126A40298007C0A7D /* MainUIViewController+Extensions.swift */; };
 		2EC77CE526A40373007C0A7D /* LastUITableViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC77CE426A40373007C0A7D /* LastUITableViewCell+Extension.swift */; };
-		2EC77CE926A40673007C0A7D /* SearchPersonViewController+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC77CE826A40673007C0A7D /* SearchPersonViewController+extensions.swift */; };
-		2EC77CED26A408A8007C0A7D /* TestViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC77CEC26A408A8007C0A7D /* TestViewController+Extensions.swift */; };
-		2EC77CF026A40989007C0A7D /* TestDetailViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC77CEF26A40989007C0A7D /* TestDetailViewController+Extensions.swift */; };
-		2EC77CF326A409EC007C0A7D /* FullscreenViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC77CF226A409EC007C0A7D /* FullscreenViewController+Extensions.swift */; };
+		2EC77CE926A40673007C0A7D /* StarWarsSearchViewController+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC77CE826A40673007C0A7D /* StarWarsSearchViewController+extensions.swift */; };
+		2EC77CED26A408A8007C0A7D /* AllBreedsController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC77CEC26A408A8007C0A7D /* AllBreedsController+Extensions.swift */; };
+		2EC77CF026A40989007C0A7D /* AllBreedsDetailViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC77CEF26A40989007C0A7D /* AllBreedsDetailViewController+Extensions.swift */; };
+		2EC77CF326A409EC007C0A7D /* AllBreedsFullScreenCollectionViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC77CF226A409EC007C0A7D /* AllBreedsFullScreenCollectionViewCell+Extensions.swift */; };
 		2EC77CF826A40B19007C0A7D /* FirstCollectionViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC77CF726A40B19007C0A7D /* FirstCollectionViewCell+Extensions.swift */; };
 		2EC77CFB26A40D04007C0A7D /* ThirdCollectionViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC77CFA26A40D04007C0A7D /* ThirdCollectionViewCell+Extensions.swift */; };
 		2EC77CFE26A44491007C0A7D /* CellTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC77CFD26A44491007C0A7D /* CellTableViewModel.swift */; };
@@ -91,7 +86,7 @@
 		2EF34E8526CD437B00E1167A /* ListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EF34E8326CD437B00E1167A /* ListCell.xib */; };
 		2EF34E8A26CE2BD800E1167A /* NewsViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF34E8926CE2BD700E1167A /* NewsViewController+Extensions.swift */; };
 		2EF4882026B88A7D00F32723 /* Person.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2EF4881E26B88A7D00F32723 /* Person.xcdatamodeld */; };
-		2EF4882626B897DD00F32723 /* RequestsViewController+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF4882526B897DD00F32723 /* RequestsViewController+extensions.swift */; };
+		2EF4882626B897DD00F32723 /* StarWarsRequestsViewController+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF4882526B897DD00F32723 /* StarWarsRequestsViewController+extensions.swift */; };
 		2EF4886326BA8F2800F32723 /* FileManagerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF4886226BA8F2800F32723 /* FileManagerExtension.swift */; };
 		2EF4886826BA983800F32723 /* FileManagerWorkExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF4886726BA983800F32723 /* FileManagerWorkExtension.swift */; };
 		2EF4886C26BA9AE800F32723 /* PhotoCacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF4886B26BA9AE800F32723 /* PhotoCacheService.swift */; };
@@ -107,14 +102,10 @@
 		2E05674926DA017100FFA740 /* NewsEndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsEndPoints.swift; sourceTree = "<group>"; };
 		2E05674D26DA0D7300FFA740 /* NewsFilters.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = NewsFilters.json; sourceTree = "<group>"; };
 		2E0567AB26DBD77500FFA740 /* SideMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenu.swift; sourceTree = "<group>"; };
-		2E0567B026DBF01700FFA740 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		2E0567B326DBF03F00FFA740 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
-		2E0567B626DBF06700FFA740 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
-		2E0567B926DBF07800FFA740 /* FourthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthViewController.swift; sourceTree = "<group>"; };
-		2E0FD55726B53F190022DEBA /* RequestsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestsViewController.swift; sourceTree = "<group>"; };
-		2E0FD55A26B53F410022DEBA /* RaquestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaquestTableViewCell.swift; sourceTree = "<group>"; };
-		2E0FD55B26B53F410022DEBA /* RaquestTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RaquestTableViewCell.xib; sourceTree = "<group>"; };
-		2E23CD9626A180CF003B92A8 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		2E0FD55726B53F190022DEBA /* StarWarsRequestsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWarsRequestsViewController.swift; sourceTree = "<group>"; };
+		2E0FD55A26B53F410022DEBA /* StarWarsRequestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWarsRequestTableViewCell.swift; sourceTree = "<group>"; };
+		2E0FD55B26B53F410022DEBA /* StarWarsRequestTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StarWarsRequestTableViewCell.xib; sourceTree = "<group>"; };
+		2E23CD9626A180CF003B92A8 /* AllBreedsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllBreedsViewController.swift; sourceTree = "<group>"; };
 		2E23CD9A26A1811D003B92A8 /* SecondCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondCollectionViewCell.swift; sourceTree = "<group>"; };
 		2E23CD9B26A1811D003B92A8 /* SecondCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecondCollectionViewCell.xib; sourceTree = "<group>"; };
 		2E23CDA226A1950E003B92A8 /* FirstCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -125,12 +116,11 @@
 		2E23CDB026A19AC1003B92A8 /* ThirdCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThirdCollectionViewCell.xib; sourceTree = "<group>"; };
 		2E23CDB526A19ADD003B92A8 /* InsideThirdCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsideThirdCollectionViewCell.swift; sourceTree = "<group>"; };
 		2E23CDB626A19ADD003B92A8 /* InsideThirdCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InsideThirdCollectionViewCell.xib; sourceTree = "<group>"; };
-		2E23CDCF26A1DB01003B92A8 /* DetailCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailCollectionViewCell.xib; sourceTree = "<group>"; };
-		2E23CDD726A20D8D003B92A8 /* TestDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDetailViewController.swift; sourceTree = "<group>"; };
-		2E23CDDB26A20FFF003B92A8 /* TestCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCollectionViewCell.swift; sourceTree = "<group>"; };
-		2E23CDDC26A20FFF003B92A8 /* TestCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestCollectionViewCell.xib; sourceTree = "<group>"; };
-		2E28D26026AEF5360062CD22 /* ItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCollectionViewCell.swift; sourceTree = "<group>"; };
-		2E28D26126AEF5360062CD22 /* ItemCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemCollectionViewCell.xib; sourceTree = "<group>"; };
+		2E23CDD726A20D8D003B92A8 /* AllBreedsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllBreedsDetailViewController.swift; sourceTree = "<group>"; };
+		2E23CDDB26A20FFF003B92A8 /* AllBreedsDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllBreedsDetailCollectionViewCell.swift; sourceTree = "<group>"; };
+		2E23CDDC26A20FFF003B92A8 /* AllBreedsDetailCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AllBreedsDetailCollectionViewCell.xib; sourceTree = "<group>"; };
+		2E28D26026AEF5360062CD22 /* StarWarsItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWarsItemCollectionViewCell.swift; sourceTree = "<group>"; };
+		2E28D26126AEF5360062CD22 /* StarWarsItemCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StarWarsItemCollectionViewCell.xib; sourceTree = "<group>"; };
 		2E29F9DA26DD4285007B8957 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		2E29F9DE26DD7654007B8957 /* MenuController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MenuController+Extensions.swift"; sourceTree = "<group>"; };
 		2E42813026DE589C002FA553 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
@@ -145,8 +135,8 @@
 		2E48E358268CEEE300271A85 /* CellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellViewModel.swift; sourceTree = "<group>"; };
 		2E48E35C268CEF0D00271A85 /* NetService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetService.swift; sourceTree = "<group>"; };
 		2E48E36E268D0B5F00271A85 /* PersonList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonList.swift; sourceTree = "<group>"; };
-		2E48E371268D0B8300271A85 /* SearchPersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPersonViewController.swift; sourceTree = "<group>"; };
-		2E48E378268D0C1300271A85 /* DetailPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPageViewController.swift; sourceTree = "<group>"; };
+		2E48E371268D0B8300271A85 /* StarWarsSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWarsSearchViewController.swift; sourceTree = "<group>"; };
+		2E48E378268D0C1300271A85 /* StarWarsDetailPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWarsDetailPageViewController.swift; sourceTree = "<group>"; };
 		2E4E2BDD26A4A2A100B2D89F /* SecondCollectionViewCell+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SecondCollectionViewCell+Extensions.swift"; sourceTree = "<group>"; };
 		2E4E2BE226A55CF100B2D89F /* ImageHound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHound.swift; sourceTree = "<group>"; };
 		2E4E2CE226A845EF00B2D89F /* FirstDogCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstDogCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -164,15 +154,15 @@
 		2E7A624A269B0B2800D54D10 /* LastUICollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastUICollectionViewCell.swift; sourceTree = "<group>"; };
 		2E7A624B269B0B2800D54D10 /* LastUICollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LastUICollectionViewCell.xib; sourceTree = "<group>"; };
 		2E7FB18626E280230005250E /* FilterViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FilterViewController+Extensions.swift"; sourceTree = "<group>"; };
-		2EC77CA926A33193007C0A7D /* FullscreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullscreenViewController.swift; sourceTree = "<group>"; };
-		2EC77CAD26A339A8007C0A7D /* FullscreenCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullscreenCollectionViewCell.swift; sourceTree = "<group>"; };
-		2EC77CAE26A339A8007C0A7D /* FullscreenCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FullscreenCollectionViewCell.xib; sourceTree = "<group>"; };
+		2EC77CA926A33193007C0A7D /* AllBreedsFullscreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllBreedsFullscreenViewController.swift; sourceTree = "<group>"; };
+		2EC77CAD26A339A8007C0A7D /* AllBreedsFullScreenCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllBreedsFullScreenCollectionViewCell.swift; sourceTree = "<group>"; };
+		2EC77CAE26A339A8007C0A7D /* AllBreedsFullScreenCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AllBreedsFullScreenCollectionViewCell.xib; sourceTree = "<group>"; };
 		2EC77CE126A40298007C0A7D /* MainUIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainUIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		2EC77CE426A40373007C0A7D /* LastUITableViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LastUITableViewCell+Extension.swift"; sourceTree = "<group>"; };
-		2EC77CE826A40673007C0A7D /* SearchPersonViewController+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchPersonViewController+extensions.swift"; sourceTree = "<group>"; };
-		2EC77CEC26A408A8007C0A7D /* TestViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TestViewController+Extensions.swift"; sourceTree = "<group>"; };
-		2EC77CEF26A40989007C0A7D /* TestDetailViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TestDetailViewController+Extensions.swift"; sourceTree = "<group>"; };
-		2EC77CF226A409EC007C0A7D /* FullscreenViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FullscreenViewController+Extensions.swift"; sourceTree = "<group>"; };
+		2EC77CE826A40673007C0A7D /* StarWarsSearchViewController+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StarWarsSearchViewController+extensions.swift"; sourceTree = "<group>"; };
+		2EC77CEC26A408A8007C0A7D /* AllBreedsController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AllBreedsController+Extensions.swift"; sourceTree = "<group>"; };
+		2EC77CEF26A40989007C0A7D /* AllBreedsDetailViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AllBreedsDetailViewController+Extensions.swift"; sourceTree = "<group>"; };
+		2EC77CF226A409EC007C0A7D /* AllBreedsFullScreenCollectionViewCell+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AllBreedsFullScreenCollectionViewCell+Extensions.swift"; sourceTree = "<group>"; };
 		2EC77CF726A40B19007C0A7D /* FirstCollectionViewCell+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FirstCollectionViewCell+Extensions.swift"; sourceTree = "<group>"; };
 		2EC77CFA26A40D04007C0A7D /* ThirdCollectionViewCell+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ThirdCollectionViewCell+Extensions.swift"; sourceTree = "<group>"; };
 		2EC77CFD26A44491007C0A7D /* CellTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellTableViewModel.swift; sourceTree = "<group>"; };
@@ -188,7 +178,7 @@
 		2EF34E8326CD437B00E1167A /* ListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListCell.xib; sourceTree = "<group>"; };
 		2EF34E8926CE2BD700E1167A /* NewsViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NewsViewController+Extensions.swift"; sourceTree = "<group>"; };
 		2EF4881F26B88A7D00F32723 /* Person.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Person.xcdatamodel; sourceTree = "<group>"; };
-		2EF4882526B897DD00F32723 /* RequestsViewController+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RequestsViewController+extensions.swift"; sourceTree = "<group>"; };
+		2EF4882526B897DD00F32723 /* StarWarsRequestsViewController+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StarWarsRequestsViewController+extensions.swift"; sourceTree = "<group>"; };
 		2EF4886226BA8F2800F32723 /* FileManagerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerExtension.swift; sourceTree = "<group>"; };
 		2EF4886726BA983800F32723 /* FileManagerWorkExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerWorkExtension.swift; sourceTree = "<group>"; };
 		2EF4886B26BA9AE800F32723 /* PhotoCacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCacheService.swift; sourceTree = "<group>"; };
@@ -225,20 +215,8 @@
 			children = (
 				2E0567AB26DBD77500FFA740 /* SideMenu.swift */,
 				2E42813026DE589C002FA553 /* TabBarViewController.swift */,
-				2E0567AE26DBEFD200FFA740 /* Navigation */,
 			);
 			path = SideMenu;
-			sourceTree = "<group>";
-		};
-		2E0567AE26DBEFD200FFA740 /* Navigation */ = {
-			isa = PBXGroup;
-			children = (
-				2E0567B026DBF01700FFA740 /* FirstViewController.swift */,
-				2E0567B326DBF03F00FFA740 /* SecondViewController.swift */,
-				2E0567B626DBF06700FFA740 /* ThirdViewController.swift */,
-				2E0567B926DBF07800FFA740 /* FourthViewController.swift */,
-			);
-			path = Navigation;
 			sourceTree = "<group>";
 		};
 		2E0C2E8026B5B50100CEC0C6 /* Person */ = {
@@ -260,9 +238,9 @@
 		2E23CD9526A180A1003B92A8 /* AllBreeds */ = {
 			isa = PBXGroup;
 			children = (
-				2E23CD9626A180CF003B92A8 /* TestViewController.swift */,
-				2E23CDD726A20D8D003B92A8 /* TestDetailViewController.swift */,
-				2EC77CA926A33193007C0A7D /* FullscreenViewController.swift */,
+				2E23CD9626A180CF003B92A8 /* AllBreedsViewController.swift */,
+				2E23CDD726A20D8D003B92A8 /* AllBreedsDetailViewController.swift */,
+				2EC77CA926A33193007C0A7D /* AllBreedsFullscreenViewController.swift */,
 			);
 			path = AllBreeds;
 			sourceTree = "<group>";
@@ -371,11 +349,9 @@
 		2E48E36C268D0AA000271A85 /* SWars */ = {
 			isa = PBXGroup;
 			children = (
-				2E48E371268D0B8300271A85 /* SearchPersonViewController.swift */,
-				2E0FD55726B53F190022DEBA /* RequestsViewController.swift */,
-				2E0FD55A26B53F410022DEBA /* RaquestTableViewCell.swift */,
-				2E0FD55B26B53F410022DEBA /* RaquestTableViewCell.xib */,
-				2E48E378268D0C1300271A85 /* DetailPageViewController.swift */,
+				2E48E371268D0B8300271A85 /* StarWarsSearchViewController.swift */,
+				2E0FD55726B53F190022DEBA /* StarWarsRequestsViewController.swift */,
+				2E48E378268D0C1300271A85 /* StarWarsDetailPageViewController.swift */,
 			);
 			path = SWars;
 			sourceTree = "<group>";
@@ -383,8 +359,10 @@
 		2E4E2CC926A83B9000B2D89F /* StarWarsCells */ = {
 			isa = PBXGroup;
 			children = (
-				2E28D26026AEF5360062CD22 /* ItemCollectionViewCell.swift */,
-				2E28D26126AEF5360062CD22 /* ItemCollectionViewCell.xib */,
+				2E0FD55A26B53F410022DEBA /* StarWarsRequestTableViewCell.swift */,
+				2E0FD55B26B53F410022DEBA /* StarWarsRequestTableViewCell.xib */,
+				2E28D26026AEF5360062CD22 /* StarWarsItemCollectionViewCell.swift */,
+				2E28D26126AEF5360062CD22 /* StarWarsItemCollectionViewCell.xib */,
 			);
 			path = StarWarsCells;
 			sourceTree = "<group>";
@@ -409,6 +387,27 @@
 			);
 			name = Controllers;
 			path = View/Controllers;
+			sourceTree = "<group>";
+		};
+		2E65837826E3F40A004DDC65 /* News */ = {
+			isa = PBXGroup;
+			children = (
+				2E05674D26DA0D7300FFA740 /* NewsFilters.json */,
+				2E05674326D96CF500FFA740 /* HelperMethods.swift */,
+				2E05674926DA017100FFA740 /* NewsEndPoints.swift */,
+				2E05674626D96F1400FFA740 /* NetworkingTasks.swift */,
+			);
+			path = News;
+			sourceTree = "<group>";
+		};
+		2E65837C26E3F422004DDC65 /* PhotoCache */ = {
+			isa = PBXGroup;
+			children = (
+				2EF4886226BA8F2800F32723 /* FileManagerExtension.swift */,
+				2EF4886726BA983800F32723 /* FileManagerWorkExtension.swift */,
+				2EF4886B26BA9AE800F32723 /* PhotoCacheService.swift */,
+			);
+			path = PhotoCache;
 			sourceTree = "<group>";
 		};
 		2E79B4A42690F33100C357C3 /* Constants */ = {
@@ -491,8 +490,8 @@
 		2EC77CD526A3E636007C0A7D /* DetailCells */ = {
 			isa = PBXGroup;
 			children = (
-				2E23CDDB26A20FFF003B92A8 /* TestCollectionViewCell.swift */,
-				2EC77CAD26A339A8007C0A7D /* FullscreenCollectionViewCell.swift */,
+				2E23CDDB26A20FFF003B92A8 /* AllBreedsDetailCollectionViewCell.swift */,
+				2EC77CAD26A339A8007C0A7D /* AllBreedsFullScreenCollectionViewCell.swift */,
 				2EF4887526BADDAB00F32723 /* Xib */,
 			);
 			path = DetailCells;
@@ -510,8 +509,8 @@
 		2EC77CE726A4061D007C0A7D /* StarWarsExtensions */ = {
 			isa = PBXGroup;
 			children = (
-				2EC77CE826A40673007C0A7D /* SearchPersonViewController+extensions.swift */,
-				2EF4882526B897DD00F32723 /* RequestsViewController+extensions.swift */,
+				2EC77CE826A40673007C0A7D /* StarWarsSearchViewController+extensions.swift */,
+				2EF4882526B897DD00F32723 /* StarWarsRequestsViewController+extensions.swift */,
 			);
 			path = StarWarsExtensions;
 			sourceTree = "<group>";
@@ -519,9 +518,9 @@
 		2EC77CEB26A40832007C0A7D /* AllBreedExtensions */ = {
 			isa = PBXGroup;
 			children = (
-				2EC77CEC26A408A8007C0A7D /* TestViewController+Extensions.swift */,
-				2EC77CEF26A40989007C0A7D /* TestDetailViewController+Extensions.swift */,
-				2EC77CF226A409EC007C0A7D /* FullscreenViewController+Extensions.swift */,
+				2EC77CEC26A408A8007C0A7D /* AllBreedsController+Extensions.swift */,
+				2EC77CEF26A40989007C0A7D /* AllBreedsDetailViewController+Extensions.swift */,
+				2EC77CF226A409EC007C0A7D /* AllBreedsFullScreenCollectionViewCell+Extensions.swift */,
 				2EC77CF526A40A28007C0A7D /* CellExtensions */,
 			);
 			path = AllBreedExtensions;
@@ -598,13 +597,8 @@
 		2EF4886126BA8EF700F32723 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				2EF4886226BA8F2800F32723 /* FileManagerExtension.swift */,
-				2EF4886726BA983800F32723 /* FileManagerWorkExtension.swift */,
-				2EF4886B26BA9AE800F32723 /* PhotoCacheService.swift */,
-				2E05674D26DA0D7300FFA740 /* NewsFilters.json */,
-				2E05674326D96CF500FFA740 /* HelperMethods.swift */,
-				2E05674926DA017100FFA740 /* NewsEndPoints.swift */,
-				2E05674626D96F1400FFA740 /* NetworkingTasks.swift */,
+				2E65837C26E3F422004DDC65 /* PhotoCache */,
+				2E65837826E3F40A004DDC65 /* News */,
 			);
 			name = Helpers;
 			path = "Core Data/Helpers";
@@ -613,9 +607,8 @@
 		2EF4887526BADDAB00F32723 /* Xib */ = {
 			isa = PBXGroup;
 			children = (
-				2EC77CAE26A339A8007C0A7D /* FullscreenCollectionViewCell.xib */,
-				2E23CDDC26A20FFF003B92A8 /* TestCollectionViewCell.xib */,
-				2E23CDCF26A1DB01003B92A8 /* DetailCollectionViewCell.xib */,
+				2E23CDDC26A20FFF003B92A8 /* AllBreedsDetailCollectionViewCell.xib */,
+				2EC77CAE26A339A8007C0A7D /* AllBreedsFullScreenCollectionViewCell.xib */,
 			);
 			path = Xib;
 			sourceTree = "<group>";
@@ -692,9 +685,8 @@
 			files = (
 				2EF34E7C26CD431E00E1167A /* GridCell.xib in Resources */,
 				2E48E2782689C5A100271A85 /* LaunchScreen.storyboard in Resources */,
-				2E23CDD126A1DB01003B92A8 /* DetailCollectionViewCell.xib in Resources */,
 				2E23CD9D26A1811D003B92A8 /* SecondCollectionViewCell.xib in Resources */,
-				2E0FD55D26B53F410022DEBA /* RaquestTableViewCell.xib in Resources */,
+				2E0FD55D26B53F410022DEBA /* StarWarsRequestTableViewCell.xib in Resources */,
 				2E7A6246269B0A7300D54D10 /* LastUITableViewCell.xib in Resources */,
 				2E23CDAB26A19606003B92A8 /* InsideFirstCollectionViewCell.xib in Resources */,
 				2E23CDB826A19ADD003B92A8 /* InsideThirdCollectionViewCell.xib in Resources */,
@@ -706,11 +698,11 @@
 				2E48E2752689C5A100271A85 /* Assets.xcassets in Resources */,
 				2E7A6236269B099800D54D10 /* FirstUITableViewCell.xib in Resources */,
 				2E7A624D269B0B2800D54D10 /* LastUICollectionViewCell.xib in Resources */,
-				2E28D26326AEF5360062CD22 /* ItemCollectionViewCell.xib in Resources */,
-				2EC77CB026A339A8007C0A7D /* FullscreenCollectionViewCell.xib in Resources */,
+				2E28D26326AEF5360062CD22 /* StarWarsItemCollectionViewCell.xib in Resources */,
+				2EC77CB026A339A8007C0A7D /* AllBreedsFullScreenCollectionViewCell.xib in Resources */,
 				2E48E2732689C59C00271A85 /* Main.storyboard in Resources */,
 				2E4E2CE526A845EF00B2D89F /* FirstDogCollectionViewCell.xib in Resources */,
-				2EC77CA326A3198D007C0A7D /* TestCollectionViewCell.xib in Resources */,
+				2EC77CA326A3198D007C0A7D /* AllBreedsDetailCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -798,11 +790,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2EC77CED26A408A8007C0A7D /* TestViewController+Extensions.swift in Sources */,
+				2EC77CED26A408A8007C0A7D /* AllBreedsController+Extensions.swift in Sources */,
 				2E23CDB126A19AC1003B92A8 /* ThirdCollectionViewCell.swift in Sources */,
 				2E4E2BDE26A4A2A100B2D89F /* SecondCollectionViewCell+Extensions.swift in Sources */,
 				2E29F9DB26DD4285007B8957 /* UIColor+Extension.swift in Sources */,
-				2E48E379268D0C1300271A85 /* DetailPageViewController.swift in Sources */,
+				2E48E379268D0C1300271A85 /* StarWarsDetailPageViewController.swift in Sources */,
 				2E79B4A62690F35800C357C3 /* Constants.swift in Sources */,
 				2E48E359268CEEE300271A85 /* CellViewModel.swift in Sources */,
 				2EF4886826BA983800F32723 /* FileManagerWorkExtension.swift in Sources */,
@@ -810,16 +802,16 @@
 				2ED290972694ED0C00B7630B /* Breed.swift in Sources */,
 				2E48E26C2689C59C00271A85 /* AppDelegate.swift in Sources */,
 				2EF34E7426CD42D400E1167A /* DetailViewController.swift in Sources */,
-				2EC77CF326A409EC007C0A7D /* FullscreenViewController+Extensions.swift in Sources */,
-				2EC77CA726A31995007C0A7D /* TestDetailViewController.swift in Sources */,
+				2EC77CF326A409EC007C0A7D /* AllBreedsFullScreenCollectionViewCell+Extensions.swift in Sources */,
+				2EC77CA726A31995007C0A7D /* AllBreedsDetailViewController.swift in Sources */,
 				2EC77CE226A40298007C0A7D /* MainUIViewController+Extensions.swift in Sources */,
 				2EF34E6626CD342600E1167A /* NewsViewController.swift in Sources */,
-				2E0FD55C26B53F410022DEBA /* RaquestTableViewCell.swift in Sources */,
+				2E0FD55C26B53F410022DEBA /* StarWarsRequestTableViewCell.swift in Sources */,
 				2E23CD9C26A1811D003B92A8 /* SecondCollectionViewCell.swift in Sources */,
 				2E23CDAA26A19606003B92A8 /* InsideFirstCollectionViewCell.swift in Sources */,
 				2E23CDA426A1950E003B92A8 /* FirstCollectionViewCell.swift in Sources */,
 				2EF4886F26BAAC3B00F32723 /* BreedImagesModel.swift in Sources */,
-				2EC77CE926A40673007C0A7D /* SearchPersonViewController+extensions.swift in Sources */,
+				2EC77CE926A40673007C0A7D /* StarWarsSearchViewController+extensions.swift in Sources */,
 				2E7FB18726E280230005250E /* FilterViewController+Extensions.swift in Sources */,
 				2E23CDB726A19ADD003B92A8 /* InsideThirdCollectionViewCell.swift in Sources */,
 				2E7A6231269B08F300D54D10 /* MainUIViewController.swift in Sources */,
@@ -831,41 +823,37 @@
 				2E4E2BE326A55CF100B2D89F /* ImageHound.swift in Sources */,
 				2EF34E7126CD3BF400E1167A /* NewsDataModel.swift in Sources */,
 				2EF4886C26BA9AE800F32723 /* PhotoCacheService.swift in Sources */,
-				2E0FD55826B53F190022DEBA /* RequestsViewController.swift in Sources */,
+				2E0FD55826B53F190022DEBA /* StarWarsRequestsViewController.swift in Sources */,
 				2E65835F26E368D2004DDC65 /* CatImage.swift in Sources */,
 				2EC77CE526A40373007C0A7D /* LastUITableViewCell+Extension.swift in Sources */,
 				2EF4886326BA8F2800F32723 /* FileManagerExtension.swift in Sources */,
 				2EF34E7B26CD431E00E1167A /* GridCell.swift in Sources */,
 				2E7A6235269B099800D54D10 /* FirstUITableViewCell.swift in Sources */,
-				2E23CD9726A180CF003B92A8 /* TestViewController.swift in Sources */,
-				2E28D26226AEF5360062CD22 /* ItemCollectionViewCell.swift in Sources */,
-				2EC77CAA26A33193007C0A7D /* FullscreenViewController.swift in Sources */,
-				2E0567B426DBF03F00FFA740 /* SecondViewController.swift in Sources */,
+				2E23CD9726A180CF003B92A8 /* AllBreedsViewController.swift in Sources */,
+				2E28D26226AEF5360062CD22 /* StarWarsItemCollectionViewCell.swift in Sources */,
+				2EC77CAA26A33193007C0A7D /* AllBreedsFullscreenViewController.swift in Sources */,
 				2E29F9DF26DD7654007B8957 /* MenuController+Extensions.swift in Sources */,
 				2EF34E6D26CD3A9F00E1167A /* APIResponse.swift in Sources */,
 				2EC77CFE26A44491007C0A7D /* CellTableViewModel.swift in Sources */,
 				2E48E26E2689C59C00271A85 /* SceneDelegate.swift in Sources */,
 				2ED2909A2694ED1C00B7630B /* Image.swift in Sources */,
-				2E0567BA26DBF07800FFA740 /* FourthViewController.swift in Sources */,
 				2E7A6245269B0A7300D54D10 /* LastUITableViewCell.swift in Sources */,
 				2EF4882026B88A7D00F32723 /* Person.xcdatamodeld in Sources */,
-				2E0567B726DBF06700FFA740 /* ThirdViewController.swift in Sources */,
 				2E05674426D96CF500FFA740 /* HelperMethods.swift in Sources */,
-				2EC77CAF26A339A8007C0A7D /* FullscreenCollectionViewCell.swift in Sources */,
+				2EC77CAF26A339A8007C0A7D /* AllBreedsFullScreenCollectionViewCell.swift in Sources */,
 				2EF34E8A26CE2BD800E1167A /* NewsViewController+Extensions.swift in Sources */,
-				2EC77CF026A40989007C0A7D /* TestDetailViewController+Extensions.swift in Sources */,
+				2EC77CF026A40989007C0A7D /* AllBreedsDetailViewController+Extensions.swift in Sources */,
 				2E48E35D268CEF0D00271A85 /* NetService.swift in Sources */,
-				2EC77CA526A31992007C0A7D /* TestCollectionViewCell.swift in Sources */,
-				2EF4882626B897DD00F32723 /* RequestsViewController+extensions.swift in Sources */,
+				2EC77CA526A31992007C0A7D /* AllBreedsDetailCollectionViewCell.swift in Sources */,
+				2EF4882626B897DD00F32723 /* StarWarsRequestsViewController+extensions.swift in Sources */,
 				86E09EDF269C5B0300049522 /* UIImageView.swift in Sources */,
-				2E48E372268D0B8300271A85 /* SearchPersonViewController.swift in Sources */,
+				2E48E372268D0B8300271A85 /* StarWarsSearchViewController.swift in Sources */,
 				2E79B4AA2690F45100C357C3 /* ProtocolNetService.swift in Sources */,
 				2E42813126DE589C002FA553 /* TabBarViewController.swift in Sources */,
 				2EF34E7726CD42E800E1167A /* FilterViewController.swift in Sources */,
 				2E48E36F268D0B6100271A85 /* PersonList.swift in Sources */,
 				2E7A6240269B0A4600D54D10 /* SecondUITableViewCell.swift in Sources */,
 				2E4E2CE426A845EF00B2D89F /* FirstDogCollectionViewCell.swift in Sources */,
-				2E0567B126DBF01700FFA740 /* FirstViewController.swift in Sources */,
 				2E7A624C269B0B2800D54D10 /* LastUICollectionViewCell.swift in Sources */,
 				2E48E353268CEE8D00271A85 /* CatsModel.swift in Sources */,
 			);

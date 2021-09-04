@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DetailPageViewController: UIViewController {
+class StarWarsDetailPageViewController: UIViewController {
 
     var detail: Results?
 

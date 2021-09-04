@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FullscreenViewController: UIViewController {
+class AllBreedsFullscreenViewController: UIViewController {
 
     // MARK: - IBOUtlets
 
@@ -23,8 +23,8 @@ class FullscreenViewController: UIViewController {
         super.viewDidLoad()
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.register(UINib(nibName: "FullscreenCollectionViewCell", bundle: nil),
-                                forCellWithReuseIdentifier: "FullscreenCollectionViewCell")
+        collectionView.register(UINib(nibName: "AllBreedsFullScreenCollectionViewCell", bundle: nil),
+                                forCellWithReuseIdentifier: "AllBreedsFullScreenCollectionViewCell")
         title = "Breed photo"
     }
 }

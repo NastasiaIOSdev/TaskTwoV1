@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TestDetailViewController: UIViewController {
+class AllBreedsDetailViewController: UIViewController {
 
     // MARK: - IBOUtlets
 
@@ -21,8 +21,8 @@ class TestDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        testCollectionView.register(UINib(nibName: "TestCollectionViewCell", bundle: nil),
-                                    forCellWithReuseIdentifier: "TestCollectionViewCell")
+        testCollectionView.register(UINib(nibName: "AllBreedsDetailCollectionViewCell", bundle: nil),
+                                    forCellWithReuseIdentifier: "AllBreedsDetailCollectionViewCell")
 
         if let data = self.model {
             title = data.breed?.capitalized

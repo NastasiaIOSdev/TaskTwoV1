@@ -8,7 +8,7 @@
 import UIKit
 import CoreData
 
-extension SearchPersonViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension StarWarsSearchViewController: UICollectionViewDelegate, UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModels.count
@@ -17,7 +17,7 @@ extension SearchPersonViewController: UICollectionViewDelegate, UICollectionView
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(
-                withReuseIdentifier: "ItemCollectionViewCell", for: indexPath) as? ItemCollectionViewCell else {
+                withReuseIdentifier: "StarWarsItemCollectionViewCell", for: indexPath) as? StarWarsItemCollectionViewCell else {
             fatalError()
         }
         cell.configure(with: viewModels[indexPath.row])
@@ -32,7 +32,7 @@ extension SearchPersonViewController: UICollectionViewDelegate, UICollectionView
   }
 }
 
-    extension SearchPersonViewController: UICollectionViewDelegateFlowLayout {
+    extension StarWarsSearchViewController: UICollectionViewDelegateFlowLayout {
         func collectionView(_ collectionView: UICollectionView,
                             layout collectionViewLayout: UICollectionViewLayout,
                             sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -44,7 +44,7 @@ extension SearchPersonViewController: UICollectionViewDelegate, UICollectionView
         }
     }
 
-extension SearchPersonViewController: UISearchBarDelegate {
+extension StarWarsSearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked (_ searchBar: UISearchBar) {
         guard let text = searchBar.text, !text.isEmpty else {
             return

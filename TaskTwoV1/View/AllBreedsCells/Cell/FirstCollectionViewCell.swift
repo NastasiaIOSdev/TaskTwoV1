@@ -15,14 +15,14 @@ class FirstCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var collectionViewTestSecond: UICollectionView!
 
-    var parentViewController: TestViewController?
+    var parentViewController: AllBreedsViewController?
     var models = [CellViewModel]()
 
     static func nib() -> UINib {
         return UINib(nibName: "FirstCollectionViewCell", bundle: nil)
     }
 
-    func configure(with models: [CellViewModel], viewC: TestViewController?) {
+    func configure(with models: [CellViewModel], viewC: AllBreedsViewController?) {
         self.models = models
         self.parentViewController = viewC
         collectionViewTestSecond.reloadData()

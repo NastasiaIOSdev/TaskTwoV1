@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension TestViewController: UICollectionViewDelegate {
+extension AllBreedsViewController: UICollectionViewDelegate {
 
     func collectionView(_ collectionView: UICollectionView,
                         willDisplay cell: UICollectionViewCell,
@@ -23,7 +23,7 @@ extension TestViewController: UICollectionViewDelegate {
     }
 }
 
-extension TestViewController: UICollectionViewDataSource {
+extension AllBreedsViewController: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModels.count
@@ -59,7 +59,7 @@ extension TestViewController: UICollectionViewDataSource {
     }
 
 }
-extension TestViewController: UICollectionViewDelegateFlowLayout {
+extension AllBreedsViewController: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,

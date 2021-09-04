@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension TestDetailViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension AllBreedsDetailViewController: UICollectionViewDelegate, UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell,
                         forItemAt indexPath: IndexPath) {
@@ -27,8 +27,8 @@ extension TestDetailViewController: UICollectionViewDelegate, UICollectionViewDa
 
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = testCollectionView.dequeueReusableCell(withReuseIdentifier: "TestCollectionViewCell",
-                                                                for: indexPath) as? TestCollectionViewCell else {
+        guard let cell = testCollectionView.dequeueReusableCell(withReuseIdentifier: "AllBreedsDetailCollectionViewCell",
+                                                                for: indexPath) as? AllBreedsDetailCollectionViewCell else {
             fatalError()
         }
         cell.configure(with: photoCacheService.photo(atIndexpath: indexPath, byUrl: self.images[indexPath.row]))
@@ -36,11 +36,11 @@ extension TestDetailViewController: UICollectionViewDelegate, UICollectionViewDa
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let viewC = storyboard?.instantiateViewController(identifier: "FullscreenViewController")
-                                                                    as? FullscreenViewController else {
+        guard let viewC = storyboard?.instantiateViewController(identifier: "AllBreedsFullscreenViewController")
+                                                                    as? AllBreedsFullscreenViewController else {
             fatalError()
         }
-        guard self.collectionView(collectionView, cellForItemAt: indexPath) is TestCollectionViewCell else {
+        guard self.collectionView(collectionView, cellForItemAt: indexPath) is AllBreedsDetailCollectionViewCell else {
             fatalError()
         }
         viewC.imageUrlString = self.images[indexPath.row]
@@ -48,7 +48,7 @@ extension TestDetailViewController: UICollectionViewDelegate, UICollectionViewDa
     }
 }
 
-extension TestDetailViewController: UICollectionViewDelegateFlowLayout {
+extension AllBreedsDetailViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {

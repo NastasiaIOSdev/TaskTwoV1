@@ -107,7 +107,7 @@ class AllBreedsViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "Detail1",
            let data = sender as? BreedImagesModel,
-           let viewC = segue.destination as? TestDetailViewController {
+           let viewC = segue.destination as? AllBreedsDetailViewController {
             viewC.model = data
         }
     }

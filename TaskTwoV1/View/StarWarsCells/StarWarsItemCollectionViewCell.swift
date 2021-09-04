@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ItemCollectionViewCell: UICollectionViewCell {
+class StarWarsItemCollectionViewCell: UICollectionViewCell {
 
     // MARK: - IBOUtlets
 

@@ -7,16 +7,16 @@
 
 import UIKit
 
-class TestCollectionViewCell: UICollectionViewCell {
+class AllBreedsDetailCollectionViewCell: UICollectionViewCell {
 
-    static let identifier = "TestCollectionViewCell"
+    static let identifier = "AllBreedsDetailCollectionViewCell"
 
     // MARK: - IBOUtlets
 
     @IBOutlet weak var imageView: UIImageView!
 
     static func nib() -> UINib {
-        return UINib(nibName: "TestCollectionViewCell", bundle: nil)
+        return UINib(nibName: "AllBreedsDetailCollectionViewCell", bundle: nil)
     }
     override func awakeFromNib() {
         super.awakeFromNib()

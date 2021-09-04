@@ -8,13 +8,13 @@
 import UIKit
 import CoreData
 
-class RequestsViewController: UIViewController {
+class StarWarsRequestsViewController: UIViewController {
 
     // MARK: - IBOUtlets
 
     @IBOutlet weak var tableView: UITableView!
 
-    let cellIdentifier = "RaquestTableViewCell"
+    let cellIdentifier = "StarWarsRequestTableViewCell"
 
     var requests: [MyRequest] = []
     let segueIdentifier = "Detail2"
@@ -25,7 +25,7 @@ class RequestsViewController: UIViewController {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
-        let nib = UINib(nibName: "RaquestTableViewCell", bundle: nil)
+        let nib = UINib(nibName: "StarWarsRequestTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: cellIdentifier)
         title = "Previous requests"
         getFronCoreData()

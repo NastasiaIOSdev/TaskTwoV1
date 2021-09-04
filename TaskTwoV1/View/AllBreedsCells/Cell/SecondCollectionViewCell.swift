@@ -11,7 +11,7 @@ class SecondCollectionViewCell: UICollectionViewCell {
 
     static let identifier = "SecondCollectionViewCell"
 
-    var parentViewController: TestViewController?
+    var parentViewController: AllBreedsViewController?
 
     // MARK: - IBOutlets
 

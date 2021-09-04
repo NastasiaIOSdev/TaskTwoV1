@@ -8,7 +8,7 @@
 import UIKit
 import CoreData
 
-extension RequestsViewController: UITableViewDelegate, UITableViewDataSource {
+extension StarWarsRequestsViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
        return requests.count
@@ -16,7 +16,7 @@ extension RequestsViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "RaquestTableViewCell", for: indexPath) as? RaquestTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "StarWarsRequestTableViewCell", for: indexPath) as? StarWarsRequestTableViewCell else {
             fatalError()
         }
         cell.configure(with: requests[indexPath.row])
@@ -31,7 +31,7 @@ extension RequestsViewController: UITableViewDelegate, UITableViewDataSource {
             do {
                 try manageContext?.save()
             } catch let error as NSError {
-                print("Не удалось удалить, \(error)")
+                print("Can't cancel, \(error)")
             }
             requests.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .bottom)

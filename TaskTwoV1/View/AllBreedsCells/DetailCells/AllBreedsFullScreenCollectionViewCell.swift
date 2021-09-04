@@ -7,9 +7,9 @@
 
 import UIKit
 
-class FullscreenCollectionViewCell: UICollectionViewCell, UIScrollViewDelegate {
+class AllBreedsFullScreenCollectionViewCell: UICollectionViewCell, UIScrollViewDelegate {
 
-    static let identifier = "FullscreenCollectionViewCell"
+    static let identifier = "AllBreedsFullScreenCollectionViewCell"
 
     // MARK: - IBOUtlets
 
@@ -17,7 +17,7 @@ class FullscreenCollectionViewCell: UICollectionViewCell, UIScrollViewDelegate {
     @IBOutlet weak var scrollView: UIScrollView!
 
     static func nib() -> UINib {
-        return UINib(nibName: "FullscreenCollectionViewCell", bundle: nil)
+        return UINib(nibName: "AllBreedsFullScreenCollectionViewCell", bundle: nil)
     }
     override func awakeFromNib() {
         super.awakeFromNib()

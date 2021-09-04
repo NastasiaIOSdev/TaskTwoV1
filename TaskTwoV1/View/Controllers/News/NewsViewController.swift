@@ -21,9 +21,6 @@ class NewsViewController: UIViewController, UINavigationControllerDelegate {
 
     // MARK: - Properties
 
-    private let catsUIViewController = FirstViewController()
-    private let starWarsViewController = SecondViewController()
-    private let allBreedsViewController = ThirdViewController()
     private var sideMenuShadowView: UIView!
     private var sideMenuRevealWidth: CGFloat = 260
     private var isExpanded: Bool = false
