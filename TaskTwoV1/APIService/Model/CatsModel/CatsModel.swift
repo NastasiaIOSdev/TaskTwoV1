@@ -8,6 +8,7 @@
 import Foundation
 
 struct Breed: Codable {
+    var id: String
     var name: String
     var origin: String
     var description: String

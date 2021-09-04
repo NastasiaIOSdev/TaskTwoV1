@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import ShimmerSwift
 
 protocol MenuControllerDelegate: class {
     func didselectMenuItem(named: String)
@@ -43,6 +44,7 @@ class MenuController: UITableViewController {
         view.backgroundColor = color
         addSwitch()
         addLabelSwitch()
+        addButtin()
     }
 
     // MARK: - SetupUISwitch
@@ -59,10 +61,25 @@ class MenuController: UITableViewController {
     }
 
     func addLabelSwitch() {
-        let switchLabel = UILabel(frame: CGRect(x: 70, y: 205, width: 100, height: 20))
-        switchLabel.text = "Dark Mode"
-        switchLabel.textColor = UIColor.setColor(lightColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), darkColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))
-        self.view.addSubview(switchLabel)
+        let shimmerSwitchLabelView = ShimmeringView(frame: CGRect(x: 75, y: 205, width: 150, height: 20))
+        self.view.addSubview(shimmerSwitchLabelView)
+        let label = UILabel(frame: shimmerSwitchLabelView.bounds)
+        label.text = "Dark Mode"
+        label.font = .systemFont(ofSize: 20, weight: .bold)
+        label.textColor = UIColor.setColor(lightColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), darkColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))
+        shimmerSwitchLabelView.contentView = label
+        shimmerSwitchLabelView.isShimmering = true
+    }
+
+    func addButtin() {
+        let shimmerSwitchLabelView = ShimmeringView(frame: CGRect(x: 10, y: 350, width: 150, height: 50))
+        self.view.addSubview(shimmerSwitchLabelView)
+        let button = UIButton(frame: shimmerSwitchLabelView.bounds)
+        button.backgroundColor = .darkText
+        button.setTitle("LogOut", for: .normal)
+        button.layer.cornerRadius = 12
+        shimmerSwitchLabelView.contentView = button
+        shimmerSwitchLabelView.isShimmering = true
     }
 
     @objc func switchStateDidChange(_ sender: UISwitch) {

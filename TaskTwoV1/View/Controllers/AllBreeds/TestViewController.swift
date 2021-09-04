@@ -37,7 +37,7 @@ class TestViewController: UIViewController {
         title = "List All Breed"
         allBreed()
         fillArrays()
-        getPhotosByHound("hound")
+        //getPhotosByHound("hound")
     }
 
     // MARK: - Actions
@@ -54,6 +54,7 @@ class TestViewController: UIViewController {
             case.success(let breed):
                 self?.viewModels = breed.compactMap({
                     CellViewModel(
+                        breedId: $0.id,
                         title: $0.name,
                         subtitle: $0.origin,
                         aboutBreed: $0.description,
@@ -85,6 +86,7 @@ class TestViewController: UIViewController {
         }
     }
 
+    /*
     func getPhotosByHound(_ hound: String) {
         APIService.shared.getPhotoHound(hound) {[weak self] result in
             switch result {
@@ -95,6 +97,7 @@ class TestViewController: UIViewController {
             }
         }
     }
+ */
 
     func getPhotoByBreed(_ breed: String, completion: @escaping (String) -> Void) {
         APIService.shared.getPhoto(breeds: breed) { result in
@@ -119,7 +122,7 @@ class TestViewController: UIViewController {
         if segue.identifier == "Detail1",
            let data = sender as? BreedImagesModel,
            let viewC = segue.destination as? TestDetailViewController {
-            viewC.viewModel = data
+            viewC.model = data
         }
     }
 }

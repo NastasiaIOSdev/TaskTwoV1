@@ -34,19 +34,20 @@ class MainUIViewController: UIViewController {
    }
 
     // MARK: - Action
-    
+
     @IBAction func didTapMenuButton() {
         if let viewController = (UIApplication.shared.windows.first?.rootViewController as? TabBarViewController) {
             viewController.presentMenu()
         }
     }
-    
+
     func getAllBreed() {
         APIService.shared.getBreed { [weak self] result in
             switch result {
             case.success(let breed):
                 self?.viewModels = breed.compactMap({
                     CellViewModel(
+                        breedId: $0.id,
                         title: $0.name,
                         subtitle: $0.origin,
                         aboutBreed: $0.description,

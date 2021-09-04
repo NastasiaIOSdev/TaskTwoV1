@@ -12,8 +12,10 @@ class TestDetailViewController: UIViewController {
     // MARK: - IBOUtlets
 
     @IBOutlet weak var testCollectionView: UICollectionView!
+    lazy var photoCacheService = PhotoCacheService.init(container: self.testCollectionView)
 
-    var viewModel: BreedImagesModel?
+    var model: BreedImagesModel?
+    var images: [String] = []
     let countCells = 2
     let offset: CGFloat = 2.0
 
@@ -21,6 +23,11 @@ class TestDetailViewController: UIViewController {
         super.viewDidLoad()
         testCollectionView.register(UINib(nibName: "TestCollectionViewCell", bundle: nil),
                                     forCellWithReuseIdentifier: "TestCollectionViewCell")
-        title = viewModel?.breed?.capitalized
+
+        if let data = self.model {
+            title = data.breed?.capitalized
+            self.images = data.images
+            self.testCollectionView.reloadData()
+        }
     }
 }

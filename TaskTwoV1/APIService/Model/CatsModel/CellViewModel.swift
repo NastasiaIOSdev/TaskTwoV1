@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 class CellViewModel {
+    let breedId: String
     let title: String
     let subtitle: String
     let aboutBreed: String
@@ -17,12 +18,14 @@ class CellViewModel {
     var imagesArray: [UIImage] = []
 
     init (
+        breedId: String,
         title: String,
         subtitle: String,
         aboutBreed: String,
         imageUrl: URL?
 
     ) {
+        self.breedId = breedId
         self.title = title
         self.subtitle = subtitle
         self.aboutBreed = aboutBreed

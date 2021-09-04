@@ -21,17 +21,8 @@ class TestCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-    func configure(with urlString: String) {
-        if let url = URL(string: urlString) {
-            URLSession.shared.dataTask(with: url) { [weak self] data, _, error in
-                guard let data = data, error == nil else {
-                    return
-                }
-                DispatchQueue.main.async {
-                    self?.imageView.image = UIImage(data: data)
-                }
-            }.resume()
-        }
+    func configure(with image: UIImage?) {
+        self.imageView.image = image
     }
     override func layoutSubviews() {
         super.layoutSubviews()

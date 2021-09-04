@@ -57,7 +57,7 @@ class SearchPersonViewController: UIViewController {
    }
 
     // MARK: - Actions
-    
+
     @IBAction func didTabMenuButton() {
         if let viewController = (UIApplication.shared.windows.first?.rootViewController as? TabBarViewController) {
             viewController.presentMenu()

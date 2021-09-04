@@ -15,7 +15,20 @@ extension ThirdCollectionViewCell: UICollectionViewDelegate,
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.parentViewController?.makeSegue(data: BreedImagesModel(cellViewModel: self.models[indexPath.row]))
+        let model = self.models[indexPath.row]
+        APIService.shared.getPhotos(breedId: model.breedId) { [self] result in
+            switch result {
+            case.success(let images):
+                let newImages = images.compactMap({ catImage in
+                    catImage.url
+                })
+                DispatchQueue.main.async {
+                    self.parentViewController?.makeSegue(data: BreedImagesModel(breed: model.title, images: newImages))
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
 
     func collectionView(_ collectionView: UICollectionView,

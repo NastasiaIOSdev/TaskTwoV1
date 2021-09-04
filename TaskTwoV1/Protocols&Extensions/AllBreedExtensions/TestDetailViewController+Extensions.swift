@@ -22,7 +22,7 @@ extension TestDetailViewController: UICollectionViewDelegate, UICollectionViewDa
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.viewModel?.images.count ?? 0
+        return self.images.count
     }
 
     func collectionView(_ collectionView: UICollectionView,
@@ -31,9 +31,7 @@ extension TestDetailViewController: UICollectionViewDelegate, UICollectionViewDa
                                                                 for: indexPath) as? TestCollectionViewCell else {
             fatalError()
         }
-        if let image = self.viewModel?.images[indexPath.row] {
-            cell.configure(with: image)
-        }
+        cell.configure(with: photoCacheService.photo(atIndexpath: indexPath, byUrl: self.images[indexPath.row]))
         return cell
     }
 
@@ -45,9 +43,7 @@ extension TestDetailViewController: UICollectionViewDelegate, UICollectionViewDa
         guard self.collectionView(collectionView, cellForItemAt: indexPath) is TestCollectionViewCell else {
             fatalError()
         }
-           if let image = self.viewModel?.images[indexPath.row] {
-            viewC.imageUrlString = image
-        }
+        viewC.imageUrlString = self.images[indexPath.row]
         self.navigationController?.pushViewController(viewC, animated: true)
     }
 }

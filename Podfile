@@ -8,5 +8,6 @@ target 'TaskTwoV1' do
   # Pods for TaskTwoV1
   pod 'SwiftLint'
   pod 'SideMenu'
+  pod 'ShimmerSwift'
   
 end

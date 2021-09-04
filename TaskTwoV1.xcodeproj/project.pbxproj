@@ -51,6 +51,7 @@
 		2E4E2BE326A55CF100B2D89F /* ImageHound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4E2BE226A55CF100B2D89F /* ImageHound.swift */; };
 		2E4E2CE426A845EF00B2D89F /* FirstDogCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4E2CE226A845EF00B2D89F /* FirstDogCollectionViewCell.swift */; };
 		2E4E2CE526A845EF00B2D89F /* FirstDogCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E4E2CE326A845EF00B2D89F /* FirstDogCollectionViewCell.xib */; };
+		2E65835F26E368D2004DDC65 /* CatImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E65835E26E368D2004DDC65 /* CatImage.swift */; };
 		2E79B4A62690F35800C357C3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E79B4A52690F35800C357C3 /* Constants.swift */; };
 		2E79B4AA2690F45100C357C3 /* ProtocolNetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E79B4A92690F45100C357C3 /* ProtocolNetService.swift */; };
 		2E7A6231269B08F300D54D10 /* MainUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7A6230269B08F300D54D10 /* MainUIViewController.swift */; };
@@ -62,6 +63,7 @@
 		2E7A6246269B0A7300D54D10 /* LastUITableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E7A6244269B0A7300D54D10 /* LastUITableViewCell.xib */; };
 		2E7A624C269B0B2800D54D10 /* LastUICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7A624A269B0B2800D54D10 /* LastUICollectionViewCell.swift */; };
 		2E7A624D269B0B2800D54D10 /* LastUICollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E7A624B269B0B2800D54D10 /* LastUICollectionViewCell.xib */; };
+		2E7FB18726E280230005250E /* FilterViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7FB18626E280230005250E /* FilterViewController+Extensions.swift */; };
 		2EC77CA326A3198D007C0A7D /* TestCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E23CDDC26A20FFF003B92A8 /* TestCollectionViewCell.xib */; };
 		2EC77CA526A31992007C0A7D /* TestCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E23CDDB26A20FFF003B92A8 /* TestCollectionViewCell.swift */; };
 		2EC77CA726A31995007C0A7D /* TestDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E23CDD726A20D8D003B92A8 /* TestDetailViewController.swift */; };
@@ -149,6 +151,7 @@
 		2E4E2BE226A55CF100B2D89F /* ImageHound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHound.swift; sourceTree = "<group>"; };
 		2E4E2CE226A845EF00B2D89F /* FirstDogCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstDogCollectionViewCell.swift; sourceTree = "<group>"; };
 		2E4E2CE326A845EF00B2D89F /* FirstDogCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FirstDogCollectionViewCell.xib; sourceTree = "<group>"; };
+		2E65835E26E368D2004DDC65 /* CatImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatImage.swift; sourceTree = "<group>"; };
 		2E79B4A52690F35800C357C3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2E79B4A92690F45100C357C3 /* ProtocolNetService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolNetService.swift; sourceTree = "<group>"; };
 		2E7A6230269B08F300D54D10 /* MainUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainUIViewController.swift; sourceTree = "<group>"; };
@@ -160,6 +163,7 @@
 		2E7A6244269B0A7300D54D10 /* LastUITableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LastUITableViewCell.xib; sourceTree = "<group>"; };
 		2E7A624A269B0B2800D54D10 /* LastUICollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastUICollectionViewCell.swift; sourceTree = "<group>"; };
 		2E7A624B269B0B2800D54D10 /* LastUICollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LastUICollectionViewCell.xib; sourceTree = "<group>"; };
+		2E7FB18626E280230005250E /* FilterViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FilterViewController+Extensions.swift"; sourceTree = "<group>"; };
 		2EC77CA926A33193007C0A7D /* FullscreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullscreenViewController.swift; sourceTree = "<group>"; };
 		2EC77CAD26A339A8007C0A7D /* FullscreenCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullscreenCollectionViewCell.swift; sourceTree = "<group>"; };
 		2EC77CAE26A339A8007C0A7D /* FullscreenCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FullscreenCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -539,6 +543,7 @@
 				2E48E352268CEE8D00271A85 /* CatsModel.swift */,
 				2EF4889026BBC4DF00F32723 /* BreedImages.swift */,
 				2E48E358268CEEE300271A85 /* CellViewModel.swift */,
+				2E65835E26E368D2004DDC65 /* CatImage.swift */,
 			);
 			path = CatsModel;
 			sourceTree = "<group>";
@@ -585,6 +590,7 @@
 			isa = PBXGroup;
 			children = (
 				2EF34E8926CE2BD700E1167A /* NewsViewController+Extensions.swift */,
+				2E7FB18626E280230005250E /* FilterViewController+Extensions.swift */,
 			);
 			path = NewsExtensions;
 			sourceTree = "<group>";
@@ -814,6 +820,7 @@
 				2E23CDA426A1950E003B92A8 /* FirstCollectionViewCell.swift in Sources */,
 				2EF4886F26BAAC3B00F32723 /* BreedImagesModel.swift in Sources */,
 				2EC77CE926A40673007C0A7D /* SearchPersonViewController+extensions.swift in Sources */,
+				2E7FB18726E280230005250E /* FilterViewController+Extensions.swift in Sources */,
 				2E23CDB726A19ADD003B92A8 /* InsideThirdCollectionViewCell.swift in Sources */,
 				2E7A6231269B08F300D54D10 /* MainUIViewController.swift in Sources */,
 				2E0567AC26DBD77500FFA740 /* SideMenu.swift in Sources */,
@@ -825,6 +832,7 @@
 				2EF34E7126CD3BF400E1167A /* NewsDataModel.swift in Sources */,
 				2EF4886C26BA9AE800F32723 /* PhotoCacheService.swift in Sources */,
 				2E0FD55826B53F190022DEBA /* RequestsViewController.swift in Sources */,
+				2E65835F26E368D2004DDC65 /* CatImage.swift in Sources */,
 				2EC77CE526A40373007C0A7D /* LastUITableViewCell+Extension.swift in Sources */,
 				2EF4886326BA8F2800F32723 /* FileManagerExtension.swift in Sources */,
 				2EF34E7B26CD431E00E1167A /* GridCell.swift in Sources */,
