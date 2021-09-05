@@ -10,6 +10,7 @@ import UIKit
 // MARK: - Filter TableView Datasource & Delegate
 
 extension FilterViewController: UITableViewDelegate, UITableViewDataSource {
+
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }

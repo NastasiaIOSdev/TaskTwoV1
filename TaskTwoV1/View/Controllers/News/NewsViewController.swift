@@ -15,7 +15,6 @@ class NewsViewController: UIViewController, UINavigationControllerDelegate {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var newsSearchBar: UISearchBar!
     @IBOutlet weak var filterButton: UIBarButtonItem!
-
     @IBOutlet weak var listButton: UIButton!
     @IBOutlet weak var gridButton: UIButton!
 

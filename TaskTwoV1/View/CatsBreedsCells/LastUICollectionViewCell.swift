@@ -9,6 +9,10 @@ import UIKit
 
 class LastUICollectionViewCell: UICollectionViewCell {
 
+    // MARK: - Properties
+
+    static let identifaer = "LastUICollectionViewCell"
+
     // MARK: - IBOUtlets
 
     @IBOutlet weak var catUIImageView: UIImageView!
@@ -16,8 +20,6 @@ class LastUICollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var countryLabel: UILabel!
     @IBOutlet weak var myView: UIView!
     @IBOutlet weak var shadowView: UIView!
-
-    static let identifaer = "LastUICollectionViewCell"
 
     static func nib() -> UINib {
         return  UINib(nibName: "LastUICollectionViewCell", bundle: nil

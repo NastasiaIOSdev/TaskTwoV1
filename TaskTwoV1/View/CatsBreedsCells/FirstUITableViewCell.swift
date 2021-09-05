@@ -9,6 +9,8 @@ import UIKit
 
 class FirstUITableViewCell: UITableViewCell {
 
+    // MARK: - Properties
+
     static let identifier = "FirstUITableViewCell"
 
     // MARK: - IBOUtlets

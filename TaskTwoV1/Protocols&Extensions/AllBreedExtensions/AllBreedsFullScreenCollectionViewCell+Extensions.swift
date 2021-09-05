@@ -27,6 +27,7 @@ extension AllBreedsFullscreenViewController: UICollectionViewDelegate, UICollect
 }
 
 extension AllBreedsFullscreenViewController: UICollectionViewDelegateFlowLayout {
+
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {

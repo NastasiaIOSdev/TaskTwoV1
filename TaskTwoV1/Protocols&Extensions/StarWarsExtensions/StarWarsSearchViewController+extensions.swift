@@ -26,23 +26,23 @@ extension StarWarsSearchViewController: UICollectionViewDelegate, UICollectionVi
 
     func collectionView(_ collectionView: UICollectionView,
                         didSelectItemAt indexPath: IndexPath) {
-     print("DID select item\(indexPath)")
-       let item = viewModels[indexPath.item]
-       performSegue(withIdentifier: segueIdentifier, sender: item)
-  }
+        print("DID select item\(indexPath)")
+        let item = viewModels[indexPath.item]
+        performSegue(withIdentifier: segueIdentifier, sender: item)
+    }
 }
 
-    extension StarWarsSearchViewController: UICollectionViewDelegateFlowLayout {
-        func collectionView(_ collectionView: UICollectionView,
-                            layout collectionViewLayout: UICollectionViewLayout,
-                            sizeForItemAt indexPath: IndexPath) -> CGSize {
-            let frameCV = collectionView.frame
-            let widthCell = frameCV.width/CGFloat(countCells)
-            let heightCell = widthCell
-            let spasing = CGFloat((countCells + 1)) * offset / CGFloat(countCells)
-            return CGSize(width: widthCell - spasing, height: heightCell - (offset*2))
-        }
+extension StarWarsSearchViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let frameCV = collectionView.frame
+        let widthCell = frameCV.width/CGFloat(countCells)
+        let heightCell = widthCell
+        let spasing = CGFloat((countCells + 1)) * offset / CGFloat(countCells)
+        return CGSize(width: widthCell - spasing, height: heightCell - (offset*2))
     }
+}
 
 extension StarWarsSearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked (_ searchBar: UISearchBar) {
@@ -69,7 +69,7 @@ extension StarWarsSearchViewController: UISearchBarDelegate {
                     self?.collectionView.reloadData()
                 }
             case.failure(let error):
-            print(error)
+                print(error)
             }
         }
     }

@@ -14,25 +14,24 @@ protocol PopupDelegate: AnyObject {
 
 class FilterViewController: UIViewController {
 
-    @IBOutlet weak var filterTableView: UITableView!
-    @IBOutlet weak var applayFilterButton: UIButton!
-    @IBOutlet weak var closeButton: UINavigationItem!
-    @IBOutlet weak var filterTypeSegmentControl: UISegmentedControl!
+    // MARK: - Properties
 
     var allFilters: [String: [String]] = [:]
     var chosenFilters: [String: [String]] = [:]
     var currentFiltersType: String = "Category"
     weak var delegate: PopupDelegate?
 
+    // MARK: - Outlets
+
+    @IBOutlet weak var filterTableView: UITableView!
+    @IBOutlet weak var applayFilterButton: UIButton!
+    @IBOutlet weak var closeButton: UINavigationItem!
+    @IBOutlet weak var filterTypeSegmentControl: UISegmentedControl!
+
+    // MARK: - Actions
+
     @IBAction func closeButtonPressed(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
-    }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        applayFilterButton.layer.cornerRadius = 5
-        filterTableView.delegate = self
-        filterTableView.dataSource = self
-        setupDarkModeColor()
     }
 
     @IBAction func indexChanged(_ sender: UISegmentedControl) {
@@ -43,5 +42,15 @@ class FilterViewController: UIViewController {
     @IBAction func applyFiltersButtonPressed(_ sender: UIButton) {
         delegate?.popupValueSelected(value: chosenFilters)
         self.dismiss(animated: true, completion: nil)
+    }
+
+    // MARK: - LifeCycles
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        applayFilterButton.layer.cornerRadius = 5
+        filterTableView.delegate = self
+        filterTableView.dataSource = self
+        setupDarkModeColor()
     }
 }

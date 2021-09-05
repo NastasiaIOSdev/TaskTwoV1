@@ -9,6 +9,8 @@ import UIKit
 
 class GridCell: UICollectionViewCell {
 
+    // MARK: - Properties
+
     static var reuseIdentifierListCell: String = "ListCell"
     static var reuseIdentifierGridCell: String = "GridCell"
 
@@ -18,7 +20,6 @@ class GridCell: UICollectionViewCell {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var newsImage: UIImageView!
     @IBOutlet weak var authorLabel: UILabel!
-
     @IBOutlet weak var myView: UIView!
     @IBOutlet weak var shadowView: UIView!
 
@@ -41,8 +42,8 @@ class GridCell: UICollectionViewCell {
     func configure(with articleInfo: inout Article?, targetVC: UIViewController) {
         if let article = articleInfo {
             nameLabel.text = article.title ?? ""
-           descriptionLabel.text = article.description ?? ""
-//            sourceLabel.text = article.source?.name ?? ""
+            descriptionLabel.text = article.description ?? ""
+            //            sourceLabel.text = article.source?.name ?? ""
             if let author = article.author {
                 authorLabel.text = author.contains("{") || author.contains("/") ? "by \(article.source?.name ?? "unknown author")" : "by \(author)"
             } else {

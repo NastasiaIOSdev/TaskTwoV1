@@ -9,15 +9,16 @@ import UIKit
 
 class ThirdCollectionViewCell: UICollectionViewCell {
 
+    // MARK: - Properties
+
     static let identifier = "ThirdCollectionViewCell"
+    var parentViewController: AllBreedsViewController?
+    var models = [CellViewModel]()
 
     // MARK: - IBOutlets
 
     @IBOutlet weak var collectionViewTestThird: UICollectionView!
     @IBOutlet weak var pageControl: UIPageControl!
-
-    var parentViewController: AllBreedsViewController?
-    var models = [CellViewModel]()
 
     static func nib() -> UINib {
         return UINib(nibName: "ThirdCollectionViewCell", bundle: nil)

@@ -69,6 +69,7 @@ extension NewsViewController: UICollectionViewDelegateFlowLayout {
 // MARK: SearchBar Delegate
 
 extension NewsViewController: UISearchBarDelegate {
+
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         refresh(sender: self)
         newsModel.fetchNewsData(searchQuery: searchBar.text ?? "")
@@ -79,6 +80,7 @@ extension NewsViewController: UISearchBarDelegate {
 // MARK: - NewsViewModelDelegate
 
 extension NewsViewController: NewsViewModelDelegate {
+
     func onFetchCompleted(with newIndexPathsToReload: [IndexPath]?) {
         guard let newIndexPathsToReload = newIndexPathsToReload else {
             collectionView.reloadData()
@@ -96,6 +98,7 @@ extension NewsViewController: NewsViewModelDelegate {
 // MARK: - PopupDelegate
 
 extension NewsViewController: PopupDelegate {
+
     func popupValueSelected(value: [String: [String]]) {
         newsModel.chosenFilters = value
         newsModel.totalArticlesCount = 100
@@ -104,12 +107,14 @@ extension NewsViewController: PopupDelegate {
 }
 
 extension UIImage {
+
     func getImageRatio() -> CGFloat {
         return CGFloat(self.size.width / self.size.height)
     }
 }
 
 extension NewsViewController {
+
     func isLoadingCell(for indexPath: IndexPath) -> Bool {
         return indexPath.row >= newsModel.fetchedArticles.count
     }

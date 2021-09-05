@@ -9,6 +9,10 @@ import UIKit
 
 class InsideFirstCollectionViewCell: UICollectionViewCell {
 
+    // MARK: - Properties
+
+    static let identifaer = "InsideFirstCollectionViewCell"
+
     // MARK: - IBOUtlets
 
     @IBOutlet weak var catUIImageView: UIImageView!
@@ -17,8 +21,6 @@ class InsideFirstCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var aboutBreedLabel: UILabel!
     @IBOutlet weak var myView: UIView!
     @IBOutlet weak var shadowView: UIView!
-
-    static let identifaer = "InsideFirstCollectionViewCell"
 
     static func nib() -> UINib {
         return  UINib(nibName: "InsideFirstCollectionViewCell", bundle: nil

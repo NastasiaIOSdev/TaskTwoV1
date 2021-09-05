@@ -10,7 +10,11 @@ import SideMenu
 
 class TabBarViewController: UITabBarController, MenuControllerDelegate {
 
+    // MARK: - Properties
+
     private var sideMenu: SideMenuNavigationController?
+
+    // MARK: - LifeCycles
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -21,8 +21,7 @@ class MainUIViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tabBarController?.tabBar.tintColor = UIColor(red: 255/255.0, green: 255/255.0, blue: 255/255.0, alpha: 1)
-        self.tabBarController?.tabBar.barTintColor = UIColor(red: 0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 1)
+        setupTabbarColor()
         tableViewSecond.register(FirstUITableViewCell.nib(), forCellReuseIdentifier: FirstUITableViewCell.identifier)
         tableViewSecond.register(SecondUITableViewCell.nib(), forCellReuseIdentifier: SecondUITableViewCell.identifier)
         tableViewSecond.register(LastUITableViewCell.nib(), forCellReuseIdentifier: LastUITableViewCell.identifier)
@@ -31,7 +30,7 @@ class MainUIViewController: UIViewController {
         title = "Cats"
         getAllBreed()
         fileManagerWork()
-   }
+    }
 
     // MARK: - Action
 
@@ -47,7 +46,7 @@ class MainUIViewController: UIViewController {
             case.success(let breed):
                 self?.viewModels = breed.compactMap({
                     CellViewModel(
-                        breedId: $0.id,
+                        breedId: $0.idCats,
                         title: $0.name,
                         subtitle: $0.origin,
                         aboutBreed: $0.description,
@@ -63,6 +62,11 @@ class MainUIViewController: UIViewController {
                 print(error)
             }
         }
+    }
+
+    func setupTabbarColor() {
+        self.tabBarController?.tabBar.tintColor = UIColor(red: 255/255.0, green: 255/255.0, blue: 255/255.0, alpha: 1)
+        self.tabBarController?.tabBar.barTintColor = UIColor(red: 0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 1)
     }
 
     override func viewDidLayoutSubviews() {

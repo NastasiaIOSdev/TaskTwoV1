@@ -9,6 +9,8 @@ import UIKit
 
 class AllBreedsFullScreenCollectionViewCell: UICollectionViewCell, UIScrollViewDelegate {
 
+    // MARK: - Properties
+
     static let identifier = "AllBreedsFullScreenCollectionViewCell"
 
     // MARK: - IBOUtlets

@@ -9,6 +9,8 @@ import UIKit
 
 class AllBreedsDetailCollectionViewCell: UICollectionViewCell {
 
+    // MARK: - Properties
+
     static let identifier = "AllBreedsDetailCollectionViewCell"
 
     // MARK: - IBOUtlets

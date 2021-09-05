@@ -9,17 +9,17 @@ import UIKit
 
 class SecondCollectionViewCell: UICollectionViewCell {
 
-    static let identifier = "SecondCollectionViewCell"
+    // MARK: - Properties
 
+    static let identifier = "SecondCollectionViewCell"
     var parentViewController: AllBreedsViewController?
+    var breeds: Breed2?
+    var images: [String] = []
+    var houndImages: [String] = []
 
     // MARK: - IBOutlets
 
     @IBOutlet weak var collectionViewTestSecond: UICollectionView!
-
-    var breeds: Breed2?
-    var images: [String] = []
-    var houndImages: [String] = []
 
     static func nib() -> UINib {
         return UINib(nibName: "SecondCollectionViewCell", bundle: nil)

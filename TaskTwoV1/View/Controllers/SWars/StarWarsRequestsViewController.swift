@@ -10,14 +10,15 @@ import CoreData
 
 class StarWarsRequestsViewController: UIViewController {
 
+    // MARK: - Properties
+
+    let cellIdentifier = "StarWarsRequestTableViewCell"
+    var requests: [MyRequest] = []
+    let segueIdentifier = "Detail2"
+
     // MARK: - IBOUtlets
 
     @IBOutlet weak var tableView: UITableView!
-
-    let cellIdentifier = "StarWarsRequestTableViewCell"
-
-    var requests: [MyRequest] = []
-    let segueIdentifier = "Detail2"
 
     // MARK: - LiveCycles
 

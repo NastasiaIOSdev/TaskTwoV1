@@ -37,7 +37,7 @@ extension AllBreedsDetailViewController: UICollectionViewDelegate, UICollectionV
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let viewC = storyboard?.instantiateViewController(identifier: "AllBreedsFullscreenViewController")
-                                                                    as? AllBreedsFullscreenViewController else {
+                as? AllBreedsFullscreenViewController else {
             fatalError()
         }
         guard self.collectionView(collectionView, cellForItemAt: indexPath) is AllBreedsDetailCollectionViewCell else {

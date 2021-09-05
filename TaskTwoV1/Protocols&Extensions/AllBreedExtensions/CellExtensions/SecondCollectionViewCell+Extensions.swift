@@ -30,7 +30,7 @@ extension SecondCollectionViewCell: UICollectionViewDelegateFlowLayout {
 }
 
 extension SecondCollectionViewCell: UICollectionViewDelegate,
-                                   UICollectionViewDataSource {
+                                    UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.breeds?.message.count ?? 0

@@ -48,7 +48,7 @@ extension AllBreedsViewController: UICollectionViewDataSource {
             cell2.parentViewController = self
             return cell2
 
-            } else if (indexPath.row - 1) % 2 == 0 || (indexPath.row - 1) % 2 == 1 || indexPath.row == 2 {
+        } else if (indexPath.row - 1) % 2 == 0 || (indexPath.row - 1) % 2 == 1 || indexPath.row == 2 {
             if let cell3 = collectionTestView.dequeueReusableCell(
                 withReuseIdentifier: "ThirdCollectionViewCell", for: indexPath) as? ThirdCollectionViewCell {
                 cell3.configure(with: viewModels, viewC: self)

@@ -9,6 +9,11 @@ import UIKit
 
 class StarWarsDetailPageViewController: UIViewController {
 
+    // MARK: - Properties
+
+    var namePerson: String!
+    var genderTipe: String!
+    var starImage: UIImage!
     var detail: Results?
 
     // MARK: - OUtlets
@@ -18,10 +23,6 @@ class StarWarsDetailPageViewController: UIViewController {
     @IBOutlet weak var personImage: UIImageView!
     @IBOutlet weak var myView: UIView!
     @IBOutlet weak var shadowView: UIView!
-
-    var namePerson: String!
-    var genderTipe: String!
-    var starImage: UIImage!
 
     // MARK: - Life cycles
 

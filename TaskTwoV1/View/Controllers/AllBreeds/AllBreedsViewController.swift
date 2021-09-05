@@ -10,9 +10,7 @@ import SideMenu
 
 class AllBreedsViewController: UIViewController {
 
-    // MARK: - IBOUtlets
-
-    @IBOutlet weak var collectionTestView: UICollectionView!
+    // MARK: - Properties
 
     private var breed = [Breed]()
     var viewModels = [CellViewModel]()
@@ -21,19 +19,25 @@ class AllBreedsViewController: UIViewController {
     var houndImages: [String] = []
     private var sideMenu: SideMenuNavigationController?
 
+    // MARK: - IBOUtlets
+
+    @IBOutlet weak var collectionTestView: UICollectionView!
+
+    // MARK: - Life cycles
+
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionTestView.delegate = self
         collectionTestView.dataSource = self
         self.collectionTestView.register(UINib(nibName: "FirstCollectionViewCell",
                                                bundle: nil),
-                                               forCellWithReuseIdentifier: "FirstCollectionViewCell")
+                                         forCellWithReuseIdentifier: "FirstCollectionViewCell")
         self.collectionTestView.register(UINib(nibName: "SecondCollectionViewCell",
                                                bundle: nil),
-                                               forCellWithReuseIdentifier: "SecondCollectionViewCell")
+                                         forCellWithReuseIdentifier: "SecondCollectionViewCell")
         self.collectionTestView.register(UINib(nibName: "ThirdCollectionViewCell",
                                                bundle: nil),
-                                               forCellWithReuseIdentifier: "ThirdCollectionViewCell")
+                                         forCellWithReuseIdentifier: "ThirdCollectionViewCell")
         title = "List All Breed"
         allBreed()
         fillArrays()
@@ -53,7 +57,7 @@ class AllBreedsViewController: UIViewController {
             case.success(let breed):
                 self?.viewModels = breed.compactMap({
                     CellViewModel(
-                        breedId: $0.id,
+                        breedId: $0.idCats,
                         title: $0.name,
                         subtitle: $0.origin,
                         aboutBreed: $0.description,
@@ -96,12 +100,14 @@ class AllBreedsViewController: UIViewController {
         }
     }
 
-    func makeSegue(data: BreedImagesModel) {
-        performSegue(withIdentifier: "Detail1", sender: data)
-    }
-
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+    }
+
+    // MARK: - Segue
+
+    func makeSegue(data: BreedImagesModel) {
+        performSegue(withIdentifier: "Detail1", sender: data)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

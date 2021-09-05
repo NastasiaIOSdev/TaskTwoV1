@@ -9,14 +9,16 @@ import UIKit
 
 class InsideThirdCollectionViewCell: UICollectionViewCell {
 
+    // MARK: - Properties
+
+    static let identifaer = "InsideThirdCollectionViewCell"
+
     // MARK: - IBOUtlets
 
     @IBOutlet weak var catUIImageView: UIImageView!
     @IBOutlet weak var breedLabel: UILabel!
     @IBOutlet weak var myView: UIView!
     @IBOutlet weak var shadowView: UIView!
-
-    static let identifaer = "InsideThirdCollectionViewCell"
 
     static func nib() -> UINib {
         return  UINib(nibName: "InsideThirdCollectionViewCell", bundle: nil

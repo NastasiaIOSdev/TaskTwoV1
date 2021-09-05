@@ -9,30 +9,30 @@ import UIKit
 
 class LastUITableViewCell: UITableViewCell {
 
+    // MARK: - Properties
+
     static let identifier = "LastUITableViewCell"
+    var models = [CellViewModel]()
 
-     // MARK: - IBOutlets
+    // MARK: - IBOutlets
 
-     @IBOutlet weak var collectionViewSecond: UICollectionView!
+    @IBOutlet weak var collectionViewSecond: UICollectionView!
 
-     var models = [CellViewModel]()
+    static func nib() -> UINib {
+        return UINib(nibName: "LastUITableViewCell", bundle: nil)
+    }
 
-      static func nib() -> UINib {
-          return UINib(nibName: "LastUITableViewCell", bundle: nil)
-      }
+    func configure(with models: [CellViewModel]) {
+        self.models = models
+        collectionViewSecond.reloadData()
+    }
 
-     func configure(with models: [CellViewModel]) {
-         self.models = models
-         collectionViewSecond.reloadData()
-     }
-
-      override func awakeFromNib() {
-          super.awakeFromNib()
-
-         collectionViewSecond.register(
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        collectionViewSecond.register(
             LastUICollectionViewCell.nib(),
-             forCellWithReuseIdentifier: LastUICollectionViewCell.identifaer)
-         collectionViewSecond.delegate = self
-         collectionViewSecond.dataSource = self
-      }
+            forCellWithReuseIdentifier: LastUICollectionViewCell.identifaer)
+        collectionViewSecond.delegate = self
+        collectionViewSecond.dataSource = self
+    }
 }

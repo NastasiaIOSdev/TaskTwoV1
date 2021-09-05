@@ -9,6 +9,8 @@ import UIKit
 
 class SecondUITableViewCell: UITableViewCell {
 
+    // MARK: - Properties
+
     static let identifier = "SecondUITableViewCell"
 
     // MARK: - IBOUtlets

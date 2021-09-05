@@ -15,12 +15,9 @@ protocol MenuControllerDelegate: class {
 
 class MenuController: UITableViewController {
 
-    // MARK: - IBOutlets
-
-    public weak var delegate: MenuControllerDelegate?
-
     // MARK: - Properties
 
+    public weak var delegate: MenuControllerDelegate?
     let menuItem: [String]
     let color = UIColor(red: 33/255.0, green: 33/255.0, blue: 33/255.0, alpha: 1)
     init(with menuItem: [String]) {

@@ -9,15 +9,19 @@ import UIKit
 
 class AllBreedsDetailViewController: UIViewController {
 
-    // MARK: - IBOUtlets
+    // MARK: - Properties
 
-    @IBOutlet weak var testCollectionView: UICollectionView!
     lazy var photoCacheService = PhotoCacheService.init(container: self.testCollectionView)
-
     var model: BreedImagesModel?
     var images: [String] = []
     let countCells = 2
     let offset: CGFloat = 2.0
+
+    // MARK: - IBOUtlets
+
+    @IBOutlet weak var testCollectionView: UICollectionView!
+
+    // MARK: - Life cycles
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -9,6 +9,8 @@ import UIKit
 
 class FirstDogCollectionViewCell: UICollectionViewCell {
 
+    // MARK: - Properties
+
     static let identifier = "FirstDogCollectionViewCell"
 
     // MARK: - IBOUtlets
@@ -58,17 +60,6 @@ class FirstDogCollectionViewCell: UICollectionViewCell {
             }
         })
     }
-
-    /*
-    func setBreed_(breed: String, imageURL: String) {
-        breedLabel.text = breed
-        let url = URL(string: imageURL)
-
-        if imageURL != "" {
-            imageDogView.downloadedFrom(url: url!)
-        }
-    }
-    */
 
     override func prepareForReuse() {
         super.prepareForReuse()

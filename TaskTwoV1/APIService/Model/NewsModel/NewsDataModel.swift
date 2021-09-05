@@ -49,7 +49,7 @@ class NewsDataModel {
         guard let filters = HelperMethods.readFiltersInfoJSON() else {
             print("An error with filters fetch from JSON has occured")
             return
-    }
+        }
         self.filters = filters
         apiClient.getSourceFilters { (sourceOptions, error) in
             DispatchQueue.main.async {

@@ -9,6 +9,8 @@ import UIKit
 
 class FirstCollectionViewCell: UICollectionViewCell {
 
+    // MARK: - Properties
+
     static let identifier = "FirstCollectionViewCell"
 
     // MARK: - IBOutlets
