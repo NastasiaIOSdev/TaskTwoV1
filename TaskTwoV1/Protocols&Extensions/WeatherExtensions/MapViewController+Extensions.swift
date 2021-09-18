@@ -39,6 +39,7 @@ extension MapViewController: MKMapViewDelegate {
         }
         return annotationView
     }
+
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         if let weatherdetailViewController = storyboard.instantiateViewController(identifier: "WeatherDetailViewController") as? WeatherDetailViewController,
@@ -62,7 +63,7 @@ extension MapViewController: UISearchBarDelegate {
                 annotation.title = self.searchBar.text!
                 self.weatherManager.sendRequest(coordinates: locCoord) { weather in
                     DispatchQueue.main.async {
-                        let simbol = Constants().simboldegrees[degreePath] ?? "℃"
+                        let simbol = Constants().degreeSymbols[degreePath] ?? "℃"
                         let annotation = MKPointAnnotation()
                         annotation.coordinate = locCoord
                         if let weather = weather {
@@ -145,8 +146,8 @@ extension MapViewController: UITableViewDataSource {
         let searchResult = searchResults[indexPath.row]
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: nil)
 
-        cell.textLabel?.attributedText = hightLightedText(searchResult.title, inRanges: searchResult.titleHighlightRanges, size: 17.0)
-        cell.detailTextLabel?.attributedText = hightLightedText(searchResult.subtitle, inRanges: searchResult.subtitleHighlightRanges, size: 12.0)
+        cell.textLabel?.attributedText = hightLightedText(searchResult.title, inRanges: searchResult.titleHighlightRanges, size: UIFont.systemFontSize)
+        cell.detailTextLabel?.attributedText = hightLightedText(searchResult.subtitle, inRanges: searchResult.subtitleHighlightRanges, size: UIFont.smallSystemFontSize)
         cell.backgroundColor = UIColor(displayP3Red: 1, green: 1, blue: 1, alpha: 0.65)
         return cell
     }
@@ -159,7 +160,7 @@ extension MapViewController: MKLocalSearchCompleterDelegate {
             setSearchresults(completer.results)
             searchresultsTableView.reloadData()
         }
-}
+    }
 
     func completer(_ completer: MKLocalSearchCompleter, didFailWithError error: Error) {
         print("Error")

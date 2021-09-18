@@ -485,8 +485,11 @@
                                 </connections>
                             </mapView>
                             <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SFH-Wv-urg">
-                                <rect key="frame" x="0.0" y="154" width="414" height="312"/>
+                                <rect key="frame" x="0.0" y="154" width="414" height="300"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="FZ3-P6-nKe"/>
+                                </constraints>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="Ktt-3m-kgS" id="mJB-5N-NmS"/>
@@ -519,7 +522,6 @@
                             <constraint firstItem="8zc-ln-TIt" firstAttribute="top" secondItem="BWC-zx-fNv" secondAttribute="top" id="2SZ-Dm-hfL"/>
                             <constraint firstItem="SFH-Wv-urg" firstAttribute="leading" secondItem="BWC-zx-fNv" secondAttribute="leading" id="87i-fN-ego"/>
                             <constraint firstItem="8zc-ln-TIt" firstAttribute="trailing" secondItem="BWC-zx-fNv" secondAttribute="trailing" id="Bca-1m-pA0"/>
-                            <constraint firstItem="BWC-zx-fNv" firstAttribute="bottom" secondItem="SFH-Wv-urg" secondAttribute="bottom" constant="347" id="E6c-rE-fbd"/>
                             <constraint firstItem="8zc-ln-TIt" firstAttribute="bottom" secondItem="BWC-zx-fNv" secondAttribute="bottom" id="HuW-aj-uqE"/>
                             <constraint firstItem="8zc-ln-TIt" firstAttribute="leading" secondItem="BWC-zx-fNv" secondAttribute="leading" id="JO5-RW-fzS"/>
                             <constraint firstItem="BWC-zx-fNv" firstAttribute="bottom" secondItem="tsC-WL-h2y" secondAttribute="bottom" constant="30" id="apa-OM-2NC"/>

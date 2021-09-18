@@ -46,7 +46,7 @@ class WeekForecastCell: UITableViewCell {
                 return
             }
             conditionId = day.dailyId
-            let simbol = Constants().simboldegrees[degreePath] ?? "℃"
+            let simbol = Constants().degreeSymbols[degreePath] ?? "℃"
             let formatNSDateToDayOfTheWeek = DateFormatter()
             formatNSDateToDayOfTheWeek.dateFormat = "EEEE"
             let date = NSDate(timeIntervalSince1970: day.dailyDt)

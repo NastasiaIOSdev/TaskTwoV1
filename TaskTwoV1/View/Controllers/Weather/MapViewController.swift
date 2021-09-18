@@ -13,6 +13,12 @@ import Network
 
 class MapViewController: UIViewController {
 
+    // MARK: - IBOutlets
+
+    @IBOutlet weak var mainMap: MKMapView!
+    @IBOutlet weak var searchresultsTableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
+
     // MARK: - Property
 
     var searchCompleter = MKLocalSearchCompleter()
@@ -26,18 +32,13 @@ class MapViewController: UIViewController {
     var latitude: Double = 0
     var longitude: Double = 0
     var ignoresearchResults = true
+    let region: CLLocationDistance = 2000
 
     func setSearchresults(_ results: [MKLocalSearchCompletion]) {
         searchResults = results
         let hidden = results.count == 0
         self.searchresultsTableView.isHidden = hidden
     }
-
-    // MARK: - IBOutlets
-
-    @IBOutlet weak var mainMap: MKMapView!
-    @IBOutlet weak var searchresultsTableView: UITableView!
-    @IBOutlet weak var searchBar: UISearchBar!
 
     // MARK: - LifeCycles
 
@@ -53,10 +54,8 @@ class MapViewController: UIViewController {
         startingPin()
         if let location = self.locationCoordinates {
             weatherManager.fetchWeather(latitude: location.latitude, longitude: location.longitude)
-
             let recognizer = UITapGestureRecognizer(target: self, action: #selector(addPin(sender:)))
             mainMap.addGestureRecognizer(recognizer)
-
         }
     }
 
@@ -84,7 +83,7 @@ class MapViewController: UIViewController {
 
         weatherManager.sendRequest(coordinates: locCoord) { weather in
             DispatchQueue.main.async {
-                let simbol = Constants().simboldegrees[degreePath] ?? "℃"
+                let simbol = Constants().degreeSymbols[degreePath] ?? "℃"
                 let annotation = MKPointAnnotation()
                 annotation.coordinate = locCoord
                 if let weather = weather {
@@ -100,19 +99,17 @@ class MapViewController: UIViewController {
         }
     }
 
+    func centerMap(location: CLLocation) {
+        let coordinate = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: region, longitudinalMeters: region)
+        mainMap.setRegion(coordinate, animated: true)
+    }
+
     func startingPin() {
-        let location = CLLocation(latitude: 55.165273, longitude: 61.367668)
-        let pin = PinInfo(coordinatePin: CLLocationCoordinate2D(
-                            latitude: 55.165273,
-                            longitude: 61.367668),
+        let location = Constants().defaultLocation
+        let pin = PinInfo(coordinatePin: location.coordinate,
                           description: "Place",
                           titlePin: "Gagarin Park",
                           namePin: "Place")
-        let region: CLLocationDistance = 2000
-        func centerMap(location: CLLocation) {
-            let coordinate = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: region, longitudinalMeters: region)
-            mainMap.setRegion(coordinate, animated: true)
-        }
         centerMap(location: location)
         mainMap.addAnnotation(pin)
     }

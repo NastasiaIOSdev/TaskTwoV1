@@ -18,26 +18,31 @@ class WeatherManager {
     weak var delegate: WeatherManagerDelegate?
 
     func fetchWeather(latitude: Double, longitude: Double) {
-        let url = Constants().weatherURL
-        let apikey = Constants().apiAccessKeyWeather
-        let units = Constants().degreePaths[degreePath] ?? "units=metric"
-        let urlString = "\(url)&appid=\(apikey)&\(units)&lat=\(latitude)&lon=\(longitude)&lang=\(Locale.current.languageCode ?? "en")&exclude=minutely,hourly,alerts"
-        performRequest(with: urlString)
+        var components = URLComponents(string: Constants().onecallWeatherURL)
+        components?.queryItems = [
+            URLQueryItem(name: "appid", value: Constants().weatherApiAccessKey),
+            URLQueryItem(name: "units", value: Constants().degreePaths[degreePath] ?? "metric"),
+            URLQueryItem(name: "lat", value: "\(latitude)"),
+            URLQueryItem(name: "lon", value: "\(longitude)"),
+            URLQueryItem(name: "lang", value: Locale.current.languageCode ?? "en"),
+            URLQueryItem(name: "exclude", value: "minutely,hourly,alerts")
+        ]
+        if let url = components?.url {
+            performRequest(with: url)
+        }
     }
 
-    func performRequest(with urlString: String) {
-        if let url = URL(string: urlString) {
-            let session = URLSession(configuration: .default)
-            let task = session.dataTask(with: url) { (data, _, error) in
-                if let error = error {
-                    self.delegate?.didFailWithError(error: error)
-                } else if let data = data,
-                          let weather = self.parseJSON(data) {
-                    self.delegate?.didUpdateweather(self, weather: weather)
-                }
+    func performRequest(with url: URL) {
+        let session = URLSession(configuration: .default)
+        let task = session.dataTask(with: url) { (data, _, error) in
+            if let error = error {
+                self.delegate?.didFailWithError(error: error)
+            } else if let data = data,
+                      let weather = self.parseJSON(data) {
+                self.delegate?.didUpdateweather(self, weather: weather)
             }
-            task.resume()
         }
+        task.resume()
     }
 
     func parseJSON(_ weatherData: Data) -> WeatherModel? {
@@ -51,15 +56,17 @@ class WeatherManager {
             for day in decodeData.daily {
                 if ignoreFirst {
                     ignoreFirst = false
-                } else {
-                    let newDay = DailyModel(dailyDt: day.dtDaily ?? 0,
-                                            dailyTemp: day.temp?.day ?? 0,
-                                            dailyId: day.weather?[0].idWeather ?? 0)
+                } else if let dailyDt = day.dtDaily,
+                          let dailyTemp = day.temp?.day,
+                          let dailyId = day.weather?[0].idWeather {
+                    let newDay = DailyModel(dailyDt: dailyDt, dailyTemp: dailyTemp, dailyId: dailyId)
                     daily.append(newDay)
                 }
             }
+            guard let currentTemperature = current.temp,
+                  let weatherId = current.weather[0].idWeather else { return nil }
             let currentWeather: CurrentWeather = CurrentWeather(
-                curTemperature: current.temp ?? 0,
+                curTemperature: currentTemperature,
                 curFeelTemp: current.feelLike,
                 curHumidity: current.humidity,
                 curClouds: current.clouds,
@@ -67,7 +74,7 @@ class WeatherManager {
                 curWindDeg: current.windDeg,
                 curPressure: current.pressure,
                 curDescription: current.weather[0].description ?? "",
-                curId: current.weather[0].idWeather ?? 0
+                curId: weatherId
             )
             let weather = WeatherModel(current: currentWeather, daily: daily)
             return weather
@@ -77,18 +84,22 @@ class WeatherManager {
         }
     }
 
-    func sendRequest(coordinates: CLLocationCoordinate2D, completion: @escaping (WeatherData2?) -> Void) {
+    func sendRequest(coordinates: CLLocationCoordinate2D, completion: @escaping (MainWeatherData?) -> Void) {
         let decoder = JSONDecoder()
-        let latitude = coordinates.latitude
-        let longitude = coordinates.longitude
-        let units = Constants().degreePaths[degreePath] ?? "units=metric"
-        let urlString = "\(Constants().weatherURL2)lat=\(latitude)&lon=\(longitude)&\(units)&appid=\(Constants().apiAccessKeyWeather)"
-        guard let url = URL(string: urlString) else { return }
+
+        var components = URLComponents(string: Constants().weatherURL)
+        components?.queryItems = [
+            URLQueryItem(name: "lat", value: "\(coordinates.latitude)"),
+            URLQueryItem(name: "lon", value: "\(coordinates.longitude)"),
+            URLQueryItem(name: "units", value: Constants().degreePaths[degreePath] ?? "metric"),
+            URLQueryItem(name: "appid", value: Constants().weatherApiAccessKey)
+        ]
+        guard let url = components?.url else { return }
 
         let task = URLSession.shared.dataTask(with: url) { (data, _, error) in
             if error == nil, let data = data {
                 do {
-                    let weather = try decoder.decode(WeatherData2.self, from: data)
+                    let weather = try decoder.decode(MainWeatherData.self, from: data)
                     completion(weather)
                 } catch {
                     completion(nil)
