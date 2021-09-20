@@ -8,6 +8,8 @@
 import UIKit
 import CoreData
 
+var degreePath = "celsius"
+
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -15,6 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        if let degree = UserDefaults.standard.string(forKey: "degree") {
+            degreePath = degree
+        }
         print(FileManager.documentsDirectory)
         return true
     }
@@ -53,6 +58,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: - Core Data Saving support
 
     func save() {
+        UserDefaults.standard.set(degreePath, forKey: "degree")
+
         let context = persistentContainer.viewContext
         if context.hasChanges {
             do {

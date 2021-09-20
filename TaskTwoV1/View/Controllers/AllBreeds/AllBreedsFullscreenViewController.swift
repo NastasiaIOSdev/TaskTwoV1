@@ -12,6 +12,7 @@ class AllBreedsFullscreenViewController: UIViewController {
     // MARK: - Properties
 
     lazy var photoCacheService = PhotoCacheService.init(container: self.collectionView)
+
     let countCells = 1
     let offset: CGFloat = 2.0
     var imageUrlString: String?
