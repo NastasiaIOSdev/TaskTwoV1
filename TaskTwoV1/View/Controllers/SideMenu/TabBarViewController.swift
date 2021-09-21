@@ -21,6 +21,7 @@ class TabBarViewController: UITabBarController, MenuControllerDelegate {
         let menu = MenuController(with: ["Cats",
                                          "StarWars",
                                          "AllBreeds",
+                                         "Weather",
                                          "News"])
         menu.delegate = self
         sideMenu = SideMenuNavigationController(rootViewController: menu)
@@ -35,13 +36,15 @@ class TabBarViewController: UITabBarController, MenuControllerDelegate {
 
     func didselectMenuItem(named: String) {
         if named == "News" {
-            self.selectedIndex = 3
+            self.selectedIndex = 4
         } else if named == "StarWars" {
             self.selectedIndex = 1
         } else if named == "AllBreeds" {
             self.selectedIndex = 2
         } else if named == "Cats" {
             self.selectedIndex = 0
+        } else if named == "Weather" {
+            self.selectedIndex = 3
         }
         sideMenu?.dismiss(animated: true)
     }

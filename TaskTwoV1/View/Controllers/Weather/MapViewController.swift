@@ -10,6 +10,7 @@ import MapKit
 import Contacts
 import CoreLocation
 import Network
+import SideMenu
 
 class MapViewController: UIViewController {
 
@@ -60,6 +61,12 @@ class MapViewController: UIViewController {
     }
 
     // MARK: - Action
+
+    @IBAction func didTapMenuButton() {
+        if let viewController = (UIApplication.shared.windows.first?.rootViewController as? TabBarViewController) {
+            viewController.presentMenu()
+        }
+    }
 
     @IBAction func onChangeType(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {

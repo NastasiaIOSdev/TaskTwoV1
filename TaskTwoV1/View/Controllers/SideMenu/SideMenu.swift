@@ -47,7 +47,7 @@ class MenuController: UITableViewController {
     // MARK: - SetupUISwitch
 
     func addSwitch() {
-        let switchOnOff = UISwitch(frame: CGRect(x: 10, y: 200, width: 0, height: 0))
+        let switchOnOff = UISwitch(frame: CGRect(x: 10, y: 230, width: 0, height: 0))
         switchOnOff.addTarget(self, action: #selector(MenuController.switchStateDidChange(_:)), for: .valueChanged)
         switchOnOff.setOn(true, animated: false)
         self.view.addSubview(switchOnOff)
@@ -58,7 +58,7 @@ class MenuController: UITableViewController {
     }
 
     func addLabelSwitch() {
-        let shimmerSwitchLabelView = ShimmeringView(frame: CGRect(x: 75, y: 205, width: 150, height: 20))
+        let shimmerSwitchLabelView = ShimmeringView(frame: CGRect(x: 75, y: 235, width: 150, height: 20))
         self.view.addSubview(shimmerSwitchLabelView)
         let label = UILabel(frame: shimmerSwitchLabelView.bounds)
         label.text = "Dark Mode"
